@@ -1,9 +1,4 @@
 @import './typography.css';
-@import './components/header.css';
-@import './components/footer.css';
-@import './components/buttons.css';
-@import './components/forms.css';
-@import './common.css';
 @import './pages/common.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';

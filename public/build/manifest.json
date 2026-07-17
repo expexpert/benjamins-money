@@ -28,7 +28,7 @@
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
   "resources/css/app.css": {
-    "file": "assets/app-nDwsWBcB.css",
+    "file": "assets/app-D4AwdrXY.css",
     "name": "app",
     "names": [
       "app.css"
@@ -41,7 +41,8 @@
       "assets/D-DINExp-CO0kwd1S.otf",
       "assets/D-DINExp-Bold-D6M_U6A9.woff2",
       "assets/D-DINExp-Italic-B1DEFVSI.woff2",
-      "assets/D-DINExp-Italic-F-6Ef1Bq.woff"
+      "assets/D-DINExp-Italic-F-6Ef1Bq.woff",
+      "assets/check-CV4MXesy.svg"
     ]
   },
   "resources/fonts/D-DINExp-Bold.woff2": {
@@ -67,6 +68,10 @@
   "resources/fonts/D-DINExp.woff2": {
     "file": "assets/D-DINExp-L8GXeOAK.woff2",
     "src": "resources/fonts/D-DINExp.woff2"
+  },
+  "resources/images/check.svg": {
+    "file": "assets/check-CV4MXesy.svg",
+    "src": "resources/images/check.svg"
   },
   "resources/js/app.js": {
     "file": "assets/app-BJOIDpEb.js",

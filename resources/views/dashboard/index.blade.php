@@ -444,7 +444,7 @@
                         <div class="d-flex gap-10px justify-space-between align-flex-start">
                             <div class="d-flex gap-12 mb-24">
                                 <div class="notification-outer">
-                                    <img src="./images/carbon_financial-assets.svg" alt="assets icon">
+                                    <img src="{{ asset('images/carbon_financial-assets.svg') }}" alt="assets icon">
                                 </div>
                                 <div class="card-cont">
                                     <h3 class="f-16 mb-4">
@@ -463,7 +463,7 @@
                         <div class="d-grid gap-12 col-lg-4-6 align-center">
                             <div class="right-col b-0 p-0">
                                 <div class="img center mb-12">
-                                    <img src="./images/asset-allocation-graph.svg" alt="asset Allocation image">
+                                    <img src="{{ asset('images/asset-allocation-graph.svg') }}" alt="asset Allocation image">
                                 </div>
                                 <h2 class="f-12 center white mb-4">
                                     33.3% (Diversified Pool)
@@ -667,7 +667,7 @@
                             </div>
 
                             <div class="plan-arrow d-flex align-center justify-center">
-                                <img src="./images/plane-arrow.svg" alt="plane arrow">
+                                <img src="{{ asset('images/plane-arrow.svg') }}" alt="plane arrow">
                             </div>
 
                             <div class="plan-item text-end">

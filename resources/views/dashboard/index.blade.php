@@ -551,7 +551,7 @@
                         <div class="d-flex gap-10px justify-space-between align-flex-start">
                             <div class="d-flex gap-12 mb-24">
                                 <div class="notification-outer">
-                                    <img src="./images/mage_goals.svg" alt="goals icon">
+                                    <img src="{{ asset('images/mage_goals.svg') }}" alt="goals icon">
                                 </div>
                                 <div class="card-cont">
                                     <h3 class="f-14 mb-4">
@@ -634,7 +634,7 @@
                         <div class="d-grid col-lg-6-4 mb-24 gap-10px justify-space-between align-flex-start">
                             <div class="d-flex gap-12">
                                 <div class="notification-outer">
-                                    <img src="./images/weight.svg" alt="weight icon">
+                                    <img src="{{ asset('images/weight.svg') }}" alt="weight icon">
                                 </div>
                                 <div class="card-cont">
                                     <h3 class="f-16 mb-4">
@@ -713,8 +713,7 @@
                         <div class="d-grid col-lg-6-4 mb-24 gap-10px justify-space-between align-flex-start">
                             <div class="d-flex gap-12 mb-24">
                                 <div class="notification-outer">
-                                    {{ asset('images/search.svg') }}
-                                    <img src="./images/real-tme.svg" alt="goals icon">
+                                    <img src="{{ asset('images/real-tme.svg') }}" alt="goals icon">
                                 </div>
                                 <div class="card-cont">
                                     <h3 class="f-14 mb-4">

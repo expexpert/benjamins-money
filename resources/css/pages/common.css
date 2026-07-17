@@ -525,7 +525,9 @@ input[type="range"]::-moz-range-thumb {
     align-items: center;
     justify-content: center;
     color: #1FC86A;
-    background: url('../images/check.svg');
+    /* background-image: url(../../../public/images/check.svg); */
+    /* background: url('/images/check.svg'); */
+    background-image: url('/images/check.svg');
     background-repeat: no-repeat;
     background-size: 14px;
     left: 5px;

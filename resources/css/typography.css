@@ -1,0 +1,474 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'D-DINExp';
+    src: url('../fonts/D-DINExp.woff2') format('woff2'),
+        url('../fonts/D-DINExp.ttf') format('truetype'),
+        url('../fonts/D-DINExp.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'D-DINExp';
+    src: url('../fonts/D-DINExp-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'D-DINExp';
+    src: url('../fonts/D-DINExp-Italic.woff2') format('woff2'),
+        url('../fonts/D-DINExp-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+:root {
+    --bg: #000A0F;
+    --sidebar_bg: #0B1417;
+    --font: 'D-DINExp', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'D-DINExp', monospace;
+    /* ==========================================
+     Primary (Green)
+  ========================================== */
+    --color-primary-100: rgba(35, 176, 91, 20%);
+    --color-primary-200: rgba(35, 176, 91, 40%);
+    --color-primary-300: rgba(35, 176, 91, 60%);
+    --color-primary-400: rgba(35, 176, 91, 80%);
+    --color-primary-500: rgba(35, 176, 91, 100%);
+    --color-primary-600: #1C8D49;
+    --color-primary-700: #156A37;
+    --color-primary-800: #0E4624;
+    --color-primary-900: #072312;
+
+    /* ==========================================
+     Secondary (Dark Blue )
+  ========================================== */
+    --color-secondary-100: rgba(0, 48, 73, 20%);
+    --color-secondary-200: rgba(0, 48, 73, 100%);
+    --color-secondary-300: rgba(0, 48, 73, 60%);
+    --color-secondary-400: rgba(0, 48, 73, 80%);
+    --color-secondary-500: rgba(0, 48, 73, 100%);
+    --color-secondary-600: #00263A;
+    --color-secondary-700: #001D2C;
+    --color-secondary-800: #00131D;
+    --color-secondary-900: #000A0F;
+
+    /* Dark Secondary */
+    --color-secondary-dark-100: rgba(53, 102, 116, 10%);
+    --color-secondary-dark-200: rgba(53, 102, 116, 40%);
+    --color-secondary-dark-300: rgba(53, 102, 116, 60%);
+    --color-secondary-dark-400: rgba(53, 102, 116, 80%);
+    --color-secondary-dark-500: rgba(53, 102, 116, 100%);
+    --color-secondary-dark-600: #2A525D;
+    --color-secondary-dark-700: #203D46;
+    --color-secondary-dark-800: #15292E;
+    --color-secondary-dark-900: #0B1417;
+
+    /* ==========================================
+     Neutral
+  ========================================== */
+    --color-neutral-100: rgba(233, 231, 221, 20%);
+    --color-neutral-200: rgba(233, 231, 221, 40%);
+    --color-neutral-300: rgba(233, 231, 221, 60%);
+    --color-neutral-400: rgba(233, 231, 221, 80%);
+    --color-neutral-500: rgba(233, 231, 221, 100%);
+    --color-neutral-600: #BAB9B1;
+    --color-neutral-700: #F6F5F1;
+    --color-neutral-800: #5D5C58;
+    --color-neutral-900: #2F2E2C;
+
+    /* Neutral Dark */
+    --color-neutral-dark-100: rgba(16, 16, 16, 20%);
+    --color-neutral-dark-200: rgba(16, 16, 16, 40%);
+    --color-neutral-dark-300: rgba(16, 16, 16, 60%);
+    --color-neutral-dark-400: rgba(16, 16, 16, 80%);
+    --color-neutral-dark-500: rgba(16, 16, 16, 100%);
+    --color-neutral-dark-600: #0D0D0D;
+    --color-neutral-dark-700: #0A0A0A;
+    --color-neutral-dark-800: #060606;
+    --color-neutral-dark-900: #030303;
+
+    /* ==========================================
+     Success (Green)
+  ========================================== */
+    --color-success-100: rgba(67, 183, 93, 20%);
+    --color-success-200: rgba(67, 183, 93, 40%);
+    --color-success-300: rgba(67, 183, 93, 60%);
+    --color-success-400: rgba(67, 183, 93, 80%);
+    --color-success-500: rgba(67, 183, 93, 100%);
+    --color-success-600: #399753;
+    --color-success-700: #2F7749;
+    --color-success-800: #26573F;
+    --color-success-900: #1C3735;
+
+    /* ==========================================
+     Danger (Red)
+  ========================================== */
+    --color-danger-100: rgba(238, 68, 63, 20%);
+    --color-danger-200: rgba(238, 68, 63, 40%);
+    --color-danger-300: rgba(238, 68, 63, 60%);
+    --color-danger-400: rgba(238, 68, 63, 80%);
+    --color-danger-500: rgba(238, 68, 63, 100%);
+    --color-danger-600: #C23B3B;
+    --color-danger-700: #963237;
+    --color-danger-800: #6A2933;
+    --color-danger-900: #3E202F;
+
+    /* ==========================================
+     Warning (Yellow)
+  ========================================== */
+    --color-warning-100: rgba(255, 170, 0, 20%);
+    --color-warning-200: rgba(255, 170, 0, 40%);
+    --color-warning-300: rgba(255, 170, 0, 60%);
+    --color-warning-400: rgba(255, 170, 0, 80%);
+    --color-warning-500: rgba(255, 170, 0, 100%);
+    --color-warning-600: #D08D09;
+    --color-warning-700: #A06F11;
+    --color-warning-800: #71521A;
+    --color-warning-900: #413422;
+
+    /* ==========================================
+     Info (Blue)
+  ========================================== */
+    --color-info-100: rgba(0, 149, 255, 20%);
+    --color-info-200: rgba(0, 149, 255, 40%);
+    --color-info-300: rgba(0, 149, 255, 60%);
+    --color-info-400: rgba(0, 149, 255, 80%);
+    --color-info-500: rgba(0, 149, 255, 100%);
+    --color-info-600: #047CD5;
+    --color-info-700: #0763AA;
+    --color-info-800: #0B4980;
+    --color-info-900: #0E3055;
+}
+
+/* body  */
+body {
+    background-color: var(--bg);
+    font-family: var(--font);
+}
+
+a {
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+
+.dashboard-outer {
+    min-height: 100vh;
+    display: flex;
+}
+
+.dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.f-64 {
+    font-size: 64px;
+    line-height: 1.3;
+}
+
+.f-56 {
+    font-size: 56px;
+    line-height: 1.3;
+}
+
+.f-48 {
+    font-size: 48px;
+    line-height: 1.3;
+}
+
+.f-40 {
+    font-size: 40px;
+    line-height: 1.3;
+}
+
+.f-32 {
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+.f-28 {
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+
+.f-24 {
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.f-22 {
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.f-20 {
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.f-18 {
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.f-16 {
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.f-14 {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.f-12 {
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.f-10 {
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+
+
+
+.gap-4 {
+    gap: 4px;
+}
+
+.gap-5 {
+    gap: 5px;
+}
+
+.gap-7 {
+    gap: 7px;
+}
+
+.gap-8 {
+    gap: 8px;
+}
+
+.gap-9 {
+    gap: 9px;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-12 {
+    gap: 12px;
+}
+
+.gap-14 {
+    gap: 14px;
+}
+
+.gap-16 {
+    gap: 16px;
+}
+
+.gap-17 {
+    gap: 17px;
+}
+
+.gap-19 {
+    gap: 19px;
+}
+
+.gap-48 {
+    gap: 48px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.p-24 {
+    padding: 24px;
+}
+
+.upperacase {
+    text-transform: uppercase;
+}
+
+.card {
+    border: 1px solid rgba(233, 231, 221, 24%);
+    background-color: var(--color-secondary-900);
+    border-radius: 12px;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.card-header h3 {
+    color: var(--color-neutral-300);
+    font-weight: 400;
+    letter-spacing: 4%;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-4 {
+    margin-bottom: 4px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.col-lg-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.col-lg-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+p {
+    color: var(--color-neutral-300);
+}
+
+.left-col p {
+    color: var(--color-neutral-300);
+}
+
+.white {
+    color: #E9E7DD;
+}
+
+.col-lg-4-6 {
+    grid-template-columns: 40% 60%;
+}
+
+.col-lg-6-4 {
+    grid-template-columns: 60% 40%;
+}
+
+.col-lg-7-3 {
+    grid-template-columns: 70% 30%;
+}
+
+.mt-21 {
+    margin-top: 21px;
+}
+
+.p-28-14 {
+    padding: 28px 14px;
+}
+
+.bg-gray {
+    background: rgba(21, 121, 61, 8%);
+    border-radius: 8px;
+}
+
+
+.blue {
+    color: var(--color-info-300);
+}
+
+
+.center {
+    text-align: center;
+}
+
+
+.p-15-24 {
+    padding: 15px 24px;
+}
+
+.bg-blue {
+    background-color: rgba(53, 102, 116, 15%);
+}
+
+.br-3 {
+    border-radius: 3px;
+}
+
+.br-8 {
+    border-radius: 8px;
+}
+
+.bg-blue {
+    background-color: rgba(53, 102, 116, 15%);
+}
+
+
+
+.p-5-11 {
+    padding: 5px 11px;
+}
+
+.btn {
+    border-radius: 34px;
+}
+
+.btn-red {
+    background-color: var(--color-danger-600);
+    color: #EBF0F1;
+}
+
+.b-0 {
+    border: none;
+}
+
+.p-0 {
+    padding: 0;
+}

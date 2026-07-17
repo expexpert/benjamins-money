@@ -273,18 +273,18 @@
                 <form>
                     <input id="search" type="text" placeholder="Search plans, accounts, documents..." class="f-14">
                     <button type="submit">
-                        <img src="{{ Vite::asset('resources/images/search.svg') }}" alt="search icon">
+                        <img src="{{ asset('images/search.svg') }}" alt="search icon">
                     </button>
                 </form>
                 <div class="notification-outer">
-                    <img src="{{ Vite::asset('resources/images/notification.svg') }}" alt="notification-icon">
+                    <img src="{{ asset('images/notification.svg') }}" alt="notification-icon">
                     <div class="notification-count">
                         <span class="f-10">3</span>
                     </div>
                 </div>
                 <div class="profile">
                     <div class="profile-img" id="profileToggle">
-                        <img src="{{ Vite::asset('resources/images/user-image.png') }}" alt="User Profile">
+                        <img src="{{ asset('images/user-image.png') }}" alt="User Profile">
                     </div>
 
                     <div class="profile-dropdown" id="profileDropdown">
@@ -293,42 +293,42 @@
                                 <a href="#" class="f-16">
                                     My Profile
                                     <span class="caret">
-                                        <img src="{{ Vite::asset('resources/images/caret.svg') }}" alt="caret icon">
+                                        <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="f-16">Advisor Team
                                     <span class="caret">
-                                        <img src="{{ Vite::asset('resources/images/caret.svg') }}" alt="caret icon">
+                                        <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="f-16">Documents
                                     <span class="caret">
-                                        <img src="{{ Vite::asset('resources/images/caret.svg') }}" alt="caret icon">
+                                        <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="f-16">Settings
                                     <span class="caret">
-                                        <img src="{{ Vite::asset('resources/images/caret.svg') }}" alt="caret icon">
+                                        <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="f-16">Security
                                     <span class="caret">
-                                        <img src="{{ Vite::asset('resources/images/caret.svg') }}" alt="caret icon">
+                                        <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="f-16">Sign out
                                     <span class="caret">
-                                        <img src="{{ Vite::asset('resources/images/caret.svg') }}" alt="caret icon">
+                                        <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
                                     </span>
                                 </a>
                             </li>
@@ -362,7 +362,7 @@
                     </div>
 
                     <div class="tooltip">
-                        <img src="{{ Vite::asset('resources/images/tooltip-icon.svg') }}" alt="Tooltip icon">
+                        <img src="{{ asset('images/tooltip-icon.svg') }}" alt="Tooltip icon">
 
                         <div class="tooltip-content">
                             SmartGuard continuously monitors your portfolio, taxes, compliance,
@@ -385,7 +385,7 @@
                     <div class="card p-24">
                         <div class="d-flex gap-12 mb-24">
                             <div class="notification-outer">
-                                <img src="{{ Vite::asset('resources/images/net-worth.svg') }}" alt="net worth icon">
+                                <img src="{{ asset('images/net-worth.svg') }}" alt="net worth icon">
                             </div>
                             <div class="card-cont">
                                 <h3 class="f-16 mb-4">
@@ -401,17 +401,17 @@
                                 $18,500,000
                             </h2>
                             <div class="d-flex gap-4 f-12">
-                                <img src="{{ Vite::asset('resources/images/stat-increases.svg') }}" alt="increased stats icon">
+                                <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
                                 <p> +$247,500 (1.35%) MTD</p>
                             </div>
                         </div>
                         <a href="#" class="cus-link gap-14 f-16 d-flex">View Breakdown <img
-                                src="{{ Vite::asset('resources/images/btn-arrow.svg') }}" alt="btn icon"></a>
+                                src="{{ asset('images/btn-arrow.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-24">
                         <div class="d-flex gap-12 mb-24">
                             <div class="notification-outer">
-                                <img src="{{ Vite::asset('resources/images/real-time.svg') }}" alt="real-time icon">
+                                <img src="{{ asset('images/real-time.svg') }}" alt="real-time icon">
                             </div>
                             <div class="card-cont">
                                 <h3 class="f-16 mb-4">
@@ -432,12 +432,12 @@
                             </div>
                         </div>
                         <a href="#" class="cus-link gap-14 f-16 d-flex">View Liquidity <img
-                                src="{{ Vite::asset('resources/images/btn-arrow.svg') }}" alt="btn icon"></a>
+                                src="{{ asset('images/btn-arrow.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-24">
                         <div class="d-flex gap-12 mb-24">
                             <div class="notification-outer">
-                                <img src="{{ Vite::asset('resources/images/cash-releases.svg') }}" alt="cash-releases icon">
+                                <img src="{{ asset('images/cash-releases.svg') }}" alt="cash-releases icon">
                             </div>
                             <div class="card-cont">
                                 <h3 class="f-16 mb-4">
@@ -457,12 +457,12 @@
                             </div>
                         </div>
                         <a href="#" class="cus-link gap-14 f-16 d-flex">View Runway <img
-                                src="{{ Vite::asset('resources/images/btn-arrow.svg') }}" alt="btn icon"></a>
+                                src="{{ asset('images/btn-arrow.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-24">
                         <div class="d-flex gap-12 mb-24">
                             <div class="notification-outer">
-                                <img src="{{ Vite::asset('resources/images/tax-rate.svg') }}" alt="tax-rate icon">
+                                <img src="{{ asset('images/tax-rate.svg') }}" alt="tax-rate icon">
                             </div>
                             <div class="card-cont">
                                 <h3 class="f-16 mb-4">
@@ -491,7 +491,7 @@
                             </div>
                         </div>
                         <a href="#" class="cus-link gap-14 f-16 d-flex">View Tax Analysis<img
-                                src="{{ Vite::asset('resources/images/btn-arrow.svg') }}" alt="btn icon"></a>
+                                src="{{ asset('images/btn-arrow.svg') }}" alt="btn icon"></a>
                     </div>
                 </div>
             </div>
@@ -506,7 +506,7 @@
                     <div class="card p-24">
                         <div class="d-flex gap-12 mb-24">
                             <div class="notification-outer">
-                                <img src="{{ Vite::asset('resources/images/after-tax.svg') }}" alt="after-tax icon">
+                                <img src="{{ asset('images/after-tax.svg') }}" alt="after-tax icon">
                             </div>
                             <div class="card-cont">
                                 <h3 class="f-16 mb-4">
@@ -539,7 +539,7 @@
                                 <div class="mt-21 bg-gray p-28-14">
                                     <div class="d-flex gap-12 mb-24">
                                         <div class="notification-outer">
-                                            <img src="{{ Vite::asset('resources/images/handcufs.svg') }}" alt="GOLDEN HANDCUFFS icon">
+                                            <img src="{{ asset('images/handcufs.svg') }}" alt="GOLDEN HANDCUFFS icon">
                                         </div>
                                         <div class="card-cont">
                                             <h3 class="f-16 mb-4">
@@ -555,7 +555,7 @@
                                             $8,240,000
                                         </h2>
                                         <a href="#">
-                                            <img src="{{ Vite::asset('resources/images/btn-rounded-arrow.svg') }}" alt="button arrow icon">
+                                            <img src="{{ asset('images/btn-rounded-arrow.svg') }}" alt="button arrow icon">
                                         </a>
                                     </div>
                                 </div>
@@ -565,7 +565,7 @@
                                     Liquidity Status
                                 </h2>
                                 <div class="img center mb-12">
-                                    <img src="{{ Vite::asset('resources/images/stats-img.svg') }}" alt="stats image">
+                                    <img src="{{ asset('images/stats-img.svg') }}" alt="stats image">
                                 </div>
                                 <a href="#" class="cus-btn f-12">View Strategy</a>
                             </div>
@@ -576,7 +576,7 @@
                     <div class="card p-24">
                         <div class="d-flex gap-12 mb-24">
                             <div class="notification-outer">
-                                <img src="{{ Vite::asset('resources/images/Scenario-Planning.svg') }}" alt="real-time icon">
+                                <img src="{{ asset('images/Scenario-Planning.svg') }}" alt="real-time icon">
                             </div>
                             <div class="card-cont">
                                 <h3 class="f-16 mb-4">
@@ -609,7 +609,7 @@
                                 <div class="bg-left">
                                     <div class="d-flex gap-12 mb-15">
                                         <div class="notification-outer br-3">
-                                            <img src="{{ Vite::asset('resources/images/outcome.svg') }}" alt="real-time icon">
+                                            <img src="{{ asset('images/outcome.svg') }}" alt="real-time icon">
                                         </div>
                                         <div class="card-cont">
                                             <h3 class="f-14 upperacase mb-0">
@@ -619,7 +619,7 @@
                                     </div>
                                     <div class="d-flex gap-8 mb-12">
                                         <div class="img">
-                                            <img src="{{ Vite::asset('resources/images/move-to-fl.svg') }}" alt="fl-icon">
+                                            <img src="{{ asset('images/move-to-fl.svg') }}" alt="fl-icon">
                                         </div>
                                         <div class="cont light-blue f-12">Move to FL (Goal #3): +$1.2M Net Savings
                                         </div>
@@ -629,7 +629,7 @@
                                     <div class="ipo-select">
                                         <div class="ipo-header d-flex align-center gap-5" id="ipoHeader">
                                             <div class="d-flex align-center gap-8">
-                                                <img src="{{ Vite::asset('resources/images/ipo.svg') }}" alt="">
+                                                <img src="{{ asset('images/ipo.svg') }}" alt="">
                                                 <span id="selectedCount" class="white f-12">IPO/Exit Scenario: 0
                                                     selected</span>
                                             </div>
@@ -693,7 +693,7 @@
                         <div class="d-flex gap-10px justify-space-between align-flex-start">
                             <div class="d-flex gap-12 mb-24">
                                 <div class="notification-outer">
-                                    <img src="{{ Vite::asset('resources/images/carbon_financial-assets.svg') }}" alt="assets icon">
+                                    <img src="{{ asset('images/carbon_financial-assets.svg') }}" alt="assets icon">
                                 </div>
                                 <div class="card-cont">
                                     <h3 class="f-16 mb-4">
@@ -712,7 +712,7 @@
                         <div class="d-grid gap-12 col-lg-4-6">
                             <div class="right-col b-0 p-0">
                                 <div class="img center">
-                                    <img src="{{ Vite::asset('resources/images/asset-allocation-graph.svg') }}" alt="asset Allocation image">
+                                    <img src="{{ asset('images/asset-allocation-graph.svg') }}" alt="asset Allocation image">
                                 </div>
                                 <h2 class="f-12 center white">
                                     33.3% (Diversified Pool)
@@ -739,7 +739,7 @@
                                 <div class="mt-21 bg-gray p-28-14">
                                     <div class="d-flex gap-12 mb-24">
                                         <div class="notification-outer">
-                                            <img src="{{ Vite::asset('resources/images/handcufs.svg') }}" alt="GOLDEN HANDCUFFS icon">
+                                            <img src="{{ asset('images/handcufs.svg') }}" alt="GOLDEN HANDCUFFS icon">
                                         </div>
                                         <div class="card-cont">
                                             <h3 class="f-16 mb-4">
@@ -755,7 +755,7 @@
                                             $8,240,000
                                         </h2>
                                         <a href="#">
-                                            <img src="{{ Vite::asset('resources/images/btn-rounded-arrow.svg') }}" alt="button arrow icon">
+                                            <img src="{{ asset('images/btn-rounded-arrow.svg') }}" alt="button arrow icon">
                                         </a>
                                     </div>
                                 </div>
@@ -767,7 +767,7 @@
                     <div class="card p-24">
                         <div class="d-flex gap-12 mb-24">
                             <div class="notification-outer">
-                                <img src="{{ Vite::asset('resources/images/Scenario-Planning.svg') }}" alt="real-time icon">
+                                <img src="{{ asset('images/Scenario-Planning.svg') }}" alt="real-time icon">
                             </div>
                             <div class="card-cont">
                                 <h3 class="f-16 mb-4">
@@ -800,7 +800,7 @@
                                 <div class="bg-left">
                                     <div class="d-flex gap-12 mb-15">
                                         <div class="notification-outer br-3">
-                                            <img src="{{ Vite::asset('resources/images/outcome.svg') }}" alt="real-time icon">
+                                            <img src="{{ asset('images/outcome.svg') }}" alt="real-time icon">
                                         </div>
                                         <div class="card-cont">
                                             <h3 class="f-14 upperacase mb-0">
@@ -810,7 +810,7 @@
                                     </div>
                                     <div class="d-flex gap-8 mb-12">
                                         <div class="img">
-                                            <img src="{{ Vite::asset('resources/images/move-to-fl.svg') }}" alt="fl-icon">
+                                            <img src="{{ asset('images/move-to-fl.svg') }}" alt="fl-icon">
                                         </div>
                                         <div class="cont light-blue f-12">Move to FL (Goal #3): +$1.2M Net Savings
                                         </div>
@@ -820,7 +820,7 @@
                                     <div class="ipo-select">
                                         <div class="ipo-header d-flex align-center gap-5" id="ipoHeader">
                                             <div class="d-flex align-center gap-8">
-                                                <img src="{{ Vite::asset('resources/images/ipo.svg') }}" alt="">
+                                                <img src="{{ asset('images/ipo.svg') }}" alt="">
                                                 <span id="selectedCount" class="white f-12">IPO/Exit Scenario: 0
                                                     selected</span>
                                             </div>

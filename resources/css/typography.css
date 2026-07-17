@@ -357,14 +357,25 @@ h6 {
     margin-bottom: 15px;
 }
 
+.mb-17 {
+    margin-bottom: 17px;
+}
 .mb-24 {
     margin-bottom: 24px;
+}
+
+.mb-28 {
+    margin-bottom: 28px;
 }
 
 .mb-32 {
     margin-bottom: 32px;
 }
 
+
+.mb-45 {
+    margin-bottom: 45px;
+}
 .d-grid {
     display: grid;
 }
@@ -471,4 +482,9 @@ p {
 
 .p-0 {
     padding: 0;
+}
+
+
+.neutral-300 {
+    color: var(--color-neutral-300);
 }

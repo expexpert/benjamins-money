@@ -737,12 +737,15 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="pl-10-40 list-unstyled m-0">
+                        <ul class="list-unstyled m-0 d-flex gap-11">
 
-                            <li class="bg-10181C">
-                                <span class="f-9-white-90">
-
+                            <li class="p-10-40 bg-10181C">
+                                <span class="f-9-white-90 mb-11">
+                                    Tax-Loss Harvesting (YTD)
                                 </span>
+                                <div class="w-250">
+                                    
+                                </div>
                             </li>
 
 

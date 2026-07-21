@@ -128,7 +128,7 @@
         <div class="card-outer d-flex gap-48 align-flex-start flex-col">
             <div class="card-internal d-flex flex-col gap-16 align-flex-start w-100">
                 <div class="card-header">
-                    <h3 class="f-12 upperacase">
+                    <h3 class="f-12 uppercase">
                         Financial Snapshot
                     </h3>
                 </div>
@@ -142,7 +142,7 @@
                                 <h3 class="f-16 mb-4">
                                     Net Worth
                                 </h3>
-                                <p class="f-12 upperacase">
+                                <p class="f-12 uppercase">
                                     Total Estate
                                 </p>
                             </div>
@@ -168,7 +168,7 @@
                                 <h3 class="f-16 mb-4">
                                     Real-Time Liquidity
                                 </h3>
-                                <p class="f-12 upperacase">
+                                <p class="f-12 uppercase">
                                     Net after - Tax
                                 </p>
                             </div>
@@ -194,7 +194,7 @@
                                 <h3 class="f-16 mb-4">
                                     Cash Reserves
                                 </h3>
-                                <p class="f-12 upperacase">
+                                <p class="f-12 uppercase">
                                     12 month RUNWAY
                                 </p>
                             </div>
@@ -219,7 +219,7 @@
                                 <h3 class="f-16 mb-4">
                                     Effective Tax Rate
                                 </h3>
-                                <p class="f-12 upperacase">
+                                <p class="f-12 uppercase">
                                     Combined Tax Rate
                                 </p>
                             </div>
@@ -249,7 +249,7 @@
 
             <div class="card-internal d-flex flex-col gap-16 align-flex-start w-100">
                 <div class="card-header">
-                    <h3 class="f-12 upperacase">
+                    <h3 class="f-12 uppercase">
                         Equity & Liquidity Engine
                     </h3>
                 </div>
@@ -263,7 +263,7 @@
                                 <h3 class="f-16 mb-4">
                                     Net-After-Tax Liqiudity
                                 </h3>
-                                <p class="f-12 upperacase">
+                                <p class="f-12 uppercase">
                                     Independence runway
                                 </p>
                             </div>
@@ -296,7 +296,7 @@
                                             <h3 class="f-16 mb-4">
                                                 GOLDEN HANDCUFFS (Forfeiture)
                                             </h3>
-                                            <p class="f-12 upperacase">
+                                            <p class="f-12 uppercase">
                                                 At risk if you leave today
                                             </p>
                                         </div>
@@ -333,7 +333,7 @@
                                 <h3 class="f-16 mb-4">
                                     Scenario Planning
                                 </h3>
-                                <p class="f-12 upperacase">
+                                <p class="f-12 uppercase">
                                     ACCELERATOR MODE
                                 </p>
                             </div>
@@ -363,7 +363,7 @@
                                             <img src="{{ asset('images/outcome.svg') }}" alt="real-time icon">
                                         </div>
                                         <div class="card-cont">
-                                            <h3 class="f-14 upperacase mb-0">
+                                            <h3 class="f-14 uppercase mb-0">
                                                 Projected Outcome (Year 3)
                                             </h3>
                                         </div>
@@ -435,7 +435,7 @@
 
             <div class="card-internal d-flex flex-col gap-16 align-flex-start w-100">
                 <div class="card-header">
-                    <h3 class="f-12 upperacase">
+                    <h3 class="f-12 uppercase">
                         Allocation and wealth goals
                     </h3>
                 </div>
@@ -450,7 +450,7 @@
                                     <h3 class="f-16 mb-4">
                                         Asset Allocation
                                     </h3>
-                                    <p class="f-12 upperacase">
+                                    <p class="f-12 uppercase">
                                         Wharton-Backed SMA
                                     </p>
                                 </div>
@@ -557,7 +557,7 @@
                                     <h3 class="f-14 mb-4">
                                         WEALTH GOALS
                                     </h3>
-                                    <p class="f-12 upperacase">
+                                    <p class="f-12 uppercase">
                                         Funding Progress
                                     </p>
                                 </div>
@@ -580,8 +580,8 @@
                                 </div>
 
                                 <div class="goal-bottom d-flex align-center justify-space-between">
-                                    <span class="f-10 neutral-300 upperacase">$5.8M / $8M TARGET</span>
-                                    <span class="f-10 neutral-300 upperacase">ON TRACK</span>
+                                    <span class="f-10 neutral-300 uppercase">$5.8M / $8M TARGET</span>
+                                    <span class="f-10 neutral-300 uppercase">ON TRACK</span>
                                 </div>
                             </li>
 
@@ -596,15 +596,15 @@
                                 </div>
 
                                 <div class="goal-bottom d-flex align-center justify-space-between">
-                                    <span class="f-10 neutral-300 upperacase">$455K / $500K</span>
-                                    <span class="f-10 neutral-300 upperacase">NEARLY FUNDED</span>
+                                    <span class="f-10 neutral-300 uppercase">$455K / $500K</span>
+                                    <span class="f-10 neutral-300 uppercase">NEARLY FUNDED</span>
                                 </div>
                             </li>
 
                             <li class="goal-item">
                                 <div class="goal-top mb-8 d-flex align-center justify-space-between">
-                                    <h3 class="f-12 white upperacase">Vacation Property</h3>
-                                    <span class="f-12 white upperacase">44%</span>
+                                    <h3 class="f-12 white uppercase">Vacation Property</h3>
+                                    <span class="f-12 white uppercase">44%</span>
                                 </div>
 
                                 <div class="progress mb-4">
@@ -612,8 +612,8 @@
                                 </div>
 
                                 <div class="goal-bottom d-flex align-center justify-space-between">
-                                    <span class="f-10 neutral-300 upperacase">$880K / $2M</span>
-                                    <span class="f-10 neutral-300 upperacase">NEEDS FUNDING</span>
+                                    <span class="f-10 neutral-300 uppercase">$880K / $2M</span>
+                                    <span class="f-10 neutral-300 uppercase">NEEDS FUNDING</span>
                                 </div>
                             </li>
 
@@ -625,7 +625,7 @@
 
             <div class="card-internal d-flex flex-col gap-16 align-flex-start w-100">
                 <div class="card-header">
-                    <h3 class="f-12 upperacase">
+                    <h3 class="f-12 uppercase">
                         tax protection, automatic diversification & compliance
                     </h3>
                 </div>
@@ -640,13 +640,13 @@
                                     <h3 class="f-16 mb-4">
                                         Stock → SMA Workflow
                                     </h3>
-                                    <p class="f-12 upperacase">
+                                    <p class="f-12 uppercase">
                                         ENERGY FLOW
                                     </p>
                                 </div>
                             </div>
                             <div class="btn-col">
-                                <div class="d-flex align-center gap-8">
+                                <div class="d-flex align-center gap-8 justify-space-between">
                                     <div class="live-icon d-flex align-center justify-center">
                                         <div class="live-icon-inner">
 
@@ -661,7 +661,7 @@
 
                         <div class="plan-card gap-10 align-center mb-45">
                             <div class="plan-item">
-                                <span class="plan-label f-10 neutral-300 upperacase mb-12">UNVESTED PLAN</span>
+                                <span class="plan-label f-10 neutral-300 uppercase mb-12">UNVESTED PLAN</span>
                                 <h2 class="clr-C8AD98 f-24">$11.1M</h2>
                                 <p class="f-12 neutral-300">Future Pipe</p>
                             </div>
@@ -671,14 +671,14 @@
                             </div>
 
                             <div class="plan-item text-end">
-                                <span class="plan-label f-10 neutral-300 upperacase mb-12">PLATINUM ALPHA SMA</span>
+                                <span class="plan-label f-10 neutral-300 uppercase mb-12">PLATINUM ALPHA SMA</span>
                                 <h2 class="clr-7BD09D f-24">$6.3M</h2>
                                 <p class="f-12 neutral-300">The Engine</p>
                             </div>
                         </div>
 
                         <div class="stock-bottom mb-28">
-                            <h4 class="f-12 neutral-300 upperacase l-1px mb-17">
+                            <h4 class="f-12 neutral-300 uppercase l-1px mb-17">
                                 AUTOPILOT (Compliance)
                             </h4>
                             <ul class="list-unstyled p-0">
@@ -711,7 +711,7 @@
                     </div>
                     <div class="card p-24 bg-060F13">
                         <div class="d-grid col-lg-6-4 mb-24 gap-10px justify-space-between align-flex-start">
-                            <div class="d-flex gap-12 mb-24">
+                            <div class="d-flex gap-12">
                                 <div class="notification-outer">
                                     <img src="{{ asset('images/real-tme.svg') }}" alt="goals icon">
                                 </div>
@@ -719,13 +719,13 @@
                                     <h3 class="f-14 mb-4">
                                         Real-Time Tax Alpha
                                     </h3>
-                                    <p class="f-12 upperacase">
+                                    <p class="f-12 uppercase">
                                         SENTRY MODE
                                     </p>
                                 </div>
                             </div>
                             <div class="btn-col">
-                                <div class="d-flex align-center gap-8">
+                                <div class="d-flex align-center gap-8 justify-space-between">
                                     <div class="live-icon d-flex align-center justify-center">
                                         <div class="live-icon-inner">
 
@@ -737,22 +737,126 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="list-unstyled m-0 d-flex gap-11">
+                        <ul class="list-unstyled m-0 d-flex gap-11 flex-col mb-24">
 
-                            <li class="p-10-40 bg-10181C">
-                                <span class="f-9-white-90 mb-11">
+                            <li class="p-10-40 bg-10181C br-8 w-100">
+                                <div class="f-9 white-90 mb-11">
                                     Tax-Loss Harvesting (YTD)
-                                </span>
-                                <div class="w-250">
-                                    
+                                </div>
+                                <div class="w-250 d-flex justify-space-between gap-10">
+                                    <div class="inner-div">
+                                        <div class="f-10 neutral-300 mb-2">
+                                            Realized Losses
+                                        </div>
+                                        <div class="white f-16">
+                                            $142,300
+                                        </div>
+                                    </div>
+                                    <div class="inner-div">
+                                        <div class="f-10 neutral-300 mb-2">
+                                            Tax Alpha Created
+                                        </div>
+                                        <div class="white f-16 clr-7BD09D">
+                                            $42,900
+                                        </div>
+                                    </div>
                                 </div>
                             </li>
 
+                            <li class="p-10-40 bg-10181C br-8 w-100">
+                                <div class="f-9 white-90 mb-5">
+                                    Wash Sale Monitor
+                                </div>
+                                <h2 class="f-18 clr-7BD09D">
+                                    Compliant
+                                </h2>
+                            </li>
 
+                            <li class="p-10-40 bg-10181C br-8 w-100">
+                                <div class="f-9 white-90 mb-5">
+                                    Upcoming Opportunities
+                                </div>
+                                <h2 class="f-14 white">
+                                    3 positions eligible for tax-loss harvesting in next 30 days
+                                </h2>
+                            </li>
 
 
                         </ul>
+                        <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-prm-900 w-100 justify-center">View Entity & Asset Protection Map</a>
                     </div>
+                </div>
+            </div>
+
+            <div class="card-internal d-flex flex-col gap-16 align-flex-start w-100">
+                <div class="card-header">
+                    <h3 class="f-12 uppercase">
+                        Ptotection & Legacy Command center
+                    </h3>
+                </div>
+                <div class="d-grid col-lg-3 gap-19 w-100">
+                    <div class="card p-24 bg-060F13">
+                        <div class="d-flex mb-24 gap-10px justify-space-between align-flex-start">
+                            <div class="d-flex gap-12">
+                                <div class="notification-outer">
+                                    <img src="{{ asset('images/tabler_cash-plus.svg') }}" alt="Risk & Insurance icon">
+                                </div>
+                                <div class="card-cont">
+                                    <h3 class="f-16 mb-4">
+                                        Risk & Insurance
+                                    </h3>
+                                    <p class="f-12 uppercase">
+                                        Protect what matters
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="btn-col">
+                                <a href="#" class="btn btn-F58F8C p-3-16 br-48 f-12 capitalize">
+                                    Critical Gap
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-col gap-8 mb-24">
+                            <div class="d-flex gap-10 justify-space-between">
+                                <h4 class="f-12 neutral-300 uppercase">
+                                    Core Exposure
+                                </h4>
+                                <h3 class="f-16 white">
+                                    $45M
+                                </h3>
+                            </div>
+                            <div class="d-flex gap-10 justify-space-between">
+                                <h4 class="f-12 neutral-300 uppercase">
+                                    Umbrella Coverage
+                                </h4>
+                                <h3 class="f-16 white">
+                                    $10M
+                                </h3>
+                            </div>
+                            <div class="pt-8 mb-8 border-bottom-white-24"></div>
+                            <div class="d-flex gap-10 justify-space-between align-center mb-20">
+                                <h4 class="f-12 neutral-300 uppercase">
+                                    Coverage
+                                </h4>
+                                <h3 class="f-20 clr-red-400">
+                                    $35M
+                                </h3>
+                            </div>
+                            <div class="d-flex flex-col gap-16">
+                                <div class="progress progress-14 d-flex align-center">
+                                    <div class="progress-bar bg-red-400" style="width:72%;"></div>
+                                </div>
+                                <h2 class="f-12 white-80">
+                                    57% protected
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center">View Insurance Audit</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

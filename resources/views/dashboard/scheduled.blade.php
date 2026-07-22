@@ -91,7 +91,7 @@
 
         <div class="heading-bar d-flex justify-space-between">
             <div class="breadcrumb">
-                <a class="d-flex gap-8 f-16 neutral-300" href="#">
+                <a class="d-flex gap-8 f-16 neutral-300" href="/compliance">
                     <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
                     Compliance
                 </a>

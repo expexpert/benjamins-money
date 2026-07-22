@@ -15,3 +15,7 @@ Route::get('/', function () {
 Route::get('/scheduled', function () {
     return view('dashboard.scheduled');
 });
+
+Route::get('/compliance', function () {
+    return view('dashboard.compliance');
+});

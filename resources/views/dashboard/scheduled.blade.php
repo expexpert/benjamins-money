@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Dashboard')
+@section('title','Scheduled')
 
 @section('content')
 
@@ -93,7 +93,7 @@
             <div class="breadcrumb">
                 <a class="d-flex gap-8 f-16 neutral-300" href="#">
                     <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
-                    Dashboard
+                    Compliance
                 </a>
             </div>
             <ul class="status d-flex gap-14">

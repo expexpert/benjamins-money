@@ -175,6 +175,10 @@
     color: #4FC07C;
 }
 
+.bg-yellow-400 {
+    background-color: #FFBB33;
+}
+
 .bg-red-400 {
     background-color: #F16965;
 }
@@ -193,7 +197,7 @@
 
 /* body  */
 body {
-    background-color: var(--bg);
+    background-color: var(--color-secondary-900);
     font-family: var(--font);
 }
 
@@ -398,6 +402,10 @@ h6 {
     padding: 3px 16px;
 }
 
+.p-4-5 {
+    padding: 4px 5px !important;
+}
+
 .p-5-11 {
     padding: 5px 11px;
 }
@@ -430,6 +438,10 @@ h6 {
     padding-top: 8px;
 }
 
+.p-10-21 {
+    padding: 10px 21px;
+}
+
 .p-10-31 {
     padding: 10px 31px;
 }
@@ -442,7 +454,7 @@ h6 {
     padding: 16px 24px;
 }
 
-.p-32-32-48{
+.p-32-32-48 {
     padding: 32px 32px 48px;
 }
 
@@ -606,6 +618,14 @@ h6 {
     width: 15px;
 }
 
+.w-21 {
+    width: 21px !important;
+}
+
+.h-21 {
+    height: 21px !important;
+}
+
 .w-30 {
     width: 30px;
 }
@@ -622,6 +642,15 @@ h6 {
     width: 100%;
 }
 
+.w-auto {
+    width: auto;
+}
+
+.m-fit-content {
+    max-width: fit-content;
+}
+
+
 .w-250 {
     max-width: 250px;
 }
@@ -633,7 +662,7 @@ p {
 
 .left-col p {
     color: var(--color-neutral-300);
-}
+}          
 
 .white {
     color: #E9E7DD;
@@ -675,6 +704,42 @@ p {
     background-color: #125D34;
 }
 
+.light-pink {
+    background: #FC8D94;
+}
+
+.light-orange {
+    background: #EDB37E;
+}
+
+.sea-green {
+    background: #9DDDD5;
+}
+
+.light-purple {
+    background: #92B0EA;
+}
+
+.peach {
+    background: #C8AD98;
+}
+
+.bg-060F13 {
+    background-color: #060F13;
+}
+
+.bg-0B1417 {
+    background-color: rgba(11, 20, 23, 50%);
+}
+
+.bg-secondary-900 {
+    background-color: var(--color-secondary-900);
+}
+
+.bg-10181C {
+    background-color: #10181C;
+}
+
 .btn-green-outlined {
     border: 1px solid var(--color-primary-400);
     color: var(--color-primary-400);
@@ -712,7 +777,7 @@ p {
 }
 
 .br-4 {
-    border-radius: 4px;
+    border-radius: 4px !important;
 }
 
 .br-6 {
@@ -805,6 +870,10 @@ p {
 
 .lh-10 {
     line-height: 10px;
+}
+
+.lh-11 {
+    line-height: 11px;
 }
 
 .lh-12 {

@@ -586,41 +586,6 @@ ul.left-col li:not(:last-child) {
     border-radius: 2px;
 }
 
-.light-pink {
-    background: #FC8D94;
-}
-
-.light-orange {
-    background: #EDB37E;
-}
-
-.sea-green {
-    background: #9DDDD5;
-}
-
-.light-purple {
-    background: #92B0EA;
-}
-
-.peach {
-    background: #C8AD98;
-}
-
-.bg-060F13 {
-    background-color: #060F13;
-}
-
-.bg-0B1417 {
-    background-color: rgba(11, 20, 23, 50%);
-}
-
-.bg-secondary-900 {
-    background-color: var(--color-secondary-900);
-}
-
-.bg-10181C {
-    background-color: #10181C;
-}
 
 .goal-item:not(:last-child),
 .stock-bottom li:not(:last-child) {
@@ -744,15 +709,7 @@ ul.left-col li:not(:last-child) {
     color: var(--color-primary-900);
 }
 
-.p-10-21 {
-    padding: 10px 21px;
-}
-
 /* timeline  */
-body {
-    background: #0d1319;
-    font-family: Arial, sans-serif;
-}
 
 .timeline {
     position: relative;

@@ -806,41 +806,41 @@
                                         Risk & Insurance
                                     </h3>
                                     <p class="f-12 uppercase">
-                                        Protect what matters
-                                    </p>
-                                </div>
-                            </div>
+                                        Protect what matters                     
+                                    </p>                          
+                                </div>                               
+                            </div>                                              
                             <div class="btn-col">
                                 <a href="#" class="btn btn-F58F8C p-3-16 br-48 f-12 capitalize">
-                                    Critical Gap
-                                </a>
-                            </div>
-                        </div>
-
+                                    Critical Gap                                          
+                                </a>                              
+                            </div>                                     
+                        </div>                            
+                                                 
                         <div class="d-flex flex-col gap-8 mb-24">
                             <div class="d-flex gap-10 justify-space-between">
                                 <h4 class="f-12 neutral-300 uppercase">
-                                    Core Exposure
+                                    Core Exposure                                 
                                 </h4>
                                 <h3 class="f-16 white">
-                                    $45M
+                                    $45M                                     
                                 </h3>
                             </div>
-                            <div class="d-flex gap-10 justify-space-between">
-                                <h4 class="f-12 neutral-300 uppercase">
-                                    Umbrella Coverage
-                                </h4>
-                                <h3 class="f-16 white">
-                                    $10M
-                                </h3>
-                            </div>
-                            <div class="pt-8 mb-8 border-bottom-white-24"></div>
+                            <div class="d-flex gap-10 justify-space-between">                          
+                                <h4 class="f-12 neutral-300 uppercase">                              
+                                    Umbrella Coverage                                      
+                                </h4>                        
+                                <h3 class="f-16 white">            
+                                    $10M                                                                
+                                </h3>                                                
+                            </div>                                                        
+                            <div class="pt-8 mb-8 border-bottom-white-24"></div>                                              
                             <div class="d-flex gap-10 justify-space-between align-center mb-20">
                                 <h4 class="f-12 neutral-300 uppercase">
-                                    Coverage
+                                    Coverage                                                                            
                                 </h4>
                                 <h3 class="f-20 clr-red-400">
-                                    $35M
+                                    $35M                                                                           
                                 </h3>
                             </div>
                             <div class="d-flex flex-col gap-16">
@@ -848,7 +848,7 @@
                                     <div class="progress-bar bg-red-400" style="width:72%;"></div>
                                 </div>
                                 <h2 class="f-12 white-80">
-                                    57% protected
+                                    57% protected                                                                                 
                                 </h2>
                             </div>
                         </div>

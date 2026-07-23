@@ -19,3 +19,7 @@ Route::get('/scheduled', function () {
 Route::get('/compliance', function () {
     return view('dashboard.compliance');
 });
+
+Route::get('/pending', function () {
+    return view('dashboard.pending');
+});

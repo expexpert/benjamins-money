@@ -473,7 +473,7 @@
 
                     <div class="d-flex justify-space-between gap-10">
                         <div class="d-flex gap-16 align-center">
-                            <div class="notification-outer">
+                            <div class="notification-outer p-4-5 w-21 h-21 br-4">
                                 <img src="{{ asset('images/pdf.svg') }}" alt="pdf icon">
                             </div>
                             <div>
@@ -491,7 +491,7 @@
 
                     <div class="d-flex justify-space-between gap-10">
                         <div class="d-flex gap-16 align-center">
-                            <div class="notification-outer">
+                            <div class="notification-outer p-4-5 w-21 h-21 br-4">
                                 <img src="{{ asset('images/pdf.svg') }}" alt="pdf icon">
                             </div>
                             <div>
@@ -509,7 +509,7 @@
 
                     <div class="d-flex justify-space-between gap-10">
                         <div class="d-flex gap-16 align-center">
-                            <div class="notification-outer">
+                            <div class="notification-outer p-4-5 w-21 h-21 br-4">
                                 <img src="{{ asset('images/pdf.svg') }}" alt="pdf icon">
                             </div>
                             <div>

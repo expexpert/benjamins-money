@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Scheduled specifications page')
+@section('title','Pending specifications page')
 
 @section('content')
 
@@ -59,11 +59,7 @@
                                 <a href="#" class="f-16">Documents
                                     <span class="caret">
                                         <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
-                                    </span>                                   
-
-
-
-                                    
+                                    </span>
                                 </a>
                             </li>
                             <li>
@@ -95,7 +91,7 @@
 
         <div class="heading-bar d-flex justify-space-between">
             <div class="breadcrumb">
-                <a class="d-flex gap-8 f-16 neutral-300" href="/compliance">
+                <a class="d-flex gap-8 f-16 neutral-300" href="/">
                     <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
                     Compliance
                 </a>
@@ -105,15 +101,15 @@
                     <div class="icon">
 
                     </div>
-                    <div class="icon-description">
+                    <div class="icon-description f-14">
                         Trading Window: Open
-                    </div>
+                    </div> 
                 </li>
 
                 <li class="d-flex gap-10 align-center">
                     <div class="icon"></div>
 
-                    <div class="icon-description">
+                    <div class="icon-description f-14">
                         SmartGuard: ACTIVE
                     </div>
 
@@ -134,21 +130,22 @@
             <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
                 <div class="d-flex gap-16 mb-24 align-center">
                     <div class="bg-e9e7dd1a w-30 h-30 br-6 d-flex align-center justify-center">
-                        <div class="w-15 h-15 bg-23B05B br-100">
+                        <div class="w-15 h-15 bg-yellow-400 br-100">
 
                         </div>
                     </div>
                     <div class="card-cont-inner">
-                        <h3 class="f-18 lh-12 mb-4 clr-23B05B">
-                            Scheduled
+                        <h3 class="f-18 lh-12 mb-8 clr-yellow-400">
+                            Pending
                         </h3>
-                        <p class="f-12 uppercase">
-                            Trade confirmed and Broker queued
+                        <p class="f-12 lh-11 uppercase">
+                            Scheduled Trade Awaiting Activation
                         </p>
                     </div>
                 </div>
+  
                 <div class="d-flex gap-16 flex-col">
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300 uppercase">
                             Trade ID
                         </h4>
@@ -159,18 +156,24 @@
                     <div class="border-bottom-white-24">
 
                     </div>
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300 uppercase">
                             EXECUTION DATE
                         </h4>
                         <h3 class="f-16 white">
-                            August 15, 2026
+                            November 15, 2026
                         </h3>
                     </div>
+        
+
+
+
+
+
                     <div class="border-bottom-white-24">
 
                     </div>
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300 uppercase">
                             Brokerage
                         </h4>
@@ -179,6 +182,7 @@
                         </h3>
                     </div>
                 </div>
+
             </div>
 
             <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
@@ -197,8 +201,9 @@
                         Compliant
                     </div>
                 </div>
+
                 <div class="d-flex gap-16 flex-col">
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300 uppercase">
                             Rule 10b5-1
                         </h4>
@@ -209,24 +214,41 @@
                     <div class="border-bottom-white-24">
 
                     </div>
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300 uppercase">
-                            Cooling Period
+                            Broker Activation
                         </h4>
                         <h3 class="f-16 white">
-                            Expired (07/15)
+                            Pending
                         </h3>
                     </div>
 
+                    <div class="border-bottom-white-24">
+
+                    </div>
+                    <div class="d-flex gap-10 justify-space-between align-center">
+                        <h4 class="f-12 neutral-300 uppercase">
+                            Trade
+                        </h4>
+                        <h3 class="f-16 white">
+                            Not Active
+                        </h3>
+                    </div>
+
+
                 </div>
+
+
             </div>
         </div>
 
-        <div class="d-grid col-lg-2 gap-32">
+
+        <div class="d-grid col-lg-2 gap-32 mb-48">
+
 
             <div class="col-outer">
                 <h3 class="f-14 neutral-300 uppercase mb-16">
-                    INSIDER TRADING WINDOW
+                    Trade Details
                 </h3>
                 <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
                     <div class="d-flex gap-16 flex-col">
@@ -256,7 +278,7 @@
                             <h4 class="f-12 neutral-300 uppercase">
                                 Price floor
                             </h4>
-                            <h3 class="f-16 white right">
+                            <h3 class="f-16 white">
                                 $85.00
                             </h3>
                         </div>
@@ -269,7 +291,7 @@
                             </h4>
                             <div class="d-flex flex-col gap-4">
                                 <h3 class="f-16 white right">
-                                    $85.00
+                                    $89.50
                                 </h3>
                                 <span class="f-12 neutral-300 capitalize">
                                     (as of May 12, 2026, 4:00 pM EST)
@@ -298,151 +320,115 @@
 
             <div class="col-outer">
                 <h3 class="f-14 neutral-300 uppercase mb-16">
-                    Withholding Strategy
+                    Estimated Net proceeds
                 </h3>
                 <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
-                    <div class="d-flex gap-16 flex-col mb-40">
+                    <div class="d-flex gap-16 flex-col">
                         <div class="d-flex gap-10 justify-space-between">
                             <h4 class="f-12 neutral-300 uppercase">
-                                Federal tAX
+                                Estimated Net Proceeds
                             </h4>
-                            <h3 class="f-16 white">
-                                22%
-                            </h3>
+                            <div class="d-flex flex-col gap-4">
+                                <h3 class="f-16 white right">
+                                     $58,230
+                                </h3>
+                                <span class="f-12 neutral-300 capitalize">
+                                    (Subject to market volatility)
+                                </span>
+                            </div>
                         </div>
                         <div class="border-bottom-white-24">
 
                         </div>
                         <div class="d-flex gap-10 justify-space-between">
                             <h4 class="f-12 neutral-300 uppercase">
-                                State tAX
+                                Tax Efficiency Score
                             </h4>
-                            <h3 class="f-16 white">
-                                0% (FL Residency)
-                            </h3>
+                            <div class="d-flex flex-col gap-4">
+                                <h3 class="f-16 white right">
+                                    88/100
+                                </h3>
+                                <span class="f-12 neutral-300 capitalize">
+                                    (Long-term Capital Gains eligible)
+                                </span>
+                            </div>
                         </div>
                         <div class="border-bottom-white-24">
 
                         </div>
                         <div class="d-flex gap-10 justify-space-between">
                             <h4 class="f-12 neutral-300 uppercase">
-                                Price floor
+                                Current Price Delta
                             </h4>
-                            <h3 class="f-16 white">
-                                $85.00
-                            </h3>
+                            <div class="d-flex flex-col gap-4">
+                                <h3 class="f-16 white right">
+                                    +5.2%
+                                </h3>
+                                <span class="f-12 neutral-300 capitalize">
+                                    above floor
+                                </span>
+                            </div>
                         </div>
-                        <div class="border-bottom-white-24">
 
-                        </div>
-                        <div class="d-flex gap-10 justify-space-between">
-                            <h4 class="f-12 neutral-300 uppercase">
-                                Fica
-                            </h4>
-                            <h3 class="f-16 white right">
-                                7.65%
-                            </h3>
-                        </div>
-                        <div class="border-bottom-white-24">
-
-                        </div>
-                        <div class="d-flex gap-10 justify-space-between">
-                            <h4 class="f-12 neutral-300 uppercase">
-                                Strategy
-                            </h4>
-                            <h3 class="f-16 white right">
-                                Sell to cover
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="bg-neutral-5 p-10-31 f-14 neutral-300 br-4 center">
-                        Note: Estimated proceeds subject to market execution price.
                     </div>
                 </div>
             </div>
+
 
         </div>
 
-        <div class="d-flex flex-col">
-            <h3 class="f-14 neutral-300 uppercase mb-16">
-                Liquidity Forecast
-            </h3>
-            <div class="d-grid col-lg-7-3 gap-32">
+        <div class="d-grid gap-16">
+            <div class="f-14 lh-16 neutral-300 uppercase">
+                Call to action
+            </div>
+
+            <div class="d-grid col-lg-2 gap-32 mb-48">
+
+
                 <div class="col-outer">
                     <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
-                        <div class="d-grid col-lg-6-4 mb-32 gap-10px justify-space-between align-flex-start">
-                            <div class="d-flex gap-12">
-                                <div class="notification-outer">
-                                    <img src="{{ asset('images/uit_calender.svg') }}" alt="weight icon">
-                                </div>
-                                <div>
-                                    <h3 class="f-14 lh-16 neutral-300 uppercase">
-                                        EXPECTED SETTLEMENT
-                                    </h3>
-                                    <p class="f-20 white">
-                                        August16, 2026 (T+1)
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-12">
-                                <div class="notification-outer">
-                                    <img src="{{ asset('images/dollar.svg') }}" alt="weight icon">
-                                </div>
-                                <div>
-                                    <h3 class="f-14 lh-16 neutral-300 uppercase">
-                                        Estimated net liquidity
-                                    </h3>
-                                    <p class="f-20 white">
-                                        August16, 2026 (T+1)
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-E9E7DD-4 p-24-14 br-12 mb-48">
-                            <div class="d-flex gap-10 justify-space-between align-center mb-24  ">
-                                <div class="f-16 white">
-                                    Trade Executed
-                                </div>
-                                <div class="img-outer d-flex align-center">
-                                    <img src="{{ asset('images/long-arrow.svg') }}" alt="arrow">
-                                </div>
-                                <div class="f-16 white">
-                                    Taxes withheld
-                                </div>
-                                <div class="img-outer d-flex align-center">
-                                    <img src="{{ asset('images/long-arrow.svg') }}" alt="arrow">
-                                </div>
-                                <div class="f-16 white">
-                                    cash deposited
-                                </div>
-                            </div>
-                            <div class="p-11-29 border-B0B7CA-40 br-8 f-14 white-80">
-                                Final amount may vary based on actual execution price and market conditions.
-                            </div>
-                        </div>
 
-                        <div class="d-grid col-lg-2 gap-30">
-                            <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-prm-900 justify-center">Sync to Calendar</a>
-                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center">Notify Advisor</a>
+                        <h3 class="f-16 white mb-8">
+                            Run “WHAT-IF” Simulation
+                        </h3>
+
+                        <p class="f-16 neutral-300 mb-40">
+                            Jumps the user to the Tax Engine (Page 3) to see how the net cash changes if the stock price moves +/- 15% by November.
+                        </p>
+
+                        <div class="btn-outer d-flex gap-10">
+                            <a href="#" class="btn btn-green-outlined p-10-21 f-16 d-flex justify-center w-auto m-fit-content">Download Report</a>
                         </div>
                     </div>
+
+
+
                 </div>
 
                 <div class="col-outer">
-                    <div class="bg-125D34 p-32-22 br-8">
-                        <p class="f-14 white mb-10">
-                            Advisor’s note
+                    <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
+                        <h3 class="f-16 white mb-8">
+                            View Equity Impact
+                        </h3>
+
+                        <p class="f-16 neutral-300 mb-40">
+                            Shows how this sale will reduce the “Concentration Risk” heatmap on the main Dashboard.
                         </p>
-                        <div class="f-16 white">
-                            Trade aligns with diversification strategy approved Q2, 2026
+
+                        <div class="btn-outer d-flex gap-10">
+                            <a href="#" class="btn btn-green-outlined p-10-21 f-16 d-flex justify-center w-auto m-fit-content">Download Report</a>
                         </div>
                     </div>
                 </div>
 
+
             </div>
+
         </div>
 
     </div>
+
+
 </div>
 
 @endsection

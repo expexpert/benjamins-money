@@ -23,3 +23,7 @@ Route::get('/compliance', function () {
 Route::get('/pending', function () {
     return view('dashboard.pending');
 });
+
+Route::get('/locked', function () {
+    return view('dashboard.locked');
+});

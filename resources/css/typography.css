@@ -175,6 +175,10 @@
     color: #4FC07C;
 }
 
+.clr-cat-brown {
+    color: #C8AD98;
+}
+
 .bg-yellow-400 {
     background-color: #FFBB33;
 }
@@ -594,6 +598,10 @@ h6 {
     margin-bottom: 48px;
 }
 
+.mb-80 {
+    margin-bottom: 80px;
+}
+
 .d-grid {
     display: grid;
 }
@@ -662,7 +670,7 @@ p {
 
 .left-col p {
     color: var(--color-neutral-300);
-}          
+}
 
 .white {
     color: #E9E7DD;
@@ -763,10 +771,21 @@ p {
     border: 1px solid rgba(176, 183, 202, 40%);
 }
 
+.border-E9E7DD-40{
+    border: 1px solid rgba(233, 231, 221, 40%);
+}
+
 .center {
     text-align: center;
 }
 
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
 
 .bg-blue {
     background-color: rgba(53, 102, 116, 15%);

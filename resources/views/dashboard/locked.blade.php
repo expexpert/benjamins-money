@@ -77,7 +77,7 @@
                                     </span>
                                 </a>
                             </li>
-                            <li>
+                            <li>                                                                                                                  
                                 <a href="#" class="f-16">Sign out
                                     <span class="caret">
                                         <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
@@ -92,7 +92,7 @@
 
         <div class="heading-bar d-flex justify-space-between">
             <div class="breadcrumb">
-                <a class="d-flex gap-8 f-16 neutral-300" href="/">
+                <a class="d-flex gap-8 f-16 neutral-300" href="{{ url('/compliance') }}">
                     <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
                     Compliance
                 </a>
@@ -145,10 +145,10 @@
 
                 <div class="d-flex gap-16 flex-col">
                     <div class="d-flex gap-10 justify-space-between align-center">
-                        <h4 class="f-12 neutral-300 uppercase">
+                        <h4 class="f-12 lh-10 neutral-300 uppercase">
                             Plan adoption date
                         </h4>
-                        <h3 class="f-16 white">
+                        <h3 class="f-16 lh-12 white">
                             April 15, 2026
                         </h3>
                     </div>
@@ -156,10 +156,10 @@
 
                     </div>
                     <div class="d-flex gap-10 justify-space-between align-center">
-                        <h4 class="f-12 neutral-300 uppercase">
+                        <h4 class="f-12 lh-10 neutral-300 uppercase">
                             Affirmative Defense system
                         </h4>
-                        <h3 class="f-16 white">
+                        <h3 class="f-16 lh-12 white">
                             Active
                         </h3>
                     </div>
@@ -168,10 +168,10 @@
 
                     </div>
                     <div class="d-flex gap-10 justify-space-between align-center">
-                        <h4 class="f-12 neutral-300 uppercase">
+                        <h4 class="f-12 lh-10 neutral-300 uppercase">
                             legal counter party
                         </h4>
-                        <h3 class="f-16 white">
+                        <h3 class="f-16 lh-12 white">
                             Amazon, General Counsel
                         </h3>
                     </div>
@@ -191,17 +191,17 @@
                             Status
                         </h3>
                     </div>
-                    <div class="f-16 clr-23B05B">
+                    <div class="f-16 lh-12 clr-23B05B">
                         Compliant
                     </div>
                 </div>
 
                 <div class="d-flex gap-16 flex-col">
                     <div class="d-flex gap-10 justify-space-between align-center">
-                        <h4 class="f-12 neutral-300 uppercase">
+                        <h4 class="f-12 lh-10 neutral-300 uppercase">
                             Rule 10b5-1
                         </h4>
-                        <h3 class="f-16 white">
+                        <h3 class="f-16 lh-12 white">
                             Active
                         </h3>
                     </div>
@@ -209,10 +209,10 @@
 
                     </div>
                     <div class="d-flex gap-10 justify-space-between align-center">
-                        <h4 class="f-12 neutral-300 uppercase">
+                        <h4 class="f-12 lh-10 neutral-300 uppercase">
                             Broker Activation
                         </h4>
-                        <h3 class="f-16 white">
+                        <h3 class="f-16 lh-12 white">
                             Pending
                         </h3>
                     </div>
@@ -221,10 +221,10 @@
 
                     </div>
                     <div class="d-flex gap-10 justify-space-between align-center">
-                        <h4 class="f-12 neutral-300 uppercase">
+                        <h4 class="f-12 lh-10 neutral-300 uppercase">
                             Plan
                         </h4>
-                        <h3 class="f-16 white">
+                        <h3 class="f-16 lh-12 white">
                             Locked
                         </h3>
                     </div>
@@ -247,32 +247,32 @@
                     <div class="timeline-item active timeline-start">
                         <div class="dot"></div>
                         <div class="content">
-                            <h4 class="f-14 clr-DADADA text-left">APR 15</h4>
-                            <p class="f-12 clr-DADADA-6 text-left">Adoption</p>
+                            <h4 class="f-14 clr-DADADA text-left">APR 15, 2026</h4>
+                            <p class="f-12 clr-DADADA-6 text-left">Plan Signed</p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="dot"></div>
                         <div class="content">
-                            <h4 class="f-14 clr-DADADA">MAY 26</h4>
-                            <p class="f-12 clr-DADADA-6">Today</p>
+                            <h4 class="f-14 clr-DADADA">90 days</h4>
+                            <p class="f-12 clr-DADADA-6">Cooling off period</p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="dot"></div>
                         <div class="content">
-                            <h4 class="f-14 clr-DADADA">JUL 15</h4>
-                            <p class="f-12 clr-DADADA-6">Live</p>
+                            <h4 class="f-14 clr-DADADA">Active</h4>
+                            <p class="f-12 clr-DADADA-6">Jul 14, 2026</p>
                         </div>
                     </div>
 
                     <div class="timeline-item timeline-end">
                         <div class="dot"></div>
                         <div class="content">
-                            <h4 class="f-14 clr-DADADA text-right">AUG 15</h4>
-                            <p class="f-12 clr-DADADA-6 text-right">Next Sale</p>
+                            <h4 class="f-14 clr-DADADA text-right">Locked</h4>
+                            <p class="f-12 clr-DADADA-6 text-right">Apr 15, 2026</p>
                         </div>
                     </div>
                 </div>

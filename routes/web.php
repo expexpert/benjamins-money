@@ -27,3 +27,7 @@ Route::get('/pending', function () {
 Route::get('/locked', function () {
     return view('dashboard.locked');
 });
+
+Route::get('/signup', function () {
+    return view('dashboard.signup');
+});

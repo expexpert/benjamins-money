@@ -806,6 +806,10 @@ ul.left-col li:not(:last-child) {
     background: linear-gradient(157deg, #003049 40%, #15793D 100%);
     width: 360px;
     min-height: 100vh;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    bottom: 0;
 }
 
 .p-64-48 {

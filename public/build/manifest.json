@@ -28,7 +28,7 @@
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CYtkP6R5.css",
+    "file": "assets/app-u5XMn_CK.css",
     "name": "app",
     "names": [
       "app.css"
@@ -42,7 +42,9 @@
       "assets/D-DINExp-Bold-D6M_U6A9.woff2",
       "assets/D-DINExp-Italic-B1DEFVSI.woff2",
       "assets/D-DINExp-Italic-F-6Ef1Bq.woff",
-      "assets/check-CV4MXesy.svg"
+      "assets/check-CV4MXesy.svg",
+      "assets/locked-BcqEj3bD.svg",
+      "assets/onboarding-bg-img-DztsEv_g.png"
     ]
   },
   "resources/fonts/D-DINExp-Bold.woff2": {
@@ -73,8 +75,16 @@
     "file": "assets/check-CV4MXesy.svg",
     "src": "resources/images/check.svg"
   },
+  "resources/images/locked.svg": {
+    "file": "assets/locked-BcqEj3bD.svg",
+    "src": "resources/images/locked.svg"
+  },
+  "resources/images/onboarding-bg-img.png": {
+    "file": "assets/onboarding-bg-img-DztsEv_g.png",
+    "src": "resources/images/onboarding-bg-img.png"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-BJOIDpEb.js",
+    "file": "assets/app-D5E4X3yr.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

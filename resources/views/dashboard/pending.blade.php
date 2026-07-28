@@ -91,7 +91,7 @@
 
         <div class="heading-bar d-flex justify-space-between">
             <div class="breadcrumb">
-                <a class="d-flex gap-8 f-16 neutral-300" href="/">
+                <a class="d-flex gap-8 f-16 neutral-300" href="{{ url('/compliance') }}">
                     <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
                     Compliance
                 </a>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="icon-description f-14">
                         Trading Window: Open
-                    </div> 
+                    </div>
                 </li>
 
                 <li class="d-flex gap-10 align-center">
@@ -143,7 +143,7 @@
                         </p>
                     </div>
                 </div>
-  
+
                 <div class="d-flex gap-16 flex-col">
                     <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300 uppercase">
@@ -164,7 +164,7 @@
                             November 15, 2026
                         </h3>
                     </div>
-        
+
 
 
 

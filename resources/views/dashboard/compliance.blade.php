@@ -130,7 +130,7 @@
             <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
                 <div class="d-flex gap-32 justify-space-between mb-16">
                     <div class="d-flex flex-col gap-6">
-                        <div class="f-12 neutral-300">
+                        <div class="f-12 neutral-300 uppercase">
                             Plan ID: AMZN-EXEC-2026-004
                         </div>
                         <div class="f-16 white">
@@ -224,22 +224,22 @@
                     Affirmative Defense Checklist (SEC Rule 10b5-1)
                 </p>
                 <div class="d-flex gap-16 flex-col">
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300">
                             Overlapping Plans
                         </h4>
-                        <h3 class="f-14 white">
+                        <h3 class="f-14 white right">
                             None Detected
                         </h3>
                     </div>
                     <div class="border-bottom-white-24">
 
                     </div>
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300">
                             Single-Trade Plan
                         </h4>
-                        <h3 class="f-14 white">
+                        <h3 class="f-14 white right">
                             N/A (Systematic recurring plan)
                         </h3>
                     </div>
@@ -247,11 +247,11 @@
                     <div class="border-bottom-white-24">
 
                     </div>
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300">
                             Officer Certifications
                         </h4>
-                        <h3 class="f-14 white">
+                        <h3 class="f-14 white right">
                             Signed and filed with General<br>
                             Counsel on 04/15
                         </h3>
@@ -259,11 +259,11 @@
                     <div class="border-bottom-white-24">
 
                     </div>
-                    <div class="d-flex gap-10 justify-space-between">
+                    <div class="d-flex gap-10 justify-space-between align-center">
                         <h4 class="f-12 neutral-300">
                             Good Faith Requirement
                         </h4>
-                        <h3 class="f-14 white">
+                        <h3 class="f-14 white right">
                             No modifications made in the <br>
                             last 120 days
                         </h3>
@@ -352,8 +352,8 @@
                                 <p class="f-16 lh-16 white center">
                                     Scheduled
                                 </p>
-                                <div class="f-14 lh-16 clr-23B05B center">
-                                    View Specs
+                                <div class="f-14 lh-16  center">
+                                    <a class="clr-23B05B" href="{{ url('/scheduled') }}">View Specs</a>
                                 </div>
                             </div>
                         </div>
@@ -383,7 +383,7 @@
                                     Pending
                                 </p>
                                 <div class="f-14 lh-16 clr-23B05B center">
-                                    View Specs
+                                    <a href="{{ url('/pending') }}" class="clr-23B05B">View Specs</a>
                                 </div>
                             </div>
                         </div>
@@ -413,7 +413,7 @@
                                     Locked
                                 </p>
                                 <div class="f-14 lh-16 clr-23B05B center">
-                                    View Specs
+                                    <a href="{{ url('/locked') }}" class="clr-23B05B">View Specs</a>
                                 </div>
                             </div>
                         </div>

@@ -27,3 +27,19 @@ Route::get('/pending', function () {
 Route::get('/locked', function () {
     return view('dashboard.locked');
 });
+
+Route::get('/signup', function () {
+    return view('dashboard.signup');
+});
+
+Route::get('/login', function () {
+    return view('dashboard.login');
+});
+
+Route::get('/verify', function () {
+    return view('dashboard.verify');
+});
+
+Route::get('/account-verified', function () {
+    return view('dashboard.account-verified');
+});

@@ -1,6 +1,73 @@
 import $ from 'jquery';
 
 $(document).ready(function () {
+    // adding bank accounts
+    const ICONS = {
+        bank: '<img class="w-24 h-24" src="images/bank.svg")" alt="completed icon">',
+        brokerage: '<img class="w-24 h-24" src="images/brokerage.svg")" alt="completed icon">',
+        stock: '<img class="w-24 h-24" src="images/company-stock.svg")" alt="completed icon">',
+        retirement: '<img class="w-24 h-24" src="images/retirement.svg")" alt="completed icon">',
+        realestate: '<img class="w-24 h-24" src="images/real-estate.svg")" alt="completed icon">',
+        insurance: '<img class="w-24 h-24" src="images/insurance.svg")" alt="completed icon">',
+        college: '<img class="w-24 h-24" src="images/clg-savings.svg")" alt="completed icon">',
+        other: '<img class="w-24 h-24" src="images/other-assets.svg")" alt="completed icon">'
+    };
+
+    const OPTIONS = [
+        { id: "bank", title: "Bank Accounts", subtitle: "Savings, CDs, Checking", icon: "bank" },
+        { id: "brokerage", title: "Brokerage Accounts", subtitle: "Investments, Bonds, ETFs", icon: "brokerage" },
+        { id: "stock", title: "Company Stock / Option", subtitle: "RSUs, Stock Options, ESPP", icon: "stock" },
+        { id: "retirement", title: "Retirement Accounts", subtitle: "401(k), IRA, Roth, Pension", icon: "retirement" },
+        { id: "realestate", title: "Real Estate", subtitle: "Primary home, Rentals, Vacation", icon: "realestate" },
+        { id: "insurance", title: "Insurance", subtitle: "Life, Disability, Long term care", icon: "insurance" },
+        { id: "college", title: "College Savings", subtitle: "529 Plans, UGMA/UTMA", icon: "college" },
+        { id: "other", title: "Other Assets", subtitle: "Trusts, crypto, collectibles etc", icon: "other" },
+    ];
+
+    const selected = new Set(["bank", "college"]);
+
+    function render() {
+        const $list = $("#optionList");
+        $list.empty();
+
+        $.each(OPTIONS, function (i, opt) {
+            const isSelected = selected.has(opt.id);
+
+            const $option = $("<button>", {
+                type: "button",
+                class: "option" + (isSelected ? " selected" : ""),
+                "aria-pressed": isSelected,
+                "data-id": opt.id
+            }).html(`
+        <span class="icon-circle">${ICONS[opt.icon]}</span>
+        <span class="text">
+          <span class="title">${opt.title}</span>
+          <span class="subtitle">${opt.subtitle}</span>
+        </span>
+        <span class="check">
+          <img class="w-24 h-24" src="images/completed-check.svg")" alt="completed icon">
+        </span>
+      `);
+
+            $list.append($option);
+        });
+
+        $("#continueBtn").prop("disabled", selected.size === 0);
+    }
+
+    $(document).on("click", ".option", function () {
+        const id = $(this).data("id");
+        selected.has(id) ? selected.delete(id) : selected.add(id);
+        render();
+    });
+
+    $("#continueBtn").on("click", function () {
+        console.log("Selected:", Array.from(selected));
+    });
+
+    $(function () {
+        render();
+    });
 
     // ===========================
     // Profile Dropdown
@@ -166,11 +233,11 @@ $(document).ready(function () {
             var $items = $section.find('.nav-items');
 
             $items.css('transition', 'none');
-            $section.addClass('open');            
-            var target = $items[0].scrollHeight;   
-            $items.css('max-height', '0px');       
-            $items[0].offsetHeight;               
-            $items.css('transition', '');          
+            $section.addClass('open');
+            var target = $items[0].scrollHeight;
+            $items.css('max-height', '0px');
+            $items[0].offsetHeight;
+            $items.css('transition', '');
 
             requestAnimationFrame(function () {
                 $items.css('max-height', target + 'px');
@@ -185,7 +252,7 @@ $(document).ready(function () {
 
         function closeSection($section) {
             var $items = $section.find('.nav-items');
-            $items.css('max-height', $items[0].scrollHeight + 'px'); 
+            $items.css('max-height', $items[0].scrollHeight + 'px');
             $section.removeClass('open');
             requestAnimationFrame(function () {
                 $items.css('max-height', '0px');
@@ -199,4 +266,5 @@ $(document).ready(function () {
         });
 
     });
+
 });

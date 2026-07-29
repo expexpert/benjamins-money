@@ -46,10 +46,10 @@
 
         <div class="d-flex gap-12 flex-col">
             <h5 class="f-18 white capitalize">
-                Effortless Management
+                Benjamins Money
             </h5>
             <p class="f-13 white">
-                Secure, lightning-fast transactions. Build your gateway to modern digital wealth asset tooling.
+                Navigate complex stock compensation and plan for large liquidity events. See your complete wealth profile in one powerful dashboard.
             </p>
         </div>
     </div>

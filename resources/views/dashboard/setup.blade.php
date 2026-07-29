@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title','Login')
+@section('title','Verify')
 
 @section('content')
 
 
 <div class="dashboard-outer">
     <div class="sidebar-lg-out p-64-48 d-flex flex-col justify-space-between gap-10">
-        <div class="lg-out-logo p-0">
-            <a href="#">
+        <div class="lg-out-logo p-0 d-flex gap-64 flex-col">
+            <a href="#" class="d-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="41" viewBox="0 0 160 41" fill="none">
                     <g clip-path="url(#clip0_9614_72034)">
                         <path
@@ -42,6 +42,62 @@
                     </defs>
                 </svg>
             </a>
+            <div class="d-flex gap-32 flex-col">
+                <div class="d-flex gap-18 align-center steps active">
+                    <div class="icon-count">
+                        <div class="completed-icon">
+                            <img class="w-24 h-24" src="{{ asset('images/completed-check.svg') }}" alt="completed icon">
+                        </div>
+                        <div class="step-count">
+                            1
+                        </div>
+                    </div>
+                    <div class="step-outer">
+                        <h3 class="f-14 clr-9C9AA5 mb-4 uppercase ">
+                            <b>STEP 1</b>
+                        </h3>
+                        <p class="f-16 clr-9C9AA5">
+                            Basic Info
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex gap-18 align-center steps">
+                    <div class="icon-count">
+                        <div class="completed-icon">
+                            <img class="w-24 h-24" src="{{ asset('images/completed-check.svg') }}" alt="completed icon">
+                        </div>
+                        <div class="step-count">
+                            2
+                        </div>
+                    </div>
+                    <div class="step-outer">
+                        <h3 class="f-14 clr-9C9AA5 mb-4 uppercase">
+                            <b>STEP 2</b>
+                        </h3>
+                        <p class="f-16 clr-9C9AA5">
+                            Connect Account
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex gap-18 align-center steps">
+                    <div class="icon-count">
+                        <div class="completed-icon">
+                            <img class="w-24 h-24" src="{{ asset('images/completed-check.svg') }}" alt="completed icon">
+                        </div>
+                        <div class="step-count">
+                            3
+                        </div>
+                    </div>
+                    <div class="step-outer">
+                        <h3 class="f-14 clr-9C9AA5 mb-4 uppercase">
+                            <b>STEP 3</b>
+                        </h3>
+                        <p class="f-16 clr-9C9AA5">
+                            Review
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="d-flex gap-12 flex-col">
@@ -54,71 +110,195 @@
         </div>
     </div>
 
-    <div class="lg-out-right">
-        <div class="d-flex flex-col gap-48 w-500">
-            <div class="right-header d-flex gap-8 flex-col">
-                <h3 class="f-36">
+    <div class="lg-out-right set-up-right">
+
+        <div class="d-flex gap-40 flex-col step-1 w-100">
+            <div class="right-header d-flex gap-8 flex-col w-640">
+                <h3 class="f-32">
                     <b>
-                        Log in to your account
+                        Let’s start with your assets
                     </b>
                 </h3>
-                <p class="clr-356674 f-16 lh-17">
-                    Welcome back! Enter your secure credentials to manage your assets.
+                <p class="clr-356674 f-16">
+                    Everything you own today from cash and investments to property and stock awards. Select all that apply. You can add or edit later.
                 </p>
             </div>
+            <div class="d-flex gap-64 flex-col assets">
+                <div class="list" id="optionList"></div>
 
-            <div class="signup-form">
-                <div class="form-field d-flex flex-col gap-6 mb-16">
-                    <label class="f-13 clr-356674" for=""><b>Email Address (*)</b></label>
-                    <input type="text" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="name@domain.com">
+                <div class="assets-footer d-flex justify-end">
+                    <button class="continue-btn p-12-32 f-16 white bg-003049 br-89" id="continueBtn" disabled>Continue</button>
                 </div>
-                <div class="form-field d-flex flex-col gap-6 mb-24">
-                    <label class="f-13 clr-356674" for=""><b>Password (*)</b></label>
-                    <div class="password-wrapper d-flex align-center">
-                        <input type="password" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Enter your password" id="password">
-                        <span class="toggle-password" onclick="togglePassword('password', this)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
-                                <line x1="1" y1="1" x2="23" y2="23"></line>
-                            </svg>
-                        </span>
+            </div>
+            <div class="center f-13 clr-9C9AA5">
+                You can modify these selections at any point in the future.
+            </div>
+        </div>
+
+        <div class="d-flex gap-40 flex-col step-2 w-100">
+            <div class="right-header d-flex gap-8 flex-col w-640">
+                <h3 class="f-32">
+                    <b>
+                        Connect your accounts
+                    </b>
+                </h3>
+                <p class="clr-356674 f-16">
+                    Securely connect your accounts to replace estimates with real-time data. This usually takes 2 mins
+                </p>
+            </div>
+            <div class="border-secondary-dark-20 p-24-32 bg-FBFAF8 br-12 d-flex flex-col gap-16">
+                <h5 class="f-12 clr-356674 uppercase">
+                    <b> Top Institutions</b>
+                </h5>
+                <div class="d-flex gap-32">
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-1170D1 br-6 inter bold">
+                        CHASE
+                    </div>
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-0F793D br-6 inter bold">
+                        Fidelity
+                    </div>
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-003185 br-6 inter bold">
+                        Bank of America
+                    </div>
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-00A0DF br-6 inter bold">
+                        Schwab
                     </div>
                 </div>
-                <div class="right mb-16">
-                    <a href="#" class="f-13 clr-23B05B"><b>Forgot your password?</b></a>
+            </div>
+            <div class="d-flex gap-16 flex-col">
+                <div class="p-16-24 border-secondary-dark-20 br-8 d-flex justify-space-between gap-10 align-center bg-white">
+                    <h5 class="f-16 clr-003049">
+                        <b>Bank Account</b>
+                    </h5>
+                    <a href="#" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#003049" />
+                        </svg>
+                        <b>
+                            Add
+                        </b>
+                    </a>
                 </div>
-                <div class="d-flex gap-20 align-center">
-                    <a href="#" class="form-btn white f-15 bg-003049">Log in</a>
-                    <p class="f-14 clr-9C9AA5">
-                        Don't have an account? <a class="clr-23B05B" href="/signup"><b>Sign up</b> </a>
-                    </p>
+                <div class="p-16-24 border-secondary-dark-20 br-8 d-flex justify-space-between gap-10 align-center bg-white">
+                    <h5 class="f-16 clr-003049">
+                        <b>Brokerage Account</b>
+                    </h5>
+                    <a href="#" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#003049" />
+                        </svg>
+                        <b>
+                            Add
+                        </b>
+                    </a>
+                </div>
+                <div class="p-16-24 border-secondary-dark-20 br-8 d-flex justify-space-between gap-10 align-center bg-white">
+                    <h5 class="f-16 clr-003049">
+                        <b> Company Stock</b>
+                    </h5>
+                    <a href="#" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#003049" />
+                        </svg>
+                        <b>
+                            Add
+                        </b>
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex justify-center">
+                <a href="#" class="d-flex gap-8 align-center f-14 clr-356674 p-9-18 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#356674" />
+                    </svg>
+                    <b>
+                        Enter manually
+                    </b>
+                </a>
+            </div>
+            <div class="assets-footer d-flex justify-end mt-14">
+                <button class="continue-btn p-12-32 f-16 white bg-003049 br-89" id="continueBtn" disabled>Continue</button>
+            </div>
+
+
+
+            <!-- ---------------- Bank search modal ---------------- -->
+            <div class="modal-overlay" id="bankModalOverlay">
+                <div class="bank-modal" role="dialog" aria-modal="true" aria-labelledby="bankModalTitle">
+
+                    <div class="bank-search-wrap">
+                        <div class="bank-search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M17.5001 17.5001L13.8835 13.8835M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#356674" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <input type="text" id="bankSearchInput" placeholder="Search for your bank" autocomplete="off" />
+                        </div>
+                    </div>
+
+                    <div class="bank-popular-label" id="bankListLabel">Popular</div>
+                    <div class="bank-list" id="bankList">
+                        <div class="bank-inner">
+                            <input type="checkbox" id="chase" name="chase" value="Chase">
+                            <label for="chase">Chase</label>
+                        </div>
+                        <div class="bank-inner">
+                            <input type="checkbox" id="boa" name="boa" value="BankOfAmerica">
+                            <label for="boa">Bank of America</label>
+                        </div>
+                        <div class="bank-inner">
+                            <input type="checkbox" id="rbc" name="rbc" value="RBC">
+                            <label for="rbc">RBC</label>
+                        </div>
+                        <div class="bank-inner">
+                            <input type="checkbox" id="jpmorgan" name="jpmorgan" value="JPMorgan">
+                            <label for="jpmorgan">J.P. Morgan</label>
+                        </div>
+                        <div class="bank-inner">
+                            <input type="checkbox" id="fidelity" name="fidelity" value="Fidelity">
+                            <label for="fidelity">Fidelity</label>
+                        </div>
+                        <div class="bank-inner">
+                            <input type="checkbox" id="charles" name="charles" value="CharlesSchwab">
+                            <label for="charles">Charles Schwab</label>
+                        </div>
+                        <!-- <input type="submit" value="Submit"> -->
+                    </div>
+                </div>
+                <div class="bank-modal">
+                    <div class="connection-outer d-flex gap-24 justify-center flex-col align-center">
+                        <div class="connection-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
+                                <rect width="96" height="96" rx="48" fill="#23B05B" fill-opacity="0.101961" />
+                                <path d="M48.6783 67.9022C56.9975 65.0021 63.9968 60.0019 63.9968 50.0016V36.0012C63.9968 35.4707 63.7861 34.962 63.4111 34.5869C63.036 34.2118 62.5274 34.0011 61.997 34.0011C57.9974 34.0011 53.0179 31.621 49.5182 28.5609C49.0946 28.1989 48.5556 28 47.9984 28C47.4412 28 46.9022 28.1989 46.4786 28.5609C42.9989 31.601 37.9994 34.0011 33.9998 34.0011C33.4694 34.0011 32.9608 34.2118 32.5857 34.5869C32.2107 34.962 32 35.4707 32 36.0012V50.0016C32 60.0019 38.9993 65.0021 47.3385 67.8822C47.7695 68.0428 48.2427 68.0498 48.6783 67.9022Z" stroke="#23B05B" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="d-flex gap-12 justify-center flex-col align-center">
+                            <h3 class="f-24 clr-003049">
+                                Launching secure connection
+                            </h3>
+                            <p class="f-16 clr-356674">
+                                You’ll be redirected securely to connect your Chase account.
+                            </p>
+                        </div>
+                        <div class="spinner d-flex justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M19.9985 6.66406V11.9978M25.5992 14.3985L29.4661 10.5316M27.9991 19.9985H33.3329M25.5992 25.5992L29.4661 29.4661M19.9985 27.9991V33.3329M10.5316 29.4661L14.3985 25.5992M6.66406 19.9985H11.9978M10.5316 10.5316L14.3985 14.3985" stroke="#356674" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="d-flex gap-8 justify-center align-center creds-locked">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#356674" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <p class="f-14">
+                                Your credentials are never stored
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="d-flex gap-16 flex-col sso-block">
 
-                <div class="divider"><span class="f-11 clr-9C9AA5 uppercase">Or Sign In With</span></div>
 
-                <div class="social-buttons d-flex gap-12">
-                    <button class="social-btn" type="button">
-                        <svg viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.63h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.88c2.27-2.09 3.57-5.17 3.57-8.81z" />
-                            <path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.95-2.92l-3.88-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.26v3.09A12 12 0 0 0 12 24z" />
-                            <path fill="#FBBC05" d="M5.27 14.27a7.2 7.2 0 0 1 0-4.54v-3.1H1.26a12 12 0 0 0 0 10.74z" />
-                            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.26 6.63l4.01 3.1C6.22 6.87 8.87 4.75 12 4.75z" />
-                        </svg>
-                        Google
-                    </button>
-
-                    <button class="social-btn" type="button">
-                        <svg viewBox="0 0 24 24">
-                            <path fill="#000" d="M16.36 1.43c0 1.14-.42 2.2-1.24 3.05-.84.88-2.03 1.5-3.15 1.43-.13-1.13.44-2.28 1.24-3.06.83-.83 2.13-1.42 3.15-1.42zm3.15 6.52c-.07.05-1.87 1.09-1.87 3.33 0 2.6 2.27 3.53 2.32 3.55-.02.07-.36 1.24-1.2 2.44-.75 1.05-1.53 2.1-2.75 2.12-1.2.02-1.59-.71-2.97-.71-1.38 0-1.82.69-2.95.73-1.19.05-2.1-1.14-2.85-2.18-1.54-2.13-2.72-6.02-1.14-8.65.79-1.31 2.19-2.13 3.72-2.15 1.16-.02 2.26.78 2.97.78.71 0 2.04-.97 3.44-.83.59.03 2.24.24 3.3 1.79z" />
-                        </svg>
-                        Apple
-                    </button>
-                </div>
-
-            </div>
         </div>
     </div>
 </div>

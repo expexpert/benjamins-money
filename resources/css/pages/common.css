@@ -224,6 +224,10 @@ input#search {
     justify-content: space-between;
 }
 
+.justify-end {
+    justify-content: flex-end;
+}
+
 .heading-bar {
     margin: 32px 0;
 }
@@ -1064,7 +1068,353 @@ ul.left-col li:not(:last-child) {
     border-radius: 11px;
     background: #fff;
 }
-.verify input:focus, .verify input:focus-visible {
+
+.verify input:focus,
+.verify input:focus-visible {
     border-color: #003049;
     color: #23B05B;
+}
+
+.steps.active h3 {
+    color: #23B05B;
+}
+
+.steps.active p {
+    color: #F6F5F1;
+}
+
+.step-count {
+    color: rgba(115, 115, 115, 50%);
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(115, 115, 115, 50%);
+    border-radius: 100%;
+}
+
+.completed-icon {
+    display: none;
+}
+
+.active .step-count {
+    display: none;
+}
+
+.active .completed-icon {
+    display: block;
+}
+
+button.option {
+    border: 1px solid rgba(0, 48, 73, 10%);
+    border-radius: 8px;
+    background: #fff;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+
+.icon-circle {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #EFEFEF;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.check {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 48, 73, 10%);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+
+div#optionList {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.check img {
+    display: none;
+}
+
+.option span.title {
+    font-size: 15px;
+    line-height: 1.3;
+    color: #003049;
+    font-weight: 700;
+}
+
+span.subtitle {
+    font-size: 13px;
+    line-height: 1.3;
+    color: #9C9AA5;
+}
+
+.set-up-right {
+    background: #FBFAF8 !important;
+    padding: 64px;
+}
+
+button.option.selected {
+    border-color: #23B05B;
+    background: rgba(35, 176, 91, 8.24%);
+}
+
+button.option.selected .check img {
+    display: block;
+}
+
+.continue-btn {
+    border: 1px solid #003049;
+}
+
+
+.continue-btn {
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.continue-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.row-btn {
+    background: none;
+    border: 2px solid #003049;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.row-btn:hover {
+    background: #003049;
+    color: #fff;
+}
+
+.row-btn:hover svg path {
+    fill: #fff;
+}
+
+/* ---------------- Modal / Popup ---------------- */
+.modal-overlay {
+    /* position: fixed;
+    inset: 0;
+    background: rgba(11, 26, 32, 0.45);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+    z-index: 1000; */
+    animation: fadeIn 0.15s ease-out;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.bank-modal {
+    background: #fff;
+    max-width: 640px;
+    /* max-width: 92vw; */
+    max-height: 76vh;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 14%);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.18s ease-out;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid rgba(53, 102, 116, 20%);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.bank-modal-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #003049;
+}
+
+.modal-close {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #356674;
+    font-size: 18px;
+    line-height: 1;
+    padding: 4px;
+}
+
+.modal-close:hover {
+    color: #003049;
+}
+
+
+.bank-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(53, 102, 116, 20%);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.bank-search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    color: #003049;
+    background: transparent;
+    font-family: inherit;
+}
+
+.bank-search input::placeholder {
+    color: #9AA9AD;
+}
+
+.bank-search svg {
+    flex-shrink: 0;
+    color: #9AA9AD;
+}
+
+.bank-popular-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #003049;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.bank-list {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.bank-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 24px;
+    border-top: 1px solid rgba(0, 48, 73, 0.08);
+    cursor: pointer;
+    font-size: 14px;
+    color: #003049;
+    user-select: none;
+}
+
+.bank-row:hover {
+    background: #FBFAF8;
+}
+
+.bank-checkbox svg {
+    opacity: 0;
+}
+
+.bank-inner {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bank-inner:not(:last-child) {
+    border-bottom: 1px solid rgba(53, 102, 116, 20%);
+}
+
+.bank-inner input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: none;
+    background: #E9F0FA;
+    cursor: pointer;
+    position: relative;
+}
+
+.bank-inner input[type="checkbox"]:checked {
+    background: #356674;
+    /* or whatever your "checked" color is */
+}
+
+.bank-inner input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.bank-inner input[type="checkbox"]:focus-visible {
+    outline: 2px solid #356674;
+    outline-offset: 2px;
+}
+
+.bank-inner label {
+    font-size: 16px;
+    color: #356674;
+    width: 100%;
+    cursor: pointer;
+}
+
+.creds-locked p{
+    color: rgba(53, 102, 116, 69.8%);
 }

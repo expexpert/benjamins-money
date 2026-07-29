@@ -46,10 +46,10 @@
 
         <div class="d-flex gap-12 flex-col">
             <h5 class="f-18 white capitalize">
-                Effortless Management
+                Benjamins Money
             </h5>
             <p class="f-13 white">
-                Secure, lightning-fast transactions. Build your gateway to modern digital wealth asset tooling.
+                Navigate complex stock compensation and plan for large liquidity events. See your complete wealth profile in one powerful dashboard.
             </p>
         </div>
     </div>
@@ -73,11 +73,11 @@
                 <a href="#" class="form-btn white f-15 bg-003049 w-100 center">Complete your Account Setup</a>
             </div>
             <div class="d-flex justify-center">
-                <p class="f-12 clr-003049 center">
+                <p class="f-12 clr-003049 center br-8 bg-003049-4 p-9-18 d-flex gap-8 align-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M5.99706 8.00282L7.33026 9.3362L9.99666 6.66944M13.3297 8.66981C13.3297 12.0032 10.9966 13.67 8.22351 14.6367C8.0783 14.6859 7.92056 14.6835 7.77688 14.63C4.99716 13.67 2.66406 12.0032 2.66406 8.66981V4.00299C2.66406 3.82617 2.73429 3.6566 2.85931 3.53157C2.98432 3.40654 3.15387 3.3363 3.33066 3.3363C4.66386 3.3363 6.33036 2.53628 7.49025 1.52291C7.63147 1.40224 7.81112 1.33594 7.99686 1.33594C8.18261 1.33594 8.36226 1.40224 8.50348 1.52291C9.67003 2.54294 11.3299 3.3363 12.6631 3.3363C12.8399 3.3363 13.0094 3.40654 13.1344 3.53157C13.2594 3.6566 13.3297 3.82617 13.3297 4.00299V8.66981Z" stroke="#003049" stroke-width="2" stroke-linecap="round" />
                     </svg>
-                    Fully Secured 256-bit SSL Connection
+                   <b>Fully Secured 256-bit SSL Connection</b>
                 </p>
             </div>
         </div>

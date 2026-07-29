@@ -43,3 +43,7 @@ Route::get('/verify', function () {
 Route::get('/account-verified', function () {
     return view('dashboard.account-verified');
 });
+
+Route::get('/setup', function () {
+    return view('dashboard.setup');
+});

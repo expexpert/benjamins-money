@@ -1255,8 +1255,8 @@ button.option.selected .check img {
     background: #fff;
     max-width: 640px;
     /* max-width: 92vw; */
-    max-height: 76vh;
-    border-radius: 20px;
+    /* max-height: 76vh; */
+    border-radius: 12px;
     box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 14%);
     display: flex;
     flex-direction: column;
@@ -1370,11 +1370,13 @@ button.option.selected .check img {
     gap: 12px;
 }
 
-.bank-inner:not(:last-child) {
+.bank-inner:not(:last-child),
+.act-list-inner:not(:last-child) {
     border-bottom: 1px solid rgba(53, 102, 116, 20%);
 }
 
-.bank-inner input[type="checkbox"] {
+.bank-inner input[type="checkbox"],
+.act-list-inner input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     width: 24px;
@@ -1386,7 +1388,13 @@ button.option.selected .check img {
     position: relative;
 }
 
-.bank-inner input[type="checkbox"]:checked {
+.act-list-inner input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.bank-inner input[type="checkbox"]:checked,
+.act-list-inner input[type="checkbox"]:checked {
     background: #356674;
     /* or whatever your "checked" color is */
 }
@@ -1403,18 +1411,70 @@ button.option.selected .check img {
     transform: rotate(45deg);
 }
 
-.bank-inner input[type="checkbox"]:focus-visible {
+.act-list-inner input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.bank-inner input[type="checkbox"]:focus-visible,
+.act-list-inner input[type="checkbox"]:focus-visible {
     outline: 2px solid #356674;
     outline-offset: 2px;
 }
 
-.bank-inner label {
+.bank-inner label,
+.act-list-inner label {
     font-size: 16px;
     color: #356674;
     width: 100%;
     cursor: pointer;
 }
 
-.creds-locked p{
+.act-list-inner label {
+    width: auto;
+}
+
+.creds-locked p {
     color: rgba(53, 102, 116, 69.8%);
+}
+
+input {
+    color: #003049;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+input:not([type="checkbox"]):not([type="radio"]):focus-visible {
+    outline: 2px solid #003049;
+}
+
+.act-list-inner:not(:last-child) {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.act-cnt-success {
+    padding: 48px;
+}
+
+.succes-heading{
+    line-height: 1.1;
+}
+
+.act-count{
+    padding: 4px 12px;
+    border: 1px solid #23B05B;
+    background-color: rgba(35, 176, 91, 10%);
+    border-radius: 64px;
+    line-height: 1;
+}
+
+.clr-1170D1{
+    color: #1170D1;
 }

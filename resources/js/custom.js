@@ -3,14 +3,14 @@ import $ from 'jquery';
 $(document).ready(function () {
     // adding bank accounts
     const ICONS = {
-        bank: '<img class="w-24 h-24" src="images/bank.svg")" alt="completed icon">',
-        brokerage: '<img class="w-24 h-24" src="images/brokerage.svg")" alt="completed icon">',
-        stock: '<img class="w-24 h-24" src="images/company-stock.svg")" alt="completed icon">',
-        retirement: '<img class="w-24 h-24" src="images/retirement.svg")" alt="completed icon">',
-        realestate: '<img class="w-24 h-24" src="images/real-estate.svg")" alt="completed icon">',
-        insurance: '<img class="w-24 h-24" src="images/insurance.svg")" alt="completed icon">',
-        college: '<img class="w-24 h-24" src="images/clg-savings.svg")" alt="completed icon">',
-        other: '<img class="w-24 h-24" src="images/other-assets.svg")" alt="completed icon">'
+        bank: '<img class="w-24 h-24" src="images/bank.svg")" alt="Bank icon">',
+        brokerage: '<img class="w-24 h-24" src="images/brokerage.svg")" alt="Brokerage icon">',
+        stock: '<img class="w-24 h-24" src="images/company-stock.svg")" alt="Stock icon">',
+        retirement: '<img class="w-24 h-24" src="images/retirement.svg")" alt="Retirement icon">',
+        realestate: '<img class="w-24 h-24" src="images/real-estate.svg")" alt="Real Estate icon">',
+        insurance: '<img class="w-24 h-24" src="images/insurance.svg")" alt="Insurance icon">',
+        college: '<img class="w-24 h-24" src="images/clg-savings.svg")" alt="collegae Savings icon">',
+        other: '<img class="w-24 h-24" src="images/other-assets.svg")" alt="Others icon">'
     };
 
     const OPTIONS = [
@@ -39,15 +39,15 @@ $(document).ready(function () {
                 "aria-pressed": isSelected,
                 "data-id": opt.id
             }).html(`
-        <span class="icon-circle">${ICONS[opt.icon]}</span>
-        <span class="text">
-          <span class="title">${opt.title}</span>
-          <span class="subtitle">${opt.subtitle}</span>
-        </span>
-        <span class="check">
-          <img class="w-24 h-24" src="images/completed-check.svg")" alt="completed icon">
-        </span>
-      `);
+                <span class="icon-circle">${ICONS[opt.icon]}</span>
+                <span class="text">
+                <span class="title">${opt.title}</span>
+                <span class="subtitle">${opt.subtitle}</span>
+                </span>
+                <span class="check">
+                <img class="w-24 h-24" src="images/completed-check.svg")" alt="completed icon">
+                </span>
+            `);
 
             $list.append($option);
         });
@@ -208,13 +208,20 @@ $(document).ready(function () {
 
 
 
-    // sidebar toggle 
+    // ===========================
+    // Sidebar toggle
+    // ===========================
     $(function () {
 
-        $('.nav-section').removeClass('open').find('.nav-items').css('max-height', '0px');
+        const $sections = $('.nav-section');
 
-        var $first = $('.nav-section').first();
-        openSection($first);
+        // guard: only run if the sidebar markup is present on this page
+        if ($sections.length) {
+            $sections.removeClass('open').find('.nav-items').css('max-height', '0px');
+
+            var $first = $sections.first();
+            openSection($first);
+        }
 
         $('.nav-header').on('click', function () {
             var $section = $(this).closest('.nav-section');
@@ -231,7 +238,7 @@ $(document).ready(function () {
 
         function openSection($section) {
             var $items = $section.find('.nav-items');
-
+            if (!$items.length) return;
             $items.css('transition', 'none');
             $section.addClass('open');
             var target = $items[0].scrollHeight;
@@ -252,6 +259,8 @@ $(document).ready(function () {
 
         function closeSection($section) {
             var $items = $section.find('.nav-items');
+            if (!$items.length) return;
+
             $items.css('max-height', $items[0].scrollHeight + 'px');
             $section.removeClass('open');
             requestAnimationFrame(function () {

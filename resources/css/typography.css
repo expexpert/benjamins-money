@@ -337,6 +337,11 @@ h6 {
     line-height: 1.3;
 }
 
+.f-15 {
+    font-size: 15px;
+    line-height: 1.3;
+}
+
 .f-14 {
     font-size: 14px;
     line-height: 1.3;
@@ -451,6 +456,10 @@ h6 {
     gap: 24px;
 }
 
+.gap-28 {
+    gap: 28px;
+}
+
 .gap-30 {
     gap: 30px;
 }
@@ -486,6 +495,10 @@ h6 {
 
 .p-16 {
     padding: 16px;
+}
+
+.p-20 {
+    padding: 20px;
 }
 
 .p-24 {
@@ -736,6 +749,18 @@ h6 {
     width: 21px !important;
 }
 
+.w-44 {
+    width: 44px;
+}
+
+.h-44 {
+    height: 44px;
+}
+
+.w-180 {
+    width: 180px;
+}
+
 .w-500 {
     width: 500px;
 }
@@ -835,6 +860,10 @@ p {
 
 .bg-003049-4 {
     background-color: rgba(0, 48, 73, 3.92%);
+}
+
+.bg-neutral-white-200{
+    background-color: #F6F5F1;
 }
 
 .light-pink {
@@ -988,7 +1017,6 @@ p {
     background-color: #23B05B;
 }
 
-
 .bg-e9e7dd1a {
     background-color: #e9e7dd1a;
 }
@@ -1078,4 +1106,8 @@ p {
 
 .bold {
     font-weight: bold;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
 }

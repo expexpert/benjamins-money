@@ -63,31 +63,60 @@
                     </b>
                 </h3>
                 <p class="clr-356674 f-16 lh-17">
-                    We have sent a 6-digit code to joe.smith@gmail.com. Please enter the code below.
+                    We have sent a 6-digit code to {{ $email }}. Please enter the code below.
                 </p>
             </div>
 
-            <div class="verify">
-                <div class="d-flex gap-12">
-                    <input type="text" name="" id="" placeholder="7" class="f-24 clr-003049 center">
-                    <input type="text" name="" id="" placeholder="8" class="f-24 clr-003049 center">
-                    <input type="text" name="" id="" placeholder="1" class="f-24 clr-003049 center">
-                    <input type="text" name="" id="" placeholder="0" class="f-24 clr-003049 center">
-                    <input type="text" name="" id="" placeholder="7" class="f-24 clr-003049 center">
-                    <input type="text" name="" id="" placeholder="7" class="f-24 clr-003049 center">
+            <!-- @if (session('status'))
+                <div class="p-12 rounded-8 bg-ECFDF3 clr-148045 f-14">
+                    {{ session('status') }}
+                </div>
+            @endif -->
+
+            @if ($errors->any())
+            <div class="p-12 rounded-8 bg-FEE4E7 clr-B4231B f-14">
+                @foreach ($errors->all() as $error)
+                {{ $error }}
+                @endforeach
+            </div>
+            @endif
+
+            <form method="POST" action="{{ route('verification.verify') }}" class="verify-form">
+                @csrf
+                <input type="hidden" name="otp" id="otp-combined" value="">
+
+                <div class="verify">
+                    <div class="d-flex gap-12">
+                        <input type="text" inputmode="numeric" maxlength="1" id="otp-1" class="otp-input f-24 clr-003049 center" pattern="[0-9]*">
+                        <input type="text" inputmode="numeric" maxlength="1" id="otp-2" class="otp-input f-24 clr-003049 center" pattern="[0-9]*">
+                        <input type="text" inputmode="numeric" maxlength="1" id="otp-3" class="otp-input f-24 clr-003049 center" pattern="[0-9]*">
+                        <input type="text" inputmode="numeric" maxlength="1" id="otp-4" class="otp-input f-24 clr-003049 center" pattern="[0-9]*">
+                        <input type="text" inputmode="numeric" maxlength="1" id="otp-5" class="otp-input f-24 clr-003049 center" pattern="[0-9]*">
+                        <input type="text" inputmode="numeric" maxlength="1" id="otp-6" class="otp-input f-24 clr-003049 center" pattern="[0-9]*">
+                    </div>
                 </div>
 
-            </div>
-
-            <div class="d-flex gap-24 flex-col">
-                <div class="d-flex">
-                    <a href="#" class="form-btn white f-15 bg-003049 w-100 center">Verify email</a>
+                <div class="d-flex flex-col mt-48">
+                    <div class="d-flex">
+                        <button type="submit" class="form-btn white f-15 bg-003049 w-100 center border-none cursor-pointer">Verify email</button>
+                    </div>
                 </div>
-                <p class="f-14 clr-9C9AA5 center">
-                    Didn't get a code? <a class="clr-23B05B" href="#"><b>Resend code</b> </a>
-                </p>
-            </div>
+            </form>
 
+            <div class="d-flex gap-24 flex-col mt-24">
+                <div class="f-14 clr-9C9AA5 center d-flex justify-center align-center gap-5">
+                    <span>Didn't get a code?</span>
+                    <form method="POST" action="{{ route('verification.send') }}" style="display:inline;margin:0;">
+                        @csrf
+                        <button type="submit" class="clr-23B05B bg-none border-none cursor-pointer p-0 ml-2"><b>Resend code</b></button>
+                    </form>
+
+                    <form method="POST" action="{{ route('verification.change-email') }}">
+                        @csrf
+                        <button type="submit" class="btn-link">Wrong email? Start over</button>
+                    </form>
+                </div>
+            </div>
 
             <div class="form-field">
                 <p class="f-11 clr-9C9AA5 center">
@@ -99,4 +128,68 @@
         </div>
     </div>
 </div>
+
+<script>
+    (function() {
+        const inputs = [
+            document.getElementById('otp-1'),
+            document.getElementById('otp-2'),
+            document.getElementById('otp-3'),
+            document.getElementById('otp-4'),
+            document.getElementById('otp-5'),
+            document.getElementById('otp-6'),
+        ];
+        const combined = document.getElementById('otp-combined');
+        const form = document.querySelector('.verify-form');
+
+        function combine() {
+            combined.value = inputs.map(function(i) {
+                return i.value;
+            }).join('');
+        }
+
+        inputs.forEach(function(input, idx) {
+            input.addEventListener('input', function(e) {
+                var val = e.target.value.replace(/[^0-9]/g, '');
+                e.target.value = val.slice(-1);
+                if (e.target.value && idx < inputs.length - 1) {
+                    inputs[idx + 1].focus();
+                }
+                combine();
+            });
+
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+                    inputs[idx - 1].focus();
+                }
+            });
+
+            input.addEventListener('paste', function(e) {
+                e.preventDefault();
+                var paste = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '').slice(0, 6);
+                for (var i = 0; i < paste.length; i++) {
+                    if (inputs[i]) {
+                        inputs[i].value = paste.charAt(i);
+                    }
+                }
+                combine();
+                if (paste.length === 6) {
+                    inputs[5].blur();
+                } else if (paste.length > 0) {
+                    inputs[Math.min(paste.length - 1, 5)].focus();
+                }
+            });
+        });
+
+        form.addEventListener('submit', function(e) {
+            combine();
+            if (combined.value.length !== 6) {
+                e.preventDefault();
+                inputs[0].focus();
+            }
+        });
+
+        inputs[0] && inputs[0].focus();
+    })();
+</script>
 @endsection

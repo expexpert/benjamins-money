@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="right mb-16">
-                        <a href="{{ route('password.request') }}" class="f-13 clr-23B05B"><b>Forgot your password?</b></a>
+                        <a href="#" class="f-13 clr-23B05B"><b>Forgot your password?</b></a>
                     </div>
                     <div class="d-flex gap-20 align-center">
                         <button type="submit" class="form-btn white f-15 bg-003049 border-none cursor-pointer">Log in</button>

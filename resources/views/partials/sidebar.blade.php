@@ -632,20 +632,23 @@
             </div> -->
         </div>
         <div class="sign-out">
-            <a class="f-16 white-50" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path opacity="0.5"
-                        d="M10.5608 16.7329H6.28C5.20345 16.7821 4.15081 16.4055 3.34983 15.6845C2.54884 14.9636 2.06393 13.9562 2 12.8804V5.17709C2.06393 4.10132 2.54884 3.09397 3.34983 2.37299C4.15081 1.65201 5.20345 1.27538 6.28 1.32459H10.56"
-                        stroke="#E9E7DD" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" />
-                    <path opacity="0.5" d="M16.6588 9.02344H5.53125" stroke="#E9E7DD" stroke-width="0.8"
-                        stroke-miterlimit="10" stroke-linecap="round" />
-                    <path opacity="0.5"
-                        d="M12.7344 13.31L16.4044 9.64C16.5652 9.4777 16.6554 9.25847 16.6554 9.03C16.6554 8.80153 16.5652 8.5823 16.4044 8.42L12.7344 4.75"
-                        stroke="#E9E7DD" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span>
-                    Sign Out
-                </span>
-            </a>
+            <form method="POST" action="{{ route('logout') }}" style="margin:0;">
+                @csrf
+                <button type="submit" class="f-16 white-50" style="display:flex;align-items:center;gap:12px;background:none;border:none;background-color:transparent;padding:0;cursor:pointer;width:100%;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path opacity="0.5"
+                            d="M10.5608 16.7329H6.28C5.20345 16.7821 4.15081 16.4055 3.34983 15.6845C2.54884 14.9636 2.06393 13.9562 2 12.8804V5.17709C2.06393 4.10132 2.54884 3.09397 3.34983 2.37299C4.15081 1.65201 5.20345 1.27538 6.28 1.32459H10.56"
+                            stroke="#E9E7DD" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" />
+                        <path opacity="0.5" d="M16.6588 9.02344H5.53125" stroke="#E9E7DD" stroke-width="0.8"
+                            stroke-miterlimit="10" stroke-linecap="round" />
+                        <path opacity="0.5"
+                            d="M12.7344 13.31L16.4044 9.64C16.5652 9.4777 16.6554 9.25847 16.6554 9.03C16.6554 8.80153 16.5652 8.5823 16.4044 8.42L12.7344 4.75"
+                            stroke="#E9E7DD" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>
+                        Sign Out
+                    </span>
+                </button>
+            </form>
         </div>
     </div>

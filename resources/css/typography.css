@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+a {
+    cursor: pointer;
+}
+
 @font-face {
     font-family: 'D-DINExp';
     src: url('../fonts/D-DINExp.woff2') format('woff2'),
@@ -492,6 +496,9 @@ h6 {
     display: flex;
 }
 
+.d-inline-flex {
+    display: inline-flex;
+}
 
 .p-16 {
     padding: 16px;
@@ -529,8 +536,16 @@ h6 {
     padding: 9px 18px;
 }
 
+.p-12-24 {
+    padding: 12px 24px;
+}
+
 .p-12-32 {
     padding: 12px 32px;
+}
+
+.p-14-76 {
+    padding: 14px 76px;
 }
 
 .p-16-24 {
@@ -797,6 +812,9 @@ h6 {
     max-width: fit-content;
 }
 
+.m-0-auto {
+    margin: 0 auto;
+}
 
 .w-250 {
     max-width: 250px;
@@ -845,6 +863,10 @@ p {
     margin-top: 21px;
 }
 
+.mt-48 {
+    margin-top: 48px;
+}
+
 .bg-gray {
     background: rgba(21, 121, 61, 8%);
     border-radius: 8px;
@@ -862,7 +884,7 @@ p {
     background-color: rgba(0, 48, 73, 3.92%);
 }
 
-.bg-neutral-white-200{
+.bg-neutral-white-200 {
     background-color: #F6F5F1;
 }
 
@@ -949,8 +971,24 @@ p {
     background-color: #FBFAF8;
 }
 
+.bg-transparent {
+    background: transparent;
+}
+
 .border-secondary-dark-20 {
     border: 1px solid rgba(53, 102, 116, 20%);
+}
+
+.border-dashed-secondary-dark-20 {
+    border: 1px dashed rgba(53, 102, 116, 20%);
+}
+
+.border-003049 {
+    border: 1px solid #003049;
+}
+
+.border-none {
+    border: none;
 }
 
 .br-3 {
@@ -1110,4 +1148,10 @@ p {
 
 .flex-wrap {
     flex-wrap: wrap;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
 }

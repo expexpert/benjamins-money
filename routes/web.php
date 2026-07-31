@@ -32,4 +32,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/setup', function () {
         return view('dashboard.setup');
     });
+
+    Route::get('/account-verified', function () {
+        return view('auth.account-verified');
+    });
 });

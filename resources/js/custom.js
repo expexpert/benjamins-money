@@ -24,7 +24,17 @@ $(document).ready(function () {
         { id: "other", title: "Other Assets", subtitle: "Trusts, crypto, collectibles etc", icon: "other" },
     ];
 
-    const selected = new Set(["bank", "college"]);
+    const selected = new Set();
+    const assetContent = {
+        bank: { title: "Bank Account", subtitle: "Checking, savings and cash accounts", badge: "B" },
+        brokerage: { title: "Brokerage Account", subtitle: "Investments, bonds and ETFs", badge: "BR" },
+        stock: { title: "Company Stock", subtitle: "RSUs, stock options and ESPP", badge: "S" },
+        retirement: { title: "Retirement Account", subtitle: "401(k), IRA and pension", badge: "R" },
+        realestate: { title: "Real Estate", subtitle: "Primary home or rental property", badge: "RE" },
+        insurance: { title: "Insurance", subtitle: "Life and disability coverage", badge: "I" },
+        college: { title: "College Savings", subtitle: "529 plans and education savings", badge: "C" },
+        other: { title: "Other Assets", subtitle: "Trusts, crypto and collectibles", badge: "O" }
+    };
 
     function render() {
         const $list = $("#optionList");
@@ -52,7 +62,63 @@ $(document).ready(function () {
             $list.append($option);
         });
 
-        $("#continueBtn").prop("disabled", selected.size === 0);
+        $("#step1ContinueBtn").prop("disabled", selected.size === 0);
+        renderStep2();
+    }
+
+    function renderStep2() {
+        const $list = $("#assetConnectionList");
+        $list.empty();
+
+        const selectedAssets = Array.from(selected);
+
+        if (selectedAssets.length === 0) {
+            $("#step2Title").text("Connect your accounts");
+            $("#step2Subtitle").text("Securely connect your accounts to replace estimates with real-time data. This usually takes 2 mins");
+            return;
+        }
+
+        const primaryAsset = selectedAssets[0];
+        const primaryConfig = assetContent[primaryAsset] || assetContent.other;
+
+        $("#step2Title").text(selectedAssets.length === 1 ? `Connect your ${primaryConfig.title.toLowerCase()}` : "Connect your selected accounts");
+        $("#step2Subtitle").text(selectedAssets.length === 1 ? `Add your ${primaryConfig.title.toLowerCase()} details to continue.` : "Add the selected account details to continue.");
+
+        selectedAssets.forEach(function (assetId) {
+            const config = assetContent[assetId] || assetContent.other;
+            const $card = $(`
+                <div class="p-16-24 border-secondary-dark-20 br-8 d-flex justify-space-between gap-10 align-center bg-white" data-asset-id="${assetId}">
+                    <div class="d-flex gap-12 align-center">
+                        <div class="w-44 h-44 d-flex align-center bg-white justify-center br-6 border-secondary-dark-20">
+                            <div class="f-14 inter bold clr-1170D1">${config.badge}</div>
+                        </div>
+                        <div class="d-flex flex-col gap-4">
+                            <h5 class="f-16 clr-003049"><b>${config.title}</b></h5>
+                            <p class="f-14 clr-356674">${config.subtitle}</p>
+                        </div>
+                    </div>
+                    <button type="button" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20" data-modal-target="modalBankSearch">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#003049" />
+                        </svg>
+                        <b>Add</b>
+                    </button>
+                </div>
+            `);
+
+            $list.append($card);
+        });
+    }
+
+    function setActiveStep(step) {
+        if (step === "step2") {
+            $(".step-1").removeClass("active").hide();
+            $(".step-2").addClass("active").show();
+            return;
+        }
+
+        $(".step-2").removeClass("active").hide();
+        $(".step-1").addClass("active").show();
     }
 
     $(document).on("click", ".option", function () {
@@ -61,12 +127,26 @@ $(document).ready(function () {
         render();
     });
 
-    $("#continueBtn").on("click", function () {
-        console.log("Selected:", Array.from(selected));
+    $("#step1ContinueBtn").on("click", function () {
+        if (selected.size > 0) {
+            renderStep2();
+            setActiveStep("step2");
+        }
+    });
+
+    $("#enterManuallyBtn").on("click", function () {
+        $(".step-2").removeClass("active").hide();
+        $(".step-2b1").addClass("active").show();
+    });
+
+    $("#ManuallyConfigureDetails").on("click", function () {
+        $(".step-2b1").removeClass("active").hide();
+        $(".step-2b4").addClass("active").show();
     });
 
     $(function () {
         render();
+        setActiveStep("step1");
     });
 
     // ===========================
@@ -274,6 +354,42 @@ $(document).ready(function () {
             $(this).addClass('active');
         });
 
+    });
+
+
+
+
+    $(document).on('click', function (e) {
+        const $target = $(e.target);
+
+        // 1. Handle Opening Modals
+        const $openTrigger = $target.closest('[data-modal-target]');
+        if ($openTrigger.length) {
+            const modalId = $openTrigger.data('modal-target'); // gets value of data-modal-target
+            $(`#${modalId}`).removeClass('hidden');
+        }
+
+        // 2. Handle Closing Modals (Close button click)
+        const $closeTrigger = $target.closest('[data-modal-close]');
+        if ($closeTrigger.length) {
+            $closeTrigger.closest('.modal-overlay').addClass('hidden');
+        }
+
+        // 3. Close Modal on Dark Backdrop Click
+        if ($target.hasClass('modal-overlay')) {
+            $target.addClass('hidden');
+        }
+    });
+
+    // Close top-most modal when ESC key is pressed
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape') {
+            const $visibleModals = $('.modal-overlay:not(.hidden)');
+            if ($visibleModals.length > 0) {
+                // Closes the last opened modal in the DOM stack
+                $visibleModals.last().addClass('hidden');
+            }
+        }
     });
 
 });

@@ -278,231 +278,345 @@
             </div>
 
 
+        </div>
 
-            <!-- ---------------- Bank search modal ---------------- -->
-            <div class="modal-overlay" id="bankModalOverlay">
-                <div class="bank-modal" role="dialog" aria-modal="true" aria-labelledby="bankModalTitle">
 
-                    <div class="bank-search-wrap">
-                        <div class="bank-search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M17.5001 17.5001L13.8835 13.8835M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#356674" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                            <input type="text" id="bankSearchInput" placeholder="Search for your bank" autocomplete="off" />
-                        </div>
+        <div class="d-flex gap-40 flex-col step-2b1 w-100">
+            <div class="right-header d-flex gap-8 flex-col w-640">
+                <h3 class="f-32">
+                    <b>
+                        How would you like to add this account?
+                    </b>
+                </h3>
+                <p class="clr-356674 f-16">
+                    Choose the option that works for you.
+                </p>
+            </div>
+
+            <div class="d-flex gap-24 mb-14">
+                <div class="border-secondary-dark-20 br-16 p-32 d-flex flex-col gap-24 bg-white">
+                    <div class="drop-icon">
+                        <img src="{{ asset('images/drop.svg') }}" alt="drag and drop icon">
                     </div>
-
-                    <div class="bank-popular-label" id="bankListLabel">Popular</div>
-                    <div class="bank-list" id="bankList">
-                        <div class="bank-inner">
-                            <input type="checkbox" id="chase" name="chase" value="Chase">
-                            <label for="chase">Chase</label>
-                        </div>
-                        <div class="bank-inner">
-                            <input type="checkbox" id="boa" name="boa" value="BankOfAmerica">
-                            <label for="boa">Bank of America</label>
-                        </div>
-                        <div class="bank-inner">
-                            <input type="checkbox" id="rbc" name="rbc" value="RBC">
-                            <label for="rbc">RBC</label>
-                        </div>
-                        <div class="bank-inner">
-                            <input type="checkbox" id="jpmorgan" name="jpmorgan" value="JPMorgan">
-                            <label for="jpmorgan">J.P. Morgan</label>
-                        </div>
-                        <div class="bank-inner">
-                            <input type="checkbox" id="fidelity" name="fidelity" value="Fidelity">
-                            <label for="fidelity">Fidelity</label>
-                        </div>
-                        <div class="bank-inner">
-                            <input type="checkbox" id="charles" name="charles" value="CharlesSchwab">
-                            <label for="charles">Charles Schwab</label>
-                        </div>
-                        <!-- <input type="submit" value="Submit"> -->
-                    </div>
-                </div>
-                <div class="bank-modal launch">
-                    <div class="connection-outer d-flex gap-24 justify-center flex-col align-center">
-                        <div class="connection-logo">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
-                                <rect width="96" height="96" rx="48" fill="#23B05B" fill-opacity="0.101961" />
-                                <path d="M48.6783 67.9022C56.9975 65.0021 63.9968 60.0019 63.9968 50.0016V36.0012C63.9968 35.4707 63.7861 34.962 63.4111 34.5869C63.036 34.2118 62.5274 34.0011 61.997 34.0011C57.9974 34.0011 53.0179 31.621 49.5182 28.5609C49.0946 28.1989 48.5556 28 47.9984 28C47.4412 28 46.9022 28.1989 46.4786 28.5609C42.9989 31.601 37.9994 34.0011 33.9998 34.0011C33.4694 34.0011 32.9608 34.2118 32.5857 34.5869C32.2107 34.962 32 35.4707 32 36.0012V50.0016C32 60.0019 38.9993 65.0021 47.3385 67.8822C47.7695 68.0428 48.2427 68.0498 48.6783 67.9022Z" stroke="#23B05B" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <div class="d-flex gap-12 justify-center flex-col align-center">
-                            <h3 class="f-24 clr-003049">
-                                <b>Launching secure connection</b>
-                            </h3>
-                            <p class="f-16 clr-356674">
-                                You’ll be redirected securely to connect your Chase account.
-                            </p>
-                        </div>
-                        <div class="spinner d-flex justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path d="M19.9985 6.66406V11.9978M25.5992 14.3985L29.4661 10.5316M27.9991 19.9985H33.3329M25.5992 25.5992L29.4661 29.4661M19.9985 27.9991V33.3329M10.5316 29.4661L14.3985 25.5992M6.66406 19.9985H11.9978M10.5316 10.5316L14.3985 14.3985" stroke="#356674" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <div class="d-flex gap-8 justify-center align-center creds-locked">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#356674" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                            <p class="f-14">
-                                Your credentials are never stored
-                            </p>
+                    <div class="bg-FBFAF8 border-dashed-secondary-dark-20 br-12 drop-box d-flex flex-col gap-16 justify-center">
+                        <h4 class="f-18 clr-003049 center">
+                            <b>Drag & drop your file here</b>
+                        </h4>
+                        <p class="f-16 clr-9C9AA5 center">
+                            Upload a PDF, image or screenshot and we will extract the details automatically
+                        </p>
+                        <div class="d-flex justify-center">
+                            <button class="p-12-32 f-16 white bg-003049 br-89 cursor-pointer border-003049">Upload Files</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="bank-modal creds">
-                    <div class="d-flex gap-24 flex-col creds-inner">
-                        <div class="creds-header d-flex gap-10 justify-space-between align-center">
-                            <div class="bank-logo">
-                                <img src="{{ asset('images/chase.svg') }}" alt="bank logo">
-                            </div>
-                            <div class="d-flex gap-4 align-center">
-                                <img src="{{ asset('images/verified.svg') }}" alt="verified icon">
-                                <p class="f-12 clr-23B05B">Secure link</p>
-                            </div>
+                <div class="border-secondary-dark-20 br-16 p-32 d-flex flex-col gap-24 bg-white justify-space-between">
+                    <div class="top-sec d-flex flex-col gap-12">
+                        <div class="drop-icon mb-12">
+                            <img src="{{ asset('images/file.svg') }}" alt="Add files manually">
                         </div>
-                        <div class="d-flex gap-8 flex-col creds-locked">
-                            <h3 class="f-24 clr-003049"><b>Enter your credentials</b></h3>
-                            <p class="f-15">By entering your Chase credentials, you are giving us access to your account information.</p>
-                        </div>
-
-                        <div class="bank-form">
-                            <div class="form-field d-flex flex-col gap-6 mb-20">
-                                <label class="f-14 clr-356674" for=""><b>Email Id</b></label>
-                                <input type="text" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="name@domain.com">
-                            </div>
-                            <div class="form-field d-flex flex-col gap-6 mb-24">
-                                <label class="f-14 clr-356674" for=""><b>Password </b></label>
-                                <div class="password-wrapper d-flex align-center">
-                                    <input type="password" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Enter your password" id="password">
-                                    <span class="toggle-password" onclick="togglePassword('password', this)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
-                                            <line x1="1" y1="1" x2="23" y2="23"></line>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-20 align-center">
-                                <a href="#" class="form-btn white f-15 bg-003049 w-100 center">Sign in</a>
-                            </div>
-                        </div>
-                        <div class="d-flex gap-8 justify-center align-center creds-locked">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#356674" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                            <p class="f-14">
-                                Your data is secured
-                            </p>
-                        </div>
+                        <h4 class="f-20 clr-003049">
+                            <b>Enter Details Manually</b>
+                        </h4>
+                        <p class="f-14 clr-9C9AA5">
+                            Add account details by yourself. Safely insert balances, institutions, and names at your own convenience.
+                        </p>
                     </div>
-                </div>
-
-
-                <div class="bank-modal select-account">
-                    <div class="d-flex gap-28 flex-col creds-inner">
-                        <div class="creds-header d-flex gap-10 justify-space-between align-center">
-                            <div class="bank-logo">
-                                <img src="{{ asset('images/chase.svg') }}" alt="bank logo">
-                            </div>
-                        </div>
-                        <div class="d-flex gap-8 flex-col creds-locked">
-                            <h3 class="f-24 clr-003049"><b>Select Accounts</b></h3>
-                            <p class="f-16">Choose the accounts you’d like to connect to Benjamins Money.</p>
-                        </div>
-
-                        <div class="d-flex gap-8 flex-col">
-                            <h5 class="f-12 clr-356674 upperacse">
-                                <b>DEPOSIT ACCOUNT</b>
-                            </h5>
-                            <div class="border-secondary-dark-20 p-20 account-list br-8">
-
-                                <div class="act-list-inner d-flex gap-12 justify-space-between">
-                                    <div class="d-flex gap-12 align-center">
-                                        <input type="checkbox" id="checking" name="checking" value="checking">
-                                        <label for="checking" class="f-16 clr-356674">Total Checking (.....7845)</label>
-                                    </div>
-                                    <div class="values f-16 clr-356674">
-                                        <b>$123,900.00</b>
-                                    </div>
-                                </div>
-
-                                <div class="act-list-inner d-flex gap-12 justify-space-between">
-                                    <div class="d-flex gap-12 align-center">
-                                        <input type="checkbox" id="checking" name="checking" value="checking">
-                                        <label for="checking" class="f-16 clr-356674">Chase Savings (.....7845)</label>
-                                    </div>
-                                    <div class="values f-16 clr-356674">
-                                        <b>$123,900.00</b>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="d-flex gap-8 flex-col">
-                            <h5 class="f-12 clr-356674 upperacse">
-                                <b>CREDIT CARD</b>
-                            </h5>
-                            <div class="border-secondary-dark-20 p-20 account-list br-8">
-
-                                <div class="act-list-inner d-flex gap-12 justify-space-between">
-                                    <div class="d-flex gap-12 align-center">
-                                        <input type="checkbox" id="checking" name="checking" value="checking">
-                                        <label for="checking" class="f-16 clr-356674">Platinum rover (.....7845)</label>
-                                    </div>
-                                    <div class="values f-16 clr-356674">
-                                        <b>$123,900.00</b>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="d-flex flex-col gap-16 justify-center w-100">
-                            <a href="#" class="form-btn white f-16 bg-003049 w-100 center">Add</a>
-                            <div class="d-flex gap-8 justify-center align-center creds-locked">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#356674" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                                <p class="f-14">
-                                    Your data is secured
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bank-modal act-cnt-success">
-                    <div class="d-flex gap-40 flex-col creds-inner">
-                        <div class="bank-logo d-flex gap-10 justify-center align-center center ">
-                            <img class="w-180" src="{{ asset('images/Success-Illustration.svg') }}" alt="successful icon">
-                        </div>
-                        <h2 class="f-32 clr-003049 center succes-heading">
-                            <b>Account successfully <br>connected!</b>
-                        </h2>
-                        <div class="d-flex gap-8 justify-center align-center creds-locked">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#356674" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                            <p class="f-14">
-                                Your credentials are never stored
-                            </p>
-                        </div>
+                    <div>
+                        <a href="#" class="d-flex gap-10 justify-space-between clr-356674 f-14 align-center"><b>Configure details </b><img src="{{ asset('images/arrow-blue.svg') }}" alt="Arrowicon"></a>
                     </div>
                 </div>
 
             </div>
 
+            <div class="d-flex gap-8 align-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#9C9AA5" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+                <p class="f-14 clr-9C9AA5 lh-14">
+                    Your data is always fully encrypted and secured.
+                </p>
+            </div>
+
 
 
         </div>
+
+        <div class="d-flex gap-40 flex-col step-2b2 w-100">
+            <div class="right-header d-flex gap-8 flex-col w-640">
+                <h3 class="f-32">
+                    <b>
+                        Analyzing your document
+                    </b>
+                </h3>
+                <p class="clr-356674 f-16">
+                    This may take a few moments. We are processing your upload.
+                </p>
+            </div>
+
+            <div class="d-grid col-lg-4-6 gap-48 align-center">
+                <div class="border-secondary-dark-20 br-16 scan-doc-left d-flex align-center gap-24 bg-white justify-center flex-col">
+                    <img src="{{ asset('images/document.svg') }}" alt="Add files manually">
+                    <p class="f-14 clr-23B05B">Scanning document...</p>
+                </div>
+
+                <ul class="d-flex gap-16 flex-col scan-doc">
+                    <li class="d-flex gap-16 f-16 completed">
+                        <img class="completed-img" src="{{ asset('images/completed-check.svg') }}" alt="completed icon">
+                        <img class="active-img" src="{{ asset('images/loading.svg') }}" alt="loading icon">
+                        <img class="pending-img" src="{{ asset('images/reviewing.svg') }}" alt="pending icon">
+                        Reading Document
+                    </li>
+                    <li class="d-flex gap-16 f-16 completed">
+                        <img class="completed-img" src="{{ asset('images/completed-check.svg') }}" alt="completed icon">
+                        <img class="active-img" src="{{ asset('images/loading.svg') }}" alt="loading icon">
+                        <img class="pending-img" src="{{ asset('images/reviewing.svg') }}" alt="pending icon">
+                        Identifying Institution
+                    </li>
+                    <li class="d-flex gap-16 f-16 completed">
+                        <img class="completed-img" src="{{ asset('images/completed-check.svg') }}" alt="completed icon">
+                        <img class="active-img" src="{{ asset('images/loading.svg') }}" alt="loading icon">
+                        <img class="pending-img" src="{{ asset('images/reviewing.svg') }}" alt="pending icon">
+                        Detecting accounts
+                    </li>
+                    <li class="d-flex gap-16 f-16 active">
+                        <img class="completed-img" src="{{ asset('images/completed-check.svg') }}" alt="completed icon">
+                        <img class="active-img" src="{{ asset('images/loading.svg') }}" alt="loading icon">
+                        <img class="pending-img" src="{{ asset('images/reviewing.svg') }}" alt="pending icon">
+                        Extracting details
+                    </li>
+                    <li class="d-flex gap-16 f-16 pending">
+                        <img class="completed-img" src="{{ asset('images/completed-check.svg') }}" alt="completed icon">
+                        <img class="active-img" src="{{ asset('images/loading.svg') }}" alt="loading icon">
+                        <img class="pending-img" src="{{ asset('images/reviewing.svg') }}" alt="pending icon">
+                        Reviewing information
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d-flex gap-8 align-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#9C9AA5" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+                <p class="f-14 clr-9C9AA5 lh-14">
+                    Your data is always fully encrypted and secured.
+                </p>
+            </div>
+
+
+
+        </div>
+
+        <div class="d-flex gap-40 flex-col step-2b3 w-100">
+            <div class="right-header d-flex gap-8 flex-col w-640">
+                <h3 class="f-32">
+                    <b>
+                        We found the following information
+                    </b>
+                </h3>
+                <p class="clr-356674 f-16">
+                    Please review and confirm the details extracted from your statement.
+                </p>
+            </div>
+
+            <div class="d-grid col-lg-2 gap-32 mb-14">
+                <div class="institution d-flex gap-64 justify-space-between flex-col">
+
+                    <div class="institution-inner">
+
+                        <h3 class="f-14 clr-23B05B mb-24 bold uppercase">
+                            Institution Detected (1)
+                        </h3>
+                        <div class="d-flex flex-col gap-24">
+                            <div class="d-flex gap-8 flex-col">
+                                <label for="institution-name" class="f-15 clr-003049 bold">Institution name</label>
+                                <select name="institution-name" id="institution-name">
+                                    <option value="Chase">Chase</option>
+                                    <option value="Fidelity">Fidelity</option>
+                                    <option value="Bank of America">Bank of America</option>
+                                    <option value="Schwab">Schwab</option>
+                                </select>
+                            </div>
+
+                            <div class="d-flex gap-8 flex-col">
+                                <label for="as-of-date" class="f-15 clr-003049 bold">As of date</label>
+                                <input type="text" name="As of date" id="as-of-date" placeholder="Mar 31, 2024">
+                            </div>
+
+                            <div class="d-flex gap-8 flex-col">
+                                <label for="institution-type" class="f-15 clr-003049 bold">Institution Type</label>
+                                <select name="institution-type" id="institution-type">
+                                    <option value="bank">Bank</option>
+                                    <option value="institude">Institute</option>
+                                    <option value="Bank of America">Bank of America</option>
+                                    <option value="Schwab">Schwab</option>
+                                </select>
+                            </div>
+                            <div class="d-flex gap-8 flex-col">
+                                <label for="website" class="f-15 clr-003049 bold">Website (optional)</label>
+                                <input type="text" name="As of date" id="as-of-date" placeholder="www.chase.com">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="btn-outlined-003049">
+                        <a href="#" class="f-16 p-12-24 br-89 d-inline-flex">Upload another</a>
+                    </div>
+                </div>
+
+
+                <div class="institution d-flex gap-64 justify-space-between flex-col">
+                    <div class="institution-inner">
+                        <h3 class="f-14 clr-23B05B mb-24 bold uppercase">
+                            Accounts Detected (3)
+                        </h3>
+                        <div class="d-flex gap-16 flex-col">
+                            <div class="p-16 d-flex gap-10 align-center br-8 bg-white border-secondary-dark-20 justify-space-between">
+                                <div class="d-flex flex-col gap-4">
+                                    <h5 class="f-16 lh-20 clr-003049 bold">
+                                        Brokerage Account
+                                    </h5>
+                                    <p class="f-14 lh-14 clr-356674">
+                                        Current balance: $123,000
+                                    </p>
+                                </div>
+                                <div class="btn-outer">
+                                    <a href="#" class="d-flex">
+                                        <img class="w-32 h-32" src="{{ asset('images/RemoveBtn.svg') }}" alt="Remove icon">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-16 d-flex gap-10 align-center br-8 bg-white border-secondary-dark-20 justify-space-between">
+                                <div class="d-flex flex-col gap-4">
+                                    <h5 class="f-16 lh-20 clr-003049 bold">
+                                        Roth IRA
+                                    </h5>
+                                    <p class="f-14 lh-14 clr-356674">
+                                        Current balance: $123,000
+                                    </p>
+                                </div>
+                                <div class="btn-outer">
+                                    <a href="#" class="d-flex">
+                                        <img class="w-32 h-32" src="{{ asset('images/RemoveBtn.svg') }}" alt="Remove icon">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-16 d-flex gap-10 align-center br-8 bg-white border-secondary-dark-20 justify-space-between">
+                                <div class="d-flex flex-col gap-4">
+                                    <h5 class="f-16 lh-20 clr-003049 bold">
+                                        Cash Management
+                                    </h5>
+                                    <p class="f-14 lh-14 clr-356674">
+                                        Current balance: $123,000
+                                    </p>
+                                </div>
+                                <div class="btn-outer">
+                                    <a href="#" class="d-flex">
+                                        <img class="w-32 h-32" src="{{ asset('images/RemoveBtn.svg') }}" alt="Remove icon">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="btn-003049 d-flex justify-end">
+                        <a href="#" class="f-16 p-12-24 br-89">Import 3 Accounts</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="d-flex gap-8 align-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#9C9AA5" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+                <p class="f-14 clr-9C9AA5 lh-14">
+                    Your data is always fully encrypted and secured.
+                </p>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="d-flex gap-40 flex-col step-2b4 w-100">
+            <div class="right-header d-flex gap-8 flex-col w-640">
+                <h3 class="f-32">
+                    <b>
+                        Add account manually
+                    </b>
+                </h3>
+                <p class="clr-356674 f-16">
+                    Enter your institution's details to connect your account.
+                </p>
+            </div>
+
+            <div class="w-640 institution d-flex flex-col gap-40">
+
+                <div class="d-flex flex-col gap-24">
+                    <div class="d-flex gap-8 flex-col">
+                        <label for="act-type" class="f-15 clr-003049 bold">Account Type</label>
+                        <select name="act-type" id="act-type">
+                            <option value="Chase">Chase</option>
+                            <option value="Fidelity">Fidelity</option>
+                            <option value="Bank of America">Bank of America</option>
+                            <option value="Schwab">Schwab</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-8 flex-col">
+                        <label for="institution-name" class="f-15 clr-003049 bold">Institution Name</label>
+                        <input type="text" name="institution-name" id="institution-name" placeholder="e.g Charles Schwab, Vanguard etc">
+                    </div>
+
+                    <div class="d-flex gap-8 flex-col">
+                        <label for="act-name" class="f-15 clr-003049 bold">Account Name (optional)</label>
+                        <input type="text" name="act-name" id="act-name" placeholder="e.g MP 401 Brokerage">
+                    </div>
+
+                    <div class="d-flex gap-8 flex-col">
+                        <label for="balance" class="f-15 clr-003049 bold">Estimated Balance</label>
+                        <input type="text" name="balance" id="balance" placeholder="$123,000">
+                    </div>
+
+                </div>
+                <div class="btn-003049 d-flex ">
+                    <a href="#" class="f-16 p-12-24 br-89 w-100 center">Add Account</a>
+                </div>
+            </div>
+
+            <div class="d-flex gap-8 align-center mt-24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#9C9AA5" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+                <p class="f-14 clr-9C9AA5 lh-14">
+                    Your data is always fully encrypted and secured.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex gap-40 flex-col step-2b5 w-500 m-0-auto">
+            <div class="bank-logo d-flex gap-10 justify-center align-center center ">
+                <img class="w-180" src="{{ asset('images/Success-Illustration.svg') }}" alt="successful icon">
+            </div>
+            <div class="d-flex flex-col gap-12">
+                <h2 class="f-32 clr-003049 bold center">
+                    Account added successfully!
+                </h2>
+                <p class="f-16 clr-356674 center">
+                    Your account details have been saved. Your net worth dashboard is being computed and updated automatically.
+                </p>
+            </div>
+            <div class="mt-24 m-0-auto center btn-003049">
+                <a href="#" class="p-14-76 br-89">Continue to Dashboard</a>
+            </div>
+        </div>
+
     </div>
+
 </div>
+
 @endsection

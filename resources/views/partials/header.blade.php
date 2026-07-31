@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="user-info-right">
-        <form>
+        <form class="search-form">
             <input id="search" type="text" placeholder="Search plans, accounts, documents..." class="f-14">
             <button type="submit">
                 <img src="{{ asset('images/search.svg') }}" alt="search icon">
@@ -69,7 +69,7 @@
                     <li>
                         <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
                             @csrf
-                            <button type="submit" class="f-16" style="background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer; width: 100%; text-align: left;">
+                            <button type="submit" class="f-16 bg-transparent border-none w-100 d-flex align-center cursor-pointer">
                                 Sign out
                                 <span class="caret">
                                     <img src="{{ asset('images/caret.svg') }}" alt="caret icon">

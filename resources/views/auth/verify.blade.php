@@ -108,12 +108,12 @@
                     <span>Didn't get a code?</span>
                     <form method="POST" action="{{ route('verification.send') }}" style="display:inline;margin:0;">
                         @csrf
-                        <button type="submit" class="clr-23B05B bg-none border-none cursor-pointer p-0 ml-2"><b>Resend code</b></button>
+                        <button type="submit" class="clr-23B05B border-none cursor-pointer bg-transparent"><b>Resend code</b></button>
                     </form>
 
                     <form method="POST" action="{{ route('verification.change-email') }}">
                         @csrf
-                        <button type="submit" class="btn-link">Wrong email? Start over</button>
+                        <button type="submit" class="btn-link clr-003049 border-none cursor-pointer bg-transparent"><b>Wrong email? Start over</b></button>
                     </form>
                 </div>
             </div>

@@ -1201,6 +1201,14 @@ button.option.selected .check img {
     display: block;
 }
 
+.setup-step {
+    display: none;
+}
+
+.setup-step.active {
+    display: flex;
+}
+
 .continue-btn {
     border: 1px solid #003049;
 }
@@ -1244,6 +1252,13 @@ button.option.selected .check img {
     padding-top: 10vh;
     z-index: 1000; */
     animation: fadeIn 0.15s ease-out;
+
+
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    z-index: 1000;
 }
 
 .modal-overlay.open {
@@ -1542,7 +1557,15 @@ select {
     color: #003049;
 }
 
-.btn-003049 a{
+.btn-003049 a {
     background-color: #003049;
     color: #fff;
+}
+
+.terms input[type="checkbox"] {
+    width: auto;
+}
+
+.hidden {
+    display: none !important;
 }

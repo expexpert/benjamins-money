@@ -13,7 +13,7 @@ class VerificationController extends Controller
     public function show(Request $request)
     {
         if ($request->user()->hasVerifiedEmail()) {
-            return redirect('/');
+            return redirect('/account-verified');
         }
 
         return view('auth.verify', [
@@ -30,7 +30,7 @@ class VerificationController extends Controller
         $user = $request->user();
 
         if ($user->hasVerifiedEmail()) {
-            return redirect('/');
+            return redirect('/account-verified');
         }
 
         $storedOtp = Cache::get('email_verification_otp_' . $user->id);
@@ -45,7 +45,7 @@ class VerificationController extends Controller
 
         Cache::forget('email_verification_otp_' . $user->id);
 
-        return redirect('/')
+        return redirect('/account-verified')
             ->with('success', 'Your email address has been verified successfully.');
     }
 
@@ -54,7 +54,7 @@ class VerificationController extends Controller
         $user = $request->user();
 
         if ($user->hasVerifiedEmail()) {
-            return redirect('/');
+            return redirect('/account-verified');
         }
 
         $otp = str_pad((string) random_int(0, 999999), 6, '0', STR_PAD_LEFT);

@@ -70,7 +70,7 @@
             </div>
 
             <div class="d-flex">
-                <a href="#" class="form-btn white f-15 bg-003049 w-100 center">Complete your Account Setup</a>
+                <a href="/setup" class="form-btn white f-15 bg-003049 w-100 center">Complete your Account Setup</a>
             </div>
             <div class="d-flex justify-center">
                 <p class="f-12 clr-003049 center br-8 bg-003049-4 p-9-18 d-flex gap-8 align-center">

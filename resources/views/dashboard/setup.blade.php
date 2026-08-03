@@ -167,7 +167,7 @@
             </div>
             <div class="d-flex gap-16 flex-col" id="assetConnectionList"></div>
             <div class="d-flex justify-center">
-                <button class="d-flex gap-8 align-center f-14 clr-356674 p-9-18 " id="enterManuallyBtn">
+                <button class="d-flex gap-8 align-center f-14 clr-356674 p-0 border-none bg-transparent cursor-pointer" id="enterManuallyBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                         <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#356674" />
                     </svg>
@@ -226,7 +226,7 @@
                         </p>
                     </div>
                     <div>
-                        <button id="ManuallyConfigureDetails" class="d-flex gap-10 justify-space-between clr-356674 f-14 align-center"><b>Configure details </b><img src="{{ asset('images/arrow-blue.svg') }}" alt="Arrowicon"></button>
+                        <button id="ManuallyConfigureDetails" class="d-flex gap-10 justify-space-between clr-356674 f-14 align-center border-none bg-transparent cursor-pointer"><b>Configure details </b><img src="{{ asset('images/arrow-blue.svg') }}" alt="Arrowicon"></button>
                     </div>
                 </div>
 
@@ -515,6 +515,213 @@
             </div>
             <div class="mt-24 m-0-auto center btn-003049">
                 <a href="#" class="p-14-76 br-89">Continue to Dashboard</a>
+            </div>
+        </div>
+
+
+        <div class="d-flex gap-40 flex-col step-2b6 setup-dashboard w-100">
+            <div class="d-flex gap-12 flex-col">
+                <h3 class="f-36 clr-003049 bold">
+                    All set! Your accounts are all connected
+                </h3>
+                <p class="f-16 clr-356674">
+                    We’ve successfully added and synced all your accounts. Your portfolio now reflects real-time data.
+                </p>
+            </div>
+            <div class="d-grid col-lg-2 gap-16">
+                <div class="bg-white br-12 p-24 dashboard-border">
+                    <p class="f-14 clr-9C9AA5 mb-8 uppercase bold">
+                        Accounts Added
+                    </p>
+                    <h2 class="f-32 clr-003049 bold">
+                        12
+                    </h2>
+                </div>
+                <div class="bg-white br-12 p-24 dashboard-border">
+                    <p class="f-14 clr-9C9AA5 mb-8 uppercase bold">
+                        Institutions Linked
+                    </p>
+                    <h2 class="f-32 clr-003049 bold">
+                        6
+                    </h2>
+                </div>
+            </div>
+            <div class="d-flex gap-16 flex-col mb-24">
+                <h6 class="f-13 clr-second-lg-400 uppercase bold">
+                    Your Connected Accounts
+                </h6>
+                <div class="d-flex flex-col br-12 border-secondary-dark-20 ">
+                    <div class="top-bar-dash p-12-24 d-grid col-lg-3">
+                        <div class="institution">
+                            <h3 class="f-13 bold">
+                                Institution
+                            </h3>
+                        </div>
+                        <div class="institution">
+                            <h3 class="f-13 bold">
+                                Account
+                            </h3>
+                        </div>
+                        <div class="institution">
+                            <h3 class="f-13 bold right">
+                                Total Balance
+                            </h3>   
+                        </div>
+                    </div>
+                    <ul class="bottom-bar-dash bg-white">
+                        <li class="p-16-24 d-grid col-lg-3">
+                            <div class="institution-outer d-flex gap-12 align-center">
+                                <div class="inst-logo">
+                                    <img src="{{ asset('images/chase.svg') }}" alt="bank logo">
+                                </div>
+                                <div class="inst-details">
+                                    <div class="f-15 clr-003049 bold">
+                                        Chase
+                                    </div>
+                                    <p class="f-12 clr-9C9AA5">
+                                        Banking
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="account-outer">
+                                <h3 class="f-14 clr-003049 bold">
+                                    2 accounts
+                                </h3>
+                                <p class="f-12 clr-356674">
+                                    Savings, Checking
+                                </p>
+                            </div>
+                            <div class="balance">
+                                <p class="f-14 clr-003049 bold right">
+                                    $2,75,000.00
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="p-16-24 d-grid col-lg-3">
+                            <div class="institution-outer d-flex gap-12 align-center">
+                                <div class="inst-logo">
+                                    <img src="{{ asset('images/Fidelity.svg') }}" alt="bank logo">
+                                </div>
+                                <div class="inst-details">
+                                    <div class="f-15 clr-003049 bold">
+                                        Fidelity Investments
+                                    </div>
+                                    <p class="f-12 clr-9C9AA5">
+                                        Brokerage
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="account-outer">
+                                <h3 class="f-14 clr-003049 bold">
+                                    3 accounts
+                                </h3>
+                                <p class="f-12 clr-356674">
+                                    Brokerage, IRA, Cash
+                                </p>
+                            </div>
+                            <div class="balance">
+                                <p class="f-14 clr-003049 bold right">
+                                    $1,345,230.00
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="p-16-24 d-grid col-lg-3">
+                            <div class="institution-outer d-flex gap-12 align-center">
+                                <div class="inst-logo">
+                                    <img src="{{ asset('images/BOA.svg') }}" alt="bank logo">
+                                </div>
+                                <div class="inst-details">
+                                    <div class="f-15 clr-003049 bold">
+                                        Bank of America
+                                    </div>
+                                    <p class="f-12 clr-9C9AA5">
+                                        Banking
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="account-outer">
+                                <h3 class="f-14 clr-003049 bold">
+                                    2 accounts
+                                </h3>
+                                <p class="f-12 clr-356674">
+                                    Brokerage, IRA
+                                </p>
+                            </div>
+                            <div class="balance">
+                                <p class="f-14 clr-003049 bold right">
+                                    $98,450.20
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="p-16-24 d-grid col-lg-3">
+                            <div class="institution-outer d-flex gap-12 align-center">
+                                <div class="inst-logo">
+                                    <img src="{{ asset('images/Schwab.svg') }}" alt="bank logo">
+                                </div>
+                                <div class="inst-details">
+                                    <div class="f-15 clr-003049 bold">
+                                        Charles Schwab
+                                    </div>
+                                    <p class="f-12 clr-9C9AA5">
+                                        Investment
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="account-outer">
+                                <h3 class="f-14 clr-003049 bold">
+                                    1 account
+                                </h3>
+                                <p class="f-12 clr-356674">
+                                    Investment
+                                </p>
+                            </div>
+                            <div class="balance">
+                                <p class="f-14 clr-003049 bold right">
+                                    $125,400.00
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="p-16-24 d-grid col-lg-3">
+                            <div class="institution-outer d-flex gap-12 align-center">
+                                <div class="inst-logo">
+                                    <img src="{{ asset('images/RBC.svg') }}" alt="bank logo">
+                                </div>
+                                <div class="inst-details">
+                                    <div class="f-15 clr-003049 bold">
+                                        RBC Royal Bank
+                                    </div>
+                                    <p class="f-12 clr-9C9AA5">
+                                        Banking
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="account-outer">
+                                <h3 class="f-14 clr-003049 bold">
+                                    2 accounts
+                                </h3>
+                                <p class="f-12 clr-356674">
+                                    Savings, Checking
+                                </p>
+                            </div>
+                            <div class="balance">
+                                <p class="f-14 clr-003049 bold right">
+                                    $74,300.16
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-end">
+                <button class="continue-btn p-12-32 f-16 white bg-003049 br-89">Continue to Dashboard</button>
+            </div>
+            <div class="center f-13 clr-9C9AA5">
+                You can modify these selections at any point in the future.
             </div>
         </div>
 

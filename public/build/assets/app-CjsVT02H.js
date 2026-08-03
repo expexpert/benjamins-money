@@ -21,7 +21,7 @@ function e(e,t){if(e===void 0||!e.document)throw Error(`jQuery requires a window
                             <p class="f-14 clr-356674">${r.subtitle}</p>
                         </div>
                     </div>
-                    <button type="button" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20" data-modal-target="modalBankSearch">
+                    <button type="button" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20 bg-transparent cursor-pointer" data-modal-target="modalBankSearch">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                             <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#003049" />
                         </svg>

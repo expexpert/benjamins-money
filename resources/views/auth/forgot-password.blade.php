@@ -54,33 +54,146 @@
         </div>
     </div>
 
-    <div class="lg-out-right center">
-        <div class="d-flex flex-col gap-48 justify-center w-500 m-0-auto">
-            <div class="success d-flex justify-center">
-                <img src="{{ asset('images/Success-Illustration.svg') }}" alt="Success Illustration">
-            </div>
-
-            <div class="d-flex gap-12 justify-center flex-col">
-                <h3 class="f-36 clr-003049 center">
-                    Congratulations!
+    <div class="lg-out-right">
+        <div class="d-flex flex-col gap-32 w-500">
+            <div class="right-header d-flex gap-8 flex-col">
+                <h3 class="f-36">
+                    <b>
+                        Forgot your password?
+                    </b>
                 </h3>
-                <p class="f-16 clr-356674 center">
-                    Your account has been successfully verified. Welcome to a seamless digital wealth management experience.
+                <p class="clr-356674 f-16 lh-17">
+                    No worries, we'll send you reset instructions.
                 </p>
             </div>
 
-            <div class="d-flex">
-                <a href="/setup" class="form-btn white f-15 bg-003049 w-100 center">Complete your Account Setup</a>
+            <div class="forgot-form">
+
+                <form action="POST" action>
+                    <div class="form-field d-flex flex-col gap-6 mb-56">
+                        <label class="f-13 clr-356674" for="email"><b>Email Address (*)</b></label>
+                        <input type="email" id="email" name="email" value="{{ old('email') }}" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="name@domain.com" required>
+                    </div>
+                    <div class="d-flex gap-20 align-center">
+                        <button type="submit" class="form-btn white f-15 bg-003049 border-none cursor-pointer">Sign up</button>
+                        <p class="f-14 clr-9C9AA5">
+                            Back to <a class="clr-23B05B" href="/login">Log in</a>
+                        </p>
+                    </div>
+
+                </form>
+
             </div>
-            <div class="d-flex justify-center">
-                <p class="f-12 clr-003049 center br-8 bg-003049-4 p-9-18 d-flex gap-8 align-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M5.99706 8.00282L7.33026 9.3362L9.99666 6.66944M13.3297 8.66981C13.3297 12.0032 10.9966 13.67 8.22351 14.6367C8.0783 14.6859 7.92056 14.6835 7.77688 14.63C4.99716 13.67 2.66406 12.0032 2.66406 8.66981V4.00299C2.66406 3.82617 2.73429 3.6566 2.85931 3.53157C2.98432 3.40654 3.15387 3.3363 3.33066 3.3363C4.66386 3.3363 6.33036 2.53628 7.49025 1.52291C7.63147 1.40224 7.81112 1.33594 7.99686 1.33594C8.18261 1.33594 8.36226 1.40224 8.50348 1.52291C9.67003 2.54294 11.3299 3.3363 12.6631 3.3363C12.8399 3.3363 13.0094 3.40654 13.1344 3.53157C13.2594 3.6566 13.3297 3.82617 13.3297 4.00299V8.66981Z" stroke="#003049" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                   <b>Fully Secured 256-bit SSL Connection</b>
+
+            <p class="f-11 clr-9C9AA5">By continuing, I accept Company’s <a class="clr-003049" href="#"><b>Terms of use</b></a> & <a href="#" class="clr-003049"><b>Privacy Policy</b></a> </p>
+        </div>
+
+
+        <div class="d-flex flex-col gap-32 w-500 forgot-2">
+            <div class="right-header d-flex gap-8 flex-col">
+                <h3 class="f-36">
+                    <b>
+                        Check your email
+                    </b>
+                </h3>
+                <p class="clr-356674 f-16 lh-17">
+                    We sent a password reset link to www.jhg@xyz.com
                 </p>
             </div>
+
+            <div class="forgot-form mb-16">
+
+                <form action="POST" class="mb-24">
+
+                    <div class="d-flex gap-20 align-center">
+                        <button type="submit" class="form-btn white f-15 bg-003049 border-none cursor-pointer">Open mail</button>
+                        <p class="f-14 clr-9C9AA5">
+                            Back to <a class="clr-23B05B" href="/login">Log in</a>
+                        </p>
+                    </div>
+
+                </form>
+
+                <p class="f-13 clr-9C9AA5">
+                    Didn't receive the email? <a href="#" class="clr-23B05B">Click to resend</a>
+                </p>
+
+            </div>
+
+            <p class="f-11 clr-9C9AA5">By continuing, I accept Company’s <a class="clr-003049" href="#"><b>Terms of use</b></a> & <a href="#" class="clr-003049"><b>Privacy Policy</b></a> </p>
         </div>
+
+
+        <div class="d-flex flex-col gap-32 w-500">
+            <div class="right-header d-flex gap-8 flex-col">
+                <h3 class="f-36">
+                    <b>
+                        Set new password
+                    </b>
+                </h3>
+                <p class="clr-356674 f-16 lh-17">
+                    Your new password must be different from previously used passwords.
+                </p>
+            </div>
+
+            <div class="forgot-form mb-16">
+
+                <form action="POST" action>
+                    <div class="form-field d-flex flex-col gap-6 mb-24">
+                        <label class="f-13 clr-356674" for="password"><b>New Password (*)</b></label>
+                        <div class="password-wrapper d-flex align-center">
+                            <input type="password" id="password" name="password" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Enter your new password" required autocomplete="new-password">
+                            <span class="toggle-password" onclick="togglePassword('password', this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-field d-flex flex-col gap-6 mb-16">
+                        <label class="f-13 clr-356674" for="password_confirmation"><b>Confirm Password (*)</b></label>
+                        <div class="password-wrapper d-flex align-center">
+                            <input type="password" id="password_confirmation" name="password_confirmation" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Confirm your new password" required autocomplete="new-password">
+                            <span class="toggle-password" onclick="togglePassword('password_confirmation', this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-col gap-8">
+                        <div class="char d-flex gap-10 f-13 clr-356674">
+                            <img class="w-16 h-16" src="{{ asset('images/chars.svg') }}" alt="check logo">Must be at least 8 characters
+                        </div>
+                        <div class="char d-flex gap-10 f-13 clr-356674">
+                            <img class="w-16 h-16" src="{{ asset('images/chars.svg') }}" alt="check logo">Must contain a special character
+                        </div>
+                    </div>
+
+
+
+                    <div class="forgot-form mt-56">
+
+                        <div class="d-flex gap-20 align-center mb-24">
+                            <button type="submit" class="form-btn white f-15 bg-003049 border-none cursor-pointer">Reset Password</button>
+                            <p class="f-14 clr-9C9AA5">
+                                Back to <a class="clr-23B05B" href="/login">Log in</a>
+                            </p>
+                        </div>
+                        <p class="f-13 clr-9C9AA5">
+                            Didn't receive the email? <a href="#" class="clr-23B05B">Click to resend</a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+            <p class="f-11 clr-9C9AA5">By continuing, I accept Company’s <a class="clr-003049" href="#"><b>Terms of use</b></a> & <a href="#" class="clr-003049"><b>Privacy Policy</b></a> </p>
+        </div>
+
+
     </div>
 </div>
 @endsection

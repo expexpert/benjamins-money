@@ -187,6 +187,10 @@ a {
     color: #4FC07C;
 }
 
+.clr-second-lg-400{
+    color: var(--color-secondary-400);
+}
+
 .clr-cat-brown {
     color: #C8AD98;
 }

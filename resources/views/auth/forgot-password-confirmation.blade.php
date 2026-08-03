@@ -55,58 +55,57 @@
     </div>
 
     <div class="lg-out-right">
-        <div class="d-flex flex-col gap-32 w-500">
+
+        <div class="d-flex flex-col gap-32 w-500 forgot-2">
             <div class="right-header d-flex gap-8 flex-col">
                 <h3 class="f-36">
-                    <b>
-                        Forgot your password?
-                    </b>
+                    <b>Check your email</b>
                 </h3>
                 <p class="clr-356674 f-16 lh-17">
-                    No worries, we'll send you reset instructions.
+                    We sent a password reset link to <b>{{ session('email') }}</b>
                 </p>
             </div>
 
-            <div class="forgot-form">
-                <!-- Display Success Status -->
-                @if (session('status'))
-                <div class="alert alert-success mb-20">
-                    {{ session('status') }}
+            <!-- Feedback Message on Resend -->
+            @if (session('status'))
+            <div class="alert alert-success mb-16 clr-23B05B f-14">
+                {{ session('status') }}
+            </div>
+            @endif
+
+            @error('email')
+            <div class="alert alert-danger mb-16 clr-danger f-14">
+                {{ $message }}
+            </div>
+            @enderror
+
+            <div class="forgot-form mb-16">
+                <div class="d-flex gap-20 align-center mb-24">
+                    <a href="https://mail.google.com" target="_blank" class="form-btn white f-15 bg-003049 border-none cursor-pointer d-flex align-center justify-center text-decoration-none">
+                        Open mail
+                    </a>
+                    <p class="f-14 clr-9C9AA5 mb-0">
+                        Back to <a class="clr-23B05B" href="/login">Log in</a>
+                    </p>
                 </div>
-                @endif
 
-                <form method="POST" action="{{ url('/forgot-password') }}">
+                <!-- Resend Form targeting the new endpoint -->
+                <form method="POST" action="{{ route('password.resend') }}" class="d-inline">
                     @csrf
+                    <input type="hidden" name="email" value="{{ session('email') }}">
 
-                    <div class="form-field d-flex flex-col gap-6 mb-56">
-                        <label class="f-13 clr-356674" for="email"><b>Email Address (*)</b></label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value="{{ old('email') }}"
-                            class="p-16 br-8 border-secondary-dark-20 f-14 @error('email') border-danger @enderror"
-                            placeholder="name@domain.com"
-                            required>
-
-                        <!-- Display Validation / Password Facade Error -->
-                        @error('email')
-                        <span class="clr-danger f-12">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <div class="d-flex gap-20 align-center">
-                        <button type="submit" class="form-btn white f-15 bg-003049 border-none cursor-pointer">
-                            Send Reset Link
+                    <p class="f-13 clr-9C9AA5">
+                        Didn't receive the email?
+                        <button type="submit" class="clr-23B05B border-none bg-transparent p-0 cursor-pointer" style="text-decoration: underline;">
+                            Click to resend
                         </button>
-                        <p class="f-14 clr-9C9AA5">
-                            Back to <a class="clr-23B05B" href="/login">Log in</a>
-                        </p>
-                    </div>
+                    </p>
                 </form>
             </div>
 
-            <p class="f-11 clr-9C9AA5">By continuing, I accept Company’s <a class="clr-003049" href="#"><b>Terms of use</b></a> & <a href="#" class="clr-003049"><b>Privacy Policy</b></a> </p>
+            <p class="f-11 clr-9C9AA5">
+                By continuing, I accept Company’s <a class="clr-003049" href="#"><b>Terms of use</b></a> & <a href="#" class="clr-003049"><b>Privacy Policy</b></a>
+            </p>
         </div>
 
     </div>

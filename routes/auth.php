@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -18,9 +19,20 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
     Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink']);
+    Route::post('/forgot-password/resend', [ForgotPasswordController::class, 'resendResetLink'])->name('password.resend');
+
+    Route::get('/forgot-password/confirmation', function () {
+        if (! session()->has('email')) {
+            return redirect()->route('password.request');
+        }
+
+        session()->keep(['email']);
+
+        return view('auth.forgot-password-confirmation');
+    })->name('password.confirmation');
 
     Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-    Route::post('/reset-password', [ResetPasswordController::class, 'reset']);
+    Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 });
 
 // Authenticated Routes

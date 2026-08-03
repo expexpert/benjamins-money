@@ -55,59 +55,103 @@
     </div>
 
     <div class="lg-out-right">
+
+
         <div class="d-flex flex-col gap-32 w-500">
             <div class="right-header d-flex gap-8 flex-col">
                 <h3 class="f-36">
                     <b>
-                        Forgot your password?
+                        Set new password
                     </b>
                 </h3>
                 <p class="clr-356674 f-16 lh-17">
-                    No worries, we'll send you reset instructions.
+                    Your new password must be different from previously used passwords.
                 </p>
             </div>
 
-            <div class="forgot-form">
-                <!-- Display Success Status -->
-                @if (session('status'))
-                <div class="alert alert-success mb-20">
-                    {{ session('status') }}
-                </div>
-                @endif
+            @if (session('status'))
+            <div class="alert alert-success mb-16 clr-23B05B f-14">
+                {{ session('status') }}
+            </div>
+            @endif
 
-                <form method="POST" action="{{ url('/forgot-password') }}">
+            @error('email')
+            <div class="alert alert-danger mb-16 clr-danger f-14">
+                {{ $message }}
+            </div>
+            @enderror
+
+            <div class="forgot-form mb-16">
+
+                <form method="POST" action="{{ route('password.update') }}">
                     @csrf
 
-                    <div class="form-field d-flex flex-col gap-6 mb-56">
-                        <label class="f-13 clr-356674" for="email"><b>Email Address (*)</b></label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value="{{ old('email') }}"
-                            class="p-16 br-8 border-secondary-dark-20 f-14 @error('email') border-danger @enderror"
-                            placeholder="name@domain.com"
-                            required>
+                    <!-- Hidden required fields -->
+                    <input type="hidden" name="token" value="{{ $token ?? request()->route('token') }}">
+                    <input type="hidden" name="email" value="{{ $email ?? request()->email }}">
 
-                        <!-- Display Validation / Password Facade Error -->
-                        @error('email')
+                    <!-- Global Error Alert (e.g., Expired Token) -->
+                    @error('email')
+                    <div class="alert alert-danger mb-16 clr-danger f-14">
+                        {{ $message }}
+                    </div>
+                    @enderror
+
+                    <!-- New Password Field -->
+                    <div class="form-field d-flex flex-col gap-6 mb-24">
+                        <label class="f-13 clr-356674" for="password"><b>New Password (*)</b></label>
+                        <div class="password-wrapper d-flex align-center">
+                            <input type="password" id="password" name="password" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Enter your new password" required autocomplete="new-password">
+                            <span class="toggle-password" onclick="togglePassword('password', this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                            </span>
+                        </div>
+                        @error('password')
                         <span class="clr-danger f-12">{{ $message }}</span>
                         @enderror
                     </div>
 
-                    <div class="d-flex gap-20 align-center">
-                        <button type="submit" class="form-btn white f-15 bg-003049 border-none cursor-pointer">
-                            Send Reset Link
-                        </button>
-                        <p class="f-14 clr-9C9AA5">
-                            Back to <a class="clr-23B05B" href="/login">Log in</a>
-                        </p>
+                    <!-- Confirm Password Field -->
+                    <div class="form-field d-flex flex-col gap-6 mb-16">
+                        <label class="f-13 clr-356674" for="password_confirmation"><b>Confirm Password (*)</b></label>
+                        <div class="password-wrapper d-flex align-center">
+                            <input type="password" id="password_confirmation" name="password_confirmation" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Confirm your new password" required autocomplete="new-password">
+                            <span class="toggle-password" onclick="togglePassword('password_confirmation', this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Checklist Hints -->
+                    <div class="d-flex flex-col gap-8">
+                        <div class="char d-flex gap-10 f-13 clr-356674">
+                            <img class="w-16 h-16" src="{{ asset('images/chars.svg') }}" alt="check logo">Must be at least 8 characters
+                        </div>
+                        <div class="char d-flex gap-10 f-13 clr-356674">
+                            <img class="w-16 h-16" src="{{ asset('images/chars.svg') }}" alt="check logo">Must contain a special character
+                        </div>
+                    </div>
+
+                    <!-- Submit Section -->
+                    <div class="forgot-form mt-56">
+                        <div class="d-flex gap-20 align-center mb-24">
+                            <button type="submit" class="form-btn white f-15 bg-003049 border-none cursor-pointer">Reset Password</button>
+                            <p class="f-14 clr-9C9AA5 mb-0">
+                                Back to <a class="clr-23B05B" href="/login">Log in</a>
+                            </p>
+                        </div>
                     </div>
                 </form>
             </div>
-
             <p class="f-11 clr-9C9AA5">By continuing, I accept Company’s <a class="clr-003049" href="#"><b>Terms of use</b></a> & <a href="#" class="clr-003049"><b>Privacy Policy</b></a> </p>
         </div>
+
 
     </div>
 </div>

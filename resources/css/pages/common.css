@@ -189,7 +189,6 @@ input#search {
     color: var(--color-neutral-500);
 }
 
-
 .status .active {
     background: rgba(175, 204, 161, 10%);
     border: none;
@@ -1117,7 +1116,7 @@ ul.left-col li:not(:last-child) {
 }
 
 button.option {
-    border: 1px solid rgba(0, 48, 73, 10%);
+    border: 2px solid rgba(0, 48, 73, 10%);
     border-radius: 8px;
     background: #fff;
     padding: 16px;
@@ -1568,4 +1567,62 @@ select {
 
 .hidden {
     display: none !important;
+}
+
+.dashboard-border {
+    border: 1px solid rgba(0, 48, 73, 10%);
+}
+
+.institution h3,
+.balance-head h3 {
+    color: rgba(0, 48, 73, 50%);
+}
+
+.inst-logo img {
+    max-width: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.inst-logo {
+    padding: 7px 8px;
+    background: rgba(0, 48, 73, 5%);
+    border-radius: 4px;
+}
+
+.bottom-bar-dash {
+    color: #C8AD98;
+    border-radius: 0 0 12px 12px;
+}
+
+.bottom-bar-dash li:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 48, 73, 10%);
+}
+
+button#enterManuallyBtn b {
+    border-bottom: 2px solid;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+input#bankSearchInput:focus,
+input#bankSearchInput:focus-visible {
+    outline: none;
+}
+
+/* .institution,
+.account-head,
+.institution-outer,
+.account-outer {
+    flex-grow: 1;
+} */
+
+.mb-56 {
+    margin-bottom: 56px;
+}
+
+.mt-56 {
+    margin-top: 56px;
 }

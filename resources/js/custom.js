@@ -36,6 +36,15 @@ $(document).ready(function () {
         other: { title: "Other Assets", subtitle: "Trusts, crypto and collectibles", badge: "O" }
     };
 
+    function showModal(modalId) {
+        $('.modal-overlay').addClass('hidden').removeClass('open');
+        $(`#${modalId}`).removeClass('hidden').addClass('open');
+    }
+
+    function hideAllModal() {
+        $('.modal-overlay').addClass('hidden').removeClass('open');
+    }
+
     function render() {
         const $list = $("#optionList");
         $list.empty();
@@ -134,14 +143,49 @@ $(document).ready(function () {
         }
     });
 
-    $("#enterManuallyBtn").on("click", function () {
-        $(".step-2").removeClass("active").hide();
+    $(".enterManuallyBtn").on("click", function () {
+        $(".step-2, .step-2b").removeClass("active").hide();
         $(".step-2b1").addClass("active").show();
     });
 
     $("#ManuallyConfigureDetails").on("click", function () {
         $(".step-2b1").removeClass("active").hide();
         $(".step-2b4").addClass("active").show();
+    });
+
+    $("#step2ContinueBtn").on("click", function () {
+        $(".step-2").removeClass("active").hide();
+        $(".step-2b6").addClass("active").show();
+    });
+
+    $(document).on('click', '#modalBankSearch .bank-inner', function (e) {
+        e.preventDefault();
+        showModal('modalConnecting');
+
+        window.setTimeout(function () {
+            showModal('modalCredentials');
+        }, 2000);
+    });
+
+    $(document).on('click', '#modalSelectAccounts #addAccountsBtn', function (e) {
+        e.preventDefault();
+        showModal('modalSuccess');
+
+        window.setTimeout(function () {
+            hideAllModal();
+            // $(".step-2").removeClass("active").hide();
+            // $(".step-2b").addClass("active").show();
+        }, 2000);
+    });
+
+    $(document).on('click', '#signInBtn', function (e) {
+        e.preventDefault();
+        showModal('modalSelectAccounts');
+    });
+
+    $(document).on('click', '#addAccountsBtn', function (e) {
+        e.preventDefault();
+        showModal('modalSuccess');
     });
 
     $(function () {
@@ -365,19 +409,22 @@ $(document).ready(function () {
         // 1. Handle Opening Modals
         const $openTrigger = $target.closest('[data-modal-target]');
         if ($openTrigger.length) {
+            e.preventDefault();
             const modalId = $openTrigger.data('modal-target'); // gets value of data-modal-target
-            $(`#${modalId}`).removeClass('hidden');
+            showModal(modalId);
         }
 
         // 2. Handle Closing Modals (Close button click)
         const $closeTrigger = $target.closest('[data-modal-close]');
         if ($closeTrigger.length) {
-            $closeTrigger.closest('.modal-overlay').addClass('hidden');
+            e.preventDefault();
+            $closeTrigger.closest('.modal-overlay').addClass('hidden').removeClass('open');
         }
 
         // 3. Close Modal on Dark Backdrop Click
         if ($target.hasClass('modal-overlay')) {
-            $target.addClass('hidden');
+            e.preventDefault();
+            $target.addClass('hidden').removeClass('open');
         }
     });
 

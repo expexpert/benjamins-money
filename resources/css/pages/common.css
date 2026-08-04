@@ -1246,26 +1246,22 @@ button.option.selected .check img {
 
 /* ---------------- Modal / Popup ---------------- */
 .modal-overlay {
-    /* position: fixed;
-    inset: 0;
-    background: rgba(11, 26, 32, 0.45);
-    display: none;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 10vh;
-    z-index: 1000; */
     animation: fadeIn 0.15s ease-out;
-
-
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
     justify-content: center;
     z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
 }
 
 .modal-overlay.open {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
 }
 
 @keyframes fadeIn {
@@ -1570,7 +1566,8 @@ select {
 }
 
 .hidden {
-    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 .dashboard-border {

@@ -19,7 +19,10 @@ a {
 
 @font-face {
     font-family: 'D-DINExp';
-    src: url('../fonts/D-DINExp-Bold.woff2') format('woff2');
+    src: url('../fonts/D-DINExp-Bold.woff2') format('woff2'),
+        url('../fonts/D-DINExp-Bold.ttf') format('truetype'),
+        url('../fonts/D-DINExp-Bold.woff') format('woff'),
+        url('../fonts/D-DINExp-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
 }
@@ -187,7 +190,7 @@ a {
     color: #4FC07C;
 }
 
-.clr-second-lg-400{
+.clr-second-lg-400 {
     color: var(--color-secondary-400);
 }
 
@@ -522,6 +525,10 @@ h6 {
 
 .p-4-5 {
     padding: 4px 5px !important;
+}
+
+.p-4-8 {
+    padding: 4px 8px;
 }
 
 .p-5-11 {
@@ -928,6 +935,10 @@ p {
     background-color: #10181C;
 }
 
+.bg-23B05B-10 {
+    background-color: rgba(35, 176, 91, 10%);
+}
+
 .btn-green-outlined {
     border: 1px solid var(--color-primary-400);
     color: var(--color-primary-400);
@@ -1158,4 +1169,8 @@ input,
 select,
 textarea {
     width: 100%;
+}
+
+.border-003049-10 {
+    border: 1px solid rgba(0, 48, 73, 10%);
 }

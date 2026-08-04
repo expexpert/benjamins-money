@@ -185,6 +185,10 @@ input#search {
     align-items: center;
 }
 
+.align-end {
+    align-items: flex-end;
+}
+
 .bar-heading h2 {
     color: var(--color-neutral-500);
 }
@@ -1625,4 +1629,49 @@ input#bankSearchInput:focus-visible {
 
 .mt-56 {
     margin-top: 56px;
+}
+
+.act-shadow {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.0392);
+}
+
+.act-outer li:first-child .icon {
+    background: #1170D1;
+}
+
+.act-outer li:nth-child(2) .icon {
+    background: #0F793D;
+}
+
+.act-outer li:nth-child(3) .icon {
+    background: #003185;
+}
+
+.act-outer li:nth-child(4) .icon {
+    background: #00A0DF;
+}
+
+.act-outer li:nth-child(5) .icon {
+    background: #005DAA;
+}
+
+select#act-type option {
+    font-family: 'D-DINExp', sans-serif;
+    font-size: 12px;
+    padding: 8px;
+    background-color: #fff;
+    color: #003049;
+}
+
+select#act-type option:checked,
+select#act-type option:hover {
+    background-color: #003049 !important;
+    color: #fff;
+}
+
+select:focus,
+select:focus-visible,
+input:focus,
+input:focus-visible {
+    outline: 1px solid #003049 !important;
 }

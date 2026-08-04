@@ -28,7 +28,7 @@
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
   "resources/css/app.css": {
-    "file": "assets/app--zQBA5Is.css",
+    "file": "assets/app-Duov3tc_.css",
     "name": "app",
     "names": [
       "app.css"
@@ -40,6 +40,9 @@
       "assets/D-DINExp-CLhvipOK.ttf",
       "assets/D-DINExp-CO0kwd1S.otf",
       "assets/D-DINExp-Bold-D6M_U6A9.woff2",
+      "assets/D-DINExp-Bold-Ch7z6O6S.ttf",
+      "assets/D-DINExp-Bold-0wsS-Ard.woff",
+      "assets/D-DINExp-Bold-DuSuJIpJ.otf",
       "assets/D-DINExp-Italic-B1DEFVSI.woff2",
       "assets/D-DINExp-Italic-F-6Ef1Bq.woff",
       "assets/check-CV4MXesy.svg",
@@ -47,6 +50,18 @@
       "assets/onboarding-bg-img2-B9QJ8fap.png",
       "assets/dropdown-C9F3JyNl.svg"
     ]
+  },
+  "resources/fonts/D-DINExp-Bold.otf": {
+    "file": "assets/D-DINExp-Bold-DuSuJIpJ.otf",
+    "src": "resources/fonts/D-DINExp-Bold.otf"
+  },
+  "resources/fonts/D-DINExp-Bold.ttf": {
+    "file": "assets/D-DINExp-Bold-Ch7z6O6S.ttf",
+    "src": "resources/fonts/D-DINExp-Bold.ttf"
+  },
+  "resources/fonts/D-DINExp-Bold.woff": {
+    "file": "assets/D-DINExp-Bold-0wsS-Ard.woff",
+    "src": "resources/fonts/D-DINExp-Bold.woff"
   },
   "resources/fonts/D-DINExp-Bold.woff2": {
     "file": "assets/D-DINExp-Bold-D6M_U6A9.woff2",

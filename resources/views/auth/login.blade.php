@@ -72,13 +72,13 @@
                     @csrf
 
                     @if ($errors->any())
-                        <div class="mb-16 p-12 br-8 bg-error-light">
-                            <ul class="f-13 clr-error list-none m-0 p-0">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    <div class="mb-16 p-12 br-8 bg-error-light">
+                        <ul class="f-13 clr-error list-none m-0 p-0">
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
 
                     <div class="form-field d-flex flex-col gap-6 mb-16">
@@ -114,7 +114,7 @@
                 <div class="divider"><span class="f-11 clr-9C9AA5 uppercase">Or Sign In With</span></div>
 
                 <div class="social-buttons d-flex gap-12">
-                    <button class="social-btn" type="button">
+                    <a href="{{ url('/auth/google') }}" class="social-btn">
                         <svg viewBox="0 0 24 24">
                             <path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.63h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.88c2.27-2.09 3.57-5.17 3.57-8.81z" />
                             <path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.95-2.92l-3.88-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.26v3.09A12 12 0 0 0 12 24z" />
@@ -122,14 +122,14 @@
                             <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.26 6.63l4.01 3.1C6.22 6.87 8.87 4.75 12 4.75z" />
                         </svg>
                         Google
-                    </button>
+                    </a>
 
-                    <button class="social-btn" type="button">
+                    <a href="{{ url('/auth/apple') }}" class="social-btn">
                         <svg viewBox="0 0 24 24">
                             <path fill="#000" d="M16.36 1.43c0 1.14-.42 2.2-1.24 3.05-.84.88-2.03 1.5-3.15 1.43-.13-1.13.44-2.28 1.24-3.06.83-.83 2.13-1.42 3.15-1.42zm3.15 6.52c-.07.05-1.87 1.09-1.87 3.33 0 2.6 2.27 3.53 2.32 3.55-.02.07-.36 1.24-1.2 2.44-.75 1.05-1.53 2.1-2.75 2.12-1.2.02-1.59-.71-2.97-.71-1.38 0-1.82.69-2.95.73-1.19.05-2.1-1.14-2.85-2.18-1.54-2.13-2.72-6.02-1.14-8.65.79-1.31 2.19-2.13 3.72-2.15 1.16-.02 2.26.78 2.97.78.71 0 2.04-.97 3.44-.83.59.03 2.24.24 3.3 1.79z" />
                         </svg>
                         Apple
-                    </button>
+                    </a>
                 </div>
 
             </div>

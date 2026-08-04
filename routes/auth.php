@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Auth\SocialAuthController;
 
 // Guest Routes
 Route::middleware('guest')->group(function () {
@@ -33,6 +34,15 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
     Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+
+
+
+    Route::get('/auth/google', [SocialAuthController::class, 'google']);
+    Route::get('/auth/google/callback', [SocialAuthController::class, 'googleCallback']);
+
+    Route::get('/auth/apple', [SocialAuthController::class, 'apple']);
+    Route::post('/auth/apple/callback', [SocialAuthController::class, 'appleCallback']);
 });
 
 // Authenticated Routes

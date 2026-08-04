@@ -167,7 +167,7 @@
             </div>
             <div class="d-flex gap-16 flex-col" id="assetConnectionList"></div>
             <div class="d-flex justify-center">
-                <button class="d-flex gap-8 align-center f-14 clr-356674 p-0 border-none bg-transparent cursor-pointer" id="enterManuallyBtn">
+                <button class="d-flex gap-8 align-center f-14 clr-356674 p-0 border-none bg-transparent cursor-pointer enterManuallyBtn" id="enterManuallyBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                         <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#356674" />
                     </svg>
@@ -181,6 +181,150 @@
             </div>
 
 
+        </div>
+
+
+        <div class="d-flex gap-40 flex-col step-2b w-100 setup-step" id="step-2b">
+            <div class="right-header d-flex gap-8 flex-col w-640">
+                <h3 class="f-32">
+                    <b>
+                        Connect your accounts
+                    </b>
+                </h3>
+                <p class="clr-356674 f-16">
+                    Securely connect your accounts to replace estimates with real-time data. This usually takes 2 mins
+                </p>
+            </div>
+            <div class="border-secondary-dark-20 p-24-32 bg-FBFAF8 br-12 d-flex flex-col gap-16">
+                <h5 class="f-12 clr-356674 uppercase">
+                    <b> Top Institutions</b>
+                </h5>
+                <div class="d-flex gap-32 flex-wrap">
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-1170D1 br-6 inter bold">
+                        CHASE
+                    </div>
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-0F793D br-6 inter bold">
+                        Fidelity
+                    </div>
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-003185 br-6 inter bold">
+                        Bank of America
+                    </div>
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-00A0DF br-6 inter bold">
+                        Schwab
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex gap-16 flex-col">
+                <div class="bank-outer">
+                    <div class="p-16-24 border-secondary-dark-20 br-8 d-flex justify-space-between gap-10 align-center bg-white">
+                        <div class="d-flex gap-12 align-center">
+                            <h5 class="f-16 clr-003049">
+                                <b>Bank Account</b>
+                            </h5>
+                            <div class="act-count f-12 clr-23B05B">
+                                1 account
+                            </div>
+                        </div>
+                        <a href="#" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#003049" />
+                            </svg>
+                            <b>
+                                Add
+                            </b>
+                        </a>
+                    </div>
+                    <div class="bg-neutral-white-200 p-24 border-secondary-dark-20">
+                        <div class="bank-header d-flex gap-10 justify-space-between mb-16">
+                            <div class="d-flex gap-12 align-center">
+                                <div class="w-44 h-44 d-flex align-center bg-white justify-center br-6 border-secondary-dark-20">
+                                    <div class="f-14 inter bold clr-1170D1">
+                                        C
+                                    </div>
+                                </div>
+                                <div class="bank-details d-flex gap-12 align-center">
+                                    <div class="bank-name d-flex gap-0 flex-col">
+                                        <h4 class="f-18 clr-003049">
+                                            Chase
+                                        </h4>
+                                        <p class="f-13 clr-356674">
+                                            Banking
+                                        </p>
+                                    </div>
+                                    <div class="act-count f-12 clr-23B05B act-status">
+                                        <b>Connected</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bank-bottom">
+                            <div class="act-list-inner d-flex gap-12 justify-space-between">
+                                <div class="d-flex gap-12 align-center">
+                                    <div class="w-18 h-18 d-flex">
+                                        <img src="{{ asset('images/CheckboxChecked.svg') }}" alt="checked logo">
+                                    </div>
+                                    <div class="f-16 clr-356674">Total Checking (.....7845)</div>
+                                </div>
+                                <div class="values f-16 clr-356674">
+                                    <b>$123,900.00</b>
+                                </div>
+                            </div>
+                            <div class="act-list-inner d-flex gap-12 justify-space-between">
+                                <div class="d-flex gap-12 align-center">
+                                    <div class="w-18 h-18 d-flex">
+                                        <img src="{{ asset('images/CheckboxChecked.svg') }}" alt="checked logo">
+                                    </div>
+                                    <div class="f-16 clr-356674">Chase Savings (.....7845)</div>
+                                </div>
+                                <div class="values f-16 clr-356674">
+                                    <b>$123,900.00</b>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="p-16-24 border-secondary-dark-20 br-8 d-flex justify-space-between gap-10 align-center bg-white">
+                    <h5 class="f-16 clr-003049">
+                        <b>Brokerage Account</b>
+                    </h5>
+                    <a href="#" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#003049" />
+                        </svg>
+                        <b>
+                            Add
+                        </b>
+                    </a>
+                </div>
+                <div class="p-16-24 border-secondary-dark-20 br-8 d-flex justify-space-between gap-10 align-center bg-white">
+                    <h5 class="f-16 clr-003049">
+                        <b> Company Stock</b>
+                    </h5>
+                    <a href="#" class="d-flex gap-4 align-center f-14 clr-003049 p-9-18 border-2-003049 br-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#003049" />
+                        </svg>
+                        <b>
+                            Add
+                        </b>
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex justify-center">
+                <button class="d-flex gap-8 align-center f-14 clr-356674 p-0 border-none bg-transparent cursor-pointer enterManuallyBtn" id="enterManuallyBtn2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <path d="M3.37926 9.0483V-0.00284159H5.66761V9.0483H3.37926ZM-0.00213066 5.6669V3.37855H9.04901V5.6669H-0.00213066Z" fill="#356674" />
+                    </svg>
+                    <b>
+                        Enter manually
+                    </b>
+                </button>
+            </div>
+            <div class="assets-footer d-flex justify-end mt-14">
+                <button class="continue-btn p-12-32 f-16 white bg-003049 br-89" id="continueBtn" disabled>Continue</button>
+            </div>
         </div>
 
 
@@ -209,7 +353,8 @@
                             Upload a PDF, image or screenshot and we will extract the details automatically
                         </p>
                         <div class="d-flex justify-center">
-                            <button class="p-12-32 f-16 white bg-003049 br-89 cursor-pointer border-003049">Upload Files</button>
+                            <button class="p-12-32 f-16 white bg-003049 br-89 cursor-pointer border-003049" onclick="document.getElementById('fileInput').click()">Upload Files</button>
+                            <input type="file" id="fileInput" style="display: none;" accept=".pdf, .jpg, .jpeg, .png">
                         </div>
                     </div>
                 </div>
@@ -523,7 +668,7 @@
         </div>
 
 
-        <div class="d-flex gap-40 flex-col step-2b6 setup-dashboard w-100">
+        <div class="d-flex gap-40 flex-col step-2b6 setup-step setup-dashboard w-100">
             <div class="d-flex gap-12 flex-col">
                 <h3 class="f-36 clr-003049 bold">
                     All set! Your accounts are all connected
@@ -754,10 +899,10 @@
 
                 </ul>
 
-        
+
             </div>
             <div class="d-flex justify-end">
-                <button class="continue-btn p-12-32 f-16 white bg-003049 br-89">Continue to Dashboard</button>
+                <button class="continue-btn p-12-32 f-16 white bg-003049 br-89" onclick="window.location.href='/';">Continue to Dashboard</button>
             </div>
             <div class="center f-13 clr-9C9AA5">
                 You can modify these selections at any point in the future.
@@ -884,7 +1029,7 @@
                     </div>
                 </div>
                 <div class="d-flex gap-20 align-center">
-                    <a href="#" class="form-btn white f-15 bg-003049 w-100 center">Sign in</a>
+                    <button type="button" id="signInBtn" class="form-btn white f-15 bg-003049 w-100 center border-none cursor-pointer">Sign in</button>
                 </div>
             </div>
             <div class="d-flex gap-8 justify-center align-center creds-locked">
@@ -963,7 +1108,7 @@
             </div>
 
             <div class="d-flex flex-col gap-16 justify-center w-100">
-                <a href="#" class="form-btn white f-16 bg-003049 w-100 center">Add</a>
+                <button type="button" id="addAccountsBtn" class="form-btn white f-16 bg-003049 w-100 center border-none cursor-pointer">Add</button>
                 <div class="d-flex gap-8 justify-center align-center creds-locked">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M4.66667 7.33642V4.66954C4.66667 3.78541 5.01786 2.9375 5.64298 2.31233C6.2681 1.68716 7.11595 1.33594 8 1.33594C8.88406 1.33594 9.7319 1.68716 10.357 2.31233C10.9821 2.9375 11.3333 3.78541 11.3333 4.66954V7.33642M3.33333 7.33642H12.6667C13.403 7.33642 14 7.93342 14 8.66986V13.3369C14 14.0733 13.403 14.6703 12.6667 14.6703H3.33333C2.59695 14.6703 2 14.0733 2 13.3369V8.66986C2 7.93342 2.59695 7.33642 3.33333 7.33642Z" stroke="#356674" stroke-width="2" stroke-linecap="round" />

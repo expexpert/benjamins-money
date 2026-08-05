@@ -119,16 +119,59 @@ $(document).ready(function () {
         });
     }
 
-    function setActiveStep(step) {
-        if (step === "step2") {
-            $(".step-1").removeClass("active").hide();
-            $(".step-2").addClass("active").show();
-            return;
-        }
-
-        $(".step-2").removeClass("active").hide();
-        $(".step-1").addClass("active").show();
+    function setActiveStep(stepClass) {
+        $(".setup-step").removeClass("active").hide();
+        $("." + stepClass).addClass("active").show();
     }
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    function showPdfExtractionStep() {
+        setActiveStep('step-2b2');
+    }
+
+    function showExtractionResult(data) {
+        $('#detected-institution-name').val(data.institution);
+        $('#detected-as-of-date').val(data.as_of_date);
+        $('#detected-institution-type').val(data.institution_type);
+        $('#detected-website').val(data.website || '');
+
+        const $list = $('#detectedAccountsList');
+        $list.empty();
+        data.accounts.forEach(function (account) {
+            $list.append(`
+                <div class="p-16 d-flex gap-10 align-center br-8 bg-white border-secondary-dark-20 justify-space-between bank-account-item" data-account-id="${account.id}">
+                    <div class="d-flex flex-col gap-4">
+                        <h5 class="f-16 lh-20 clr-003049 bold">${account.name}</h5>
+                        <p class="f-14 lh-14 clr-356674">Current balance: ${account.balance}</p>
+                    </div>
+                    <div class="btn-outer">
+                        <a href="#" class="d-flex remove-account"><img class="w-32 h-32" src="images/RemoveBtn.svg" alt="Remove icon"></a>
+                    </div>
+                </div>
+            `);
+        });
+
+        $('#importAccountsBtn').text(`Import ${data.accounts.length} Account${data.accounts.length === 1 ? '' : 's'}`);
+        $('#detectedAccountsTitle').text(`Accounts Detected ${data.accounts.length}`);
+        setActiveStep('step-2b3');
+    }
+
+    function showExtractionError(message) {
+        alert(message || 'Unable to parse PDF. Please try again.');
+        setActiveStep('step-2b1');
+    }
+
+    $(document).on("click", ".remove-account", function () {
+        $(this).closest('.bank-account-item').remove();
+        const remainingAccounts = $('#detectedAccountsList .bank-account-item').length;
+        $('#detectedAccountsTitle').text(`Accounts Detected ${remainingAccounts}`);
+        $('#importAccountsBtn').text(`Import ${remainingAccounts} Account${remainingAccounts === 1 ? '' : 's'}`);
+    });
 
     $(document).on("click", ".option", function () {
         const id = $(this).data("id");
@@ -139,7 +182,7 @@ $(document).ready(function () {
     $("#step1ContinueBtn").on("click", function () {
         if (selected.size > 0) {
             renderStep2();
-            setActiveStep("step2");
+            setActiveStep("step-2");
         }
     });
 
@@ -183,6 +226,48 @@ $(document).ready(function () {
         showModal('modalSelectAccounts');
     });
 
+    $('#fileInput').on('change', function () {
+        const file = this.files[0];
+        if (!file) {
+            return;
+        }
+
+        if (file.type !== 'application/pdf') {
+            alert('Please upload a valid PDF document.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('pdf', file);
+
+        showPdfExtractionStep();
+
+        $.ajax({
+            url: '/setup/extract',
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                showExtractionResult(response);
+            },
+            error: function (xhr) {
+                const message = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : 'Unable to parse PDF. Please try again.';
+                showExtractionError(message);
+            }
+        });
+    });
+
+    $(document).on('click', '#uploadAnotherBtn', function (e) {
+        e.preventDefault();
+        $('#fileInput').val('');
+        setActiveStep('step-2b1');
+    });
+
+    $(document).on('click', '#importAccountsBtn', function (e) {
+        // e.preventDefault();
+        setActiveStep('step-2b6');
+    });
     $(document).on('click', '#addAccountsBtn', function (e) {
         e.preventDefault();
         showModal('modalSuccess');
@@ -190,7 +275,7 @@ $(document).ready(function () {
 
     $(function () {
         render();
-        setActiveStep("step1");
+        setActiveStep("step-1");
     });
 
     // ===========================

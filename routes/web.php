@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SetupController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -32,6 +33,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/setup', function () {
         return view('dashboard.setup');
     });
+
+    Route::post('/setup/extract', [SetupController::class, 'extract']);
 
     Route::get('/account-verified', function () {
         return view('auth.account-verified');

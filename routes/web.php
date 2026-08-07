@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/admin.php';
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', function () {
@@ -30,13 +31,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.locked');
     });
 
-    Route::get('/setup', function () {
-        return view('dashboard.setup');
-    });
-
-    Route::post('/setup/extract', [SetupController::class, 'extract']);
-
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });
+
+
+    Route::get('/setup', [SetupController::class, 'setup'])->name('setup');
+    
+    Route::post('/setup/extract', [SetupController::class, 'extract']);
+
 });

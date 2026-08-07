@@ -887,31 +887,19 @@
 
             <div class="bank-popular-label" id="bankListLabel">Popular</div>
             <div class="bank-list" id="bankList">
-                <div class="bank-inner">
-                    <input type="checkbox" id="chase" name="chase" value="Chase">
-                    <label for="chase">Chase</label>
+                @foreach ($banks as $bank)
+                @php
+                $id = 'bank_' . $bank->id;
+                @endphp
+                <div class="bank-inner" data-featured="{{ $bank->is_featured ? 'true' : 'false' }}" data-name="{{ $bank->name }}" data-logo="{{ $bank->logo ?? '' }}">
+                    <input type="checkbox" id="{{ $id }}" name="banks[]" value="{{ $bank->id }}">
+                    <label for="{{ $id }}">{{ $bank->name }}</label>
                 </div>
-                <div class="bank-inner">
-                    <input type="checkbox" id="boa" name="boa" value="BankOfAmerica">
-                    <label for="boa">Bank of America</label>
+                @endforeach
+
+                <div id="noResults" style="display: none; padding: 20px; text-align: center; color: #777;">
+                    No banks found matching your search.
                 </div>
-                <div class="bank-inner">
-                    <input type="checkbox" id="rbc" name="rbc" value="RBC">
-                    <label for="rbc">RBC</label>
-                </div>
-                <div class="bank-inner">
-                    <input type="checkbox" id="jpmorgan" name="jpmorgan" value="JPMorgan">
-                    <label for="jpmorgan">J.P. Morgan</label>
-                </div>
-                <div class="bank-inner">
-                    <input type="checkbox" id="fidelity" name="fidelity" value="Fidelity">
-                    <label for="fidelity">Fidelity</label>
-                </div>
-                <div class="bank-inner">
-                    <input type="checkbox" id="charles" name="charles" value="CharlesSchwab">
-                    <label for="charles">Charles Schwab</label>
-                </div>
-                <!-- <input type="submit" value="Submit"> -->
             </div>
         </div>
     </div>
@@ -954,8 +942,11 @@
         <div class="bank-modal creds">
             <div class="d-flex gap-24 flex-col creds-inner">
                 <div class="creds-header d-flex gap-10 justify-space-between align-center">
-                    <div class="bank-logo">
-                        <img src="{{ asset('images/chase.svg') }}" alt="bank logo">
+                    <div class="bank-logo hidden-imp">
+                        <img src="#" alt="bank logo">
+                    </div>
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-1170D1 br-6 inter bold hidden-imp bank-name">
+                        CHASE
                     </div>
                     <div class="d-flex gap-4 align-center">
                         <img src="{{ asset('images/verified.svg') }}" alt="verified icon">
@@ -964,7 +955,7 @@
                 </div>
                 <div class="d-flex gap-8 flex-col creds-locked">
                     <h3 class="f-24 clr-003049"><b>Enter your credentials</b></h3>
-                    <p class="f-15">By entering your Chase credentials, you are giving us access to your account information.</p>
+                    <p class="f-15">By entering your Account credentials, you are giving us access to your account information.</p>
                 </div>
 
                 <div class="bank-form">
@@ -1004,8 +995,11 @@
         <div class="bank-modal select-account">
             <div class="d-flex gap-28 flex-col creds-inner">
                 <div class="creds-header d-flex gap-10 justify-space-between align-center">
-                    <div class="bank-logo">
-                        <img src="{{ asset('images/chase.svg') }}" alt="bank logo">
+                    <div class="bank-logo hidden-imp">
+                        <img src="#" alt="bank logo">
+                    </div>
+                    <div class="border-secondary-dark-100 bg-white p-6-12 clr-1170D1 br-6 inter bold hidden-imp bank-name">
+                        CHASE
                     </div>
                 </div>
                 <div class="d-flex gap-8 flex-col creds-locked">

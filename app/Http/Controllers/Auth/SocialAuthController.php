@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Hash;
 
 class SocialAuthController extends Controller
 {
@@ -29,7 +28,8 @@ class SocialAuthController extends Controller
                 'name' => $googleUser->getName(),
                 'email' => $googleUser->getEmail(),
                 'google_id' => $googleUser->getId(),
-                'password' => Hash::make(Str::random(10)),
+                'password' => Str::random(10),
+                'role' => User::ROLE_USER,
                 'email_verified_at' => now(),
             ]);
         } else {
@@ -61,7 +61,8 @@ class SocialAuthController extends Controller
                 'name' => $appleUser->getName() ?: 'Apple User',
                 'email' => $appleUser->getEmail(),
                 'apple_id' => $appleUser->getId(),
-                'password' => Hash::make(Str::random(32)),
+                'password' => Str::random(32),
+                'role' => User::ROLE_USER,
                 'email_verified_at' => now(),
             ]);
         } else {

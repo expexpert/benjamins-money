@@ -1,16 +1,61 @@
 import $ from 'jquery';
 
 $(document).ready(function () {
+
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+
+    // 1. Check and display Success flash message
+    var successMsg = $('meta[name="flash-success"]').attr('content');
+    if (successMsg) {
+        toastr.success(successMsg);
+    }
+
+    // 2. Check and display Error flash message
+    var errorMsg = $('meta[name="flash-error"]').attr('content');
+    if (errorMsg) {
+        toastr.error(errorMsg);
+    }
+
+    // 3. Check and display Validation error messages
+    var validationErrors = $('meta[name="flash-errors"]').attr('content');
+    if (validationErrors) {
+        try {
+            var errors = JSON.parse(validationErrors);
+            errors.forEach(function (msg) {
+                toastr.error(msg);
+            });
+        } catch (e) {
+            console.error('Failed to parse validation errors:', e);
+        }
+    }
+
+
+
     // adding bank accounts
     const ICONS = {
-        bank: '<img class="w-24 h-24" src="images/bank.svg")" alt="Bank icon">',
-        brokerage: '<img class="w-24 h-24" src="images/brokerage.svg")" alt="Brokerage icon">',
-        stock: '<img class="w-24 h-24" src="images/company-stock.svg")" alt="Stock icon">',
-        retirement: '<img class="w-24 h-24" src="images/retirement.svg")" alt="Retirement icon">',
-        realestate: '<img class="w-24 h-24" src="images/real-estate.svg")" alt="Real Estate icon">',
-        insurance: '<img class="w-24 h-24" src="images/insurance.svg")" alt="Insurance icon">',
-        college: '<img class="w-24 h-24" src="images/clg-savings.svg")" alt="collegae Savings icon">',
-        other: '<img class="w-24 h-24" src="images/other-assets.svg")" alt="Others icon">'
+        bank: '<img class="w-24 h-24" src="/images/bank.svg" alt="Bank icon">',
+        brokerage: '<img class="w-24 h-24" src="/images/brokerage.svg" alt="Brokerage icon">',
+        stock: '<img class="w-24 h-24" src="/images/company-stock.svg" alt="Stock icon">',
+        retirement: '<img class="w-24 h-24" src="/images/retirement.svg" alt="Retirement icon">',
+        realestate: '<img class="w-24 h-24" src="/images/real-estate.svg" alt="Real Estate icon">',
+        insurance: '<img class="w-24 h-24" src="/images/insurance.svg" alt="Insurance icon">',
+        college: '<img class="w-24 h-24" src="/images/clg-savings.svg" alt="College Savings icon">',
+        other: '<img class="w-24 h-24" src="/images/other-assets.svg" alt="Others icon">'
     };
 
     const OPTIONS = [
@@ -64,7 +109,7 @@ $(document).ready(function () {
                 <span class="subtitle">${opt.subtitle}</span>
                 </span>
                 <span class="check">
-                <img class="w-24 h-24" src="images/completed-check.svg")" alt="completed icon">
+                <img class="w-24 h-24" src="/images/completed-check.svg" alt="completed icon">
                 </span>
             `);
 
@@ -150,7 +195,7 @@ $(document).ready(function () {
                         <p class="f-14 lh-14 clr-356674">Current balance: ${account.balance}</p>
                     </div>
                     <div class="btn-outer">
-                        <a href="#" class="d-flex remove-account"><img class="w-32 h-32" src="images/RemoveBtn.svg" alt="Remove icon"></a>
+                        <a href="#" class="d-flex remove-account"><img class="w-32 h-32" src="/images/RemoveBtn.svg" alt="Remove icon"></a>
                     </div>
                 </div>
             `);
@@ -204,6 +249,20 @@ $(document).ready(function () {
     $(document).on('click', '#modalBankSearch .bank-inner', function (e) {
         e.preventDefault();
         showModal('modalConnecting');
+
+        var bankName = $(this).attr('data-name');
+        var bankLogo = $(this).attr('data-logo');
+
+        $('#modalCredentials .bank-name, #modalSelectAccounts .bank-name').text(bankName);
+        var fullLogoUrl = bankLogo ? '/storage/' + bankLogo : '';
+
+        if (fullLogoUrl) {
+            $('#modalCredentials .bank-logo img, #modalSelectAccounts .bank-logo img').attr('src', fullLogoUrl);
+            $('#modalCredentials .bank-logo, #modalSelectAccounts .bank-logo').removeClass('hidden-imp');
+        } else {
+            $('#modalCredentials .bank-logo, #modalSelectAccounts .bank-logo').addClass('hidden-imp');
+            $('#modalCredentials .bank-name, #modalSelectAccounts .bank-name').removeClass('hidden-imp');
+        }
 
         window.setTimeout(function () {
             showModal('modalCredentials');
@@ -524,4 +583,58 @@ $(document).ready(function () {
         }
     });
 
+
+
+    const $searchInput = $('#bankSearchInput');
+    const $bankItems = $('#bankList .bank-inner');
+    const $label = $('#bankListLabel');
+    const $noResults = $('#noResults');
+
+    function resetBankList() {
+        $label.text('Popular');
+        $noResults.hide();
+
+        $bankItems.each(function () {
+            const $item = $(this);
+            // Use String() conversion to prevent null/undefined errors
+            const isFeatured = String($item.attr('data-featured')) === 'true';
+            if (isFeatured) {
+                $item.show();
+            } else {
+                $item.hide();
+            }
+        });
+    }
+
+    resetBankList();
+
+    $searchInput.on('input', function () {
+        const query = $(this).val().toLowerCase().trim();
+
+        if (query === '') {
+            resetBankList();
+        } else {
+            $label.text('Search Results');
+            let visibleCount = 0;
+
+            $bankItems.each(function () {
+                const $item = $(this);
+                // Use .attr('data-name') instead of .data('name')
+                const bankName = ($item.attr('data-name') || '').toLowerCase();
+
+                if (bankName.includes(query)) {
+                    $item.show();
+                    visibleCount++;
+                } else {
+                    $item.hide();
+                }
+            });
+
+            if (visibleCount === 0) {
+                $noResults.show();
+            } else {
+                $noResults.hide();
+            }
+        }
+    });
 });

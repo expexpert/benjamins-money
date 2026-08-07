@@ -30,6 +30,16 @@
 
             <div class="profile-dropdown" id="profileDropdown">
                 <ul>
+                    @if(Auth::user()->isAdmin())
+                        <li>
+                            <a href="{{ route('admin.dashboard') }}" class="f-16">
+                                Admin Panel
+                                <span class="caret">
+                                    <img src="{{ asset('images/caret.svg') }}" alt="caret icon">
+                                </span>
+                            </a>
+                        </li>
+                    @endif
                     <li class="active">
                         <a href="#" class="f-16">
                             My Profile

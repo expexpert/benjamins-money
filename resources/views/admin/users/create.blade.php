@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" autocomplete="new-password" required>
                     @error('password')
                         <div class="error">{{ $message }}</div>
                     @enderror
@@ -51,7 +51,7 @@
 
                 <div class="form-group">
                     <label for="password_confirmation">Confirm Password</label>
-                    <input type="password" id="password_confirmation" name="password_confirmation" required>
+                    <input type="password" id="password_confirmation" name="password_confirmation" autocomplete="new-password" required>
                 </div>
 
                 <div style="display: flex; gap: 12px;">

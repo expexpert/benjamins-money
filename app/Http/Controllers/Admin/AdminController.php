@@ -48,6 +48,7 @@ class AdminController extends Controller
             ->when($role, function ($query) use ($role) {
                 $query->where('role', $role);
             })
+            ->orderByRaw("FIELD(role, 'admin') DESC")
             ->latest()
             ->paginate(10);
 
@@ -188,7 +189,7 @@ class AdminController extends Controller
             'logo' => $logoPath,
             'description' => $validated['description'] ?? null,
             'is_featured' => $request->boolean('is_featured'),
-            'is_active' => $request->boolean('is_active', true),
+            'is_active' => $request->boolean('is_active'),
         ]);
 
         return redirect()->route('admin.banks')

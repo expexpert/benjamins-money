@@ -18,6 +18,9 @@
         @endif
     </form>
     <a href="{{ route('admin.users.create') }}" class="btn btn-success">+ Create User</a>
+    @if($trashedUsers > 0)
+    <a href="{{ route('admin.users.trash') }}" class="btn btn-secondary">View Trashed ({{ $trashedUsers }})</a>
+    @endif
 </div>
 
 <div class="admin-card">

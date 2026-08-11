@@ -52,7 +52,9 @@ class AdminController extends Controller
             ->latest()
             ->paginate(10);
 
-        return view('admin.users.index', compact('users', 'search', 'role'));
+        $trashedUsers = User::onlyTrashed()->count();
+
+        return view('admin.users.index', compact('users', 'search', 'role', 'trashedUsers'));
     }
 
     public function createUser()
@@ -139,6 +141,52 @@ class AdminController extends Controller
         return back()->with('success', $message);
     }
 
+    public function trashUsers(Request $request)
+    {
+        $search = $request->input('search');
+
+        $users = User::onlyTrashed()
+            ->when($search, function ($query) use ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'like', "%{$search}%")
+                        ->orWhere('email', 'like', "%{$search}%");
+                });
+            })
+            ->latest('deleted_at')
+            ->paginate(10)
+            ->appends(['search' => $search]);
+
+        return view('admin.users.trash', compact('users', 'search'));
+    }
+
+    public function restoreUser($id)
+    {
+        $user = User::withTrashed()->findOrFail($id);
+        $user->restore();
+
+        return redirect()->route('admin.users.trash')
+            ->with('success', 'User restored successfully.');
+    }
+
+    public function forceDeleteUser($id)
+    {
+        $user = User::withTrashed()->findOrFail($id);
+
+        if ($user->id === auth()->id()) {
+            return back()->withErrors(['error' => 'You cannot delete your own account.']);
+        }
+
+        $user->forceDelete();
+
+        return redirect()->route('admin.users.trash')
+            ->with('success', 'User permanently deleted.');
+    }
+
+
+
+
+
+
     public function banks(Request $request)
     {
         $search = $request->input('search');
@@ -155,8 +203,9 @@ class AdminController extends Controller
             })
             ->latest()
             ->paginate(10);
+        $trashedBanks = Bank::onlyTrashed()->count();
 
-        return view('admin.banks.index', compact('banks', 'search', 'status'));
+        return view('admin.banks.index', compact('banks', 'search', 'status', 'trashedBanks'));
     }
 
     public function createBank()
@@ -258,5 +307,47 @@ class AdminController extends Controller
         $message = $bank->is_active ? 'Bank activated successfully.' : 'Bank deactivated successfully.';
 
         return back()->with('success', $message);
+    }
+
+    public function trashBanks(Request $request)
+    {
+        $search = $request->input('search');
+
+        $banks = Bank::onlyTrashed()
+            ->when($search, function ($query) use ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'like', "%{$search}%")
+                        ->orWhere('code', 'like', "%{$search}%")
+                        ->orWhere('website', 'like', "%{$search}%");
+                });
+            })
+            ->latest('deleted_at')
+            ->paginate(10)
+            ->appends(['search' => $search]);
+
+        return view('admin.banks.trash', compact('banks', 'search'));
+    }
+
+    public function restoreBank($id)
+    {
+        $bank = Bank::withTrashed()->findOrFail($id);
+        $bank->restore();
+
+        return redirect()->route('admin.banks.trash')
+            ->with('success', 'Bank restored successfully.');
+    }
+
+    public function forceDeleteBank($id)
+    {
+        $bank = Bank::withTrashed()->findOrFail($id);
+
+        if ($bank->id === auth()->id()) {
+            return back()->withErrors(['error' => 'You cannot delete your own account.']);
+        }
+
+        $bank->forceDelete();
+
+        return redirect()->route('admin.banks.trash')
+            ->with('success', 'Bank permanently deleted.');
     }
 }

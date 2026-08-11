@@ -18,6 +18,9 @@
         @endif
     </form>
     <a href="{{ route('admin.banks.create') }}" class="btn btn-success">+ Add Bank</a>
+    @if($trashedBanks > 0)
+        <a href="{{ route('admin.banks.trash') }}" class="btn btn-secondary">View Trashed ({{ $trashedBanks }})</a>
+    @endif
 </div>
 
 <div class="admin-card">

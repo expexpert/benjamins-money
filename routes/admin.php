@@ -17,6 +17,8 @@ Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.'
     Route::post('/users/{id}/restore', [AdminController::class, 'restoreUser'])->name('users.restore');
     Route::delete('/users/{id}/force-delete', [AdminController::class, 'forceDeleteUser'])->name('users.force-delete');
 
+
+    
     Route::get('/banks', [AdminController::class, 'banks'])->name('banks');
     Route::get('/banks/create', [AdminController::class, 'createBank'])->name('banks.create');
     Route::post('/banks', [AdminController::class, 'storeBank'])->name('banks.store');

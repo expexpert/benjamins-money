@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Prunable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     const ROLE_ADMIN = 'admin';
     const ROLE_USER = 'user';
 
-    use HasFactory, Notifiable, SoftDeletes;
+    use HasFactory, Notifiable, SoftDeletes, Prunable;
 
     protected $fillable = [
         'name',
@@ -60,5 +61,10 @@ class User extends Authenticatable implements MustVerifyEmail
             self::ROLE_USER => 'User',
             self::ROLE_ADMIN => 'Admin',
         ];
+    }
+
+    public function prunable()
+    {
+        return static::where('deleted_at', '<=', now()->subDays(30));
     }
 }

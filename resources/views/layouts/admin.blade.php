@@ -39,7 +39,7 @@
     <div class="admin-layout">
         <aside class="admin-sidebar">
             <div class="logo">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/admin/dashboard') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="160" height="41" viewBox="0 0 160 41" fill="none">
                         <g clip-path="url(#clip0_9614_72034)">
                             <path

@@ -637,4 +637,18 @@ $(document).ready(function () {
             }
         }
     });
+
+    // new worth progress bar
+    document.querySelectorAll('.seg-bar').forEach(function (bar) {
+        var pct = parseFloat(bar.getAttribute('data-pct'));
+        var total = 20; // total number of segments
+        var filled = Math.round((pct / 100) * total);
+        var inner = bar.querySelector('.seg-inner');
+        inner.innerHTML = '';
+        for (var i = 0; i < total; i++) {
+            var block = document.createElement('div');
+            block.className = 'seg-block ' + (i < filled ? 'filled' : 'empty');
+            inner.appendChild(block);
+        }
+    });
 });

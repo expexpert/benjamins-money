@@ -31,6 +31,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.locked');
     });
 
+    Route::get('/networth', function () {
+        return view('dashboard.networth');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

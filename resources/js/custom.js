@@ -641,8 +641,8 @@ $(document).ready(function () {
     // new worth progress bar
     document.querySelectorAll('.seg-bar').forEach(function (bar) {
         var pct = parseFloat(bar.getAttribute('data-pct'));
-        var total = 20; // total number of segments
-        var filled = Math.round((pct / 100) * total);
+        var total = 20;
+        var filled = pct > 0 ? Math.max(1, Math.round((pct / 100) * total)) : 0;
         var inner = bar.querySelector('.seg-inner');
         inner.innerHTML = '';
         for (var i = 0; i < total; i++) {
@@ -651,4 +651,288 @@ $(document).ready(function () {
             inner.appendChild(block);
         }
     });
+
+    // ── DATA SETS ──
+    const DATASETS = {
+        '1D': {
+            points: [14200, 14320, 14180, 14400, 14380, 14450, 14500, 14480, 14520, 14600, 14580, 14620, 14743],
+            labels: ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM'],
+            assets: '$16,125,000', liabilities: '$1,382,000',
+            value: '$14,743,000', change: '+$543,000 (3.8%) today', positive: true
+        },
+        '1W': {
+            points: [13800, 14100, 13950, 14300, 14100, 14500, 14743],
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            assets: '$16,125,000', liabilities: '$1,382,000',
+            value: '$14,743,000', change: '+$943,000 (6.8%) this week', positive: true
+        },
+        '1M': {
+            points: [13200, 13800, 13500, 14100, 13900, 14300, 14100, 14500, 14200, 14600, 14400, 14743],
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            assets: '$16,125,000', liabilities: '$1,382,000',
+            value: '$14,743,000', change: '+$1,543,000 (11.7%) this month', positive: true
+        },
+        '3M': {
+            points: [12800, 13200, 13600, 13400, 13900, 14100, 13800, 14300, 14100, 14500, 14300, 14743],
+            labels: ['Mar', 'Apr', 'May'],
+            assets: '$16,125,000', liabilities: '$1,382,000',
+            value: '$14,743,000', change: '+$1,943,000 (15.2%) 3 months', positive: true
+        },
+        'YTD': {
+            points: [13619, 14100, 13800, 14400, 13900, 14600, 14200, 14800, 14400, 14900, 14600, 14743],
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            assets: '$16,125,000', liabilities: '$1,382,000',
+            value: '$14,743,000', change: '+$1,124,000 (8.2%) this year', positive: true
+        },
+        '1Y': {
+            points: [
+                13619, 7800, 16500, 9200, 12200, 16700,
+                11800, 13000, 16800, 10500, 17000, 11200,
+                14600, 11000, 16900, 10800, 14900, 13100,
+                17100, 9500, 16000, 13500, 7200, 16200
+            ],
+            labels: ['May, 25', 'Jun, 25', 'Jul, 25', 'Aug, 25', 'Sep, 25', 'Oct, 25', 'Nov, 25', 'Dec, 25', 'Jan, 26', 'Feb, 26', 'Mar, 26', 'Apr, 26', 'May, 26'],
+            assets: '$16,125,000', liabilities: '$1,382,000',
+            value: '$14,743,000', change: '+$1,124,000 (8.2%) this year', positive: true
+        },
+        'ALL': {
+            points: [
+                5000, 6200, 5800, 7100, 6500, 8200, 7800, 9500,
+                8900, 10200, 9800, 11500, 10800, 12400, 11900, 13200,
+                12800, 14100, 13600, 14743
+            ],
+            labels: ['2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+            assets: '$16,125,000', liabilities: '$1,382,000',
+            value: '$14,743,000', change: '+$9,743,000 (194.9%) all time', positive: true
+        }
+    };
+
+    // hover date labels per range
+    const DATE_LABELS = {
+        '1D': (i, len) => {
+            const hours = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:15 PM', '5:30 PM', '5:45 PM'];
+            return hours[i] || '';
+        },
+        '1W': (i) => ['Mon, May 19', 'Tue, May 20', 'Wed, May 21', 'Thu, May 22', 'Fri, May 23', 'Sat, May 24', 'Sun, May 25'][i] || '',
+        '1M': (i) => `Day ${i + 1}, May 2026`,
+        '3M': (i) => `Week ${i + 1}`,
+        'YTD': (i) => ['Jan 26', 'Feb 26', 'Mar 26', 'Apr 26', 'May 26', 'Jun 26', 'Jul 26', 'Aug 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dec 26'][i] || '',
+        '1Y': (i) => {
+            const months = ['May 25', 'Jun 25', 'Jul 25', 'Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25', 'Jan 26', 'Feb 26', 'Mar 26', 'Apr 26', 'May 26', 'Jun 26', 'Jul 26', 'Aug 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dec 26', 'Jan 27', 'Feb 27', 'Mar 27', 'Apr 27'];
+            return months[i] || '';
+        },
+        'ALL': (i) => ['Jan 2020', 'Jul 2020', 'Jan 2021', 'Jul 2021', 'Jan 2022', 'Jul 2022', 'Jan 2023', 'Jul 2023', 'Jan 2024', 'Jul 2024', 'Jan 2025', 'Jul 2025', 'Jan 2026', 'Jul 2026', 'Jan 2027', 'Jul 2027', 'Jan 2028', 'Jul 2028', 'Jan 2029', 'Jul 2029'][i] || ''
+    };
+
+    let activeRange = '1Y';
+    const canvas = document.getElementById('chart');
+    const ctx = canvas.getContext('2d');
+    const wrap = document.getElementById('chart-wrap');
+    const tooltip = document.getElementById('tooltip');
+    const ttVal = document.getElementById('tt-value');
+    const ttDate = document.getElementById('tt-date');
+    const dot = document.getElementById('crosshair-dot');
+    const xLabels = document.getElementById('x-labels');
+
+    function fmt(n) {
+        if (n >= 1000000) return '$' + (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+        if (n >= 1000) return '$' + Math.round(n / 1000) + 'K';
+        return '$' + n;
+    }
+
+    function drawChart(range) {
+        const ds = DATASETS[range];
+        const pts = ds.points;
+        const DPR = window.devicePixelRatio || 1;
+        const W = wrap.clientWidth;
+        const H = wrap.clientHeight;
+
+        canvas.width = W * DPR;
+        canvas.height = H * DPR;
+        canvas.style.width = W + 'px';
+        canvas.style.height = H + 'px';
+        ctx.scale(DPR, DPR);
+
+        const PAD_L = 52, PAD_R = 16, PAD_T = 16, PAD_B = 30;
+        const chartW = W - PAD_L - PAD_R;
+        const chartH = H - PAD_T - PAD_B;
+
+        const minV = Math.min(...pts) * 0.92;
+        const maxV = Math.max(...pts) * 1.06;
+
+        function xPos(i) { return PAD_L + (i / (pts.length - 1)) * chartW; }
+        function yPos(v) { return PAD_T + (1 - (v - minV) / (maxV - minV)) * chartH; }
+
+        ctx.clearRect(0, 0, W, H);
+
+        // Y grid lines + labels
+        const yTicks = 5;
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        ctx.font = '10px Inter, sans-serif';
+
+        for (let t = 0; t <= yTicks; t++) {
+            const v = minV + (t / yTicks) * (maxV - minV);
+            const y = yPos(v);
+            ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(PAD_L, y);
+            ctx.lineTo(W - PAD_R, y);
+            ctx.stroke();
+            ctx.fillStyle = '#4b5563';
+            ctx.fillText(fmt(v), PAD_L - 6, y);
+        }
+
+        // gradient fill
+        const grad = ctx.createLinearGradient(0, PAD_T, 0, PAD_T + chartH);
+        grad.addColorStop(0, 'rgba(46,204,113,0.35)');
+        grad.addColorStop(0.5, 'rgba(46,204,113,0.08)');
+        grad.addColorStop(1, 'rgba(46,204,113,0)');
+
+        ctx.beginPath();
+        ctx.moveTo(xPos(0), yPos(pts[0]));
+        for (let i = 1; i < pts.length; i++) {
+            const x0 = xPos(i - 1), y0 = yPos(pts[i - 1]);
+            const x1 = xPos(i), y1 = yPos(pts[i]);
+            const cpx = (x0 + x1) / 2;
+            ctx.bezierCurveTo(cpx, y0, cpx, y1, x1, y1);
+        }
+        ctx.lineTo(xPos(pts.length - 1), PAD_T + chartH);
+        ctx.lineTo(xPos(0), PAD_T + chartH);
+        ctx.closePath();
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // line
+        ctx.beginPath();
+        ctx.moveTo(xPos(0), yPos(pts[0]));
+        for (let i = 1; i < pts.length; i++) {
+            const x0 = xPos(i - 1), y0 = yPos(pts[i - 1]);
+            const x1 = xPos(i), y1 = yPos(pts[i]);
+            const cpx = (x0 + x1) / 2;
+            ctx.bezierCurveTo(cpx, y0, cpx, y1, x1, y1);
+        }
+        ctx.strokeStyle = '#2ecc71';
+        ctx.lineWidth = 2;
+        ctx.shadowColor = 'rgba(46,204,113,0.5)';
+        ctx.shadowBlur = 6;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // X labels
+        const lbls = ds.labels;
+        xLabels.innerHTML = '';
+        lbls.forEach(function (l) {
+            const s = document.createElement('span');
+            s.textContent = l;
+            xLabels.appendChild(s);
+        });
+
+        // store for hover
+        canvas._pts = pts;
+        canvas._xPos = xPos;
+        canvas._yPos = yPos;
+        canvas._minV = minV;
+        canvas._maxV = maxV;
+        canvas._chartW = chartW;
+        canvas._chartH = chartH;
+        canvas._PAD_L = PAD_L;
+        canvas._PAD_R = PAD_R;
+        canvas._PAD_T = PAD_T;
+        canvas._PAD_B = PAD_B;
+        canvas._W = W;
+        canvas._H = H;
+    }
+
+    function onHover(e) {
+        const pts = canvas._pts;
+        if (!pts) return;
+
+        const rect = wrap.getBoundingClientRect(); // use wrap, not canvas
+        const mx = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+
+        const PAD_L = canvas._PAD_L;
+        const PAD_R = canvas._PAD_R;
+        const PAD_T = canvas._PAD_T;
+        const chartW = canvas._chartW;
+        const chartH = canvas._chartH;
+        const W = canvas._W;
+
+        if (mx < PAD_L || mx > W - PAD_R) { hideTooltip(); return; }
+
+        const ratio = (mx - PAD_L) / chartW;
+        const floatIdx = ratio * (pts.length - 1);
+        const idx0 = Math.floor(floatIdx);
+        const idx1 = Math.min(idx0 + 1, pts.length - 1);
+        const t = floatIdx - idx0;
+        const interpVal = pts[idx0] + (pts[idx1] - pts[idx0]) * t;
+        const py = canvas._yPos(interpVal);
+        const px = mx;
+
+        drawChart(activeRange);
+
+        // no ctx.save/scale here — drawChart already scaled
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(px, PAD_T);
+        ctx.lineTo(px, PAD_T + chartH);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        dot.style.display = 'block';
+        dot.style.left = px + 'px';
+        dot.style.top = py + 'px';
+
+        ttVal.textContent = fmt(interpVal * 1000);
+        ttDate.textContent = DATE_LABELS[activeRange](Math.round(floatIdx), pts.length);
+
+        tooltip.style.display = 'block';
+        const tw = tooltip.offsetWidth;
+        const th = tooltip.offsetHeight;
+        let tx = px + 12;
+        let ty = py - th / 2;
+        if (tx + tw > W - 8) tx = px - tw - 12;
+        if (ty < 4) ty = 4;
+        tooltip.style.left = tx + 'px';
+        tooltip.style.top = ty + 'px';
+    }
+
+    function hideTooltip() {
+        tooltip.style.display = 'none';
+        dot.style.display = 'none';
+    }
+
+    wrap.addEventListener('mousemove', onHover);
+    wrap.addEventListener('mouseleave', function () { hideTooltip(); drawChart(activeRange); });
+    wrap.addEventListener('touchmove', function (e) { e.preventDefault(); onHover(e); }, { passive: false });
+    wrap.addEventListener('touchend', hideTooltip);
+
+    // ── TABS ──
+    document.querySelectorAll('.tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+            tab.classList.add('active');
+            activeRange = tab.getAttribute('data-range');
+            const ds = DATASETS[activeRange];
+
+            document.getElementById('display-value').textContent = ds.value;
+            const changeEl = document.getElementById('display-change');
+            changeEl.innerHTML = ds.positive
+                ? '<svg fill="none" viewBox="0 0 24 24" stroke="#2ecc71" stroke-width="2.5" style="width:14px;height:14px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>' + ds.change
+                : '<svg fill="none" viewBox="0 0 24 24" stroke="#e74c3c" stroke-width="2.5" style="width:14px;height:14px;"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>' + ds.change;
+            changeEl.style.color = ds.positive ? '#2ecc71' : '#e74c3c';
+
+            document.getElementById('assets-value').textContent = ds.assets;
+            document.getElementById('liabilities-value').textContent = ds.liabilities;
+
+            drawChart(activeRange);
+        });
+    });
+
+    // ── INIT ──
+    window.addEventListener('resize', function () { drawChart(activeRange); });
+    drawChart(activeRange);
 });

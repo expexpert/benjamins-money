@@ -1716,3 +1716,187 @@ input:focus-visible {
 .liability .seg-block.filled {
     background: #F16965;
 }
+
+
+.card.card-graph {
+    background: #060F13;
+    padding: 32px;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+/* ── HEADER ── */
+.card-graph .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+
+.card-graph .net-worth-label {
+    font-size: 12px;
+    color: rgba(233, 231, 221, 60%);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    line-height: 11px;
+}
+
+.card-graph .net-worth-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #E9E7DD;
+    letter-spacing: 4%;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.card-graph .net-worth-change {
+    font-size: 16px;
+    color: #4FC07C;
+    letter-spacing: 2%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.card-graph .net-worth-change svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ── RANGE TABS ── */
+.card-graph .range-tabs {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.card-graph .tab {
+    padding: 7px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #E9E7DD !important;
+    cursor: pointer;
+    border: 1px solid rgba(233, 231, 221, 24%);
+    background: transparent;
+    transition: 0.15s;
+    font-family: inherit;
+    line-height: 11px;
+}
+
+.card-graph .tab:hover {
+    color: #f0f0f0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.card-graph .tab.active {
+    background: #E9E7DD;
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #072312 !important;
+}
+
+/* ── CHART AREA ── */
+.card-graph .chart-wrap {
+    position: relative;
+    margin-top: 24px;
+    height: 280px;
+    cursor: crosshair;
+}
+
+.card-graph canvas#chart {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ── TOOLTIP ── */
+.card-graph .tooltip {
+    position: absolute;
+    background: #060F13;
+    border: 1px solid rgba(233, 231, 221, 0.24);
+    border-radius: 8px;
+    padding: 6px 7px;
+    pointer-events: none;
+    display: none;
+    z-index: 10;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 14px;
+    color: #E9E7DD;
+}
+
+.card-graph .tooltip-value {
+    font-size: 14px;
+    color: #E9E7DD;
+}
+
+.card-graph .tooltip-date {
+    font-size: 12px;
+    color: rgba(233, 231, 221, 60%);
+    margin-top: 5px;
+}
+
+/* crosshair dot */
+.card-graph .crosshair-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border: 2px solid #2ecc71;
+    border-radius: 50%;
+    pointer-events: none;
+    display: none;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.6);
+}
+
+/* ── X AXIS LABELS ── */
+.card-graph .x-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 60px 16px;
+    font-size: 12px;
+    color: rgba(233, 231, 221, 60%);
+}
+
+/* ── FOOTER ── */
+.card-graph .footer {
+    display: flex;
+    background: rgba(233, 231, 221, 4%);
+    border: 1px solid rgba(233, 231, 221, 50%);
+    border-radius: 10px;
+    padding: 22px 30px;
+    gap: 40px;
+}
+
+.card-graph .footer-item {
+    flex: 1;
+}
+
+.card-graph .footer-item:last-child {
+    border-right: none;
+}
+
+.card-graph .footer-label {
+    font-size: 9px;
+    letter-spacing: 0;
+    color: #E9E7DD;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.card-graph .footer-value {
+    font-size: 16px;
+    color: #E9E7DD;
+    margin-bottom: 10px;
+}
+
+.card-graph .footer-bar {
+    height: 3px;
+    border-radius: 2px;
+    width: 100%;
+}

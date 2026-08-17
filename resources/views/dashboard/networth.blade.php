@@ -118,6 +118,59 @@
             </div>
         </div>
 
+        <div class="card card-graph mb-48 br-12 border-E9E7DD-24">
+            <!-- HEADER -->
+            <div class="header">
+                <div class="header-left">
+                    <div class="net-worth-label">Net Worth</div>
+                    <div class="net-worth-value" id="display-value">$14,743,000</div>
+                    <div class="net-worth-change" id="display-change">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="#2ecc71" stroke-width="2.5">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                        +$1,124,000 (8.2%) this year
+                    </div>
+                </div>
+                <div class="range-tabs">
+                    <button class="tab" data-range="1D">1D</button>
+                    <button class="tab" data-range="1W">1W</button>
+                    <button class="tab" data-range="1M">1M</button>
+                    <button class="tab" data-range="3M">3M</button>
+                    <button class="tab" data-range="YTD">YTD</button>
+                    <button class="tab active" data-range="1Y">1Y</button>
+                    <button class="tab" data-range="ALL">ALL</button>
+                </div>
+            </div>
+
+            <!-- CHART -->
+            <div class="chart-wrap" id="chart-wrap">
+                <canvas id="chart"></canvas>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltip-value" id="tt-value"></div>
+                    <div class="tooltip-date" id="tt-date"></div>
+                </div>
+                <div class="crosshair-dot" id="crosshair-dot"></div>
+            </div>
+
+            <!-- X LABELS -->
+            <div class="x-labels" id="x-labels"></div>
+
+            <!-- FOOTER -->
+            <div class="footer">
+                <div class="footer-item">
+                    <div class="footer-label">Assets</div>
+                    <div class="footer-value" id="assets-value">$16,125,000</div>
+                    <div class="footer-bar" style="background: #4FC07C;"></div>
+                </div>
+                <div class="footer-item">
+                    <div class="footer-label">Liabilities</div>
+                    <div class="footer-value" id="liabilities-value">$1,382,000</div>
+                    <div class="footer-bar" style="background:rgba(196, 229, 225, 30%);"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="d-flex gap-16 flex-col mb-48">
             <h5 class="f-14 lh-16 neutral-300">
                 TOTAL ASSETS
@@ -225,7 +278,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="46.5">
+                                <div class="seg-bar" data-pct="34.1">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -256,7 +309,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="46.5">
+                                <div class="seg-bar" data-pct="17.1">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -287,7 +340,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="25.5">
+                                <div class="seg-bar" data-pct="1.6">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -318,7 +371,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="46.5">
+                                <div class="seg-bar" data-pct="0.7">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -349,7 +402,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="46.5">
+                                <div class="seg-bar" data-pct="0.2">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -440,7 +493,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="46.5">
+                                <div class="seg-bar" data-pct="54.3">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -471,7 +524,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="46.5">
+                                <div class="seg-bar" data-pct="36.2">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -502,7 +555,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="46.5">
+                                <div class="seg-bar" data-pct="5.90">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -533,7 +586,7 @@
                                 </p>
                             </div>
                             <div class="date-outer">
-                                <div class="seg-bar" data-pct="25.5">
+                                <div class="seg-bar" data-pct="3.60">
                                     <div class="seg-inner"></div>
                                 </div>
                             </div>
@@ -559,141 +612,7 @@
         </div>
 
 
-        <div class="card">
 
-            <div class="header">
-                <div>
-                    <p class="net-worth-label">NET WORTH</p>
-                    <p class="net-worth-value">$14,743,000</p>
-                    <div class="net-worth-change">
-                        <span>&#8599;</span>
-                        <span>+$1,124,000 (8.2%) this year</span>
-                    </div>
-                </div>
-
-                <div class="range-toggle">
-                    <button>1D</button>
-                    <button>1W</button>
-                    <button>1M</button>
-                    <button>3M</button>
-                    <button>YTD</button>
-                    <button class="active">1Y</button>
-                    <button>ALL</button>
-                </div>
-            </div>
-
-            <div class="chart-wrap">
-                <div class="tooltip">
-                    <div class="amount">$14,600,00</div>
-                    <div class="date">Nov26, 2025</div>
-                </div>
-
-                <svg viewBox="0 0 1220 480" preserveAspectRatio="none">
-                    <defs>
-                        <linearGradient id="fillGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#1f6b4f" stop-opacity="0.55" />
-                            <stop offset="100%" stop-color="#0a0f12" stop-opacity="0" />
-                        </linearGradient>
-                    </defs>
-
-                    <!-- gridlines -->
-                    <line x1="70" y1="30" x2="70" y2="400" stroke="#1b2226" stroke-width="1" />
-                    <line x1="70" y1="400" x2="1200" y2="400" stroke="#1b2226" stroke-width="1" />
-
-                    <!-- y axis labels -->
-                    <text x="55" y="45" text-anchor="end" class="axis-label">$20M</text>
-                    <text x="55" y="130" text-anchor="end" class="axis-label">$16M</text>
-                    <text x="55" y="215" text-anchor="end" class="axis-label">$12M</text>
-                    <text x="55" y="300" text-anchor="end" class="axis-label">$8M</text>
-
-                    <!-- area fill -->
-                    <path d="
-        M 90,440
-        C 130,380 150,260 200,260
-        C 240,260 250,380 280,400
-        C 310,420 330,340 360,340
-        C 390,340 400,375 430,375
-        C 460,375 470,300 500,265
-        C 530,230 540,225 570,225
-        C 600,225 610,335 645,360
-        C 670,378 680,378 700,360
-        C 715,347 720,335 730,300
-        C 740,265 745,225 760,225
-        C 775,225 785,265 800,320
-        C 815,360 825,375 845,375
-        C 865,375 875,340 890,340
-        C 905,340 910,370 930,375
-        C 950,380 960,300 985,255
-        C 1010,210 1020,205 1040,205
-        C 1060,205 1065,270 1080,300
-        C 1095,330 1105,335 1120,335
-        C 1135,335 1140,300 1155,275
-        C 1170,250 1175,325 1190,380
-        C 1200,415 1205,435 1210,445
-        L 1210,440 L 90,440 Z"
-                        fill="url(#fillGradient)" stroke="none" />
-
-                    <!-- line -->
-                    <path d="
-        M 90,440
-        C 130,380 150,260 200,260
-        C 240,260 250,380 280,400
-        C 310,420 330,340 360,340
-        C 390,340 400,375 430,375
-        C 460,375 470,300 500,265
-        C 530,230 540,225 570,225
-        C 600,225 610,335 645,360
-        C 670,378 680,378 700,360
-        C 715,347 720,335 730,300
-        C 740,265 745,225 760,225
-        C 775,225 785,265 800,320
-        C 815,360 825,375 845,375
-        C 865,375 875,340 890,340
-        C 905,340 910,370 930,375
-        C 950,380 960,300 985,255
-        C 1010,210 1020,205 1040,205
-        C 1060,205 1065,270 1080,300
-        C 1095,330 1105,335 1120,335
-        C 1135,335 1140,300 1155,275
-        C 1170,250 1175,325 1190,380
-        C 1200,415 1205,435 1210,445"
-                        fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" />
-
-                    <!-- marker -->
-                    <line x1="730" y1="300" x2="730" y2="440" stroke="#4a5459" stroke-width="1" stroke-dasharray="3,3" />
-                    <circle cx="730" cy="300" r="5" fill="#f2f4f5" />
-
-                    <!-- x axis labels -->
-                    <text x="90" y="465" class="axis-label">May, 25</text>
-                    <text x="180" y="465" class="axis-label">Jun, 25</text>
-                    <text x="270" y="465" class="axis-label">Jul, 25</text>
-                    <text x="360" y="465" class="axis-label">Aug, 25</text>
-                    <text x="450" y="465" class="axis-label">Sep, 25</text>
-                    <text x="545" y="465" class="axis-label">Oct, 25</text>
-                    <text x="640" y="465" class="axis-label">Nov, 25</text>
-                    <text x="730" y="465" class="axis-label">Dec, 25</text>
-                    <text x="820" y="465" class="axis-label">Jan, 26</text>
-                    <text x="915" y="465" class="axis-label">Feb, 26</text>
-                    <text x="1010" y="465" class="axis-label">Mar, 26</text>
-                    <text x="1105" y="465" class="axis-label">Apr, 26</text>
-                    <text x="1180" y="465" class="axis-label">May, 26</text>
-                </svg>
-            </div>
-
-            <div class="footer">
-                <div class="stat-box">
-                    <p class="stat-label">ASSETS</p>
-                    <p class="stat-value">$16,125,000</p>
-                    <div class="stat-bar assets-bar"><span></span></div>
-                </div>
-                <div class="stat-box">
-                    <p class="stat-label">LIABILITIES</p>
-                    <p class="stat-value">$1,382,000</p>
-                    <div class="stat-bar liabilities-bar"><span></span></div>
-                </div>
-            </div>
-
-        </div>
 
     </div>
 </div>

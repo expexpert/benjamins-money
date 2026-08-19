@@ -154,8 +154,28 @@ a {
     --color-info-900: #0E3055;
 }
 
+.clr-6B7280 {
+    color: #6B7280;
+}
+
+.clr-E5E7EB {
+    color: #E5E7EB;
+}
+
 .clr-red-400 {
     color: #F16965;
+}
+
+.clr-5D5C58 {
+    color: #5D5C58;
+}
+
+.clr-10B981 {
+    color: #10B981;
+}
+
+.clr-94A3B8 {
+    color: #94A3B8 !important;
 }
 
 .clr-blue-300 {
@@ -242,6 +262,10 @@ a {
     color: var(--color-secondary-900);
 }
 
+.bg-374151 {
+    background-color: #374151;
+}
+
 .bg-yellow-400 {
     background-color: #FFBB33;
 }
@@ -300,12 +324,25 @@ a {
 .dashboard-outer {
     min-height: 100vh;
     display: flex;
+    position: relative;
 }
 
 .dashboard-content {
-    flex: 1;
+    /* flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
+    position: relative;
+    left: 267px;
+    width: calc(100% - 267px);
+    padding: 48px 40px;
+}
+
+.sidebar-outer {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    height: calc(100% - 40px);
+    padding: 0 16px;
+    overflow-x: hidden;
 }
 
 /* typography */
@@ -421,6 +458,10 @@ h6 {
 
 .white-80 {
     color: var(--color-neutral-400);
+}
+
+.white-75 {
+    color: rgba(233, 231, 221, 75%);
 }
 
 .white-50 {
@@ -549,6 +590,10 @@ h6 {
 
 .p-24 {
     padding: 24px;
+}
+
+.p-2-8 {
+    padding: 2px 8px;
 }
 
 .p-3-16 {
@@ -688,8 +733,8 @@ h6 {
 }
 
 .card {
-    border: 1px solid rgba(233, 231, 221, 24%);
-    background-color: var(--color-secondary-900);
+    border: 1px solid #1E2A30;
+    background-color: #060F13;
     border-radius: 12px;
 }
 
@@ -698,7 +743,7 @@ h6 {
 }
 
 .card-header h3 {
-    color: var(--color-neutral-300);
+    color: var(--color-neutral-400);
     font-weight: 400;
     letter-spacing: 4%;
 }
@@ -755,6 +800,10 @@ h6 {
     margin-bottom: 17px;
 }
 
+.mb-18 {
+    margin-bottom: 18px;
+}
+
 .mb-20 {
     margin-bottom: 20px;
 }
@@ -789,6 +838,10 @@ h6 {
 
 .d-grid {
     display: grid;
+}
+
+.col-lg-1 {
+    grid-template-columns: repeat(1, 1fr);
 }
 
 .col-lg-2 {
@@ -896,6 +949,10 @@ p {
     color: #E9E7DD;
 }
 
+.org-white {
+    color: #fff;
+}
+
 .border-bottom-white-24 {
     border-bottom: 1px solid rgba(233, 231, 221, 24%);
 }
@@ -933,6 +990,14 @@ p {
 .bg-gray {
     background: rgba(21, 121, 61, 8%);
     border-radius: 8px;
+}
+
+.bg-1E2A30 {
+    background-color: #1E2A30;
+}
+
+.bg-light-green {
+    background-color: rgba(16, 185, 129, 12.16%);
 }
 
 .bg-neutral-5 {
@@ -1163,6 +1228,14 @@ p {
 
 .success-300 {
     color: var(--color-success-300);
+}
+
+.ls-042 {
+    letter-spacing: 0.42px;
+}
+
+.ls-084 {
+    letter-spacing: 0.84px;
 }
 
 .lh-10 {

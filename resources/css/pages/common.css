@@ -1,18 +1,32 @@
 /* sidebar  */
 .sidebar {
     background-color: var(--sidebar_bg);
-    padding: 32px 15px;
-    width: 256px;
+    padding: 48px 0px 30px;
+    width: 267px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 9;
+    transition: all 0.5s ease;
 }
 
 .logo {
     text-align: center;
-    margin: 0 auto 16px 0;
-    padding: 0 30px;
+    margin: 0;
+    padding: 0 24px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo svg {
+    max-width: 145px;
 }
 
 .sidebar-inner {
@@ -73,17 +87,13 @@ ul.sidebar-links a svg rect,
 
 /* dashboard content  */
 
-.dashboard-content {
-    padding: 56px 44px;
-}
-
 .top-bar h1 {
     color: var(--color-neutral-500);
     font-weight: 400;
 }
 
 .sync-time {
-    color: var(--color-neutral-300);
+    color: var(--color-neutral-400);
     position: relative;
 }
 
@@ -100,7 +110,7 @@ ul.sidebar-links a svg rect,
     top: calc(50% - 3px);
     width: 3px;
     height: 3px;
-    background: var(--color-neutral-300);
+    background: var(--color-neutral-400);
     border-radius: 100%;
     content: '';
 }
@@ -158,7 +168,7 @@ ul.sidebar-links a svg rect,
 input#search {
     border: 1px solid var(--color-neutral-200);
     background: transparent;
-    padding: 12px 40px 12px 12px;
+    padding: 12px 40px 12px 16px;
     border-radius: 8px;
     min-width: 320px;
     color: var(--color-neutral-500);
@@ -358,13 +368,13 @@ input#search {
 }
 
 .card-cont h3 {
-    color: var(--color-neutral-500);
+    color: #fff;
     font-weight: 400;
 }
 
 .card-cont p {
-    color: var(--color-neutral-300);
-    letter-spacing: 4%;
+    color: #8C8B85;
+    letter-spacing: 1.5px;
 }
 
 .card .notification-outer {
@@ -403,8 +413,8 @@ a.cus-link {
 
 a.cus-btn {
     color: #4FC07C;
-    padding: 5px 14px;
-    border: 1px solid var(--color-primary-500);
+    padding: 10px 14px;
+    border: 1px solid #10B981;
     display: block;
     border-radius: 34px;
     text-align: center;
@@ -416,7 +426,7 @@ a.cus-btn {
 
 input[type="range"] {
     accent-color: var(--color-primary-500);
-    height: 5px;
+    height: 8px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -426,7 +436,7 @@ input[type="range"]::-webkit-slider-thumb {
     height: 28px;
     border-radius: 50%;
     background: #fff;
-    border: 2px solid var(--color-primary-500);
+    border: 2px solid #10B981;
     box-shadow:
         inset 0 0 0 6px var(--color-primary-500),
         0 2px 8px rgba(0, 0, 0, .18);
@@ -452,10 +462,10 @@ input[type="range"]::-moz-range-thumb {
     color: var(--color-neutral-200);
 }
 
-.selected-value {
+/* .selected-value {
     border-bottom: 2px solid #29C36A;
     padding-bottom: 2px;
-}
+} */
 
 .bg-blue .notification-outer {
     padding: 4px;
@@ -908,7 +918,12 @@ ul.left-col li:not(:last-child) {
 .nav-header .left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+}
+
+.nav-header .left svg {
+    width: 18px;
+    height: 18px;
 }
 
 .nav-header .icon-leaf {
@@ -973,7 +988,7 @@ ul.left-col li:not(:last-child) {
     padding: 16px;
 } */
 .sign-out button {
-    padding: 8px 16px !important;
+    padding: 8px 32px !important;
 }
 
 /* checkbox css */
@@ -1899,4 +1914,110 @@ input:focus-visible {
     height: 3px;
     border-radius: 2px;
     width: 100%;
+}
+
+
+/* toggle sidebar css  */
+
+
+body.sidebar-close .sidebar {
+    width: 80px;
+}
+
+body.sidebar-close .logo a {
+    display: none;
+}
+
+body.sidebar-close .nav-items {
+    opacity: 0;
+    padding: 0 !IMPORTANT;
+    height: 0 !important;
+}
+
+body.sidebar-close .left span {
+    opacity: 0;
+    width: 0;
+}
+
+body.sidebar-close #sidebar {
+    gap: 0;
+}
+
+body.sidebar-close button span {
+    opacity: 0;
+}
+
+body.sidebar-close button svg {
+    width: 18px !important;
+}
+
+body.sidebar-close button {
+    display: block !important;
+}
+
+body.sidebar-close .dashboard-content {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.nav-section span.tooltip {
+    position: absolute;
+    top: -20px;
+    left: calc(100% + 15px);
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0s;
+    color: #000a0f;
+    justify-content: center;
+    text-align: center;
+}
+
+/* .nav-section:hover span.tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px !important;
+} */
+
+.nav-section {
+    position: relative;
+}
+
+/* Fix tooltip visibility when sidebar is collapsed */
+body.sidebar-close .sidebar {
+    overflow: visible !important;
+}
+
+body.sidebar-close .sidebar-outer {
+    overflow: visible !important;
+}
+
+body.sidebar-close #sidebar {
+    overflow: visible !important;
+}
+
+body.sidebar-close .nav-section span.tooltip {
+    z-index: 99999 !important;
+}
+
+body.sidebar-close .nav-section:hover span.tooltip {
+    opacity: 1 !important;
+    pointer-events: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px !important;
+    left: calc(100% + 10px);
+}
+
+.sidebar-toggle {
+    cursor: pointer;
 }

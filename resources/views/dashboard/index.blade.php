@@ -49,234 +49,252 @@
         <div class="card-outer d-flex gap-48 align-flex-start flex-col">
             <div class="card-internal d-flex flex-col gap-16 align-flex-start w-100">
                 <div class="card-header">
-                    <h3 class="f-12 uppercase">
+                    <h3 class="f-14 uppercase">
                         Financial Snapshot
                     </h3>
                 </div>
-                <div class="d-grid col-lg-4 gap-19 w-100">
+                <div class="d-grid col-lg-4 gap-16 w-100">
                     <div class="card p-24">
-                        <div class="d-flex gap-12 mb-24">
-                            <div class="notification-outer">
+                        <div class="d-flex gap-12 mb-20">
+                            <!-- <div class="notification-outer">
                                 <img src="{{ asset('images/net-worth.svg') }}" alt="net worth icon">
-                            </div>
+                            </div> -->
                             <div class="card-cont">
-                                <h3 class="f-16 mb-4">
-                                    Net Worth
-                                </h3>
-                                <p class="f-12 uppercase">
+                                <p class="f-12 uppercase mb-4">
                                     Total Estate
                                 </p>
+                                <h3 class="f-14">
+                                    Net Worth
+                                </h3>
                             </div>
                         </div>
-                        <div class="stats mb-32">
-                            <h2 class="f-24 mb-8 blue">
+                        <div class="stats mb-16">
+                            <h2 class="f-28 mb-20 org-white">
                                 $18,500,000
                             </h2>
-                            <div class="d-flex gap-4 f-12">
+                            <div class="h-1 bg-1E2A30 mb-12">
+
+                            </div>
+                            <div class="p-2-8 bg-light-green br-6 clr-10B981 d-inline-flex f-12 lh-14">
+                                +$247,500 (1.35%) MTD
+                            </div>
+                            <!-- <div class="d-flex gap-4 f-12">
                                 <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
                                 <p> +$247,500 (1.35%) MTD</p>
-                            </div>
+                            </div> -->
                         </div>
-                        <a href="#" class="cus-link gap-14 f-16 d-flex">View Breakdown <img
-                                src="{{ asset('images/btn-arrow.svg') }}" alt="btn icon"></a>
+                        <a href="#" class="cus-link gap-4 f-12 d-flex">View Details <img
+                                src="{{ asset('images/arrow-gray.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-24">
-                        <div class="d-flex gap-12 mb-24">
-                            <div class="notification-outer">
-                                <img src="{{ asset('images/real-time.svg') }}" alt="real-time icon">
-                            </div>
+                        <div class="d-flex gap-12 mb-20">
+                            <!-- <div class="notification-outer">
+                                <img src="{{ asset('images/real-time.svg') }}" alt="net worth icon">
+                            </div> -->
                             <div class="card-cont">
-                                <h3 class="f-16 mb-4">
+                                <p class="f-12 uppercase mb-4">
+                                    NET AFTER-TAX
+                                </p>
+                                <h3 class="f-14">
                                     Real-Time Liquidity
                                 </h3>
-                                <p class="f-12 uppercase">
-                                    Net after - Tax
-                                </p>
                             </div>
                         </div>
-                        <div class="stats mb-32">
-                            <h2 class="f-24 mb-8 white">
+                        <div class="stats mb-16">
+                            <h2 class="f-28 mb-20 org-white">
                                 $14,200,000
                             </h2>
-                            <div class="d-flex gap-4 f-12">
+                            <div class="h-1 bg-1E2A30 mb-12">
 
-                                <p> 76.8% Liquid</p>
                             </div>
+                            <div class="p-2-8 bg-light-green br-6 clr-10B981 d-inline-flex f-12 lh-14">
+                                76.8% Liquid
+                            </div>
+                            <!-- <div class="d-flex gap-4 f-12">
+                                <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
+                                <p> +$247,500 (1.35%) MTD</p>
+                            </div> -->
                         </div>
-                        <a href="#" class="cus-link gap-14 f-16 d-flex">View Liquidity <img
-                                src="{{ asset('images/btn-arrow.svg') }}" alt="btn icon"></a>
+                        <a href="#" class="cus-link gap-4 f-12 d-flex">View Liquidity <img
+                                src="{{ asset('images/arrow-gray.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-24">
-                        <div class="d-flex gap-12 mb-24">
-                            <div class="notification-outer">
-                                <img src="{{ asset('images/cash-releases.svg') }}" alt="cash-releases icon">
-                            </div>
+                        <div class="d-flex gap-12 mb-20">
+                            <!-- <div class="notification-outer">
+                                <img src="{{ asset('images/cash-releases.svg') }}" alt="net worth icon">
+                            </div> -->
                             <div class="card-cont">
-                                <h3 class="f-16 mb-4">
+                                <p class="f-12 uppercase mb-4">
+                                    12 MONTH RUNWAY
+                                </p>
+                                <h3 class="f-14">
                                     Cash Reserves
                                 </h3>
-                                <p class="f-12 uppercase">
-                                    12 month RUNWAY
-                                </p>
                             </div>
                         </div>
-                        <div class="stats mb-32">
-                            <h2 class="f-24 mb-8 white">
-                                $250,000
+                        <div class="stats mb-16">
+                            <h2 class="f-28 mb-20 org-white">
+                                $600,000
                             </h2>
-                            <div class="d-flex gap-4 f-12">
-                                <p> Available Today</p>
+                            <div class="h-1 bg-1E2A30 mb-12">
+
                             </div>
+                            <div class="clr-5D5C58 f-12 lh-14">
+                                Available Today
+                            </div>
+                            <!-- <div class="d-flex gap-4 f-12">
+                                <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
+                                <p> +$247,500 (1.35%) MTD</p>
+                            </div> -->
                         </div>
-                        <a href="#" class="cus-link gap-14 f-16 d-flex">View Runway <img
-                                src="{{ asset('images/btn-arrow.svg') }}" alt="btn icon"></a>
+                        <a href="#" class="cus-link gap-4 f-12 d-flex">View Runway <img
+                                src="{{ asset('images/arrow-gray.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-24">
-                        <div class="d-flex gap-12 mb-24">
-                            <div class="notification-outer">
-                                <img src="{{ asset('images/tax-rate.svg') }}" alt="tax-rate icon">
-                            </div>
+                        <div class="d-flex gap-12 mb-20">
+                            <!-- <div class="notification-outer">
+                                <img src="{{ asset('images/tax-rate.svg') }}" alt="net worth icon">
+                            </div> -->
                             <div class="card-cont">
-                                <h3 class="f-16 mb-4">
+                                <p class="f-12 uppercase mb-4">
+                                    COMBINED TAX RATE
+                                </p>
+                                <h3 class="f-14">
                                     Effective Tax Rate
                                 </h3>
-                                <p class="f-12 uppercase">
-                                    Combined Tax Rate
-                                </p>
                             </div>
                         </div>
-                        <div class="stats mb-32">
-                            <h2 class="f-24 mb-8 white">
+                        <div class="stats mb-16">
+                            <h2 class="f-28 mb-20 org-white">
                                 40.2%
                             </h2>
-                            <div class="d-grid gap-4 f-12 col-lg-2">
-                                <div>
-                                    <p> Federal: <span class="blue">37.0%</span> </p>
-                                </div>
-                                <div>
-                                    <p> State + Local: <span class="blue">8.95%</span> </p>
-                                </div>
+                            <div class="h-1 bg-1E2A30 mb-12">
 
-                                <div>
-                                    <p>NIIT: <span class="blue">3.8%</span> </p>
-                                </div>
                             </div>
+                            <div class="clr-5D5C58 f-12 lh-14">
+                                Fed: 37.0% | State: 8.95% | NIIT: 3.8%
+                            </div>
+                            <!-- <div class="d-flex gap-4 f-12">
+                                <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
+                                <p> +$247,500 (1.35%) MTD</p>
+                            </div> -->
                         </div>
-                        <a href="#" class="cus-link gap-14 f-16 d-flex">View Tax Analysis<img
-                                src="{{ asset('images/btn-arrow.svg') }}" alt="btn icon"></a>
+                        <a href="#" class="cus-link gap-4 f-12 d-flex">View Tax Analysis <img
+                                src="{{ asset('images/arrow-gray.svg') }}" alt="btn icon"></a>
                     </div>
                 </div>
             </div>
 
             <div class="card-internal d-flex flex-col gap-16 align-flex-start w-100">
                 <div class="card-header">
-                    <h3 class="f-12 uppercase">
+                    <h3 class="f-14 uppercase">
                         Equity & Liquidity Engine
                     </h3>
                 </div>
                 <div class="d-grid col-lg-2 gap-19 w-100">
-                    <div class="card p-24">
-                        <div class="d-flex gap-12 mb-24">
-                            <div class="notification-outer">
+                    <div class="card p-24 d-flex flex-col gap-16">
+                        <div class="d-flex gap-12 mb-4 align-center justify-space-between">
+                            <!-- <div class="notification-outer">
                                 <img src="{{ asset('images/after-tax.svg') }}" alt="after-tax icon">
-                            </div>
+                            </div> -->
                             <div class="card-cont">
-                                <h3 class="f-16 mb-4">
-                                    Net-After-Tax Liqiudity
-                                </h3>
-                                <p class="f-12 uppercase">
+                                <p class="f-11 uppercase clr-94A3B8 mb-5">
                                     Independence runway
                                 </p>
+                                <h3 class="f-16">
+                                    Net-After-Tax Liqiudity
+                                </h3>
+                            </div>
+                            <div class="p-5-11 bg-light-green br-89 clr-10B981 d-inline-flex f-11 lh-14 ls-042">
+                                Active Ledger
                             </div>
                         </div>
 
-                        <div class="d-grid gap-12 col-lg-6-4">
-                            <div class="left-col">
-                                <div class="d-grid gap-17 f-12 col-lg-2">
-                                    <div>
-                                        <p> Shares Vested <span class="white f-16">8,340</span> </p>
-                                    </div>
-                                    <div>
-                                        <p> AMZN Price<span class="white f-16">$89.50</span> </p>
-                                    </div>
-
-                                    <div>
-                                        <p>Vested Value <span class="white f-16">$746,530</span> </p>
-                                    </div>
-
-                                    <div>
-                                        <p>Net After-Tax <span class="white f-16">$14.2M</span> </p>
-                                    </div>
+                        <div class="d-flex align-center gap-26 justify-space-between">
+                            <div class="real-left d-flex flex-col gap-4">
+                                <div class="f-11 clr-6B7280 ls-084 uppercase">
+                                    REAL-TIME VALUATION
                                 </div>
-                                <div class="mt-21 bg-gray p-28-14">
-                                    <div class="d-flex gap-12 mb-24">
-                                        <div class="notification-outer">
-                                            <img src="{{ asset('images/handcufs.svg') }}" alt="GOLDEN HANDCUFFS icon">
-                                        </div>
-                                        <div class="card-cont">
-                                            <h3 class="f-16 mb-4">
-                                                GOLDEN HANDCUFFS (Forfeiture)
-                                            </h3>
-                                            <p class="f-12 uppercase">
-                                                At risk if you leave today
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex gap-12 justify-space-between">
-                                        <h2 class="f-20 white">
-                                            $8,240,000
-                                        </h2>
-                                        <a href="#">
-                                            <img src="{{ asset('images/btn-rounded-arrow.svg') }}" alt="button arrow icon">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right-col">
-                                <h2 class="f-12 center">
-                                    Liquidity Status
+                                <h2 class="f-28 org-white">
+                                    $8,240,000
                                 </h2>
-                                <div class="img center mb-12">
-                                    <img src="{{ asset('images/stats-img.svg') }}" alt="stats image">
+                                <div class="clr-10B981 f-12 lh-14">
+                                    +$247,500 (1.35%) MTD
                                 </div>
-                                <a href="#" class="cus-btn f-12">View Strategy</a>
+                            </div>
+                            <div class="img center">
+                                <img src="{{ asset('images/stats-img.svg') }}" alt="stats image">
                             </div>
                         </div>
+
+                        <div class="h-1 bg-374151">
+
+                        </div>
+
+                        <div class="left-col">
+                            <div class="d-grid gap-8 col-lg-1">
+                                <div class="d-flex align-center justify-space-between gap-10">
+                                    <p class="f-13 clr-94A3B8 lh-14"> Shares Vested </p>
+                                    <span class="white f-16">8,340</span>
+                                </div>
+                                <div class="d-flex align-center justify-space-between gap-10">
+                                    <p class="f-13 clr-94A3B8 lh-14"> AMZN Price </p>
+                                    <span class="org-white f-13 lh-14">$89.50</span>
+                                </div>
+
+                                <div class="d-flex align-center justify-space-between gap-10">
+                                    <p class="f-13 clr-94A3B8 lh-14">Vested Value </p>
+                                    <span class="org-white f-13 lh-14">$746,530</span>
+                                </div>
+
+                                <div class="d-flex align-center justify-space-between gap-10">
+                                    <p class="f-13 clr-94A3B8 lh-14">Net After-Tax </p>
+                                    <span class="org-white f-13 lh-14">$14.2M</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid col-lg-2 align-center gap-12">
+                            <a href="#" class="cus-btn f-14">View Strategy</a>
+                            <a href="#" class="cus-btn f-14 bg-light-green">View Forfeiture Risk</a>
+                        </div>
+
 
 
                     </div>
                     <div class="card p-24">
-                        <div class="d-flex gap-12 mb-24">
-                            <div class="notification-outer">
-                                <img src="{{ asset('images/Scenario-Planning.svg') }}" alt="real-time icon">
-                            </div>
+                        <div class="d-flex gap-12 mb-18 align-center justify-space-between">
+                            <!-- <div class="notification-outer">
+                                <img src="{{ asset('images/after-tax.svg') }}" alt="after-tax icon">
+                            </div> -->
                             <div class="card-cont">
-                                <h3 class="f-16 mb-4">
-                                    Scenario Planning
-                                </h3>
-                                <p class="f-12 uppercase">
-                                    ACCELERATOR MODE
+                                <p class="f-11 uppercase clr-94A3B8 mb-5">
+                                    Accelerator mode
                                 </p>
+                                <h3 class="f-16">
+                                    Scenario Modeling
+                                </h3>
                             </div>
+                            <!-- <div class="p-5-11 bg-light-green br-89 clr-10B981 d-inline-flex f-11 lh-14 ls-042">
+                                Active Ledger
+                            </div> -->
                         </div>
                         <div class="planning mb-15">
-                            <div class="plan-head d-flex justify-space-between mb-8">
-                                <h3 class="f-14 white">Planning Timeline</h3>
-                                <div class="selected-value f-16 white" id="selectedValue">Year 3</div>
+                            <div class="plan-head d-flex justify-space-between mb-4">
+                                <h3 class="f-13 clr-E5E7EB lh-14">Simulated Timeline</h3>
+                                <div class="selected-value f-13 lh-14 clr-10B981" id="selectedValue">Selected: Year 3 Target </div>
                             </div>
 
                             <div class="slidecontainer w-100">
                                 <input type="range" min="1" max="5" value="3" class="slider w-100" id="myRange">
                             </div>
 
-                            <div class="range-labels f-12">
+                            <div class="range-labels f-12 mb-15">
                                 <span>Now</span>
                                 <span id="middleLabel">Year 3</span>
                                 <span>Year 5</span>
                             </div>
                         </div>
-                        <div class="bg-blue p-15-24 br-8">
-
+                        <div class="bg-blue p-15-24 br-8 mb-18">
                             <div class="d-grid col-lg-7-3 gap-10">
                                 <div class="bg-left">
                                     <div class="d-flex gap-12 mb-15">
@@ -285,7 +303,7 @@
                                         </div>
                                         <div class="card-cont">
                                             <h3 class="f-14 uppercase mb-0">
-                                                Projected Outcome (Year 3)
+                                                Projected Outcome (Year 3)
                                             </h3>
                                         </div>
                                     </div>
@@ -337,6 +355,7 @@
                                         </div>
 
                                         <div class="selected-tags" id="selectedTags"></div>
+
                                     </div>
 
                                 </div>
@@ -350,6 +369,7 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="#" class="cus-btn f-14 bg-light-green d-flex">View Scenario Planning</a>
                     </div>
                 </div>
             </div>

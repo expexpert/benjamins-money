@@ -12,7 +12,7 @@
     </div>
     <div class="user-info-right">
         <form class="search-form">
-            <input id="search" type="text" placeholder="Search plans, accounts, documents..." class="f-14">
+            <input id="search" type="text" placeholder="Search plans, accounts, documents..." class="f-14 lh-14">
             <button type="submit">
                 <img src="{{ asset('images/search.svg') }}" alt="search icon">
             </button>

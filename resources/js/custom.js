@@ -1,7 +1,10 @@
 import $ from 'jquery';
 
 $(document).ready(function () {
-
+    // toggle btn in the sidebar
+    $('.sidebar-toggle').on('click', function () {
+        $('body').toggleClass('sidebar-close');
+    });
     toastr.options = {
         "closeButton": true,
         "debug": false,
@@ -363,11 +366,11 @@ $(document).ready(function () {
     // ===========================
 
     const labels = {
-        1: "Now",
-        2: "Year 2",
-        3: "Year 3",
-        4: "Year 4",
-        5: "Year 5"
+        1: "Selected: Now Target",
+        2: "Selected: Year 2 Target",
+        3: "Selected: Year 3 Target",
+        4: "Selected: Year 4 Target",
+        5: "Selected: Year 5 Target"
     };
 
     function updateTimeline() {

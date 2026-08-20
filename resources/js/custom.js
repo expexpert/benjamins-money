@@ -366,11 +366,11 @@ $(document).ready(function () {
     // ===========================
 
     const labels = {
-        1: "Selected: Now Target",
-        2: "Selected: Year 2 Target",
-        3: "Selected: Year 3 Target",
-        4: "Selected: Year 4 Target",
-        5: "Selected: Year 5 Target"
+        1: "Now Target",
+        2: "Year 2 Target",
+        3: "Year 3 Target",
+        4: "Year 4 Target",
+        5: "Year 5 Target"
     };
 
     function updateTimeline() {

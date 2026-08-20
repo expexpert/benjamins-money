@@ -1,12 +1,12 @@
 <div class="dashboard-header">
     <div class="user-info-left">
         <div class="top-bar">
-            <h1 class="f-20">Good Morning, <b>{{ Auth::user()->name }}</b></h1>
-            <div class="sync-time f-14">
+            <h1 class="f-20 lh-20">Good Morning, <b>{{ Auth::user()->name }}</b></h1>
+            <div class="sync-time f-14 lh-14">
                 Updated 2 mins ago
             </div>
         </div>
-        <div class="bottom-bar f-14">
+        <div class="bottom-bar f-14 lh-14">
             Tax Residency • Bethesda, MD
         </div>
     </div>

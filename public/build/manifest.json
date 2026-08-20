@@ -28,7 +28,7 @@
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CeUvnWbs.css",
+    "file": "assets/app-DyQMsCpK.css",
     "name": "app",
     "names": [
       "app.css"
@@ -104,7 +104,7 @@
     "src": "resources/images/onboarding-bg-img2.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CrjpL2X7.js",
+    "file": "assets/app-CofQ4vcN.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

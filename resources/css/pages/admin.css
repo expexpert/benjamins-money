@@ -420,3 +420,16 @@ tr:hover {
 .action-form {
     display: inline;
 }
+
+
+aside.admin-sidebar logo div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.admin-sidebar .logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -21,8 +21,25 @@ class SocialAuthController extends Controller
     {
         $googleUser = Socialite::driver('google')->user();
 
-        $user = User::where('email', $googleUser->getEmail())->first();
+        // Find user including soft-deleted users
+        $user = User::withTrashed()
+            ->where('google_id', $googleUser->getId())
+            ->first();
 
+        // If Google ID isn't linked, try email
+        if (!$user) {
+            $user = User::withTrashed()
+                ->where('email', $googleUser->getEmail())
+                ->first();
+        }
+
+        // User exists but has been soft deleted
+        if ($user && $user->trashed()) {
+            return redirect('/login')
+                ->with('error', 'Your account has been deleted or deactivated. Please contact support.');
+        }
+
+        // User doesn't exist - create new account
         if (!$user) {
             $user = User::create([
                 'name' => $googleUser->getName(),
@@ -33,6 +50,7 @@ class SocialAuthController extends Controller
                 'email_verified_at' => now(),
             ]);
         } else {
+            // Existing active user
             $user->update([
                 'google_id' => $googleUser->getId(),
                 'email_verified_at' => $user->email_verified_at ?? now(),
@@ -54,8 +72,25 @@ class SocialAuthController extends Controller
     {
         $appleUser = Socialite::driver('apple')->user();
 
-        $user = User::where('email', $appleUser->getEmail())->first();
+        // First check for the user including soft-deleted records
+        $user = User::withTrashed()
+            ->where('apple_id', $appleUser->getId())
+            ->first();
 
+        // If Apple ID isn't linked, try email
+        if (!$user) {
+            $user = User::withTrashed()
+                ->where('email', $appleUser->getEmail())
+                ->first();
+        }
+
+        // User exists but has been soft deleted
+        if ($user && $user->trashed()) {
+            return redirect('/login')
+                ->with('error', 'Your account has been deleted or deactivated. Please contact support.');
+        }
+
+        // User doesn't exist - create new account
         if (!$user) {
             $user = User::create([
                 'name' => $appleUser->getName() ?: 'Apple User',

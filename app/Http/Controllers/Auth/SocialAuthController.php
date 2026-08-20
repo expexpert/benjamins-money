@@ -96,7 +96,7 @@ class SocialAuthController extends Controller
                 'name' => $appleUser->getName() ?: 'Apple User',
                 'email' => $appleUser->getEmail(),
                 'apple_id' => $appleUser->getId(),
-                'password' => Str::random(32),
+                'password' => Str::random(10),
                 'role' => User::ROLE_USER,
                 'email_verified_at' => now(),
             ]);

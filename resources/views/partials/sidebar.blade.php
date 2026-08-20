@@ -35,7 +35,7 @@
                 </svg>
             </a>
             <div class="sidebar-toggle">
-                <img src="{{ asset('images/panel-toggle.svg') }}" alt="toggle">
+                <img src="{{ asset('images/sidebar-open.svg') }}" alt="toggle">
             </div>
         </div>
 

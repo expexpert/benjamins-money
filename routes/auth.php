@@ -41,8 +41,8 @@ Route::middleware('guest')->group(function () {
     Route::get('/auth/google', [SocialAuthController::class, 'google']);
     Route::get('/auth/google/callback', [SocialAuthController::class, 'googleCallback']);
 
-    Route::get('/auth/apple', [SocialAuthController::class, 'apple']);
-    Route::post('/auth/apple/callback', [SocialAuthController::class, 'appleCallback']);
+    Route::get('/auth/apple', [SocialAuthController::class, 'apple'])->name('apple.login');
+    Route::match(['get', 'post'], '/auth/apple/callback', [SocialAuthController::class, 'appleCallback'])->name('apple.callback');
 });
 
 // Authenticated Routes

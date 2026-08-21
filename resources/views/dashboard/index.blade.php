@@ -277,7 +277,7 @@
                             <div class="d-flex gap-12 mb-28 align-center justify-space-between">
                                 <div class="d-flex gap-16 align-center">
                                     <div class="notification-outer">
-                                        <img src="{{ asset('images/net-after.svg') }}" alt="net worth icon">
+                                        <img src="{{ asset('images/planning.svg') }}" alt="net worth icon">
                                     </div>
                                     <div class="card-cont">
                                         <h3 class="f-16 mb-8">
@@ -318,7 +318,7 @@
                                     <div class="bg-left">
                                         <div class="d-flex gap-12 mb-15">
                                             <div class="notification-outer br-3">
-                                                <img src="{{ asset('images/outcome.svg') }}" alt="real-time icon">
+                                                <img src="{{ asset('images/outcome-org.svg') }}" alt="real-time icon">
                                             </div>
                                             <div class="card-cont">
                                                 <h3 class="f-14 uppercase mb-0">
@@ -378,7 +378,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="bg-right pt-10">
+                                    <div class="bg-right pt-10 d-flex flex-col align-end">
                                         <h3 class="f-24 mb-4">
                                             $32.0M
                                         </h3>
@@ -388,7 +388,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="cus-btn f-14 bg-light-green d-flex justify-center">View Scenario Planning</a>
+                            <a href="#" class="cus-btn f-14 bg-light-green d-flex justify-center border-none">View Scenario Planning</a>
                         </div>
                     </div>
                 </div>
@@ -401,8 +401,8 @@
                     </div>
                     <div class="d-grid col-lg-2 gap-19 w-100">
                         <div class="card p-24 border-white-15 bg-0B1417 d-flex flex-col gap-22">
-                            <div class="d-flex gap-10px justify-space-between align-flex-start">
-                                <div class="d-flex gap-12">
+                            <div class="d-flex gap-10px justify-space-between align-center">
+                                <div class="d-flex gap-12 align-center">
                                     <div class="notification-outer">
                                         <img src="./images/pie-chart.svg" alt="assets icon">
                                     </div>
@@ -426,7 +426,7 @@
                             <div class="d-grid gap-34 col-lg-4-6 align-center">
                                 <div class="right-col b-0 p-0">
                                     <div class="img">
-                                        <img class="w-100" src="./images/allocation.svg" alt="asset Allocation image">
+                                        <img class="w-100" src="./images/diversified.svg" alt="asset Allocation image">
                                     </div>
                                     <!-- <h2 class="f-12 center white mb-4">
                                     33.3% (Diversified Pool)
@@ -439,11 +439,11 @@
                                             <div class="icon-square light-pink">
 
                                             </div>
-                                            <div class="icon-cont f-14 white-80">
+                                            <div class="icon-cont f-14 clr-99ACB6">
                                                 Single Stock (AMZN)
                                             </div>
                                         </div>
-                                        <span class="f-14 org-white">
+                                        <span class="f-14 white">
                                             66.7%
                                         </span>
                                     </li>
@@ -453,11 +453,11 @@
                                             <div class="icon-square light-orange">
 
                                             </div>
-                                            <div class="icon-cont f-14 white-80">
+                                            <div class="icon-cont f-14 clr-99ACB6">
                                                 Diversified Equity
                                             </div>
                                         </div>
-                                        <span class="f-14 org-white">
+                                        <span class="f-14 white">
                                             15%
                                         </span>
                                     </li>
@@ -467,11 +467,11 @@
                                             <div class="icon-square sea-green">
 
                                             </div>
-                                            <div class="icon-cont f-14 white-80">
+                                            <div class="icon-cont f-14 clr-99ACB6">
                                                 Fixed Income
                                             </div>
                                         </div>
-                                        <span class="f-14 org-white">
+                                        <span class="f-14 white">
                                             10%
                                         </span>
                                     </li>
@@ -481,11 +481,11 @@
                                             <div class="icon-square light-purple">
 
                                             </div>
-                                            <div class="icon-cont f-14 white-80">
+                                            <div class="icon-cont f-14 clr-99ACB6">
                                                 Alts / PE
                                             </div>
                                         </div>
-                                        <span class="f-14 org-white">
+                                        <span class="f-14 white">
                                             5%
                                         </span>
                                     </li>
@@ -495,11 +495,11 @@
                                             <div class="icon-square peach">
 
                                             </div>
-                                            <div class="icon-cont f-14 white-80">
+                                            <div class="icon-cont f-14 clr-99ACB6">
                                                 Cash
                                             </div>
                                         </div>
-                                        <span class="f-14 org-white">
+                                        <span class="f-14 white">
                                             3.3%
                                         </span>
                                     </li>
@@ -508,8 +508,8 @@
                                 </ul>
                             </div>
 
-                            <div class="bg-1E2A30-40 p-12 center f-12 lh-14 neutral-300 br-8">
-                                Target pool diversification is <span class="clr-108476">80%</span> • Action required to rebalance.
+                            <div class="bg-neutral-10 p-12 center f-12 lh-14 white br-8">
+                                Target pool diversification is <span class="clr-A7DFBD">80%</span> • Action required to rebalance.
                             </div>
 
                             <a href="#" class="border-none cus-btn f-14 lh-14 d-flex gap-6 align-center justify-center">View Asset Allocation Details <img class="w-14 h-14" src="{{ asset('images/long-arw.svg') }}" alt="long arrow"></a>
@@ -539,7 +539,7 @@
 
                                 <li class="goal-item">
                                     <div class="goal-top mb-8 d-flex align-center justify-space-between">
-                                        <h3 class="f-14 white">Retirement (2030)</h3>
+                                        <h3 class="f-15 white">Retirement (2030)</h3>
                                         <span class="f-14 white">72%</span>
                                     </div>
 
@@ -548,14 +548,14 @@
                                     </div>
 
                                     <div class="goal-bottom d-flex align-center justify-space-between">
-                                        <span class="f-12 white-80 uppercase">$5.8M / $8M TARGET</span>
-                                        <span class="f-13 clr-23B05B uppercase ls-054">ON TRACK</span>
+                                        <span class="f-13 white-80 uppercase">$5.8M / $8M TARGET</span>
+                                        <span class="f-13 clr-A7DFBD ls-054">On Track</span>
                                     </div>
                                 </li>
 
                                 <li class="goal-item">
                                     <div class="goal-top mb-8 d-flex align-center justify-space-between">
-                                        <h3 class="f-14 white">Education Fund</h3>
+                                        <h3 class="f-15 white">Education Fund</h3>
                                         <span class="f-14 white">91%</span>
                                     </div>
 
@@ -564,14 +564,14 @@
                                     </div>
 
                                     <div class="goal-bottom d-flex align-center justify-space-between">
-                                        <span class="f-12 white-80 uppercase">$455K / $500K</span>
-                                        <span class="f-13 clr-23B05B uppercase ls-054">NEARLY FUNDED</span>
+                                        <span class="f-13 white-80 uppercase">$455K / $500K</span>
+                                        <span class="f-13 clr-A7DFBD ls-054">Nearly Funded</span>
                                     </div>
                                 </li>
 
                                 <li class="goal-item">
                                     <div class="goal-top mb-8 d-flex align-center justify-space-between">
-                                        <h3 class="f-14 white">Vacation Property</h3>
+                                        <h3 class="f-15 white">Vacation Property</h3>
                                         <span class="f-14 white">44%</span>
                                     </div>
 
@@ -580,8 +580,8 @@
                                     </div>
 
                                     <div class="goal-bottom d-flex align-center justify-space-between">
-                                        <span class="f-12 white-80 uppercase">$880K / $2M</span>
-                                        <span class="f-13 clr-23B05B uppercase ls-054">NEEDS FUNDING</span>
+                                        <span class="f-13 white-80 uppercase">$880K / $2M</span>
+                                        <span class="f-13 clr-FFDD99 ls-054">Needs Funding</span>
                                     </div>
                                 </li>
 
@@ -598,10 +598,10 @@
                             Guardian Guardrails
                         </h3>
                     </div>
-                    <div class="d-grid col-lg-2 align-flex-start justify-space-between gap-19 w-100">
+                    <div class="d-grid col-lg-2 justify-space-between gap-19 w-100">
                         <div class="card p-24 border-white-15 bg-0B1417 d-flex flex-col gap-22">
                             <div class="d-flex gap-10px justify-space-between align-center mb-12">
-                                <div class="d-flex gap-12">
+                                <div class="d-flex gap-12 align-center">
                                     <div class="notification-outer">
                                         <img src="./images/guardian.svg" alt="assets icon">
                                     </div>
@@ -617,28 +617,28 @@
                                 <div class="btn-col">
                                     <!-- <a href="#" class="btn btn-red p-5-11 f-14 d-flex">66.7% Concentration Risk</a> -->
                                     <a href="#" class="br-8 p-5-11 btn-light-yellow f-11 lh-14 d-inline-flex gap-6 align-center">
-                                        <span class="w-6 h-6 bg-F59E0B br-100"></span>
-                                        AMZN Concentration Risk
+                                        <span class="w-6 h-6 bg-71521A  br-100"></span>
+                                        Blackout Window
                                     </a>
                                 </div>
                             </div>
-                            <div class="d-flex flex-col gap-4">
-                                <h2 class="f-28 white">
+                            <div class="d-flex gap-4 justify-space-between align-center">
+                                <p class="f-16 clr-99ACB6">
+                                    AMZN Sell Cap
+                                </p>
+                                <h2 class="f-24 lh-24 white">
                                     > $185 / Oct 15
                                 </h2>
-                                <p class="f-14 clr-64748B">
-                                    Blackout Window
-                                </p>
                             </div>
-                            <div class="bg-131E22 p-18-16 br-12 d-flex flex-col gap-16">
+                            <div class="bg-sec-900 border-E9E7DD-40 p-18-16 br-12 d-flex flex-col gap-16">
                                 <div class="d-grid col-lg-3 gap-10">
-                                    <span class="f-12 lh-15 clr-6C6C6C">
+                                    <span class="f-12 lh-15 clr-AEC2C7">
                                         Projected Proceeds
                                     </span>
-                                    <span class="f-12 lh-15 clr-6C6C6C">
+                                    <span class="f-12 lh-15 clr-AEC2C7">
                                         Rate / Source
                                     </span>
-                                    <span class="f-12 lh-15 clr-6C6C6C right">
+                                    <span class="f-12 lh-15 clr-AEC2C7 right">
                                         Quarterly Amount
                                     </span>
                                 </div>
@@ -699,6 +699,10 @@
                                 </p>
                             </div>
 
+                            <div class="d-flex gap-14 flex-col">
+                                <a href="#" class="cus-btn f-14 bg-light-green d-flex justify-center border-none">View</a>
+                                <a href="#" class="border-none cus-btn f-14 lh-14">Download Latest IPS Report</a>
+                            </div>
 
                         </div>
                     </div>
@@ -713,15 +717,15 @@
                     <div class="d-grid col-lg-2 gap-19 w-100">
                         <div class="card p-24 bg-0B1417">
                             <div class="d-grid col-lg-6-4 mb-24 gap-10px justify-space-between align-flex-start">
-                                <div class="d-flex gap-12">
+                                <div class="d-flex gap-12 align-center">
                                     <div class="notification-outer">
-                                        <img src="{{ asset('images/weight.svg') }}" alt="weight icon">
+                                        <img src="{{ asset('images/flow-tree-icon.svg') }}" alt="weight icon">
                                     </div>
                                     <div class="card-cont">
-                                        <h3 class="f-14 mb-4">
+                                        <h3 class="f-14 mb-4 white">
                                             Stock → SMA Workflow
                                         </h3>
-                                        <p class="f-12 uppercase white-80">
+                                        <p class="f-12 uppercase clr-99ACB6">
                                             ENERGY FLOW
                                         </p>
                                     </div>
@@ -742,9 +746,9 @@
 
                             <div class="plan-card gap-10 align-center mb-24">
                                 <div class="plan-item">
-                                    <span class="plan-label f-10 neutral-300 uppercase mb-12">UNVESTED PLAN</span>
-                                    <h2 class="clr-C8AD98 f-24">$11.1M</h2>
-                                    <p class="f-12 neutral-300">Future Pipe</p>
+                                    <span class="plan-label f-10 clr-99ACB6 uppercase mb-12">UNVESTED PLAN</span>
+                                    <h2 class="clr-EDB37E f-24 bold">$11.1M</h2>
+                                    <p class="f-12 white-80">Future Pipe</p>
                                 </div>
 
                                 <div class="plan-arrow d-flex align-center justify-center">
@@ -752,19 +756,19 @@
                                 </div>
 
                                 <div class="plan-item text-end">
-                                    <span class="plan-label f-10 neutral-300 uppercase mb-12">PLATINUM ALPHA SMA</span>
-                                    <h2 class="clr-7BD09D f-24">$6.3M</h2>
-                                    <p class="f-12 neutral-300">The Engine</p>
+                                    <span class="plan-label f-10 clr-99ACB6 uppercase mb-12">PLATINUM ALPHA SMA</span>
+                                    <h2 class="clr-A7DFBD f-24">$6.3M</h2>
+                                    <p class="f-12 white-80">The Engine</p>
                                 </div>
                             </div>
 
                             <div class="stock-bottom mb-28">
-                                <h4 class="f-12 white-80 uppercase l-1px mb-12">
+                                <h4 class="f-12 clr-99ACB6 uppercase l-1px mb-12">
                                     Compliance & Execution Schedule
                                 </h4>
-                                <ul class="list-unstyled bg-10181C p-12">
+                                <ul class="list-unstyled bg-15793D-10 p-12 br-8">
                                     <li class="d-flex justify-space-between">
-                                        <span class="f-12 lh-14 white-80">
+                                        <span class="f-12 lh-14 clr-99ACB6">
                                             Next Planned Sale
                                         </span>
                                         <span class="f-12 white">
@@ -772,7 +776,7 @@
                                         </span>
                                     </li>
                                     <li class="d-flex justify-space-between">
-                                        <span class="f-12 lh-14 neutral-300">
+                                        <span class="f-12 lh-14 clr-99ACB6">
                                             Remaining Balance
                                         </span>
                                         <span class="f-14 white">
@@ -782,11 +786,12 @@
                                 </ul>
                             </div>
 
-                            <div class="d-grid col-lg-2 align-center gap-12 mb-22">
+                            <div class="d-grid col-lg-2 align-center gap-12">
                                 <a href="#" class="cus-btn f-14">View Liquidity Workflow</a>
-                                <a href="#" class="cus-btn f-14 bg-light-green">Track Compliance Audit</a>
+                                <!-- <a href="#" class="cus-btn f-14 bg-light-green">Track Compliance Audit</a> -->
+                                <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-101010 justify-center bold">Track Compliance Audit</a>
                             </div>
-                            <div class="h-1 border-bottom-white-24 mb-12">
+                            <!-- <div class="h-1 border-bottom-white-24 mb-12">
 
                             </div>
                             <div class="d-flex gap-10 justify-space-between align-center">
@@ -804,14 +809,14 @@
                                         SECURED COPY
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
                         <div class="card p-24 bg-0B1417">
                             <div class="d-grid col-lg-6-4 mb-24 gap-10px justify-space-between align-flex-start">
-                                <div class="d-flex gap-12 mb-24">
+                                <div class="d-flex gap-12">
                                     <div class="notification-outer">
-                                        <img src="{{ asset('images/real-tme.svg') }}" alt="goals icon">
+                                        <img src="{{ asset('images/alpha.svg') }}" alt="goals icon">
                                     </div>
                                     <div class="card-cont">
                                         <h3 class="f-14 mb-4">
@@ -835,46 +840,46 @@
                                     </div>
                                 </div>
                             </div>
-                            <ul class="list-unstyled m-0 d-flex gap-12 flex-col mb-42">
+                            <ul class="list-unstyled m-0 d-flex gap-12 flex-col mb-22">
 
-                                <li class="p-10-40 bg-10181C br-8 w-100">
-                                    <div class="f-12 lh-12 white-90 mb-11">
+                                <li class="p-16-24 bg-10181C br-8 w-100 border-4FC07C-20">
+                                    <div class="f-12 lh-12 clr-99ACB6 mb-12">
                                         Tax-Loss Harvesting (YTD)
                                     </div>
-                                    <div class="w-250 d-flex justify-space-between gap-10">
-                                        <div class="inner-div">
-                                            <div class="f-12 white-80 mb-2">
+                                    <div class="d-flex flex-col justify-space-between gap-8">
+                                        <div class="inner-div d-flex gap-10 align-center justify-space-between">
+                                            <div class="f-12 lh-12 clr-99ACB6">
                                                 Realized Losses
                                             </div>
-                                            <div class="white f-16">
+                                            <div class="white f-16 lh-16">
                                                 $142,300
                                             </div>
                                         </div>
-                                        <div class="inner-div">
-                                            <div class="f-12 white-80 mb-2">
+                                        <div class="inner-div d-flex gap-10 align-center justify-space-between">
+                                            <div class="f-12 lh-12 clr-99ACB6">
                                                 Tax Alpha Created
                                             </div>
-                                            <div class="f-16 clr-7BD09D">
+                                            <div class="f-16 lh-16 clr-7BD09D">
                                                 $42,900
                                             </div>
                                         </div>
                                     </div>
                                 </li>
 
-                                <li class="p-10-40 bg-10181C br-8 w-100">
-                                    <div class="f-12 white-90 mb-5">
+                                <li class="p-16-24 bg-10181C br-8 d-flex align-center justify-space-between border-4FC07C-20">
+                                    <div class="f-12 lh-12 clr-99ACB6">
                                         Wash Sale Monitor
                                     </div>
-                                    <h2 class="f-18 clr-7BD09D">
+                                    <h2 class="f-16 lh-18 clr-A7DFBD">
                                         Compliant
                                     </h2>
                                 </li>
 
-                                <li class="p-10-40 bg-10181C br-8 w-100">
-                                    <div class="f-12 white-90 mb-5">
+                                <li class="p-16-24 bg-10181C br-8 w-100 border-4FC07C-20">
+                                    <div class="f-12 lh-12 clr-99ACB6 mb-5 uppercase ls-054">
                                         Upcoming Opportunities
                                     </div>
-                                    <h2 class="f-14 white">
+                                    <h2 class="f-14 lh-18 white">
                                         3 positions eligible for tax-loss harvesting in next 30 days
                                     </h2>
                                 </li>
@@ -893,20 +898,20 @@
                             Ptotection & Legacy Command center
                         </h3>
                     </div>
-                    <div class="d-grid col-lg-3 gap-19 w-100 align-flex-start">
-                        <div class="card p-24 bg-0B1417">
+                    <div class="d-grid col-lg-3 gap-19 w-100">
+                        <div class="card p-32-24 bg-0B1417-50 border-white-24">
                             <div class="d-flex mb-16 gap-10px justify-space-between align-flex-start">
                                 <div class="d-flex gap-12">
                                     <!-- <div class="notification-outer">
                                     <img src="{{ asset('images/tabler_cash-plus.svg') }}" alt="Risk & Insurance icon">
                                 </div> -->
                                     <div class="card-cont">
-                                        <h2 class="f-14 lh-16 uppercase neutral-300 mb-4">
-                                            Protect what matters
-                                        </h2>
-                                        <h3 class="f-20 lh-22 white">
+                                        <h3 class="f-16 lh-16 white mb-8">
                                             Risk & Insurance
                                         </h3>
+                                        <h2 class="f-12 lh-12 uppercase clr-99ACB6">
+                                            Protect what matters
+                                        </h2>
                                     </div>
                                 </div>
                                 <div class="btn-col">
@@ -922,12 +927,12 @@
 
                             </div>
 
-                            <div class="d-flex flex-col gap-10 mb-24">
+                            <div class="d-flex flex-col gap-10 mb-20">
                                 <div class="d-flex gap-10 justify-space-between">
-                                    <h4 class="f-14 neutral-300">
+                                    <h4 class="f-14 lh-14 clr-99ACB6">
                                         Core Exposure
                                     </h4>
-                                    <h3 class="f-16 white">
+                                    <h3 class="f-16 lh-16 white">
                                         $45M
                                     </h3>
                                 </div>
@@ -935,45 +940,57 @@
 
                                 </div>
                                 <div class="d-flex gap-10 justify-space-between">
-                                    <h4 class="f-12 neutral-300">
+                                    <h4 class="f-14 lh-14 clr-99ACB6">
                                         Umbrella Coverage
                                     </h4>
-                                    <h3 class="f-16 white">
+                                    <h3 class="f-16 lh-16 white">
                                         $10M
                                     </h3>
                                 </div>
                                 <div class="border-bottom-white-24 h-1">
 
                                 </div>
-                                <div class="d-flex gap-10 justify-space-between mb-8">
-                                    <h4 class="f-14 clr-red-400">
+                                <div class="d-flex gap-10 justify-space-between mb-6">
+                                    <h4 class="f-14 lh-14 clr-red-300">
                                         Coverage Gap
                                     </h4>
-                                    <h3 class="f-20 clr-red-400 bold">
+                                    <h3 class="f-16 lh-16 clr-red-300 bold">
                                         $35M
                                     </h3>
                                 </div>
-                                <div class="d-flex flex-col gap-16">
-                                    <div class="progress progress-14 d-flex align-center">
-                                        <div class="progress-bar bg-red-400" style="width:72%;"></div>
+                                <div class="d-flex flex-col gap-8">
+                                    <div class="progress progress-6 d-flex align-center">
+                                        <div class="progress-bar bg-red-300" style="width:72%;"></div>
                                     </div>
                                     <h2 class="f-12 neutral-300">
                                         57% protected
                                     </h2>
                                 </div>
                             </div>
-                            <a href="#" class="cus-btn f-14 d-flex justify-center">View Insurance Audit</a>
+                            <!-- <a href="#" class="cus-btn f-14 d-flex justify-center">View Insurance Audit</a> -->
+                            <a href="#" class="border-none cus-btn f-14 lh-14 bold">View Insurance Audit</a>
                         </div>
-                        <div class="card p-24 bg-0B1417">
+                        <div class="card p-32-24 bg-0B1417-50 border-white-24">
                             <div class="d-flex mb-16 gap-10px justify-space-between align-flex-start">
                                 <div class="d-flex gap-12">
-                                    <div class="card-cont">
+                                    <!-- <div class="card-cont">
                                         <h2 class="f-14 lh-16 uppercase neutral-300 mb-4">
-                                            Prepare Legacy
+                                            Estate & Legacy
                                         </h2>
                                         <h3 class="f-20 lh-22 white">
-                                            Estate & Legacy
+                                            Prepare Legacy
                                         </h3>
+                                    </div> -->
+                                    
+
+
+                                    <div class="card-cont">
+                                        <h3 class="f-16 lh-16 white mb-8">
+                                           Estate & Legacy
+                                        </h3>
+                                        <h2 class="f-12 lh-12 uppercase clr-99ACB6">
+                                           Prepare Legacy
+                                        </h2>
                                     </div>
                                 </div>
                                 <div class="btn-col">
@@ -985,38 +1002,49 @@
                             <div class="border-bottom-white-24 mb-16 h-1">
 
                             </div>
-                            <div class="d-grid gap-10 col-lg-1 mb-16">
+                            <div class="d-grid gap-10 col-lg-1 mb-25">
                                 <div class="d-flex align-center justify-space-between gap-10">
-                                    <p class="f-14 neutral-300 lh-14">Gross Estate</p>
-                                    <span class="white f-14">$45.5M</span>
+                                    <p class="f-14 clr-99ACB6 lh-14">Gross Estate</p>
+                                    <span class="white f-16 lh-18">$45.5M</span>
                                 </div>
                                 <div class="d-flex align-center justify-space-between gap-10">
-                                    <p class="f-14 neutral-300 lh-14">Projected Tax (Current)</p>
-                                    <span class="white f-14 lh-14">$12.4M</span>
+                                    <p class="f-14 clr-99ACB6 lh-14">Projected Tax (Current)</p>
+                                    <span class="white f-16 lh-18">$12.4M</span>
                                 </div>
 
                                 <div class="d-flex align-center justify-space-between gap-10">
-                                    <p class="f-14 neutral-300 lh-14">Net to Heirs</p>
-                                    <span class="clr-4FC07C f-14 lh-14">$33.1M</span>
+                                    <p class="f-14 clr-99ACB6 lh-14">Net to Heirs</p>
+                                    <span class="clr-4FC07C f-16 lh-18">$33.1M</span>
                                 </div>
 
 
                             </div>
-                            <div class="d-flex gap-10 flex-col">
-                                <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-131927 justify-center">Launch Interactive Scenario</a>
-                                <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center">Launch Interactive Scenario</a>
+                            <div class="d-flex gap-18 flex-col">
+                                <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-131927 justify-center bold">Launch Interactive Scenario</a>
+                                <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold">Need to check</a>
                             </div>
                         </div>
-                        <div class="card p-24 bg-0B1417">
+                        <div class="card p-32-24 bg-0B1417-50 border-white-24">
                             <div class="d-flex mb-16 gap-10px justify-space-between align-flex-start">
                                 <div class="d-flex gap-12">
-                                    <div class="card-cont">
+                                    <!-- <div class="card-cont">
                                         <h2 class="f-14 lh-16 uppercase neutral-300 mb-4">
                                             Protect what matters
                                         </h2>
                                         <h3 class="f-20 lh-22 white">
                                             Risk & Insurance
                                         </h3>
+                                    </div> -->
+
+
+
+                                    <div class="card-cont">
+                                        <h3 class="f-16 lh-16 white mb-8">
+                                          Asset Protection
+                                        </h3>
+                                        <h2 class="f-12 lh-12 uppercase clr-99ACB6">
+                                           Asset Protection
+                                        </h2>
                                     </div>
                                 </div>
                                 <div class="btn-col">
@@ -1029,33 +1057,34 @@
 
                             </div>
 
-                            <div class="d-grid col-lg-2 gap-12 mb-16">
+                            <div class="d-grid col-lg-2 gap-12 mb-20">
 
                                 <div class="bg-white-3 br-6 p-10">
-                                    <p class="f-12 neutral-300 mb-6">
+                                    <p class="f-12 clr-99ACB6 lh-14 mb-6 uppercase">
                                         Score
                                     </p>
-                                    <h2 class="f-18 clr-4FC07C">
+                                    <h2 class="f-16 lh-16 clr-A7DFBD">
                                         85%
                                     </h2>
                                 </div>
 
                                 <div class="bg-white-3 br-6 p-10">
-                                    <p class="f-12 neutral-300 mb-6">
+                                    <p class="f-12 clr-99ACB6 lh-14 mb-6 uppercase">
                                         Entities
                                     </p>
-                                    <h2 class="f-14 white">
+                                    <h2 class="f-16 lh-18 white">
                                         2 lLC+1 FLP
                                     </h2>
                                 </div>
 
                             </div>
 
-                            <div class="d-flex align-center justify-space-between gap-10 mb-16">
-                                <p class="f-14 neutral-300 lh-14">Vulnerabilities</p>
-                                <span class="clr-red-400 f-14">1 Uninsulated</span>
+                            <div class="d-flex align-center justify-space-between gap-10 mb-32">
+                                <p class="f-12 clr-99ACB6 lh-14">Vulnerabilities</p>
+                                <span class="clr-red-400 f-14 lh-16">1 Uninsulated</span>
                             </div>
-                            <a href="#" class="cus-btn f-14 d-flex justify-center">View Protection Map</a>
+                            <!-- <a href="#" class="cus-btn f-14 d-flex justify-center">View Protection Map</a> -->
+                            <a href="#" class="cus-btn f-14 bg-light-green d-flex justify-center border-none">View Protection Map</a>
                         </div>
                     </div>
                 </div>
@@ -1065,13 +1094,13 @@
 
 
         <div class="footer d-flex gap-20 flex-col">
-            <div class="f-13 lh-20 white-65">
+            <div class="f-13 lh-20 clr-CCD6DB">
                 © 2026 Benjamin's Money, Inc. All rights reserved. Benjamin's Money Executive Wealth Command, Tax Alpha Hub, Protection Hub, SmartGuard, and Scenario Modeling are proprietary tools of Benjamin's Money, Inc. All portfolio data, estate projections, and tax optimization strategies shown are specific to your account and generated in real time from connected custodial feeds.
             </div>
-            <div class="f-13 lh-20 white-50">
+            <div class="f-13 lh-20 clr-CCD6DB">
                 Wealth advisory services provided through Benjamin's Money Advisory, a registered investment adviser. 10b5-1 plan administration, equity liquidation strategies, and SMA workflows are managed by Benjamin's Money Securities, LLC (member FINRA/SIPC). Your Platinum Alpha SMA and Wharton-Backed SMA allocations are subject to the terms of your Investment Policy Statement (IPS). Concentration risk alerts, including AMZN position monitoring, are updated in real time and do not constitute a recommendation to buy or sell.
             </div>
-            <div class="f-13 lh-20 white-50">
+            <div class="f-13 lh-20 clr-CCD6DB">
                 Scenario modeling projections, independence runway estimates, and tax-loss harvesting opportunities displayed in this dashboard are for illustrative and planning purposes only. Actual outcomes may vary based on market conditions, tax law changes, and individual circumstances. SmartGuard monitoring and Guardian Guardrails are automated risk tools and do not replace professional fiduciary advice. Please consult your Benjamin's Money advisor before executing any equity liquidation, estate planning, or relocation strategy. | Support: advisory@benjaminsmoney.com • 1-800-BEN-MONEY
             </div>
         </div>

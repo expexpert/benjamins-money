@@ -158,6 +158,14 @@ a {
     color: #108476;
 }
 
+.clr-EDB37E {
+    color: #EDB37E !important;
+}
+
+.clr-CCD6DB{
+    color: #CCD6DB;
+}
+
 .clr-64748B {
     color: #64748B !important;
 }
@@ -200,6 +208,10 @@ a {
 
 .clr-red-400 {
     color: #F16965;
+}
+
+.clr-red-300 {
+    color: #F58F8C;
 }
 
 .clr-5D5C58 {
@@ -298,6 +310,14 @@ a {
     color: var(--color-secondary-900);
 }
 
+.clr-FFDD99 {
+    color: #FFDD99;
+}
+
+.clr-AEC2C7 {
+    color: #AEC2C7;
+}
+
 .bg-374151 {
     background-color: #374151;
 }
@@ -318,11 +338,15 @@ a {
     background-color: #F16965;
 }
 
+.bg-red-300 {
+    background-color: #F58F8C;
+}
+
 .bg-seconday-dark-900 {
     background-color: var(--color-secondary-dark-900);
 }
 
-.bg-sec-900 {
+.border-E9E7DD-40 {
     background-color: var(--color-secondary-900);
 }
 
@@ -358,8 +382,16 @@ a {
     background-color: rgba(230, 232, 213, 3.92%);
 }
 
+.bg-71521A {
+    background-color: #71521A;
+}
+
+.bg-15793D-10 {
+    background-color: rgba(21, 121, 61, 10%);
+}
+
 .border-white-24 {
-    border: 1px solid rgba(233, 231, 221, 24%);
+    border: 1px solid rgba(233, 231, 221, 24%) !important;
 }
 
 .border-secondary-dark-100 {
@@ -368,6 +400,10 @@ a {
 
 .border-1F2937 {
     border: 1px solid #1F2937 !important;
+}
+
+.border-4FC07C-20 {
+    border: 1px solid rgba(79, 192, 124, 20%);
 }
 
 /* body  */
@@ -705,6 +741,10 @@ h6 {
     padding: 8px 10px;
 }
 
+.p-16-24 {
+    padding: 16px 24px;
+}
+
 .p-17-50 {
     padding: 17px 50px;
 }
@@ -743,6 +783,10 @@ h6 {
 
 .p-32-22 {
     padding: 32px 22px;
+}
+
+.p-32-24 {
+    padding: 32px 24px;
 }
 
 .p-32-40 {
@@ -830,7 +874,7 @@ h6 {
 .card-header h3 {
     color: var(--color-neutral-400);
     font-weight: 400;
-    letter-spacing: 4%;
+    letter-spacing: 0;
 }
 
 .pt-10 {
@@ -851,6 +895,10 @@ h6 {
 
 .mb-5 {
     margin-bottom: 5px;
+}
+
+.mb-6 {
+    margin-bottom: 6px;
 }
 
 .mb-8 {
@@ -899,6 +947,10 @@ h6 {
 
 .mb-24 {
     margin-bottom: 24px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
 }
 
 .mb-28 {
@@ -1121,6 +1173,10 @@ p {
     background-color: #F6F5F1;
 }
 
+.bg-0B1417-50 {
+    background-color: rgba(11, 20, 23, 50.2%);
+}
+
 .light-pink {
     background: #FC8D94;
 }
@@ -1320,7 +1376,7 @@ p {
 }
 
 .bg-neutral-10 {
-    color: rgba(233, 231, 221, 10%);
+    background-color: rgba(233, 231, 221, 10%);
 }
 
 .neutral-300 {
@@ -1404,7 +1460,7 @@ p {
 }
 
 .bold {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .flex-wrap {

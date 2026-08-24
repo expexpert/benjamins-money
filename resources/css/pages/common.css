@@ -205,7 +205,7 @@ input#search {
 }
 
 .status .active {
-    background: rgba(211, 239, 222, 10%);
+    background: rgba(175, 204, 161, 10%);
     border: none;
 }
 
@@ -651,7 +651,7 @@ ul.left-col li:not(:last-child) {
 }
 
 .progress-6 .progress-bar {
-    height: 6px;    
+    height: 6px;
 }
 
 .progress-bar {
@@ -669,6 +669,10 @@ ul.left-col li:not(:last-child) {
 
 .progress-bar.purple {
     background: #C694D4;
+}
+
+.progress-bar-A7DFBD {
+    background-color: #A7DFBD;
 }
 
 .pl-40 {
@@ -2064,4 +2068,43 @@ body.sidebar-close .nav-section:hover span.tooltip {
 .active-ledger {
     background-color: rgba(211, 239, 222, 10.2%);
     border: 2px solid rgba(211, 239, 222, 25.1%);
+}
+
+body.sidebar-close .profile-dropdown a,
+body.sidebar-close .profile-dropdown button {
+    display: flex !important;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #356674;
+}
+
+.password-toggle .eye-icon {
+    display: block;
+}
+
+.password-toggle .eye-hide {
+    display: none;
 }

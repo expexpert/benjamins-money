@@ -5,6 +5,40 @@ $(document).ready(function () {
     $('.sidebar-toggle').on('click', function () {
         $('body').toggleClass('sidebar-close');
     });
+
+
+
+
+    document.querySelectorAll('.password-toggle').forEach(function (button) {
+
+        button.addEventListener('click', function () {
+
+            const input = document.getElementById(this.dataset.target);
+            const eyeShow = this.querySelector('.eye-show');
+            const eyeHide = this.querySelector('.eye-hide');
+
+            if (input.type === 'password') {
+                // Show password
+                input.type = 'text';
+
+                eyeShow.style.display = 'none';
+                eyeHide.style.display = 'block';
+
+                this.setAttribute('aria-label', 'Hide password');
+
+            } else {
+                // Hide password
+                input.type = 'password';
+
+                eyeShow.style.display = 'block';
+                eyeHide.style.display = 'none';
+
+                this.setAttribute('aria-label', 'Show password');
+            }
+        });
+
+    });
+
     toastr.options = {
         "closeButton": true,
         "debug": false,

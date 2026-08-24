@@ -162,7 +162,7 @@ a {
     color: #EDB37E !important;
 }
 
-.clr-CCD6DB{
+.clr-CCD6DB {
     color: #CCD6DB;
 }
 
@@ -322,6 +322,22 @@ a {
     background-color: #374151;
 }
 
+.bg-0E4624 {
+    background-color: var(--color-primary-800);
+}
+
+.bg-356674-15 {
+    background-color: rgba(53, 102, 116, 14.9%);
+}
+
+.bg-072312 {
+    background-color: var(--color-primary-900);
+}
+
+.bg-FFCC66 {
+    background-color: #FFCC66;
+}
+
 .bg-yellow-400 {
     background-color: #FFBB33;
 }
@@ -346,9 +362,9 @@ a {
     background-color: var(--color-secondary-dark-900);
 }
 
-.border-E9E7DD-40 {
+/* .border-E9E7DD-40 {
     background-color: var(--color-secondary-900);
-}
+} */
 
 .bg-003049 {
     background: #003049;
@@ -741,6 +757,10 @@ h6 {
     padding: 8px 10px;
 }
 
+.p-10-14 {
+    padding: 10px 14px;
+}
+
 .p-16-24 {
     padding: 16px 24px;
 }
@@ -777,6 +797,10 @@ h6 {
     padding: 20px 22px;
 }
 
+.p-24-22{
+    padding: 24px 22px;
+}
+
 .p-24-32 {
     padding: 24px 32px;
 }
@@ -791,6 +815,10 @@ h6 {
 
 .p-32-40 {
     padding: 32px 40px;
+}
+
+.p-35-32 {
+    padding: 35px 32px;
 }
 
 .p-32-48 {
@@ -1013,6 +1041,15 @@ h6 {
     height: 6px;
 }
 
+
+.w-10 {
+    width: 10px;
+}
+
+.h-10 {
+    height: 10px;
+}
+
 .w-15 {
     width: 15px;
 }
@@ -1063,6 +1100,14 @@ h6 {
 
 .h-30 {
     height: 30px;
+}
+
+.w-38 {
+    width: 38px !important;
+}
+
+.h-38 {
+    height: 38px !important;
 }
 
 .h-15 {
@@ -1117,9 +1162,17 @@ p {
     border: 2px solid #003049;
 }
 
+.border-4FC07C {
+    border: 1px solid #4FC07C;
+}
+
 .col-lg-4-6 {
     /* grid-template-columns: 40% 60%; */
     grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+}
+
+.col-lg-6-3 {
+    grid-template-columns: 69.86% 30.14%;
 }
 
 .col-lg-6-4 {
@@ -1131,6 +1184,13 @@ p {
 
     grid-template-columns: 7fr 3fr;
 }
+
+.col-lg-3-7 {
+    /* grid-template-columns: 30% 70%; */
+
+    grid-template-columns: 3fr 7fr;
+}
+
 
 .mt-14 {
     margin-top: 14px;
@@ -1147,6 +1207,14 @@ p {
 .bg-gray {
     background: rgba(21, 121, 61, 8%);
     border-radius: 8px;
+}
+
+.bg-0095FF {
+    background-color: #0095FF;
+}
+
+.bg-89C6FF {
+    background-color: #89C6FF;
 }
 
 .bg-1E2A30 {
@@ -1248,6 +1316,10 @@ p {
     border: 1px solid rgba(233, 231, 221, 40%);
 }
 
+.border-E9E7DD-15 {
+    border: 1px solid rgba(233, 231, 221, 15%);
+}
+
 .center {
     text-align: center;
 }
@@ -1286,6 +1358,10 @@ p {
 
 .border-none {
     border: none !important;
+}
+
+.br-2 {
+    border-radius: 2px;
 }
 
 .br-3 {
@@ -1389,6 +1465,10 @@ p {
 
 .success-300 {
     color: var(--color-success-300);
+}
+
+.ls-0{
+    letter-spacing: 0 !important;
 }
 
 .ls-042 {

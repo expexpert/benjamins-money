@@ -327,55 +327,55 @@
                 </div>
 
                 <div class="d-flex gap-16 flex-col w-100">
-                    <div class="f-14 neutral-300 uppercase">
-                        SCHEDULED EXECUTIONS
+                    <div class="f-16 lh-11 white-80">
+                        Scheduled Executions
                     </div>
-                    <div class="bg-seconday-dark-900 p-40-32 br-11 border-E9E7DD-24">
-                        <div class="d-flex gap-10px justify-space-between align-flex-start mb-16">
-                            <div class="d-flex gap-12">
+                    <div class="bg-seconday-dark-900 p-32-24 br-11 border-E9E7DD-24">
+                        <div class="d-flex gap-10px justify-space-between align-flex-start mb-24">
+                            <div class="d-flex gap-16 align-center">
                                 <div class="notification-outer">
-                                    <img src="{{ asset('images/weight.svg') }}" alt="goals icon">
+                                    <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                 </div>
                                 <div class="card-cont">
-                                    <h3 class="f-14 mb-4">
+                                    <h3 class="f-16 white mb-4">
                                         Post Tax / FL Residency </h3>
-                                    <p class="f-12 uppercase">
+                                    <p class="f-12 ls-1 clr-99ACB6 uppercase">
                                         Net Proceeds
                                     </p>
                                 </div>
                             </div>
                             <div class="btn-col">
-                                <p class="f-32 white lh-18">
+                                <p class="f-32 white lh-18 bold">
                                     $482,400
                                 </p>
                             </div>
                         </div>
 
-                        <div class="bg-seconday-dark-900 border-white-24 p-32-40 br-16">
+                        <div class="bg-0B1417 border-white-24 p-32-40 br-16">
                             <div class="d-flex gap-34 flex-col">
                                 <div class="table-row d-grid col-lg-5 align-center gap-10">
                                     <div class="date-outer">
-                                        <p class="f-12 lh-10 neutral-300 uppercase">
+                                        <p class="f-13 lh-10 clr-99ACB6 uppercase">
                                             Date
                                         </p>
                                     </div>
                                     <div class="date-outer">
-                                        <p class="f-12 lh-10 neutral-300 uppercase">
+                                        <p class="f-13 lh-10 clr-99ACB6 uppercase">
                                             Volume
                                         </p>
                                     </div>
                                     <div class="date-outer">
-                                        <p class="f-12 lh-10 neutral-300 uppercase">
+                                        <p class="f-13 lh-10 clr-99ACB6 uppercase">
                                             Price floor
                                         </p>
                                     </div>
                                     <div class="date-outer">
-                                        <p class="f-12 lh-10 neutral-300 uppercase">
+                                        <p class="f-13 lh-10 clr-99ACB6 uppercase">
                                             Instruction
                                         </p>
                                     </div>
                                     <div class="date-outer">
-                                        <p class="f-12 lh-10 neutral-300 uppercase center">
+                                        <p class="f-13 lh-10 clr-99ACB6 uppercase center">
                                             action
                                         </p>
                                     </div>
@@ -406,7 +406,7 @@
                                             Scheduled
                                         </p>
                                         <div class="f-14 lh-16  center">
-                                            <a class="clr-23B05B" href="{{ url('/scheduled') }}">View Specs</a>
+                                            <a class="clr-primary-grn-400" href="{{ url('/scheduled') }}">View Specs</a>
                                         </div>
                                     </div>
                                 </div>
@@ -480,20 +480,23 @@
                 <div class="d-grid col-lg-2 gap-32 w-100">
 
                     <div class="col-outer">
-                        <h3 class="f-14 neutral-300 uppercase mb-16">
-                            INSIDER TRADING WINDOW
+                        <h3 class="f-16 lh-11 white-80 mb-16">
+                            Insider Trading Window
                         </h3>
+                        <!-- <h3 class="f-14 neutral-300 uppercase mb-16">
+                            INSIDER TRADING WINDOW
+                        </h3> -->
                         <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
                             <div class="d-flex gap-10px justify-space-between align-center mb-14">
-                                <div class="d-flex gap-12">
+                                <div class="d-flex gap-16">
                                     <div class="notification-outer">
-                                        <img src="{{ asset('images/weight.svg') }}" alt="search icon">
+                                        <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                     </div>
                                     <div class="card-cont">
-                                        <h3 class="f-14 mb-4">
+                                        <h3 class="f-16 white mb-4">
                                             Clear to Trade (Open Window)
                                         </h3>
-                                        <p class="f-12 uppercase">
+                                        <p class="f-12 ls-1 clr-99ACB6 uppercase">
                                             Current state
                                         </p>
                                     </div>
@@ -503,31 +506,31 @@
                                 </div>
                             </div>
 
-                            <div class="bg-6C6C6C-10 br-9 p-16-24 mb-48">
+                            <div class="bg-6C6C6C-10 br-9 p-16-32 mb-32">
                                 <div class="f-14 lh-22 white mb-12">
                                     Note: Manual trades permitted for vested shares outside of 10b5-1 subject to General Counsel approval. Your 10b5-1 plan is exempt from blackout periods and will execute regardless of earnings news.
                                 </div>
-                                <a href="#" class="f-14 clr-23B05B d-flex gap-12 align-center">Modify Plan <img src="{{ asset('images/btn-arrow-sm.svg') }}" alt="btn arrow icon"></a>
+                                <a href="#" class="f-14 clr-23B05B d-flex gap-8 align-center">Modify Plan <img src="{{ asset('images/btn-arrow-sm.svg') }}" alt="btn arrow icon"></a>
                             </div>
 
-                            <div class="d-grid col-lg-2 gap-30">
-                                <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-prm-900 justify-center">Request Pre Clearance</a>
-                                <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center">Log Private Trade</a>
+                            <div class="d-grid col-lg-2 gap-16">
+                                <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold">Log Private Trade</a>
+                                <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-prm-900 justify-center bold">Request Pre Clearance</a>
                             </div>
 
                         </div>
                     </div>
 
                     <div class="col-outer">
-                        <h3 class="f-14 neutral-300 uppercase mb-16">
-                            Audit trail & Filings
+                        <h3 class="f-16 lh-11 white-80 mb-16">
+                            Audit Trail & Filings
                         </h3>
-                        <div class="bg-seconday-dark-900 p-32-32-48 br-11 border-E9E7DD-24 d-flex gap-22 flex-col">
+                        <div class="bg-seconday-dark-900 p-32-24 br-11 border-E9E7DD-24 d-flex gap-22 flex-col">
 
                             <div class="d-flex justify-space-between gap-10">
                                 <div class="d-flex gap-16 align-center">
-                                    <div class="notification-outer p-4-5 w-21 h-21 br-4">
-                                        <img src="{{ asset('images/pdf.svg') }}" alt="pdf icon">
+                                    <div class="notification-outer p-4-5 w-34 h-34 br-6">
+                                        <img src="{{ asset('images/document-new.svg') }}" alt="pdf icon">
                                     </div>
                                     <div>
                                         <h3 class="f-16 lh-16 white">
@@ -544,8 +547,8 @@
 
                             <div class="d-flex justify-space-between gap-10">
                                 <div class="d-flex gap-16 align-center">
-                                    <div class="notification-outer p-4-5 w-21 h-21 br-4">
-                                        <img src="{{ asset('images/pdf.svg') }}" alt="pdf icon">
+                                    <div class="notification-outer p-4-5 w-34 h-34 br-6">
+                                        <img src="{{ asset('images/document-new.svg') }}" alt="pdf icon">
                                     </div>
                                     <div>
                                         <h3 class="f-16 lh-16 white">
@@ -562,8 +565,8 @@
 
                             <div class="d-flex justify-space-between gap-10">
                                 <div class="d-flex gap-16 align-center">
-                                    <div class="notification-outer p-4-5 w-21 h-21 br-4">
-                                        <img src="{{ asset('images/pdf.svg') }}" alt="pdf icon">
+                                    <div class="notification-outer p-4-5 w-34 h-34 br-6">
+                                        <img src="{{ asset('images/document-new.svg') }}" alt="pdf icon">
                                     </div>
                                     <div>
                                         <h3 class="f-16 lh-16 white">

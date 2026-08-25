@@ -133,7 +133,7 @@
 
                         </div>
                         <div class="d-flex gap-10 justify-space-between align-center">
-                             <h4 class="f-13 lh-10 clr-99ACB6 uppercase">
+                            <h4 class="f-13 lh-10 clr-99ACB6 uppercase">
                                 Broker Activation
                             </h4>
                             <h3 class="f-16 lh-12 white">
@@ -145,7 +145,7 @@
 
                         </div>
                         <div class="d-flex gap-10 justify-space-between align-center">
-                             <h4 class="f-13 lh-10 clr-99ACB6 uppercase">
+                            <h4 class="f-13 lh-10 clr-99ACB6 uppercase">
                                 Trade
                             </h4>
                             <h3 class="f-16 lh-12 white">
@@ -185,7 +185,7 @@
                                 <h4 class="f-12 lh-16 clr-99ACB6 uppercase">
                                     order type
                                 </h4>
-                                 <h3 class="f-16 lh-20 white">
+                                <h3 class="f-16 lh-20 white">
                                     Market-at-Open
                                 </h3>
                             </div>
@@ -196,7 +196,7 @@
                                 <h4 class="f-12 lh-16 clr-99ACB6 uppercase">
                                     Price floor
                                 </h4>
-                                 <h3 class="f-16 lh-20 white">
+                                <h3 class="f-16 lh-20 white">
                                     $85.00
                                 </h3>
                             </div>
@@ -243,7 +243,7 @@
                     <div class="bg-seconday-dark-900 p-32-24 br-11 border-E9E7DD-24">
                         <div class="d-flex gap-16 flex-col">
                             <div class="d-flex gap-10 justify-space-between">
-                               <h4 class="f-13 lh-16 clr-99ACB6 uppercase">
+                                <h4 class="f-13 lh-16 clr-99ACB6 uppercase">
                                     Estimated Net Proceeds
                                 </h4>
                                 <div class="d-flex flex-col gap-4">
@@ -259,7 +259,7 @@
 
                             </div>
                             <div class="d-flex gap-10 justify-space-between">
-                               <h4 class="f-13 lh-16 clr-99ACB6 uppercase">
+                                <h4 class="f-13 lh-16 clr-99ACB6 uppercase">
                                     Tax Efficiency Score
                                 </h4>
                                 <div class="d-flex flex-col gap-4">
@@ -300,7 +300,7 @@
                     Call to action
                 </div> -->
 
-                <div class="d-grid col-lg-2 gap-32 mb-48">
+                <div class="d-grid col-lg-2 gap-32">
 
 
                     <div class="col-outer">
@@ -344,7 +344,17 @@
 
             </div>
         </div>
-
+        <div class="footer d-flex gap-20 flex-col">
+            <div class="f-13 lh-20 clr-CCD6DB">
+                © 2026 Benjamin's Money, Inc. All rights reserved. Benjamin's Money Executive Wealth Command, Tax Alpha Hub, Protection Hub, SmartGuard, and Scenario Modeling are proprietary tools of Benjamin's Money, Inc. All portfolio data, estate projections, and tax optimization strategies shown are specific to your account and generated in real time from connected custodial feeds.
+            </div>
+            <div class="f-13 lh-20 clr-CCD6DB">
+                Wealth advisory services provided through Benjamin's Money Advisory, a registered investment adviser. 10b5-1 plan administration, equity liquidation strategies, and SMA workflows are managed by Benjamin's Money Securities, LLC (member FINRA/SIPC). Your Platinum Alpha SMA and Wharton-Backed SMA allocations are subject to the terms of your Investment Policy Statement (IPS). Concentration risk alerts, including AMZN position monitoring, are updated in real time and do not constitute a recommendation to buy or sell.
+            </div>
+            <div class="f-13 lh-20 clr-CCD6DB">
+                Scenario modeling projections, independence runway estimates, and tax-loss harvesting opportunities displayed in this dashboard are for illustrative and planning purposes only. Actual outcomes may vary based on market conditions, tax law changes, and individual circumstances. SmartGuard monitoring and Guardian Guardrails are automated risk tools and do not replace professional fiduciary advice. Please consult your Benjamin's Money advisor before executing any equity liquidation, estate planning, or relocation strategy. | Support: advisory@benjaminsmoney.com • 1-800-BEN-MONEY
+            </div>
+        </div>
 
     </div>
 

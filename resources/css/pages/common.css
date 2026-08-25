@@ -13,6 +13,15 @@
     height: 100%;
     z-index: 9;
     transition: all 0.5s ease;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 16rem;
+    height: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    position: sticky;
 }
 
 .logo {
@@ -761,7 +770,7 @@ ul.left-col li:not(:last-child) {
 .timeline::before {
     content: "";
     position: absolute;
-    top: 10px;
+    top: 14px;
     left: 0;
     width: 100%;
     height: 4px;
@@ -828,16 +837,16 @@ ul.left-col li:not(:last-child) {
 .locked-timeline .dot,
 .locked-timeline .timeline-item.active .dot,
 .timeline-item.current .dot {
-    background-image: url("../images/timeline-arw.svg");
-    background-size: 12px;
+    background-image: url("../images/timeline-arw-new.svg");
+    background-size: 21px;
     background-repeat: no-repeat;
-    width: 12px;
-    height: 12px;
+    width: 21px;
+    height: 21px;
     background-position: center;
 }
 
 .timeline-item.timeline-end .dot {
-    background-image: url('../../images/locked.svg');
+    background-image: url('../../images/locked-new.svg');
 }
 
 
@@ -985,7 +994,7 @@ ul.left-col li:not(:last-child) {
     top: 16px;
     bottom: 16px;
     width: 1px;
-    background: rgba(233, 231, 221, 24%);
+    background: rgba(233, 231, 221, 8%);
 }
 
 .nav-item .grid-icon {
@@ -1970,10 +1979,10 @@ body.sidebar-close button {
     display: block !important;
 }
 
-body.sidebar-close .dashboard-content {
+/* body.sidebar-close .dashboard-content {
     width: calc(100% - 80px);
     left: 80px;
-}
+} */
 
 .nav-section span.tooltip {
     position: absolute;

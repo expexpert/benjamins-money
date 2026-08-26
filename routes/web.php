@@ -39,10 +39,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.cash-reserves');
     });
 
+    Route::get('/real-time-liquidity', function () {
+        return view('dashboard.real-time-liquidity');
+    });
+    
+    Route::get('/real-time-liquidity-adj-org-scenario', function () {
+        return view('dashboard.real-time-liquidity-adj-scenario-org-scenario');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });
-
 
     Route::get('/setup', [SetupController::class, 'setup'])->name('setup');
     

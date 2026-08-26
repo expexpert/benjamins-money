@@ -173,6 +173,12 @@ ul.sidebar-links a svg rect,
     gap: 30px;
     justify-content: space-between;
     padding: 0 40px;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+    padding-top: 40px;
 }
 
 input#search {
@@ -257,12 +263,26 @@ input#search {
 
 .heading-bar {
     margin: 28px 0 0;
-    border-bottom: 1px solid rgba(233, 231, 221, 30%);
+    /* border-bottom: 1px solid rgba(233, 231, 221, 30%); */
     padding: 0 40px 32px;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
 }
 
 .dash-cont-outer {
-    padding: 44px 40px 0;
+    padding: 44px 0px 0;
+    box-shadow: 0 0 4.6px 0 rgba(255, 255, 255, 0.25);
+}
+
+.dash-cont-inner {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
 }
 
 /* tooltip  */
@@ -2128,4 +2148,22 @@ body.sidebar-close .profile-dropdown button {
 
 .password-toggle .eye-hide {
     display: none;
+}
+
+.real-timeline .timeline-start .dot {
+    margin-left: auto;
+}
+
+.real-timeline .timeline-end .dot {
+    margin-right: auto;
+}
+
+.big-box {
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.sidebar-close .dash-cont-inner,
+.sidebar-close .heading-bar,
+.sidebar-close .dashboard-header {
+    max-width: 85rem;
 }

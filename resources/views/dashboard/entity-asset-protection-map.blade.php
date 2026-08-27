@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Compliance')
+@section('title','Entity & Asset Protection Map')
 
 @section('content')
 
@@ -58,13 +58,13 @@
                         </div>
                         <div class="d-grid col-lg-4 gap-13 w-100">
                             <div class="card p-24 border-E9E7DD-24">
-                                <div class="d-flex gap-12 mb-20 align-center">
+                                <div class="d-flex gap-12 mb-16 align-center">
                                     <div class="notification-outer w-38 h-38">
                                         <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                     </div>
                                     <div class="card-cont">
                                         <p class="f-16 lh-18 white ls-0">
-                                            Total Savings
+                                            Realised Losses
                                         </p>
                                         <!-- <h3 class="f-16 white">
                                         Net Worth
@@ -73,28 +73,25 @@
                                 </div>
                                 <div class="d-flex gap-8 flex-col">
                                     <h2 class="f-24 lh-24 clr-7BD09D">
-                                        $1.33M
+                                        $142,300
                                     </h2>
                                     <div class="d-flex gap-4 align-center f-12 lh-14 ls-042 clr-99ACB6">
                                         <img src="{{ asset('images/state-increase.svg') }}" alt="increased stats">
-                                        Vs Current State
+                                        YTD
                                     </div>
-                                    <!-- <div class="d-flex gap-4 f-12">
-                                <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
-                                <p> +$247,500 (1.35%) MTD</p>
-                            </div> -->
+
                                 </div>
 
                             </div>
 
                             <div class="card p-24 border-E9E7DD-24">
-                                <div class="d-flex gap-12 mb-20 align-center">
+                                <div class="d-flex gap-12 mb-16 align-center">
                                     <div class="notification-outer w-38 h-38">
                                         <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                     </div>
                                     <div class="card-cont">
                                         <p class="f-16 lh-18 white ls-0">
-                                            Net Worth Impact
+                                            Tax Alpha Created
                                         </p>
                                         <!-- <h3 class="f-16 white">
                                         Net Worth
@@ -102,29 +99,26 @@
                                     </div>
                                 </div>
                                 <div class="d-flex gap-8 flex-col">
-                                    <h2 class="f-24 lh-24 clr-7BD09D">
-                                        +21.4%
+                                    <h2 class="f-24 lh-24 white">
+                                        $42,900
                                     </h2>
                                     <div class="d-flex gap-4 align-center f-12 lh-14 ls-042 clr-99ACB6">
                                         <img src="{{ asset('images/state-increase.svg') }}" alt="increased stats">
-                                        Increase
+                                        14.2% vs prior year
                                     </div>
-                                    <!-- <div class="d-flex gap-4 f-12">
-                                <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
-                                <p> +$247,500 (1.35%) MTD</p>
-                            </div> -->
+
                                 </div>
 
                             </div>
 
                             <div class="card p-24 border-E9E7DD-24">
-                                <div class="d-flex gap-12 mb-20 align-center">
+                                <div class="d-flex gap-12 mb-16 align-center">
                                     <div class="notification-outer w-38 h-38">
                                         <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                     </div>
                                     <div class="card-cont">
                                         <p class="f-16 lh-18 white ls-0">
-                                            Estate Tax Rate
+                                            Net Benefit (Est.)
                                         </p>
                                         <!-- <h3 class="f-16 white">
                                         Net Worth
@@ -132,29 +126,25 @@
                                     </div>
                                 </div>
                                 <div class="d-flex gap-8 flex-col">
-                                    <h2 class="f-24 lh-24 clr-7BD09D">
-                                        92 / 100
+                                    <h2 class="f-24 lh-24 white">
+                                        $38,400
                                     </h2>
                                     <div class="d-flex gap-4 align-center f-12 lh-14 ls-042 clr-99ACB6">
                                         <img src="{{ asset('images/state-increase.svg') }}" alt="increased stats">
-                                        Very Strong
+                                        After est. tax impact
                                     </div>
-                                    <!-- <div class="d-flex gap-4 f-12">
-                                <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
-                                <p> +$247,500 (1.35%) MTD</p>
-                            </div> -->
+
                                 </div>
 
                             </div>
-
                             <div class="card p-24 border-E9E7DD-24">
-                                <div class="d-flex gap-12 mb-20 align-center">
+                                <div class="d-flex gap-12 mb-16 align-center">
                                     <div class="notification-outer w-38 h-38">
                                         <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                     </div>
                                     <div class="card-cont">
                                         <p class="f-16 lh-18 white ls-0">
-                                            Estate Tax Rate
+                                            Wash Sale Health
                                         </p>
                                         <!-- <h3 class="f-16 white">
                                         Net Worth
@@ -163,16 +153,13 @@
                                 </div>
                                 <div class="d-flex gap-8 flex-col">
                                     <h2 class="f-24 lh-24 clr-7BD09D">
-                                        $18,500,000
+                                        Compliant
                                     </h2>
                                     <div class="d-flex gap-4 align-center f-12 lh-14 ls-042 clr-99ACB6">
                                         <img src="{{ asset('images/state-increase.svg') }}" alt="increased stats">
-                                        Potential Savings
+                                        100 / 100
                                     </div>
-                                    <!-- <div class="d-flex gap-4 f-12">
-                                <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">
-                                <p> +$247,500 (1.35%) MTD</p>
-                            </div> -->
+
                                 </div>
 
                             </div>
@@ -180,148 +167,259 @@
                         </div>
                     </div>
                     <div class="d-grid col-lg-2 gap-32 w-100 align-flex-start">
-                        <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
-                            <div class="d-flex gap-32 justify-space-between mb-16">
-                                <div class="d-flex flex-col gap-12">
-                                    <div class="f-13 lh-10 clr-AEC2C7 uppercase">
-                                        Plan ID: AMZN-EXEC-2026-004
+                        <div class="d-flex gap-16 flex-col">
+                            <h3 class="f-16 lh-11 white-80">
+                                Insider Trading Window
+                            </h3>
+                            <div class="bg-seconday-dark-900 p-32-24 br-11 border-E9E7DD-24">
+                                <div class="d-flex gap-32 justify-space-between mb-16 flex-col">
+                                    <div class="d-flex gap-16 align-center">
+                                        <div class="notification-outer w-38 h-38">
+                                            <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
+                                        </div>
+                                        <div class="card-cont">
+                                            <p class="f-16 lh-18 white ls-0">
+                                                Trust / Entity / Structure
+                                            </p>
+                                            <h3 class="f-12 lh-13 ls-042 clr-99ACB6 uppercase">
+                                                A node-based diagram showing how assets are shielded
+                                            </h3>
+                                        </div>
                                     </div>
-                                    <div class="f-16 lh-20 white">
-                                        10b5-1 Autopilot & Compliance
+
+                                    <div class="d-flex flex-col gap-8">
+                                        <div class="p-18-24 bg-000A0F border-E9E7DD-15 d-flex gap-10 align-center br-8">
+                                            <div class="d-flex justify-space-between w-100">
+                                                <div class="left-cont">
+                                                    <div class="d-flex gap-8 align-center">
+                                                        <h3 class="f-15 lh-18 white">
+                                                            Revocable Living Trust
+                                                        </h3>
+                                                        <span class="bg-E9E7DD border-23B05B p-4-16 f-12 lh-12 clr-156A37 br-24 bold">Trust</span>
+                                                    </div>
+                                                    <div class="f-13 lh-14 clr-99ACB6">
+                                                        Realised Losses
+                                                    </div>
+                                                </div>
+                                                <div class="right-box">
+                                                    <f-20 class="lh-20 clr-7BD09D">
+                                                        $6.3M
+                                                    </f-20>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-18-24 bg-000A0F border-E9E7DD-15 d-flex gap-10 align-center br-8">
+                                            <div class="d-flex justify-space-between w-100">
+                                                <div class="left-cont">
+                                                    <div class="d-flex gap-8 align-center">
+                                                        <h3 class="f-15 lh-18 white">
+                                                            Revocable Living Trust
+                                                        </h3>
+                                                        <span class="bg-E9E7DD border-23B05B p-4-16 f-12 lh-12 clr-156A37 br-24 bold">Trust</span>
+                                                    </div>
+                                                    <div class="f-13 lh-14 clr-99ACB6">
+                                                        Realised Losses
+                                                    </div>
+                                                </div>
+                                                <div class="right-box">
+                                                    <f-20 class="lh-20 clr-7BD09D">
+                                                        $6.3M
+                                                    </f-20>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-18-24 bg-000A0F border-E9E7DD-15 d-flex gap-10 align-center br-8">
+                                            <div class="d-flex justify-space-between w-100">
+                                                <div class="left-cont">
+                                                    <div class="d-flex gap-8 align-center">
+                                                        <h3 class="f-15 lh-18 white">
+                                                            Revocable Living Trust
+                                                        </h3>
+                                                        <span class="bg-E9E7DD border-23B05B p-4-16 f-12 lh-12 clr-156A37 br-24 bold">Trust</span>
+                                                    </div>
+                                                    <div class="f-13 lh-14 clr-99ACB6">
+                                                        Realised Losses
+                                                    </div>
+                                                </div>
+                                                <div class="right-box">
+                                                    <f-20 class="lh-20 clr-7BD09D">
+                                                        $6.3M
+                                                    </f-20>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
+
+
                                 </div>
-                                <ul class="status d-flex gap-14 align-center">
-                                    <li class="active d-flex gap-10 align-center">
-                                        <div class="icon">
 
-                                        </div>
-                                        <div class="icon-description f-14 lh-14">
-                                            Status: Active
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                                <div class="bg-E9E7DD-5 p-24-22 d-flex gap-24 flex-col br-8 mb-16">
+                                    <div class="f-14 white">
+                                        Execution Radar (Cooling-Off & Windows)
+                                    </div>
 
-                            <div class="bg-E9E7DD-5 p-24-22 d-flex gap-24 flex-col br-8 mb-16">
-                                <div class="f-14 white">
-                                    Execution Radar (Cooling-Off & Windows)
+                                    <div class="timeline">
+                                        <div class="timeline-progress"></div>
+
+                                        <div class="timeline-item active">
+                                            <div class="dot"></div>
+                                            <div class="content">
+                                                <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">APR 15</h4>
+                                                <p class="f-14 lh-12 clr-AEC2C7">Adoption</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="content">
+                                                <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">MAY 26</h4>
+                                                <p class="f-14 lh-12 clr-AEC2C7">Today</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="content">
+                                                <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">JUL 15</h4>
+                                                <p class="f-14 lh-12 clr-AEC2C7">Live</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="content">
+                                                <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">AUG 15</h4>
+                                                <p class="f-14 lh-12 clr-AEC2C7">Next Sale</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
-                                <div class="timeline">
-                                    <div class="timeline-progress"></div>
-
-                                    <div class="timeline-item active">
-                                        <div class="dot"></div>
-                                        <div class="content">
-                                            <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">APR 15</h4>
-                                            <p class="f-14 lh-12 clr-AEC2C7">Adoption</p>
-                                        </div>
+                                <div class="d-grid col-lg-2 gap-16">
+                                    <div class="border-white-15 p-32-24 br-8">
+                                        <p class="f-10 lh-10 clr-99ACB6 mb-12 uppercase">
+                                            Cooling Off Period
+                                        </p>
+                                        <h2 class="f-16 lh-20 clr-A7DFBD mb-8">
+                                            49 Days Remaining
+                                        </h2>
+                                        <p class="f-14 lh-10 clr-99ACB6">
+                                            Locked until Jul 15
+                                        </p>
                                     </div>
 
-                                    <div class="timeline-item">
-                                        <div class="dot"></div>
-                                        <div class="content">
-                                            <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">MAY 26</h4>
-                                            <p class="f-14 lh-12 clr-AEC2C7">Today</p>
-                                        </div>
+                                    <div class="border-white-15 p-32-24 br-8">
+                                        <p class="f-10 lh-10 clr-99ACB6 mb-12 uppercase">
+                                            Execution Window Opens
+                                        </p>
+                                        <h2 class="f-16 lh-20 clr-A7DFBD mb-8">
+                                            Next Trade
+                                        </h2>
+                                        <p class="f-14 lh-10 clr-99ACB6">
+                                            1,200 Shares on Aug 15
+                                        </p>
                                     </div>
-
-                                    <div class="timeline-item">
-                                        <div class="dot"></div>
-                                        <div class="content">
-                                            <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">JUL 15</h4>
-                                            <p class="f-14 lh-12 clr-AEC2C7">Live</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="timeline-item">
-                                        <div class="dot"></div>
-                                        <div class="content">
-                                            <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">AUG 15</h4>
-                                            <p class="f-14 lh-12 clr-AEC2C7">Next Sale</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="d-grid col-lg-2 gap-16">
-                                <div class="border-white-15 p-32-24 br-8">
-                                    <p class="f-10 lh-10 clr-99ACB6 mb-12 uppercase">
-                                        Cooling Off Period
-                                    </p>
-                                    <h2 class="f-16 lh-20 clr-A7DFBD mb-8">
-                                        49 Days Remaining
-                                    </h2>
-                                    <p class="f-14 lh-10 clr-99ACB6">
-                                        Locked until Jul 15
-                                    </p>
-                                </div>
-
-                                <div class="border-white-15 p-32-24 br-8">
-                                    <p class="f-10 lh-10 clr-99ACB6 mb-12 uppercase">
-                                        Execution Window Opens
-                                    </p>
-                                    <h2 class="f-16 lh-20 clr-A7DFBD mb-8">
-                                        Next Trade
-                                    </h2>
-                                    <p class="f-14 lh-10 clr-99ACB6">
-                                        1,200 Shares on Aug 15
-                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-seconday-dark-900 p-32-24 br-11 border-E9E7DD-24">
-                            <p class="f-12 lh-10 clr-AEC2C7 uppercase mb-24">
-                                Affirmative Defense Checklist (SEC Rule 10b5-1)
-                            </p>
-                            <div class="d-flex gap-16 flex-col">
-                                <div class="d-flex gap-10 justify-space-between align-center">
-                                    <h4 class="f-14 lh-10 clr-AEC2C7">
-                                        Overlapping Plans
-                                    </h4>
-                                    <h3 class="f-15 lh-18 white right">
-                                        None Detected
-                                    </h3>
-                                </div>
-                                <div class="border-bottom-white-24">
+                        <div class="d-flex gap-16 flex-col">
+                            <h3 class="f-16 lh-11 white-80">
+                                Audit Trail & Filings
+                            </h3>
+                            <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
+                                <div class="d-flex gap-32 justify-space-between mb-16">
+                                    <div class="d-flex flex-col gap-12">
+                                        <div class="f-13 lh-10 clr-AEC2C7 uppercase">
+                                            Plan ID: AMZN-EXEC-2026-004
+                                        </div>
+                                        <div class="f-16 lh-20 white">
+                                            10b5-1 Autopilot & Compliance
+                                        </div>
+                                    </div>
+                                    <ul class="status d-flex gap-14 align-center">
+                                        <li class="active d-flex gap-10 align-center">
+                                            <div class="icon">
 
-                                </div>
-                                <div class="d-flex gap-10 justify-space-between align-center">
-                                    <h4 class="f-14 lh-10 clr-AEC2C7">
-                                        Single-Trade Plan
-                                    </h4>
-                                    <h3 class="f-15 lh-18 white right">
-                                        N/A (Systematic recurring plan)
-                                    </h3>
-                                </div>
-
-                                <div class="border-bottom-white-24">
-
-                                </div>
-                                <div class="d-flex gap-10 justify-space-between align-center">
-                                    <h4 class="f-14 lh-10 clr-AEC2C7">
-                                        Officer Certifications
-                                    </h4>
-                                    <h3 class="f-15 lh-18 white right">
-                                        Signed and filed with General<br>
-                                        Counsel on 04/15
-                                    </h3>
-                                </div>
-                                <div class="border-bottom-white-24">
-
-                                </div>
-                                <div class="d-flex gap-10 justify-space-between align-center">
-                                    <h4 class="f-14 lh-10 clr-AEC2C7">
-                                        Good Faith Requirement
-                                    </h4>
-                                    <h3 class="f-15 lh-18 white right">
-                                        No modifications made in the <br>
-                                        last 120 days
-                                    </h3>
+                                            </div>
+                                            <div class="icon-description f-14 lh-14">
+                                                Status: Active
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
 
+                                <div class="bg-E9E7DD-5 p-24-22 d-flex gap-24 flex-col br-8 mb-16">
+                                    <div class="f-14 white">
+                                        Execution Radar (Cooling-Off & Windows)
+                                    </div>
+
+                                    <div class="timeline">
+                                        <div class="timeline-progress"></div>
+
+                                        <div class="timeline-item active">
+                                            <div class="dot"></div>
+                                            <div class="content">
+                                                <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">APR 15</h4>
+                                                <p class="f-14 lh-12 clr-AEC2C7">Adoption</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="content">
+                                                <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">MAY 26</h4>
+                                                <p class="f-14 lh-12 clr-AEC2C7">Today</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="content">
+                                                <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">JUL 15</h4>
+                                                <p class="f-14 lh-12 clr-AEC2C7">Live</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="content">
+                                                <h4 class="f-14 lh-14 uppercase clr-DADADA mb-8">AUG 15</h4>
+                                                <p class="f-14 lh-12 clr-AEC2C7">Next Sale</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="d-grid col-lg-2 gap-16">
+                                    <div class="border-white-15 p-32-24 br-8">
+                                        <p class="f-10 lh-10 clr-99ACB6 mb-12 uppercase">
+                                            Cooling Off Period
+                                        </p>
+                                        <h2 class="f-16 lh-20 clr-A7DFBD mb-8">
+                                            49 Days Remaining
+                                        </h2>
+                                        <p class="f-14 lh-10 clr-99ACB6">
+                                            Locked until Jul 15
+                                        </p>
+                                    </div>
+
+                                    <div class="border-white-15 p-32-24 br-8">
+                                        <p class="f-10 lh-10 clr-99ACB6 mb-12 uppercase">
+                                            Execution Window Opens
+                                        </p>
+                                        <h2 class="f-16 lh-20 clr-A7DFBD mb-8">
+                                            Next Trade
+                                        </h2>
+                                        <p class="f-14 lh-10 clr-99ACB6">
+                                            1,200 Shares on Aug 15
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

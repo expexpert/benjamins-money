@@ -50,6 +50,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/scenario-planning', function () {
         return view('dashboard.scenario-planning');
     });
+    
+    Route::get('/entity-asset-protection-map', function () {
+        return view('dashboard.entity-asset-protection-map');
+    });
 
     Route::get('/account-verified', function () {
         return view('auth.account-verified');

@@ -42,9 +42,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/real-time-liquidity', function () {
         return view('dashboard.real-time-liquidity');
     });
-    
+
     Route::get('/real-time-liquidity-adj-org-scenario', function () {
         return view('dashboard.real-time-liquidity-adj-scenario-org-scenario');
+    });
+
+    Route::get('/scenario-planning', function () {
+        return view('dashboard.scenario-planning');
     });
 
     Route::get('/account-verified', function () {
@@ -52,7 +56,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     Route::get('/setup', [SetupController::class, 'setup'])->name('setup');
-    
-    Route::post('/setup/extract', [SetupController::class, 'extract']);
 
+    Route::post('/setup/extract', [SetupController::class, 'extract']);
 });

@@ -28,7 +28,7 @@
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DJscy7ym.css",
+    "file": "assets/app-Sn-mtYKK.css",
     "name": "app",
     "names": [
       "app.css"
@@ -46,6 +46,7 @@
       "assets/D-DINExp-Italic-B1DEFVSI.woff2",
       "assets/D-DINExp-Italic-F-6Ef1Bq.woff",
       "assets/check-CV4MXesy.svg",
+      "assets/timeline-arw-new-CPdXUFO1.svg",
       "assets/locked-new-OUXOjxLo.svg",
       "assets/onboarding-bg-img2-B9QJ8fap.png",
       "assets/dropdown-C9F3JyNl.svg"
@@ -102,6 +103,10 @@
   "resources/images/onboarding-bg-img2.png": {
     "file": "assets/onboarding-bg-img2-B9QJ8fap.png",
     "src": "resources/images/onboarding-bg-img2.png"
+  },
+  "resources/images/timeline-arw-new.svg": {
+    "file": "assets/timeline-arw-new-CPdXUFO1.svg",
+    "src": "resources/images/timeline-arw-new.svg"
   },
   "resources/js/app.js": {
     "file": "assets/app-CITgkcRh.js",

@@ -76,7 +76,7 @@
                                     Restore Scenario </a>
                             </div>
                         </div>
-    
+
                         <div class="d-grid col-2-1 gap-28">
                             <div class="big-box d-grid align-center gap-12">
                                 <div class="border-23B05B-25 p-32-24 d-flex flex-col gap-16 br-12">
@@ -132,306 +132,197 @@
                                 </div>
                             </div>
                         </div>
-    
-                         <div class="bg-108476-15 p-8-32 br-16 d-flex gap-12 align-center f-15 lh-16 neutral-300">
-                                    <img src="{{ asset('images/information-line.svg') }}" alt="search icon">
-                                    Results are based on Monte Carlo simulations with 10,000 market scenarios using current assumptions
-                                </div>
-    
-                    </div>
-    
-                    <div class="d-flex gap-16 flex-col">
-                        <h3 class="f-16 lh-12 white-80">
-                            Vesting Waterfall / Timeline
-                        </h3>
-                        <div class="bg-0B1417 border-white-24 p-32-40 br-16">
-                            <div class="d-flex gap-24 flex-col">
-                                <div class="table-row d-grid col-lg-5 align-center gap-10">
-                                    <div class="date-outer">
-                                        <p class="f-13 lh-10 clr-99ACB6 uppercase">
-                                            Year
-                                        </p>
-                                    </div>
-                                    <div class="date-outer">
-                                        <p class="f-13 lh-10 clr-99ACB6 uppercase">
-                                            Tranche
-                                        </p>
-                                    </div>
-                                    <div class="date-outer">
-                                        <p class="f-13 lh-10 clr-99ACB6 uppercase">
-                                            Shares
-                                        </p>
-                                    </div>
-                                    <div class="date-outer">
-                                        <p class="f-13 lh-10 clr-99ACB6 uppercase">
-                                            Est. value
-                                        </p>
-                                    </div>
-                                    <div class="date-outer">
-                                        <p class="f-13 lh-10 clr-99ACB6 uppercase center">
-                                            status
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-col gap-16">
-                                    <div class="table-row d-grid col-lg-5 align-center gap-10">
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                2026
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                q3 cLIFF
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                4,200
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                $375,900
-                                            </p>
-                                        </div>
-                                        <div class="date-outer pending-btn d-flex justify-center">
-                                            <a href="#" class="p-6-14 f-16 lh-16 clr-FFDD99 d-flex gap-6 align-center border-FFBB33-15 bg-FFBB33-5 justify-center br-30">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                                    <path d="M2.14963 9.00909C1.8858 8.37213 1.75 7.68944 1.75 7C1.75 5.60761 2.30312 4.27226 3.28769 3.28769C4.27226 2.30312 5.60761 1.75 7 1.75C8.39239 1.75 9.72774 2.30312 10.7123 3.28769C11.6969 4.27226 12.25 5.60761 12.25 7C12.25 7.68944 12.1142 8.37213 11.8504 9.00909C11.5865 9.64605 11.1998 10.2248 10.7123 10.7123C10.2248 11.1998 9.64605 11.5865 9.00909 11.8504C8.37213 12.1142 7.68944 12.25 7 12.25C6.31056 12.25 5.62787 12.1142 4.99091 11.8504C4.35395 11.5865 3.7752 11.1998 3.28769 10.7123C2.80018 10.2248 2.41347 9.64605 2.14963 9.00909Z" stroke="#FFDD99" stroke-width="0.92" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M7 4.07812V6.99479L8.75 8.74479" stroke="#FFDD99" stroke-width="0.92" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                                Pending
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="border-bottom-E9E7DD-24"></div>
-                                    <div class="table-row d-grid col-lg-5 align-center gap-10">
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                2026
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                q4 cLIFF
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                4,200
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                $375,900
-                                            </p>
-                                        </div>
-                                        <div class="date-outer pending-btn d-flex justify-center">
-                                            <a href="#" class="p-6-14 f-16 lh-16 clr-FFDD99 d-flex gap-6 align-center border-FFBB33-15 bg-FFBB33-5 justify-center br-30">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                                    <path d="M2.14963 9.00909C1.8858 8.37213 1.75 7.68944 1.75 7C1.75 5.60761 2.30312 4.27226 3.28769 3.28769C4.27226 2.30312 5.60761 1.75 7 1.75C8.39239 1.75 9.72774 2.30312 10.7123 3.28769C11.6969 4.27226 12.25 5.60761 12.25 7C12.25 7.68944 12.1142 8.37213 11.8504 9.00909C11.5865 9.64605 11.1998 10.2248 10.7123 10.7123C10.2248 11.1998 9.64605 11.5865 9.00909 11.8504C8.37213 12.1142 7.68944 12.25 7 12.25C6.31056 12.25 5.62787 12.1142 4.99091 11.8504C4.35395 11.5865 3.7752 11.1998 3.28769 10.7123C2.80018 10.2248 2.41347 9.64605 2.14963 9.00909Z" stroke="#FFDD99" stroke-width="0.92" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M7 4.07812V6.99479L8.75 8.74479" stroke="#FFDD99" stroke-width="0.92" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                                Pending
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="border-bottom-E9E7DD-24"></div>
-                                    <div class="table-row d-grid col-lg-5 align-center gap-10">
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                2027
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                Annual tOTAL
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                24,500
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                $2,192,750
-                                            </p>
-                                        </div>
-                                        <div class="date-outer pending-btn d-flex justify-center">
-                                            <a href="#" class="p-6-14 f-16 lh-16 clr-C293C9 d-flex gap-6 align-center border-FFBB33-15 bg-FFBB33-5 justify-center br-30">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                                    <path d="M4.66927 5.83333H3.5026C3.19318 5.83333 2.89644 5.95625 2.67765 6.17504C2.45885 6.39383 2.33594 6.69058 2.33594 7V11.0833C2.33594 11.3928 2.45885 11.6895 2.67765 11.9083C2.89644 12.1271 3.19318 12.25 3.5026 12.25H10.5026C10.812 12.25 11.1088 12.1271 11.3276 11.9083C11.5464 11.6895 11.6693 11.3928 11.6693 11.0833V7C11.6693 6.69058 11.5464 6.39383 11.3276 6.17504C11.1088 5.95625 10.812 5.83333 10.5026 5.83333H9.33594M4.66927 5.83333V4.08333C4.66927 3.46449 4.9151 2.871 5.35269 2.43342C5.79027 1.99583 6.38377 1.75 7.0026 1.75C7.62144 1.75 8.21494 1.99583 8.65252 2.43342C9.09011 2.871 9.33594 3.46449 9.33594 4.08333V5.83333M4.66927 5.83333H9.33594M7.0026 8.16667V9.91667" stroke="#C293C9" stroke-width="0.916667" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                                Locked
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="border-bottom-E9E7DD-24"></div>
-                                    <div class="table-row d-grid col-lg-5 align-center gap-10">
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                2028
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                q3 cLIFF
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                59,167
-                                            </p>
-                                        </div>
-                                        <div class="date-outer">
-                                            <p class="f-16 lh-16 white">
-                                                $5,295,450
-                                            </p>
-                                        </div>
-                                        <div class="date-outer pending-btn d-flex justify-center">
-                                            <a href="#" class="p-6-14 f-16 lh-16 clr-C293C9 d-flex gap-6 align-center border-FFBB33-15 bg-FFBB33-5 justify-center br-30">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                                    <path d="M4.66927 5.83333H3.5026C3.19318 5.83333 2.89644 5.95625 2.67765 6.17504C2.45885 6.39383 2.33594 6.69058 2.33594 7V11.0833C2.33594 11.3928 2.45885 11.6895 2.67765 11.9083C2.89644 12.1271 3.19318 12.25 3.5026 12.25H10.5026C10.812 12.25 11.1088 12.1271 11.3276 11.9083C11.5464 11.6895 11.6693 11.3928 11.6693 11.0833V7C11.6693 6.69058 11.5464 6.39383 11.3276 6.17504C11.1088 5.95625 10.812 5.83333 10.5026 5.83333H9.33594M4.66927 5.83333V4.08333C4.66927 3.46449 4.9151 2.871 5.35269 2.43342C5.79027 1.99583 6.38377 1.75 7.0026 1.75C7.62144 1.75 8.21494 1.99583 8.65252 2.43342C9.09011 2.871 9.33594 3.46449 9.33594 4.08333V5.83333M4.66927 5.83333H9.33594M7.0026 8.16667V9.91667" stroke="#C293C9" stroke-width="0.916667" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                                Locked
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-    
-    
+
+                        <div class="bg-108476-15 p-8-32 br-16 d-flex gap-12 align-center f-15 lh-16 neutral-300">
+                            <img src="{{ asset('images/information-line.svg') }}" alt="search icon">
+                            Results are based on Monte Carlo simulations with 10,000 market scenarios using current assumptions
                         </div>
+
                     </div>
-    
-    
-    
-    
-                    <div class="d-flex gap-16 flex-col">
-                        <h3 class="f-16 lh-12 white-80">
-                            The “Exit Price” (Forfeiture Risk)
-                        </h3>
-                        <div class="d-grid col-lg-2 gap-32">
-                            <div class="bg-0B1417 border-E9E7DD-15 p-32-24 br-12">
-                                <h3 class="f-14 lh-12 clr-99ACB6 uppercase mb-16">
-                                    If your depart on 06/01/2026
-                                </h3>
-                                <div class="d-flex flex-col gap-11 mb-48">
-                                    <div class="d-flex gap-10 align-center justify-space-between">
-                                        <p class="f-14 lh-14 clr-99ACB6">
-                                            Loss of unvested equity
-                                        </p>
-                                        <p class="f-16 lh-11 clr-F8B4B2">
-                                            ($8,240,000)
+
+                    <div class="d-grid col-2-1 gap-17">
+
+                        <div class="left-box d-flex gap-30 flex-col">
+                            <div class="bg-060F13 br-8 border-E9E7DD-24 p-32">
+                                <div class="d-flex gap-10 justify-space-between align-center mb-20">
+                                    <div class="d-flex flex-col gap-8">
+                                        <h5 class="f-16 lh-12 white">
+                                            Projected Net Worth Trajectory
+                                        </h5>
+                                        <p class="f-12 ls-8 clr-99ACB6">
+                                            (MONTE CARLO SIMULATION OVERVIEW) 
                                         </p>
                                     </div>
-                                    <div class="border-bottom-E9E7DD-40">
-    
-                                    </div>
-                                    <div class="d-flex gap-10 align-center justify-space-between">
-                                        <p class="f-14 lh-14 clr-99ACB6">
-                                            Loss of potential growth (5%)
-                                        </p>
-                                        <p class="f-16 lh-11 clr-F8B4B2">
-                                            ($412,000)
-                                        </p>
-                                    </div>
-                                    <div class="border-bottom-E9E7DD-40">
-    
-                                    </div>
-                                    <div class="d-flex gap-10 align-center justify-space-between">
-                                        <p class="f-14 lh-14 clr-99ACB6">
-                                            Total Opportunity Cost
-                                        </p>
-                                        <p class="f-16 lh-11 clr-F8B4B2">
-                                            $8,652,000
-                                        </p>
+                                    <div class="d-flex gap-10">
+                                        <div class="border-E9E7DD-24 p-6-12 br-4 d-flex align-center gap-4">
+                                            <div class="w-13 h-2 bg-23B05B br-65">
+
+                                            </div>
+                                            <p class="f-12 lh-12 white">
+                                                Current Plan
+                                            </p>
+                                        </div>
+                                        <div class="border-E9E7DD-24 p-6-12 br-4 d-flex align-center gap-4">
+                                            <div class="w-13 h-2 bg-FFCC66 br-65">
+
+                                            </div>
+                                            <p class="f-12 lh-12 white">
+                                                Early Retirement
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="d-flex gap-18 flex-col">
-                                    <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-131927 justify-center bold">Analyze Early Retirement Impact</a>
-                                    <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold">Review Employment Agreement Terms</a>
+                                <div class="img-box">
+                                    <img class="w-100" src="{{ asset('images/net-worth-trajectory.svg') }}" alt="search icon">
                                 </div>
                             </div>
-                            <div class="bg-0B1417 border-E9E7DD-15 p-32-24 br-12">
-                                <div class="d-flex gap-10px justify-space-between align-center mb-16">
-                                    <div class="d-flex gap-8 align-center">
-                                        <div class="notification-outer w-38 h-38">
-                                            <img src="./images/vesting-timeline.svg" alt="assets icon">
-                                        </div>
-                                        <div class="card-cont">
-                                            <h3 class="f-16 lh-12 white">
-                                                Vesting Timeline
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="btn-col">
-                                        <!-- <a href="#" class="btn btn-red p-5-11 f-14 d-flex">66.7% Concentration Risk</a> -->
-                                        <a href="#" class="br-8 p-5-11 clr-A7DFBD f-12 lh-12 d-inline-flex gap-6 align-center border-A7DFBD">
-                                            *AMZN Stock Price: $89.5
-                                        </a>
-                                    </div>
-                                </div>
-    
-                                <div class="timeline locked-timeline real-timeline mb-40">
-                                    <div class="timeline-progress"></div>
-    
-                                    <div class="timeline-item active timeline-start">
-                                        <div class="dot"></div>
-                                        <div class="content">
-                                            <p class="f-12 lh-12 clr-23B05B mb-10">2026 Q3</p>
-                                            <h4 class="f-16 lh-10 clr-99ACB6 mb-10">4,200 shares</h4>
-                                            <p class="f-16 lh-14 white">Plan Signed</p>
-                                        </div>
-                                    </div>
-    
-                                    <div class="timeline-item">
-                                        <div class="dot"></div>
-                                        <div class="content">
-                                            <p class="f-12 lh-12 clr-23B05B mb-10">2026 Q4</p>
-                                            <h4 class="f-16 lh-10 clr-99ACB6 mb-10">$375,900</h4>
-                                            <p class="f-16 lh-14 white">4,200 shares</p>
-                                        </div>
-                                    </div>
-    
-                                    <div class="timeline-item timeline-end">
-                                        <div class="dot"></div>
-                                        <div class="content">
-                                            <p class="f-12 lh-12 clr-yellow-400 mb-10">2027</p>
-                                            <h4 class="f-16 lh-10 clr-99ACB6 mb-10">$2,192,750</h4>
-                                            <p class="f-16 lh-14 white">24,500 shares</p>
-                                        </div>
-                                    </div>
-    
-                                    <div class="timeline-item timeline-end">
-                                        <div class="dot"></div>
-                                        <div class="content">
-                                            <p class="f-12 lh-12 clr-yellow-400 mb-10 bold">2028 Q3</p>
-                                            <h4 class="f-16 lh-10 clr-99ACB6 mb-10">$5,295,450</h4>
-                                            <p class="f-16 lh-14 white">54,650 shares</p>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="bg-108476-5 p-8-12 br-16 d-flex gap-12 align-center f-12 lh-14 neutral-300 mb-15">
-                                    <img src="{{ asset('images/information-line.svg') }}" alt="search icon">
-                                    Values are calculated using the prior day's closing price for XYZ ($89.50).
-                                </div>
-                                <p class="f-12 lh-14 clr-E9E7DD-34">
-                                    <em>
-                                        Data refreshes automatically via livecustom API feed sync.
-                                    </em>
+
+                            <div class="bg-0B1417-50 border-E9E7DD-24 p-32 br-12">
+                                <p class="f-14 lh-16 clr-99ACB6 ls-042 mb-12 uppercase">
+                                    Recovery Planner (Adjust & see impact)
                                 </p>
+                                <p class="f-16 lh-12 white mb-32">
+                                    Adjust your Scenario
+                                </p>
+                                <div class="retirement-controls d-grid col-lg-2 gap-26 w-100">
+                                    <!-- Departure Date -->
+                                    <div class="control-item d-flex gap-10 flex-col">
+                                        <div class="control-header d-flex justify-space-between align-center">
+                                            <span class="f-14 lh-14 white">Adjust Departure Date</span>
+                                            <span class="f-14 lh-14 clr-A7DFBD">Jun 1, 2028</span>
+                                        </div>
+
+                                        <input
+                                            type="range"
+                                            class="custom-range"
+                                            min="0"
+                                            max="100"
+                                            value="50">
+
+                                        <div class="range-labels">
+                                            <span class="f-12 lh-14 ls-018 clr-E9E7DD-40">Jun 1, 2026</span>
+                                            <span>Jun 1, 2028</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Spending -->
+                                    <div class="control-item d-flex gap-10 flex-col">
+                                        <div class="control-header d-flex justify-space-between align-center">
+                                            <span class="f-14 lh-14 white">Post-Retirement Spending</span>
+                                            <span class="f-14 lh-14 clr-A7DFBD">$120,000/yr</span>
+                                        </div>
+
+                                        <input
+                                            type="range"
+                                            class="custom-range"
+                                            min="100000"
+                                            max="160000"
+                                            value="120000">
+
+                                        <div class="range-labels">
+                                            <span>$100,000</span>
+                                            <span>$160,000</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="right-box bg-060F13 border-E9E7DD-24 br-8 p-32-24">
+                            <div class="d-flex gap-10 justify-space-between align-center mb-32">
+                                <p class="f-16 lh-20 white">
+                                    Adjusted Scenario Results
+                                </p>
+                                <div class="bg-AFCCA1-10 br-8 p-8-12 d-flex gap-10 align-center ">
+                                    <div class="w-9 h-9 br-100 bg-A7DFBD">
+
+                                    </div>
+                                    <p class="f-14 lh-14 clr-A7DFBD">
+                                        Live
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-col gap-16 justify-space-between align-center mb-56">
+                                <div class="d-flex gap-12 justify-space-between align-center flex-col w-100">
+                                    <div class="d-flex align-center justify-space-between w-100">
+                                        <p class="f-14 f-14 white">
+                                            Success Rate
+                                        </p>
+                                        <p class="f-16 lh-18 white">
+                                            84%
+                                        </p>
+                                    </div>
+                                    <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                        <p class="f-12 lh-12 clr-AEC2C7">
+                                            (In today’s dollars)
+                                        </p>
+                                        <p class="f-12 lh-12 clr-A7DFBD d-flex gap-6 align-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10" fill="none">
+                                                <path d="M4.18359 8.51562V9.01562H3.18359V8.51562H3.68359H4.18359ZM3.33004 0.146461C3.5253 -0.0488005 3.84189 -0.0488005 4.03715 0.146461L7.21913 3.32844C7.41439 3.5237 7.41439 3.84029 7.21913 4.03555C7.02387 4.23081 6.70728 4.23081 6.51202 4.03555L3.68359 1.20712L0.855167 4.03555C0.659904 4.23081 0.343322 4.23081 0.14806 4.03555C-0.0472023 3.84029 -0.0472023 3.5237 0.14806 3.32844L3.33004 0.146461ZM3.68359 8.51562H3.18359V0.500015H3.68359H4.18359V8.51562H3.68359Z" fill="#A7DFBD" />
+                                            </svg>12 pp improvement
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="border-bottom-E9E7DD-24 w-100">
+
+                                </div>
+                                <div class="d-flex gap-12 justify-space-between align-center flex-col w-100">
+                                    <div class="d-flex align-center justify-space-between w-100">
+                                        <p class="f-14 f-14 white">
+                                            Recovered Value
+                                        </p>
+                                        <p class="f-16 lh-18 white">
+                                            +$4.12M
+                                        </p>
+                                    </div>
+                                    <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                        <p class="f-12 lh-12 clr-AEC2C7">
+                                            (In today’s dollars)
+                                        </p>
+                                        <p class="f-12 lh-12 clr-A7DFBD d-flex gap-6 align-center">
+                                            Recovered
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="border-bottom-E9E7DD-24 w-100">
+
+                                </div>
+                                <div class="d-flex gap-12 justify-space-between align-center flex-col w-100">
+                                    <div class="d-flex align-center justify-space-between w-100">
+                                        <p class="f-14 f-14 white">
+                                            Remaining Opportunity Cost
+                                        </p>
+                                        <p class="f-16 lh-18 white">
+                                            $4.53M
+                                        </p>
+                                    </div>
+                                    <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                        <p class="f-12 lh-12 clr-AEC2C7">
+                                            (In today’s dollars)
+                                        </p>
+                                        <p class="f-12 lh-12 clr-yellow-300 d-flex gap-6 align-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10" fill="none">
+                                                <path d="M4.18359 0.5V0H3.18359V0.5H3.68359H4.18359ZM3.33004 8.86916C3.5253 9.06443 3.84189 9.06443 4.03715 8.86916L7.21913 5.68718C7.41439 5.49192 7.41439 5.17534 7.21913 4.98008C7.02387 4.78481 6.70728 4.78481 6.51202 4.98008L3.68359 7.8085L0.855167 4.98008C0.659904 4.78481 0.343322 4.78481 0.14806 4.98008C-0.0472023 5.17534 -0.0472023 5.49192 0.14806 5.68718L3.33004 8.86916ZM3.68359 0.5H3.18359V8.51561H3.68359H4.18359V0.5H3.68359Z" fill="#FFCC66" />
+                                            </svg> 48%
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold mb-40">Review with Advisor</a>
+                            <p class="f-12 lh-18 neutral-300">
+                                Projections are hypothetical and not gauranteed. Results may vary with market conditions and changes to your plan
+                            </p>
+                        </div>
+
                     </div>
+
+
+
                 </div>
             </div>
         </div>
 
-      
+
     </div>
 </div>
 

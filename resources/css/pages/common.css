@@ -857,7 +857,7 @@ ul.left-col li:not(:last-child) {
 .locked-timeline .dot,
 .locked-timeline .timeline-item.active .dot,
 .timeline-item.current .dot {
-    background-image: url("../images/timeline-arw-new.svg");
+    background-image: url("../../images/timeline-arw-new.svg");
     background-size: 21px;
     background-repeat: no-repeat;
     width: 21px;
@@ -2166,4 +2166,8 @@ body.sidebar-close .profile-dropdown button {
 .sidebar-close .heading-bar,
 .sidebar-close .dashboard-header {
     max-width: 85rem;
+}
+
+.retirement-controls input[type="range"] {
+    height: 5px;
 }

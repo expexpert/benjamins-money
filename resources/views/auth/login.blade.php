@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title','Login')
+@section('no-layout', true)
 
 @section('content')
 

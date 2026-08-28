@@ -35,7 +35,21 @@
 
 <body>
 
+    @hasSection('no-layout')
     @yield('content')
+    @else
+    <div class="dashboard-outer">
+        @include('partials.sidebar')
+
+        <div class="dashboard-content">
+            @include('partials.header')
+
+            @yield('content')
+
+            @include('partials.footer')
+        </div>
+    </div>
+    @endif
 
     @stack('modals')
     @stack('scripts')

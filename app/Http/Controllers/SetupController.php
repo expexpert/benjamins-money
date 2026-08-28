@@ -13,7 +13,7 @@ class SetupController extends Controller
     public function setup()
     {
         $banks = Bank::where('is_active', true)->get();
-        return view('dashboard.setup', compact('banks'));
+        return view('setup', compact('banks'));
     }
 
     public function extract(Request $request): JsonResponse

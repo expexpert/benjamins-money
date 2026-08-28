@@ -54,6 +54,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/entity-asset-protection-map', function () {
         return view('dashboard.entity-asset-protection-map');
     });
+     
+    Route::get('/liquidity-workflow', function () {
+        return view('dashboard.liquidity-workflow');
+    });
 
     Route::get('/account-verified', function () {
         return view('auth.account-verified');

@@ -254,7 +254,7 @@
                     </div>
                 </div>
 
-                <div class="d-grid col-lg-2 gap-25 w-100">
+                <div class="d-grid col-2-1 gap-25 w-100">
                     <div class="d-flex flex-col gap-12">
                         <h2 class="f-16 lh-18 white-80 mb-4">
                             State Comparison Snapshot

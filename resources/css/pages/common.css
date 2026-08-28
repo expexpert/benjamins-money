@@ -2279,7 +2279,60 @@ body.sidebar-close .profile-dropdown button {
     background: #ffae4b;
 }
 
+.bg-losses {
+    position: relative;
+}
 
+.bg-losses::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+    90deg,
+    #696969 0%,
+    #23B05B 100%
+);
+    top: 0;
+    bottom: 0;
+    opacity: 20%;
+}
+
+.bg-savings{
+    position: relative;
+}
+
+.bg-savings::before{
+    
+      position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+   background: linear-gradient(
+    90deg,
+    #15793D 0%,
+    rgba(35, 176, 91, 0.3) 100%
+);
+    top: 0;
+    bottom: 0;
+    opacity: 20%;
+}
+
+.stage-inner{
+    position: relative;
+}
+
+.stage-inner:not(:last-child)::before {
+    position: absolute;
+    content: '';
+    right: -42px;
+    background-image: url(../../images/bg-arw.svg);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    width: 26px;
+    height: 26px;
+    top: calc(50% - 12px);
+}
 
 /* Responsive */
 @media (max-width: 768px) {

@@ -47,31 +47,31 @@
                 <div class="card-internal d-flex flex-col gap-16 align-flex-start w-100">
                     <div class="card-header">
                         <h3 class="f-16 lh-11">
-                            Financial Snapshot
+                            The Transformation Flow
                         </h3>
                     </div>
-                    <div class="d-grid col-lg-4 gap-13 w-100">
+                    <div class="d-grid col-lg-3 gap-30 w-100 mb-8">
                         <div class="card p-24 border-E9E7DD-24">
                             <div class="d-flex gap-12 mb-16 align-center">
                                 <div class="notification-outer w-38 h-38">
                                     <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                 </div>
                                 <div class="card-cont">
-                                    <p class="f-16 lh-18 white ls-0">
-                                        Realised Losses
+                                    <p class="f-16 lh-18 white ls-0 mb-4">
+                                        Company Stock
                                     </p>
-                                    <!-- <h3 class="f-16 white">
-                                            Net Worth
-                                        </h3> -->
+                                    <h3 class="f-12 lh-12 clr-99ACB6 uppercase">
+                                            Source
+                                        </h3>
                                 </div>
                             </div>
                             <div class="d-flex gap-8 flex-col">
                                 <h2 class="f-24 lh-24 clr-7BD09D">
-                                    $142,300
+                                    $11.1M
                                 </h2>
                                 <div class="d-flex gap-4 align-center f-12 lh-14 ls-042 clr-99ACB6">
                                     <img src="{{ asset('images/state-increase.svg') }}" alt="increased stats">
-                                    YTD
+                                    Future Pipe Risk: Extreme (84%)
                                 </div>
 
                             </div>
@@ -84,21 +84,21 @@
                                     <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                 </div>
                                 <div class="card-cont">
-                                    <p class="f-16 lh-18 white ls-0">
-                                        Tax Alpha Created
+                                    <p class="f-16 lh-18 white ls-0 mb-4">
+                                        Tax Aplha Filter
                                     </p>
-                                    <!-- <h3 class="f-16 white">
-                                            Net Worth
-                                        </h3> -->
+                                    <h3 class="f-12 lh-12 clr-99ACB6 uppercase">
+                                            Filter
+                                        </h3>
                                 </div>
                             </div>
                             <div class="d-flex gap-8 flex-col">
                                 <h2 class="f-24 lh-24 white">
-                                    $42,900
+                                    +$42,000
                                 </h2>
                                 <div class="d-flex gap-4 align-center f-12 lh-14 ls-042 clr-99ACB6">
                                     <img src="{{ asset('images/state-increase.svg') }}" alt="increased stats">
-                                    14.2% vs prior year
+                                    YTD Savings
                                 </div>
 
                             </div>
@@ -111,53 +111,74 @@
                                     <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                 </div>
                                 <div class="card-cont">
-                                    <p class="f-16 lh-18 white ls-0">
-                                        Net Benefit (Est.)
+                                    <p class="f-16 lh-18 white ls-0 mb-4">
+                                        Platinum Alpha SMA
                                     </p>
-                                    <!-- <h3 class="f-16 white">
-                                            Net Worth
-                                        </h3> -->
+                                    <h3 class="f-12 lh-12 clr-99ACB6 uppercase">
+                                            Destination
+                                        </h3>
                                 </div>
                             </div>
                             <div class="d-flex gap-8 flex-col">
                                 <h2 class="f-24 lh-24 white">
-                                    $38,400
+                                    $6.3M
                                 </h2>
                                 <div class="d-flex gap-4 align-center f-12 lh-14 ls-042 clr-99ACB6">
                                     <img src="{{ asset('images/state-increase.svg') }}" alt="increased stats">
-                                    After est. tax impact
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="card p-24 border-E9E7DD-24">
-                            <div class="d-flex gap-12 mb-16 align-center">
-                                <div class="notification-outer w-38 h-38">
-                                    <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
-                                </div>
-                                <div class="card-cont">
-                                    <p class="f-16 lh-18 white ls-0">
-                                        Wash Sale Health
-                                    </p>
-                                    <!-- <h3 class="f-16 white">
-                                            Net Worth
-                                        </h3> -->
-                                </div>
-                            </div>
-                            <div class="d-flex gap-8 flex-col">
-                                <h2 class="f-24 lh-24 clr-7BD09D">
-                                    Compliant
-                                </h2>
-                                <div class="d-flex gap-4 align-center f-12 lh-14 ls-042 clr-99ACB6">
-                                    <img src="{{ asset('images/state-increase.svg') }}" alt="increased stats">
-                                    100 / 100
+                                    The Engine Risk: Secure (20%)
                                 </div>
 
                             </div>
 
                         </div>
 
+                    </div>
+                    <div class="bg-0B1417 p-32-24 gap-84 stages-outer d-grid col-lg-3 w-100 br-12">
+                        <div class="stage-inner">
+                            <p class="f-12 lh-12 uppercase clr-99ACB6 mb-12">
+                                Stage 1
+                            </p>
+                            <p class="f-16 lh-16 white mb-24">
+                                Liquidation (The Sell)
+                            </p>
+                            <p class="f-16 lh-20 white mb-8">
+                                Automated 10b5-1 / RSU Vest Sale
+                            </p>
+                            <p class="f-14 lh-20 neutral-300 mb-16">
+                                Selling 1,000 shares on June 01 at Market (Est. $142,000).
+                            </p>
+                            <a href="#" class="border-7BD09D clr-7BD09D p-4-24 f-13 lh-18 d-inline-flex justify-center uppercase br-48">STATUS:  ACTIVE</a>
+                        </div>
+                        <div class="stage-inner">
+                            <p class="f-12 lh-12 uppercase clr-99ACB6 mb-12">
+                                Stage 2
+                            </p>
+                            <p class="f-16 lh-16 white mb-24">
+                                Tax Optimization (The Filter)
+                            </p>
+                            <p class="f-16 lh-20 white mb-8">
+                                Real-time Sentry Monitoring.
+                            </p>
+                            <p class="f-14 lh-20 neutral-300 mb-16">
+                                Offsetting gains with the $142,300 in realized losses.
+                            </p>
+                            <a href="#" class="border-white white p-4-24 f-13 lh-18 d-inline-flex justify-center uppercase br-48">IMPACT:  EST. $42,900 TAX SAVINGS</a>
+                        </div>
+                        <div class="stage-inner">
+                            <p class="f-12 lh-12 uppercase clr-99ACB6 mb-12">
+                                Stage 3
+                            </p>
+                            <p class="f-16 lh-16 white mb-24">
+                                Diversified Re-entry (The Invest)
+                            </p>
+                            <p class="f-16 lh-20 white mb-8">
+                                Destination: Platinum Alpha SMA.
+                            </p>
+                            <p class="f-14 lh-20 neutral-300 mb-16">
+                                Funds are split across 500+ global equities and bonds.
+                            </p>
+                            <a href="#" class="border-white white p-4-24 f-13 lh-18 d-inline-flex justify-center uppercase br-48">CURRENT ENGINE VALUE:  $6.3M</a>
+                        </div>
                     </div>
                 </div>
                 <div class="d-grid col-lg-2 gap-32 w-100">
@@ -241,7 +262,7 @@
                                             </div>
                                             <div class="right-box">
                                                 <f-20 class="lh-20 clr-7BD09D">
-                                                   $11.1M
+                                                    $11.1M
                                                 </f-20>
                                             </div>
                                         </div>
@@ -263,7 +284,7 @@
                             Audit Trail & Filings
                         </h3>
                         <div class="bg-seconday-dark-900 p-32 br-11 border-E9E7DD-24">
-                           <div class="d-flex gap-16 align-center mb-24">
+                            <div class="d-flex gap-16 align-center mb-24">
                                 <div class="notification-outer w-38 h-38">
                                     <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
                                 </div>
@@ -304,7 +325,7 @@
                                         Re - Entry Type
                                     </p>
                                     <p class="f-16 lh-18 white uppercase">
-                                       Diversified
+                                        Diversified
                                     </p>
                                 </div>
 
@@ -313,14 +334,14 @@
                                         Compliance Score
                                     </p>
                                     <p class="f-16 lh-18 clr-A7DFBD uppercase">
-                                       100 / 100
+                                        100 / 100
                                     </p>
                                 </div>
 
                             </div>
                             <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold mb-38">Download Audit Trail Compliance Log</a>
                             <div class="bg-108476-10 br-16 p-17 f-14 lh-20 neutral-300">
-                               Note: "Protection Mode ensures your Future Pipe liquidation is not just a sale, but a tax-efficient transition. By matching $142k in losses against gains, we have created a 30.1% return on your tax liability."
+                                Note: "Protection Mode ensures your Future Pipe liquidation is not just a sale, but a tax-efficient transition. By matching $142k in losses against gains, we have created a 30.1% return on your tax liability."
                             </div>
                         </div>
                     </div>
@@ -328,7 +349,7 @@
 
                 <div class="d-flex gap-16 flex-col w-100">
                     <div class="f-16 lh-11 white-80">
-                       Tax Alpha Flow
+                        Tax Alpha Flow
                     </div>
                     <div class="bg-seconday-dark-900 p-32-24 br-11 border-E9E7DD-24 d-grid col-lg-3">
                         <div class="d-flex">
@@ -368,7 +389,7 @@
                                     Net Worth
                                 </p>
                                 <p class="f-14 lh-14 clr-99ACB6">
-                                  +$38.4k
+                                    +$38.4k
                                 </p>
                             </div>
                         </div>
@@ -378,7 +399,7 @@
 
                 <div class="d-flex gap-16 flex-col w-100">
                     <div class="f-16 lh-11 white-80">
-                       The Harvesting Ledger (Active Opportunities)
+                        The Harvesting Ledger (Active Opportunities)
                     </div>
                     <div class="bg-seconday-dark-900 p-32-24 br-11 border-E9E7DD-24">
 
@@ -515,7 +536,7 @@
                                     TOTAL Potential tax alpha
                                 </p>
                                 <p class="f-16 lh-16 clr-A7DFBD">
-                                   +$18,750
+                                    +$18,750
                                 </p>
                             </div>
                         </div>

@@ -113,7 +113,7 @@
 
     <div class="lg-out-right set-up-right">
 
-        <div class="d-flex gap-40 flex-col step-1 setup-step active w-100">
+        <div class="gap-40 flex-col step-1 setup-step active w-100">
             <div class="right-header d-flex gap-8 flex-col w-640">
                 <h3 class="f-32">
                     <b>
@@ -136,7 +136,7 @@
             </div>
         </div>
 
-        <div class="d-flex gap-40 flex-col step-2 setup-step w-100">
+        <div class="gap-40 flex-col step-2 setup-step w-100">
             <div class="right-header d-flex gap-8 flex-col w-640">
                 <h3 class="f-32">
                     <b id="step2Title">
@@ -185,7 +185,7 @@
         </div>
 
 
-        <div class="d-flex gap-40 flex-col step-2b w-100 setup-step" id="step-2b">
+        <div class="gap-40 flex-col step-2b w-100 setup-step" id="step-2b">
             <div class="right-header d-flex gap-8 flex-col w-640">
                 <h3 class="f-32">
                     <b>
@@ -329,7 +329,7 @@
         </div>
 
 
-        <div class="d-flex gap-40 flex-col step-2b1 w-100 setup-step">
+        <div class="gap-40 flex-col step-2b1 w-100 setup-step">
             <div class="right-header d-flex gap-8 flex-col w-640">
                 <h3 class="f-32">
                     <b>
@@ -391,7 +391,7 @@
 
         </div>
 
-        <div class="d-flex gap-40 flex-col step-2b2 w-100 setup-step">
+        <div class="gap-40 flex-col step-2b2 w-100 setup-step">
             <div class="right-header d-flex gap-8 flex-col w-640">
                 <h3 class="f-32">
                     <b>
@@ -456,7 +456,7 @@
 
         </div>
 
-        <div class="d-flex gap-40 flex-col step-2b3 w-100 setup-step">
+        <div class="gap-40 flex-col step-2b3 w-100 setup-step">
             <div class="right-header d-flex gap-8 flex-col w-640">
                 <h3 class="f-32">
                     <b>
@@ -549,7 +549,7 @@
         </div>
 
 
-        <div class="d-flex gap-40 flex-col step-2b4 w-100 setup-step">
+        <div class="gap-40 flex-col step-2b4 w-100 setup-step">
             <div class="right-header d-flex gap-8 flex-col w-640">
                 <h3 class="f-32">
                     <b>
@@ -609,7 +609,7 @@
             </div>
         </div>
 
-        <div class="d-flex gap-40 flex-col step-2b5 w-500 m-0-auto setup-step">
+        <div class="gap-40 flex-col step-2b5 w-500 m-0-auto setup-step">
             <div class="bank-logo d-flex gap-10 justify-center align-center center ">
                 <img class="w-180" src="{{ asset('images/Success-Illustration.svg') }}" alt="successful icon">
             </div>
@@ -627,7 +627,7 @@
         </div>
 
 
-        <div class="d-flex gap-40 flex-col step-2b6 setup-step setup-dashboard w-100">
+        <div class="gap-40 flex-col step-2b6 setup-step setup-dashboard w-100">
             <div class="d-flex gap-12 flex-col">
                 <h3 class="f-36 clr-003049 bold">
                     All set! Your accounts are all connected

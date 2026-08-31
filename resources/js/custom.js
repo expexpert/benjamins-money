@@ -9,6 +9,43 @@ $(document).ready(function () {
 
 
 
+    // accordion on asset allocation page 
+
+    $('.risk-card').each(function (index) {
+
+        var $card = $(this);
+        var $content = $card.find('.risk-card-content');
+        var $arrow = $card.find('.risk-card-arrow');
+
+        // First card open by default
+        if (index === 0) {
+            $content.show();
+            $arrow.addClass('active');
+        } else {
+            $content.hide();
+        }
+
+        $card.find('.risk-card-header').on('click', function () {
+
+            var isOpen = $content.is(':visible');
+
+            // Close all cards
+            $('.risk-card').each(function () {
+                $(this).find('.risk-card-content').slideUp();
+                $(this).find('.risk-card-arrow').removeClass('active');
+            });
+
+            // Open clicked card if it was closed
+            if (!isOpen) {
+                $content.slideDown();
+                $arrow.addClass('active');
+            }
+
+        });
+
+    });
+
+
     document.querySelectorAll('.password-toggle').forEach(function (button) {
 
         button.addEventListener('click', function () {

@@ -2339,6 +2339,24 @@ body.sidebar-close .profile-dropdown button {
     width: 100%;
 }
 
+span.risk-card-arrow.active svg {
+    transform: rotate(180deg);
+}
+
+span.risk-card-arrow svg,
+.risk-card-header {
+    cursor: pointer;
+}
+
+span.risk-card-arrow svg {
+    transition: 0.5s ease-in-out;
+}
+
+.asset-grid {
+    grid-template-columns: 110px 1fr;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .tax-comparison {

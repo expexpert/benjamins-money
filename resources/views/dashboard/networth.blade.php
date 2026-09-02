@@ -126,7 +126,7 @@
                             <canvas class="total-assets" id="assetsChart"></canvas>
                             <div class="chart-center-text">ASSETS</div>
                         </div>
-                        <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col">
+                        <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col w-100">
                             <div class="d-flex gap-10 align-center justify-space-between w-100">
                                 <div class="d-flex gap-8 align-center w-100">
                                     <span class="bg-blue-400 w-8 h-8">
@@ -251,7 +251,7 @@
                             <canvas class="total-assets" id="liabilitiesChart"></canvas>
                             <div class="chart-center-text">DEBT</div>
                         </div>
-                        <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col">
+                        <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col w-100">
                             <div class="d-flex gap-10 align-center justify-space-between w-100">
                                 <div class="d-flex gap-8 align-center w-100">
                                     <span class="bg-blue-400 w-8 h-8">

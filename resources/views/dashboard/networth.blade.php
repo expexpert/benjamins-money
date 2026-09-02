@@ -4,12 +4,18 @@
 
 @section('content')
 
-<div class="heading-bar d-flex justify-space-between">
-    <div class="breadcrumb">
-        <a class="d-flex gap-8 f-16 neutral-300" href="{{ url('/') }}">
-            <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
+<div class="heading-bar d-flex justify-space-between align-center">
+    <div class="breadcrumb d-flex gap-14">
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
             Dashboard
         </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="f-16 lh-18 white">
+            Net Worth
+        </p>
+
     </div>
     <ul class="status d-flex gap-14">
         <li class="active d-flex gap-10 align-center">
@@ -41,568 +47,465 @@
     </ul>
 </div>
 
-<div class="d-grid col-lg-3 gap-24 mb-48">
-    <div class="p-24 br-11 border-E9E7DD-24">
-        <div class="d-flex gap-16 mb-16 align-center">
-            <div class="notification-outer">
-                <img src="{{ asset('images/net-worth.svg') }}" alt="networth-icon">
-            </div>
-            <div class="card-cont-inner">
-                <h3 class="f-16 lh-12 white">
-                    Total Assets
-                </h3>
-            </div>
-        </div>
-
-        <div class="d-flex gap-8 flex-col">
-            <h4 class="f-24 lh-22 white">
-                $16,125,000
-            </h4>
-            <p class="f-14 clr-4FC07C">
-                +$1,320,000 (8.9%) this year
-            </p>
-        </div>
-
-    </div>
-
-    <div class="p-24 br-11 border-E9E7DD-24">
-        <div class="d-flex gap-16 mb-16 align-center">
-            <div class="notification-outer">
-                <img src="{{ asset('images/real-time.svg') }}" alt="real-time icon">
-            </div>
-            <div class="card-cont-inner">
-                <h3 class="f-16 lh-12 white">
-                    Total Liabilities
-                </h3>
-            </div>
-        </div>
-
-        <div class="d-flex gap-8 flex-col">
-            <h4 class="f-24 lh-22 white">
-                $1,382,000
-            </h4>
-            <p class="f-14 clr-red-400">
-                +$120,000 (8.0%) this year
-            </p>
-        </div>
-
-    </div>
-
-    <div class="p-24 br-11 border-E9E7DD-24">
-        <div class="d-flex gap-16 mb-16 align-center">
-            <div class="notification-outer">
-                <img src="{{ asset('images/cash-releases.svg') }}" alt="cash-releases icon">
-            </div>
-            <div class="card-cont-inner">
-                <h3 class="f-16 lh-12 white">
-                    Net Worth
-                </h3>
-            </div>
-        </div>
-
-        <div class="d-flex gap-8 flex-col">
-            <h4 class="f-24 lh-22 white">
-                $14,743,000
-            </h4>
-            <p class="f-14 clr-4FC07C">
-                +$1,124,000 (8.2%) this year
-            </p>
-        </div>
-
-    </div>
-</div>
-
-<div class="card card-graph mb-48 br-12 border-E9E7DD-24">
-    <!-- HEADER -->
-    <div class="header">
-        <div class="header-left">
-            <div class="net-worth-label">Net Worth</div>
-            <div class="net-worth-value" id="display-value">$14,743,000</div>
-            <div class="net-worth-change" id="display-change">
-                <svg fill="none" viewBox="0 0 24 24" stroke="#2ecc71" stroke-width="2.5">
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                    <polyline points="17 6 23 6 23 12" />
-                </svg>
-                +$1,124,000 (8.2%) this year
-            </div>
-        </div>
-        <div class="range-tabs">
-            <button class="tab" data-range="1D">1D</button>
-            <button class="tab" data-range="1W">1W</button>
-            <button class="tab" data-range="1M">1M</button>
-            <button class="tab" data-range="3M">3M</button>
-            <button class="tab" data-range="YTD">YTD</button>
-            <button class="tab active" data-range="1Y">1Y</button>
-            <button class="tab" data-range="ALL">ALL</button>
-        </div>
-    </div>
-
-    <!-- CHART -->
-    <div class="chart-wrap" id="chart-wrap">
-        <canvas id="chart"></canvas>
-        <div class="tooltip" id="tooltip">
-            <div class="tooltip-value" id="tt-value"></div>
-            <div class="tooltip-date" id="tt-date"></div>
-        </div>
-        <div class="crosshair-dot" id="crosshair-dot"></div>
-    </div>
-
-    <!-- X LABELS -->
-    <div class="x-labels" id="x-labels"></div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-        <div class="footer-item">
-            <div class="footer-label">Assets</div>
-            <div class="footer-value" id="assets-value">$16,125,000</div>
-            <div class="footer-bar" style="background: #4FC07C;"></div>
-        </div>
-        <div class="footer-item">
-            <div class="footer-label">Liabilities</div>
-            <div class="footer-value" id="liabilities-value">$1,382,000</div>
-            <div class="footer-bar" style="background:rgba(196, 229, 225, 30%);"></div>
-        </div>
-    </div>
-</div>
-
-<div class="d-flex gap-16 flex-col mb-48">
-    <h5 class="f-14 lh-16 neutral-300">
-        TOTAL ASSETS
-    </h5>
-    <div class="p-40-32 bg-060F13 border-E9E7DD-24 br-16 d-flex flex-col gap-16">
-        <div class="d-flex gap-12 justify-space-between align-center">
-            <div class="d-flex gap-12 align-center">
-                <div class="notification-outer w-47 h-47 d-flex align-center justify-center">
-                    <img src="{{ asset('images/net-worth.svg') }}" alt="net worth icon">
-                </div>
+<div class="dash-cont-outer">
+    <div class="dash-cont-inner">
+        <div class="card-outer d-flex gap-24 align-flex-start flex-col">
+            <div class="bg-0B1417 p-32 br-12 border-E9E7DD-24 d-flex justify-space-between gap-10 w-100">
                 <div>
-                    <h3 class="f-24 lh-24 mb-8 clr-23B05B bold">
-                        $16,125,000
+                    <div class="d-flex gap-8 align-center mb-28">
+                        <p class="f-13 uppercase lh-14 clr-99ACB6">
+                            CONSOLIDATED NET WORTH
+                        </p>
+                        <span class="bg-C5A059-10 br-4 p-4-8 f-14 lh-14 clr-C5A059">
+                            Q2 REPORT
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="h3 f-24 lh-26 white mb-12">
+                            $47,250,000
+                        </h3>
+
+                        <div class="d-flex gap-8 align-center">
+                            <p class="f-16 lh-18 clr-7BD09D">
+                                ▲ +$2,180,000 (+4.8%)
+                            </p>
+                            <p class="f-14 lh-16 neutral-300">
+                                vs. Prior Period (03/31/2025)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-col gap-8">
+                    <h3 class="f-14 lh-16 white uppercase ls-054">
+                        6-Period Statement Trend
                     </h3>
-                    <p class="f-18 lh-22 white">
-                        Assets Breakdown
+                    <div id="period-graph">
+                        <img src="{{ asset('images/sparkline-container.svg') }}" alt="search icon">
+                    </div>
+                    <div class="d-flex align-center justify-space-between">
+                        <p class="f-14 lh-14 clr-99ACB6">
+                            Q1-2024
+                        </p>
+                        <p class="f-14 lh-14 clr-99ACB6">
+                            Q2-2025
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-0B1417 br-12 border-E9E7DD-24 p-32 d-flex gap-20 flex-col w-100">
+                <h2 class="f-16 lh-12 white-80">
+                    Net Worth Composition Stack
+                </h2>
+            </div>
+
+            <div class="d-grid gap-24 col-lg-2 w-100">
+                <div class="bg-0B1417 p-32 br-12 border-E9E7DD-24 d-flex justify-space-between gap-24 w-100 flex-col">
+                    <div class="d-flex gap-10 justify-space-between w-100">
+                        <div class="d-flex gap-10 justify-space-between align-center">
+                            <div class="d-flex gap-4 flex-col">
+                                <p class="f-14 clr-99ACB6 lh-16 ls-054">
+                                    TOTAL ASSETS
+                                </p>
+                                <h3 class="f-24 lh-26 white">
+                                    $52,800,000
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-col gap-4">
+                            <p class="f-14 lh-16 clr-7BD09D right">
+                                ▲ +3.2%
+                            </p>
+                            <p class="f-11 lh-12 clr-99ACB6 right">
+                                vs. Q1
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-24 asset-grid">
+                        <div class="total-assets">
+                            <img src="{{ asset('images/donut-chart-mock.svg') }}" alt="total assets chart icon">
+                        </div>
+                        <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col">
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="bg-blue-400 w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Investments
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        35%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="bg-indigo w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Real Estate
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        28%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="bg-EE60E0 w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Concentrated Stock
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        22%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="light-pink w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Cash & Equivalents
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        8%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="bg-AFCCA1 w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Other / Alternatives
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        7%
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-bottom-334155">
+
+                    </div>
+                    <a href="#" class="cus-link gap-4 f-14 d-flex">View Asset Details <span>→</span></a>
+                </div>
+
+
+                <div class="bg-0B1417 p-32 br-12 border-E9E7DD-24 d-flex justify-space-between gap-24 w-100 flex-col">
+                    <div class="d-flex gap-10 justify-space-between w-100">
+                        <div class="d-flex gap-10 justify-space-between align-center">
+                            <div class="d-flex gap-4 flex-col">
+                                <p class="f-14 clr-99ACB6 lh-16 ls-054">
+                                    TOTAL LIABILITIES
+                                </p>
+                                <h3 class="f-24 lh-26 white">
+                                    $5,550,000
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-col gap-4">
+                            <p class="f-14 lh-16 clr-7BD09D right clr-yellow-300">
+                                ▼ -2.1%
+                            </p>
+                            <p class="f-11 lh-12 clr-99ACB6 right">
+                                vs. Q1
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-24 asset-grid">
+                        <div class="total-assets">
+                            <img src="{{ asset('images/donut-chart-debt.svg') }}" alt="total debt chart icon">
+                        </div>
+                        <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col">
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="bg-blue-400 w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Mortgages
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        54%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="bg-indigo w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Securities-Backed
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        18%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="bg-EE60E0 w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Business Debt
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        14%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="light-pink w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Lifestyle Financing
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        10%
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-10 align-center justify-space-between w-100">
+                                <div class="d-flex gap-8 align-center w-100">
+                                    <span class="bg-AFCCA1 w-8 h-8">
+
+                                    </span>
+                                    <div class="right-col">
+                                        <p class="f-13 lh-23 white">
+                                            Personal / Consumer
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="f-13 lh-14 white">
+                                        4%
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-bottom-334155">
+
+                    </div>
+                    <a href="#" class="cus-link gap-4 f-14 d-flex">View Liability Details <span>→</span></a>
+                </div>
+            </div>
+            <div class="d-grid gap-24 col-lg-2 w-100 align-flex-start">
+                <div class="bg-0B1417 border-E9E7DD-24 p-32-24 d-flex flex-col gap-20 br-12">
+                    <h2 class="f-16 lh-12 white-80">
+                        Key Financial Health Indicators
+                    </h2>
+                    <div class="d-grid gap-16 col-lg-3">
+                        <div class="bg-C5A059-5 border-C5A059-30 br-8 p-16 d-flex gap-8 flex-col">
+                            <p class="f-11 lh-12 clr-99ACB6">
+                                Liquidity Ratio
+                            </p>
+                            <div class="d-flex gap-8 align-center">
+                                <p class="f-16 lh-18 white">
+                                    12%
+                                </p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
+                                </svg>
+                            </div>
+                            <p class="f-13 lh-18 white-80">
+                                Target: >15% Liquid Assets
+                            </p>
+                        </div>
+
+                        <div class="bg-0B1417 border-334155 br-8 p-16 d-flex gap-8 flex-col">
+                            <p class="f-11 lh-12 clr-99ACB6">
+                                Debt-to-Asset
+                            </p>
+                            <div class="d-flex gap-8 align-center">
+                                <p class="f-16 lh-18 white">
+                                    10.5%
+                                </p>
+                            </div>
+                            <p class="f-13 lh-18 white-80">
+                                Conservative Tier (< 20%)
+                                    </p>
+                        </div>
+
+                        <div class="bg-C5A059-5 border-C5A059-30 br-8 p-16 d-flex gap-8 flex-col">
+                            <p class="f-11 lh-12 clr-99ACB6">
+                                Concentration Risk
+                            </p>
+                            <div class="d-flex gap-8 align-center">
+                                <p class="f-16 lh-18 white">
+                                    24%
+                                </p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
+                                </svg>
+                            </div>
+                            <p class="f-13 lh-18 white-80">
+                                XYZ Corp Exceeds 15% Cap
+                            </p>
+                        </div>
+
+
+                        <div class="bg-0B1417 border-334155 br-8 p-16 d-flex gap-8 flex-col">
+                            <p class="f-11 lh-12 clr-99ACB6">
+                                Fixed / Variable Rate
+                            </p>
+                            <div class="d-flex gap-8 align-center">
+                                <p class="f-16 lh-18 white">
+                                    62% / 38%
+                                </p>
+                            </div>
+                            <p class="f-13 lh-18 white-80">
+                                Variable exposure monitored
+                            </p>
+                        </div>
+
+                        <div class="bg-0B1417 border-334155 br-8 p-16 d-flex gap-8 flex-col">
+                            <p class="f-11 lh-12 clr-99ACB6">
+                                Undrawn Credit
+                            </p>
+                            <div class="d-flex gap-8 align-center">
+                                <p class="f-16 lh-18 white">
+                                    $2,450,000
+                                </p>
+                            </div>
+                            <p class="f-13 lh-18 white-80">
+                                Immediate Liquidity Access
+                            </p>
+                        </div>
+
+                        <div class="bg-0B1417 border-334155 br-8 p-16 d-flex gap-8 flex-col">
+                            <p class="f-11 lh-12 clr-99ACB6">
+                                12-Mo Maturities
+                            </p>
+                            <div class="d-flex gap-8 align-center">
+                                <p class="f-16 lh-18 white">
+                                    $875,000
+                                </p>
+                            </div>
+                            <p class="f-13 lh-18 white-80">
+                                Refinancing scheduled
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bg-0B1417 border-E9E7DD-24 p-32-24 d-flex flex-col gap-20 br-12">
+                    <h2 class="f-16 lh-12 white-80">
+                        Alerts & Items Requiring Attention
+                    </h2>
+                    <div class="d-flex gap-12 flex-col">
+                        <div class="d-flex gap-12 p-12 align-center bg-000A0F br-8 border-C5A059-30">
+                            <div class="danger-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
+                                </svg>
+                            </div>
+                            <div class="cont f-13 lh-20 white">
+                                Concentrated stock position (XYZ Corp) at 24% of net worth - exceeds your family office threshold of 15%.
+                            </div>
+                        </div>
+                        <div class="d-flex gap-12 p-12 align-center bg-000A0F br-8 border-C5A059-30">
+                            <div class="danger-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
+                                </svg>
+                            </div>
+                            <div class="cont f-13 lh-20 white">
+                                SBLOC balance is approaching 65% LTV margin threshold (current: 58%). Alert trigger set at 60%.
+                            </div>
+                        </div>
+                        <div class="d-flex gap-12 p-12 align-center bg-000A0F br-8 border-C5A059-30">
+                            <div class="danger-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
+                                </svg>
+                            </div>
+                            <div class="cont f-13 lh-20 white">
+                                $875,000 in debt is maturing within 12 months. Requesting refinancing review.
+                            </div>
+                        </div>
+                        <div class="d-flex gap-12 p-12 align-center bg-000A0F br-8 border-C5A059-30">
+                            <div class="danger-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
+                                </svg>
+                            </div>
+                            <div class="cont f-13 lh-20 white">
+                                Estimated tax liability on unrealized gains is currently $1,850,000.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid col-lg-3 gap-16 bg-0B1417 p-32-24">
+                <div class="cont">
+                    <p class="f-12 lh-20 clr-EDECE4">
+                        CONFIDENTIAL REPORT • BM Private Office • Strictly Private & Confidential. Unauthorized distribution prohibited.
                     </p>
                 </div>
-            </div>
-
-            <div class="d-flex gap-24 align-center">
-                <a href="#" class="btn btn-green-outlined p-6-16 f-14 d-flex">Add /connect account</a>
-                <a href="#" class="f-14 d-flex clr-4FC07C">View All</a>
-            </div>
-
-        </div>
-        <div class="bg-sec-900 border-E9E7DD-24 br-16 p-32">
-            <div class="d-flex gap-16 flex-col">
-                <div class="table-row d-grid col-lg-5 align-center gap-32 mb-8">
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase">
-                            Asset
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase">
-                            Percentage
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase">
-                            Current Value
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase">
-                            allocation
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase center">
-                            Status
-                        </p>
-                    </div>
-                </div>
-
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            Amazon Stock Awards
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-yellow-outlined bg-yellow-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connection Required</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            46.5%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $7,500,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="46.5">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-E9E7DD-32 h-1"></div>
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            Ft. Lauderdale, FL Home
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-green-outlined bg-green-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connected</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            34.1%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $3,000,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="34.1">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-E9E7DD-32 h-1"></div>
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            RBC Brokerage Account
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-green-outlined bg-green-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connected</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            17.1%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $2,750,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="17.1">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-E9E7DD-32 h-1"></div>
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            Mclean, VA home
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-yellow-outlined bg-yellow-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connection Required</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            1.6%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $2500,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="1.6">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-E9E7DD-32 h-1"></div>
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            RBC Brokerage Account
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-green-outlined bg-green-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connected</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            0.7%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $250,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="0.7">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-E9E7DD-32 h-1"></div>
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            Bank of America CDs
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-green-outlined bg-green-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connected</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            0.2%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $125,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="0.2">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
+                <a href="#" class="btn btn-green-outlined p-10-21 f-14 lh-18 d-flex justify-center bold">Download Full Statement (PDF)</a>
+                <a href="#" class="btn btn-green-outlined p-10-21 f-14 lh-18 d-flex justify-center bold">Schedule Portfolio Review</a>
             </div>
         </div>
     </div>
-</div>
 
-<div class="d-flex gap-16 flex-col mb-32">
-    <h5 class="f-14 lh-16 neutral-300">
-        TOTAL LIABILITIES
-    </h5>
-    <div class="p-40-32 bg-060F13 border-E9E7DD-24 br-16 d-flex flex-col gap-16 liability">
-        <div class="d-flex gap-12 justify-space-between align-center">
-            <div class="d-flex gap-12 align-center">
-                <div class="notification-outer w-47 h-47 d-flex align-center justify-center">
-                    <img src="{{ asset('images/net-worth.svg') }}" alt="net worth icon">
-                </div>
-                <div>
-                    <h3 class="f-24 lh-24 mb-8 clr-red-400 bold">
-                        $1,382,000
-                    </h3>
-                    <p class="f-18 lh-22 white">
-                        Liabilities Breakdown
-                    </p>
-                </div>
-            </div>
-
-            <div class="d-flex gap-24 align-center">
-                <a href="#" class="btn btn-green-outlined p-6-16 f-14 d-flex">Add /connect account</a>
-                <a href="#" class="f-14 d-flex clr-4FC07C">View All</a>
-            </div>
-
-        </div>
-        <div class="bg-sec-900 border-E9E7DD-24 br-16 p-32">
-            <div class="d-flex gap-16 flex-col">
-                <div class="table-row d-grid col-lg-5 align-center gap-32 mb-8">
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase">
-                            Asset
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase">
-                            Percentage
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase">
-                            Current Value
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase">
-                            allocation
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-12 lh-10 neutral-300 uppercase center">
-                            Status
-                        </p>
-                    </div>
-                </div>
-
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            Auto Loans (Two Loans)
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-yellow-outlined bg-yellow-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connection Required</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            54.3%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $750,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="54.3">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-E9E7DD-32 h-1"></div>
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            Mclean BOA Home Loan
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-green-outlined bg-green-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connected</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            36.2%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $500,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="36.2">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-E9E7DD-32 h-1"></div>
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            FLL BB&T Home Loan
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-green-outlined bg-green-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connected</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            5.90%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $82,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="5.90">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-E9E7DD-32 h-1"></div>
-                <div class="table-row d-grid col-lg-5 align-start gap-32">
-                    <div class="date-outer d-flex gap-8 flex-col justify-start">
-                        <p class="f-16 lh-18 white">
-                            Ft. Lauderdale, FL Home
-                        </p>
-                        <div class="f-12 lh-16">
-                            <a class="btn-yellow-outlined bg-yellow-400-15 p-3-16 br-48 d-inline-flex justify-start" href="#">Connection Required</a>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            3.60%
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white">
-                            $50,000
-                        </p>
-                    </div>
-                    <div class="date-outer">
-                        <div class="seg-bar" data-pct="3.60">
-                            <div class="seg-inner"></div>
-                        </div>
-                    </div>
-                    <div class="date-outer">
-                        <p class="f-16 lh-16 white center">
-                            Active
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="bg-E9E7DD-5 p-17-50 br-16 d-flex gap-12 align-center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18ZM9 5H11V7H9V5ZM9 9H11V15H9V9Z" fill="#E9E7DD" fill-opacity="0.6" />
-    </svg>
-    <p class="neutral-300 f-14 lh-25">
-        API connections will sync automatically once linked. Redfin API updates property values in real time. New assets or loans added here will reflect in your net worth immediately.
-    </p>
 </div>
 
 @endsection

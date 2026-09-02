@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Asset Allocation')
+@section('title', 'Concentration cap')
 
 @section('content')
 
@@ -18,7 +18,7 @@
             </div>
             <div class="icon-description f-14">
                 Trading Window: Open
-            </div>
+            </div>  
         </li>
 
         <li class="d-flex gap-10 align-center">

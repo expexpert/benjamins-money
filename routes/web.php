@@ -35,6 +35,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.networth');
     });
 
+    Route::get('/networth-assets', function () {
+        return view('dashboard.networth-assets');
+    });
+
     Route::get('/cash-reserves', function () {
         return view('dashboard.cash-reserves');
     });

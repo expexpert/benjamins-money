@@ -79,8 +79,8 @@
                     <h3 class="f-14 lh-16 white uppercase ls-054">
                         6-Period Statement Trend
                     </h3>
-                    <div id="period-graph">
-                        <img src="{{ asset('images/sparkline-container.svg') }}" alt="search icon">
+                    <div class="trend-chart-wrapper">
+                        <canvas id="trendChart"></canvas>
                     </div>
                     <div class="d-flex align-center justify-space-between">
                         <p class="f-14 lh-14 clr-99ACB6">
@@ -121,9 +121,10 @@
                             </p>
                         </div>
                     </div>
-                    <div class="d-grid gap-24 asset-grid">
-                        <div class="total-assets">
-                            <img src="{{ asset('images/donut-chart-mock.svg') }}" alt="total assets chart icon">
+                    <div class="d-grid gap-24 asset-grid chart-body">
+                        <div class="chart-canvas-wrapper">
+                            <canvas class="total-assets" id="assetsChart"></canvas>
+                            <div class="chart-center-text">ASSETS</div>
                         </div>
                         <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col">
                             <div class="d-flex gap-10 align-center justify-space-between w-100">
@@ -245,9 +246,10 @@
                             </p>
                         </div>
                     </div>
-                    <div class="d-grid gap-24 asset-grid">
-                        <div class="total-assets">
-                            <img src="{{ asset('images/donut-chart-debt.svg') }}" alt="total debt chart icon">
+                    <div class="d-grid gap-24 asset-grid chart-body">
+                        <div class="chart-canvas-wrapper">
+                            <canvas class="total-assets" id="liabilitiesChart"></canvas>
+                            <div class="chart-center-text">DEBT</div>
                         </div>
                         <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col">
                             <div class="d-flex gap-10 align-center justify-space-between w-100">

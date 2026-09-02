@@ -735,30 +735,30 @@ window.togglePassword = function (inputId, iconEl) {
 document.addEventListener("DOMContentLoaded", function () {
 
     // --- 1. SPARKLINE TREND GRAPH ---
-new Chart(document.getElementById('trendChart').getContext('2d'), {
-    type: 'line',
-    data: {
-        labels: ['Q1-2024', 'Q2-2024', 'Q3-2024', 'Q4-2024', 'Q1-2025', 'Q2-2025'],
-        datasets: [{
-            data: [42, 42.5, 44, 43.5, 45.2, 47.25],
-            borderColor: '#4ade80',
-            borderWidth: 1.5,
-            pointBackgroundColor: '#4ade80',
-            pointRadius: 2,
-            fill: false,
-            tension: 0.2
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false, // Prevents canvas vertical blowing up
-        plugins: { legend: { display: false } },
-        scales: {
-            x: { display: false },
-            y: { display: false }
+    new Chart(document.getElementById('trendChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: ['Q1-2024', 'Q2-2024', 'Q3-2024', 'Q4-2024', 'Q1-2025', 'Q2-2025'],
+            datasets: [{
+                data: [42, 42.5, 44, 43.5, 45.2, 47.25],
+                borderColor: '#4ade80',
+                borderWidth: 1.5,
+                pointBackgroundColor: '#4ade80',
+                pointRadius: 2,
+                fill: false,
+                tension: 0.2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Prevents canvas vertical blowing up
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { display: false },
+                y: { display: false }
+            }
         }
-    }
-});
+    });
 
     const chartColors = ['#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e', '#a3e635'];
 

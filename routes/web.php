@@ -71,6 +71,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.liquidity-workflow');
     });
 
+    Route::get('/diversification-velocity-control', function () {
+        return view('dashboard.diversification-velocity-control');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

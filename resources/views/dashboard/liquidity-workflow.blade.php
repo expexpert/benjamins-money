@@ -5,11 +5,17 @@
 @section('content')
 
 <div class="heading-bar d-flex justify-space-between">
-    <div class="breadcrumb">
-        <a class="d-flex gap-8 f-16 neutral-300" href="/">
-            <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
+    <div class="breadcrumb d-flex gap-8">
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
             Dashboard
         </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="f-16 lh-18 white">
+            Liquidity Workflow
+        </p>
+
     </div>
     <ul class="status d-flex gap-14">
         <li class="active d-flex gap-10 align-center">
@@ -54,7 +60,10 @@
                     <div class="card p-24 border-E9E7DD-24">
                         <div class="d-flex gap-12 mb-16 align-center">
                             <div class="notification-outer w-38 h-38">
-                                <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
+                                <!-- <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon"> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                    <path d="M3.12109 16.1172V11.7839M9.12109 16.1172V7.45052M15.1211 16.1172V3.11719" stroke="#108476" stroke-width="2" stroke-linecap="round" />
+                                </svg>
                             </div>
                             <div class="card-cont">
                                 <p class="f-16 lh-18 white ls-0 mb-4">
@@ -81,7 +90,10 @@
                     <div class="card p-24 border-E9E7DD-24">
                         <div class="d-flex gap-12 mb-16 align-center">
                             <div class="notification-outer w-38 h-38">
-                                <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
+                                <!-- <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon"> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                    <path d="M7.71331 15.6013C7.63907 15.4812 7.59978 15.3427 7.59984 15.2015V10.6414C7.59967 10.2647 7.45964 9.90152 7.20688 9.62222L1.71536 3.55047C1.61687 3.44136 1.55214 3.30603 1.529 3.16088C1.50587 3.01573 1.52532 2.86699 1.58501 2.73267C1.64469 2.59835 1.74205 2.48422 1.86528 2.4041C1.98851 2.32397 2.13234 2.2813 2.27933 2.28125H15.9606C16.1075 2.2816 16.2511 2.32448 16.3741 2.40472C16.4971 2.48495 16.5943 2.5991 16.6538 2.73336C16.7133 2.86762 16.7326 3.01625 16.7094 3.16126C16.6862 3.30627 16.6215 3.44146 16.5231 3.55047L11.0331 9.62222C10.7803 9.90152 10.6403 10.2647 10.6401 10.6414V15.9615C10.6402 16.0911 10.6071 16.2185 10.5441 16.3317C10.481 16.4449 10.3901 16.5401 10.2799 16.6082C10.1697 16.6764 10.0439 16.7152 9.91445 16.7211C9.78501 16.7269 9.65622 16.6996 9.54031 16.6417L8.02016 15.8817C7.89381 15.8186 7.78756 15.7215 7.71331 15.6013Z" stroke="#108476" stroke-width="1.2" stroke-linecap="round" />
+                                </svg>
                             </div>
                             <div class="card-cont">
                                 <p class="f-16 lh-18 white ls-0 mb-4">
@@ -108,7 +120,7 @@
                     <div class="card p-24 border-E9E7DD-24">
                         <div class="d-flex gap-12 mb-16 align-center">
                             <div class="notification-outer w-38 h-38">
-                                <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
+                                <img src="{{ asset('images/target.png') }}" alt="Target icon">
                             </div>
                             <div class="card-cont">
                                 <p class="f-16 lh-18 white ls-0 mb-4">

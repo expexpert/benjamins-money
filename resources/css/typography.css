@@ -1313,6 +1313,10 @@ h6 {
     grid-template-columns: 1.3fr 1fr;
 }
 
+.col-12-1 {
+    grid-template-columns: 1.2fr 1fr;
+}
+
 .w-4 {
     width: 4px;
 }
@@ -2004,6 +2008,14 @@ textarea {
 
 .border-003049-10 {
     border: 1px solid rgba(0, 48, 73, 10%);
+}
+
+.bl-4{
+    border-left-width: 4px;
+}
+
+.border-2-23B05B{
+    border: 2px solid #23B05B;
 }
 
 .border-white-15 {

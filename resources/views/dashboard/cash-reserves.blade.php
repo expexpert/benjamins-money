@@ -4,11 +4,18 @@
 
 @section('content')
 
-<div class="heading-bar d-flex justify-space-between">
-    <div class="bar-heading">
-        <h2 class="f-24">
-            Executive Wealth Command
-        </h2>
+<div class="heading-bar d-flex justify-space-between align-center">
+    <div class="breadcrumb d-flex gap-8">
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
+            Dashboard
+        </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="f-16 lh-18 white">
+            Cash Reserves
+        </p>
+
     </div>
     <ul class="status d-flex gap-14">
         <li class="active d-flex gap-10 align-center f-14 lh-14">
@@ -88,7 +95,10 @@
                     <div class="d-flex gap-8 align-center">
 
                         <div class="notification-outer">
-                            <img src="{{ asset('images/guardian.svg') }}" alt="weight icon">
+                            <!-- <img src="{{ asset('images/guardian.svg') }}" alt="weight icon"> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+                                <path d="M3.75 18.3334H14.2512M3.75 1.66406H14.2512M12.751 18.3334V14.8562C12.7509 14.4141 12.5928 13.9902 12.3115 13.6777L9.0006 9.99873M9.0006 9.99873L5.68972 13.6777C5.40837 13.9902 5.25026 14.4141 5.25017 14.8562V18.3334M9.0006 9.99873L5.68972 6.31981C5.40837 6.00727 5.25026 5.58335 5.25017 5.14129V1.66406M9.0006 9.99873L12.3115 6.31981C12.5928 6.00727 12.7509 5.58335 12.751 5.14129V1.66406" stroke="#108476" stroke-width="1.2" stroke-linecap="round" />
+                            </svg>
                         </div>
                         <div class="card-cont">
                             <h3 class="f-14 lh-16 white">
@@ -203,7 +213,7 @@
                                         <div class="w-10 h-10 bg-0095FF br-2">
 
                                         </div>
-                                        <p class="f-13 lh-14 white neutral-300">
+                                        <p class="f-13 lh-14 neutral-300">
                                             RBC Cash
                                         </p>
                                     </div>
@@ -216,7 +226,7 @@
                                         <div class="w-10 h-10 bg-89C6FF br-2">
 
                                         </div>
-                                        <p class="f-13 lh-14 white neutral-300">
+                                        <p class="f-13 lh-14 neutral-300">
                                             BofA CDs
                                         </p>
                                     </div>

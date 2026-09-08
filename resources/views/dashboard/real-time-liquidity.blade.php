@@ -4,12 +4,18 @@
 
 @section('content')
 
-<div class="heading-bar d-flex justify-space-between">
-    <div class="breadcrumb">
-        <a class="d-flex gap-8 f-16 neutral-300" href="{{ url('/compliance') }}">
-            <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
-            Compliance
+<div class="heading-bar d-flex justify-space-between align-center">
+    <div class="breadcrumb d-flex gap-8">
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
+            Dashboard
         </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="f-16 lh-18 white">
+            Real Time Liquidity
+        </p>
+
     </div>
     <ul class="status d-flex gap-14">
         <li class="active d-flex gap-10 align-center">
@@ -60,7 +66,7 @@
                     <div class="border-E9E7DD-24"></div>
                     <div class="d-flex gap-8 flex-col">
                         <div class="d-flex gap-10 justify-space-between align-center">
-                            <h4 class="f-13 lh-11 clr-99ACB6 uppercase">
+                            <h4 class="f-13 lh-11 clr-99ACB6">
                                 Total Shares
                             </h4>
                             <h3 class="f-14 lh-14 white">
@@ -69,7 +75,7 @@
                         </div>
 
                         <div class="d-flex gap-10 justify-space-between align-center">
-                            <h4 class="f-13 lh-11 clr-99ACB6 uppercase">
+                            <h4 class="f-13 lh-11 clr-99ACB6">
                                 Current Price
                             </h4>
                             <h3 class="f-14 lh-14 white">
@@ -79,7 +85,7 @@
 
 
                         <div class="d-flex gap-10 justify-space-between align-center">
-                            <h4 class="f-13 lh-11 clr-99ACB6 uppercase">
+                            <h4 class="f-13 lh-11 clr-99ACB6">
                                 Next Vest Date
                             </h4>
                             <h3 class="f-14 lh-14 clr-FFDD99">
@@ -141,7 +147,7 @@
                                 </div>
                                 <div class="date-outer">
                                     <p class="f-16 lh-16 white">
-                                        q3 cLIFF
+                                        Q3 cliff
                                     </p>
                                 </div>
                                 <div class="date-outer">
@@ -173,7 +179,7 @@
                                 </div>
                                 <div class="date-outer">
                                     <p class="f-16 lh-16 white">
-                                        q4 cLIFF
+                                        Q4 cliff
                                     </p>
                                 </div>
                                 <div class="date-outer">
@@ -205,7 +211,7 @@
                                 </div>
                                 <div class="date-outer">
                                     <p class="f-16 lh-16 white">
-                                        Annual tOTAL
+                                        Annual Total
                                     </p>
                                 </div>
                                 <div class="date-outer">
@@ -236,7 +242,7 @@
                                 </div>
                                 <div class="date-outer">
                                     <p class="f-16 lh-16 white">
-                                        q3 cLIFF
+                                        Q3 Cliff
                                     </p>
                                 </div>
                                 <div class="date-outer">

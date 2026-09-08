@@ -50,7 +50,7 @@
                     </h3>
                 </div>
                 <div class="d-grid col-lg-4 gap-13 w-100">
-                    <div class="card p-24">
+                    <div class="card p-32-24">
                         <div class="d-flex gap-16 mb-20">
                             <!-- <div class="notification-outer">
                                     <img src="{{ asset('images/net-after.svg') }}" alt="net worth icon">
@@ -82,7 +82,7 @@
                         <a href="#" class="cus-link gap-4 f-14 d-flex">View Details <img
                                 src="{{ asset('images/arrow-right.svg') }}" alt="btn icon"></a>
                     </div>
-                    <div class="card p-24">
+                    <div class="card p-32-24">
                         <div class="d-flex gap-16 mb-20">
                             <!-- <div class="notification-outer">
                                 <img src="{{ asset('images/real-time.svg') }}" alt="net worth icon">
@@ -114,7 +114,7 @@
                         <a href="#" class="cus-link gap-4 f-14 d-flex">View Liquidity <img
                                 src="{{ asset('images/arrow-right.svg') }}" alt="btn icon"></a>
                     </div>
-                    <div class="card p-24">
+                    <div class="card p-32-24">
                         <div class="d-flex gap-16 mb-20">
                             <!-- <div class="notification-outer">
                                 <img src="{{ asset('images/cash-releases.svg') }}" alt="net worth icon">
@@ -146,7 +146,7 @@
                         <a href="#" class="cus-link gap-4 f-14 d-flex">View Runway <img
                                 src="{{ asset('images/arrow-right.svg') }}" alt="btn icon"></a>
                     </div>
-                    <div class="card p-24">
+                    <div class="card p-32-24">
                         <div class="d-flex gap-16 mb-20">
                             <!-- <div class="notification-outer">
                                 <img src="{{ asset('images/tax-rate.svg') }}" alt="net worth icon">
@@ -188,12 +188,16 @@
                     </h3>
                 </div>
                 <div class="d-grid col-lg-2 gap-19 w-100">
-                    <div class="card p-24 d-flex flex-col gap-16 border-white-15 bg-0B1417">
+                    <div class="card p-32-24 d-flex flex-col gap-16 border-white-15 bg-0B1417">
                         <div class="d-flex gap-12 mb-4 align-center justify-space-between">
                             <div class="d-flex gap-16 align-center">
 
                                 <div class="notification-outer">
-                                    <img src="{{ asset('images/net-after.svg') }}" alt="net worth icon">
+                                    <!-- <img src="{{ asset('images/net-after.svg') }}" alt="net worth icon"> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M11.2502 8.317V8C11.2502 7.80109 11.3292 7.61032 11.4699 7.46967C11.6105 7.32902 11.8013 7.25 12.0002 7.25C12.1991 7.25 12.3899 7.32902 12.5305 7.46967C12.6712 7.61032 12.7502 7.80109 12.7502 8V8.312C12.9272 8.346 13.1002 8.395 13.2772 8.465C13.6752 8.623 14.0412 8.869 14.4532 9.181C14.6118 9.30114 14.7162 9.47937 14.7434 9.67647C14.7706 9.87357 14.7184 10.0734 14.5982 10.232C14.4781 10.3906 14.2998 10.495 14.1027 10.5222C13.9056 10.5494 13.7058 10.4971 13.5472 10.377C13.1592 10.083 12.9252 9.939 12.7232 9.859C12.5392 9.786 12.3412 9.75 12.0002 9.75C11.5072 9.75 11.1762 9.867 10.9902 10.002C10.9137 10.0519 10.8514 10.1208 10.8093 10.2019C10.7673 10.2831 10.7469 10.3737 10.7502 10.465C10.7502 10.702 10.8402 10.831 11.0662 10.957C11.3392 11.11 11.7182 11.193 12.1232 11.26C12.5192 11.326 13.1392 11.438 13.6662 11.734C14.2412 12.055 14.7502 12.626 14.7502 13.534C14.7536 13.8627 14.6771 14.1874 14.5273 14.48C14.3775 14.7727 14.1589 15.0245 13.8902 15.214C13.5632 15.45 13.1722 15.604 12.7502 15.683V16C12.7502 16.1989 12.6712 16.3897 12.5305 16.5303C12.3899 16.671 12.1991 16.75 12.0002 16.75C11.8013 16.75 11.6105 16.671 11.4699 16.5303C11.3292 16.3897 11.2502 16.1989 11.2502 16V15.688C11.0702 15.6532 10.8938 15.602 10.7232 15.535C10.3252 15.377 9.95921 15.131 9.54721 14.819C9.46868 14.7595 9.40264 14.6851 9.35285 14.6001C9.30306 14.5151 9.27051 14.4211 9.25704 14.3235C9.22985 14.1264 9.28207 13.9266 9.40221 13.768C9.52235 13.6094 9.70058 13.505 9.89768 13.4778C10.0948 13.4506 10.2946 13.5029 10.4532 13.623C10.8412 13.917 11.0752 14.061 11.2772 14.141C11.4612 14.214 11.6592 14.25 12.0002 14.25C12.4932 14.25 12.8242 14.133 13.0102 13.998C13.0867 13.9481 13.149 13.8792 13.1911 13.7981C13.2331 13.7169 13.2535 13.6263 13.2502 13.535C13.2502 13.298 13.1602 13.169 12.9342 13.043C12.6612 12.89 12.2812 12.807 11.8772 12.74C11.4812 12.674 10.8612 12.562 10.3342 12.266C9.75921 11.945 9.25021 11.374 9.25021 10.466C9.25021 9.764 9.57321 9.176 10.1102 8.786C10.4507 8.54692 10.8401 8.38671 11.2502 8.317Z" fill="#108476" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.764 3.25C15.571 3.25 13.761 3.768 12.033 4.262L11.944 4.287C10.179 4.792 8.483 5.267 6.391 5.267C5.319 5.267 4.32 5.054 3.235 4.745C2.96446 4.66563 2.68072 4.64155 2.40067 4.67419C2.12063 4.70683 1.85003 4.79553 1.605 4.935C1.34508 5.08389 1.12912 5.29881 0.97898 5.558C0.828837 5.8172 0.749845 6.11146 0.75 6.411V17.645C0.75 18.257 0.925 18.789 1.263 19.225C1.593 19.65 2.04 19.935 2.51 20.129C3.505 20.549 4.336 20.75 6.236 20.75C8.429 20.75 10.239 20.232 11.967 19.738L12.056 19.713C13.821 19.208 15.517 18.733 17.609 18.733C18.681 18.733 19.68 18.946 20.765 19.255C21.323 19.415 21.919 19.345 22.395 19.065C22.884 18.776 23.25 18.256 23.25 17.589V6.355C23.25 5.743 23.075 5.211 22.737 4.775C22.407 4.35 21.96 4.065 21.49 3.871C20.495 3.451 19.665 3.25 17.764 3.25ZM6.39 6.767C8.715 6.767 10.594 6.233 12.356 5.729L12.383 5.722C14.145 5.218 15.782 4.75 17.763 4.75C19.509 4.75 20.133 4.927 20.908 5.254L20.912 5.255C21.225 5.385 21.427 5.535 21.551 5.695C21.666 5.843 21.749 6.044 21.749 6.355V17.59C21.749 17.662 21.722 17.72 21.633 17.773C21.563 17.8095 21.4866 17.8317 21.408 17.8386C21.3294 17.8455 21.2502 17.8368 21.175 17.813C20.036 17.489 18.883 17.234 17.608 17.234C15.283 17.234 13.404 17.768 11.642 18.272L11.615 18.279C9.853 18.783 8.216 19.251 6.235 19.251C4.489 19.251 3.865 19.074 3.09 18.747L3.086 18.746C2.773 18.616 2.571 18.466 2.447 18.306C2.332 18.158 2.249 17.957 2.249 17.646V6.41C2.249 6.338 2.276 6.28 2.365 6.227C2.43496 6.19055 2.51143 6.16826 2.59002 6.16139C2.66861 6.15453 2.74778 6.16323 2.823 6.187C3.962 6.511 5.115 6.766 6.39 6.766" fill="#108476" />
+                                    </svg>
                                 </div>
                                 <div class="card-cont">
                                     <h3 class="f-16 lh-16 mb-8">
@@ -268,7 +272,7 @@
 
 
                     </div>
-                    <div class="card p-24 border-white-15 bg-0B1417">
+                    <div class="card p-32-24 border-white-15 bg-0B1417">
                         <div class="d-flex gap-12 mb-28 align-center justify-space-between">
                             <div class="d-flex gap-16 align-center">
                                 <div class="notification-outer">
@@ -383,7 +387,9 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="cus-btn f-14 bg-light-green d-flex justify-center border-none">View Scenario Planning</a>
+                        <a href="#" class="cus-btn f-14 bg-light-green d-flex gap-10 align-center justify-center border-none"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                <path d="M2.95833 5.87542V3.5419C2.95833 2.76829 3.26562 2.02637 3.81261 1.47934C4.35959 0.932315 5.10145 0.625 5.875 0.625C6.64855 0.625 7.39041 0.932315 7.93739 1.47934C8.48438 2.02637 8.79167 2.76829 8.79167 3.5419V5.87542M1.79167 5.87542H9.95833C10.6027 5.87542 11.125 6.3978 11.125 7.04218V11.1258C11.125 11.7702 10.6027 12.2926 9.95833 12.2926H1.79167C1.14733 12.2926 0.625 11.7702 0.625 11.1258V7.04218C0.625 6.3978 1.14733 5.87542 1.79167 5.87542Z" stroke="#4FC07C" stroke-width="1.25" stroke-linecap="round" />
+                            </svg>View Scenario Planning</a>
                     </div>
                 </div>
             </div>
@@ -395,14 +401,14 @@
                     </h3>
                 </div>
                 <div class="d-grid col-lg-2 gap-19 w-100">
-                    <div class="card p-24 border-white-15 bg-0B1417 d-flex flex-col gap-22">
+                    <div class="card p-32-24 border-white-15 bg-0B1417 d-flex flex-col gap-22">
                         <div class="d-flex gap-10px justify-space-between align-center">
                             <div class="d-flex gap-12 align-center">
                                 <div class="notification-outer">
                                     <img src="./images/pie-chart.svg" alt="assets icon">
                                 </div>
                                 <div class="card-cont">
-                                    <h3 class="f-17 mb-4 white">
+                                    <h3 class="f-16 lh-18 mb-4 white">
                                         Asset Allocation
                                     </h3>
                                     <p class="f-12 uppercase white-80">
@@ -510,15 +516,15 @@
                         <a href="#" class="border-none cus-btn f-14 lh-14 d-flex gap-6 align-center justify-center">View Asset Allocation Details <img class="w-14 h-14" src="{{ asset('images/long-arw.svg') }}" alt="long arrow"></a>
 
                     </div>
-                    <div class="card p-24 border-white-15 bg-0B1417">
+                    <div class="card p-32-24 border-white-15 bg-0B1417">
                         <div class="d-flex gap-10px justify-space-between align-flex-start">
                             <div class="d-flex gap-12 mb-24">
                                 <div class="notification-outer">
                                     <img src="{{ asset('images/flag.svg') }}" alt="goals icon">
                                 </div>
                                 <div class="card-cont">
-                                    <h3 class="f-17 mb-4 white">
-                                        WEALTH GOALS
+                                    <h3 class="f-16 lh-18 mb-4 white">
+                                        Wealth Goals
                                     </h3>
                                     <p class="f-12 uppercase white-80">
                                         Funding Progress
@@ -581,7 +587,8 @@
                             </li>
 
                         </ul>
-                        <a href="#" class="cus-btn f-14 bg-light-green d-flex justify-center">View All Goals</a>
+                        <a href="#" class="cus-btn f-14 bg-light-green d-flex justify-center mb-16">View All Goals</a>
+                        <a href="#" class="cus-btn f-14 bg-light-green d-flex justify-center">Add Goal</a>
                     </div>
                 </div>
             </div>
@@ -594,8 +601,8 @@
                     </h3>
                 </div>
                 <div class="d-grid col-lg-2 justify-space-between gap-19 w-100">
-                    <div class="card p-24 border-white-15 bg-0B1417 d-flex flex-col gap-22">
-                        <div class="d-flex gap-10px justify-space-between align-center mb-12">
+                    <div class="card p-32-24 border-white-15 bg-0B1417 d-flex flex-col gap-16">
+                        <div class="d-flex gap-10px justify-space-between align-center">
                             <div class="d-flex gap-12 align-center">
                                 <div class="notification-outer">
                                     <img src="./images/guardian.svg" alt="assets icon">
@@ -625,7 +632,7 @@
                                 > $185 / Oct 15
                             </h2>
                         </div>
-                        <div class="bg-sec-900 border-E9E7DD-40 p-18-16 br-12 d-flex flex-col gap-16">
+                        <div class="bg-sec-900 border-E9E7DD-40 p-18-16 br-12 d-flex flex-col gap-16 mb-8">
                             <div class="d-grid col-lg-3 gap-10">
                                 <span class="f-12 lh-15 clr-AEC2C7">
                                     Projected Proceeds
@@ -660,11 +667,11 @@
                                 </span>
                             </div>
                         </div>
-
+                        <a href="#" class="border-none cus-btn f-14 lh-14 d-flex gap-6 align-center justify-center p-0">View Details <img class="w-14 h-14" src="http://127.0.0.1:8000/images/long-arw.svg" alt="long arrow"></a>
                     </div>
-                    <div class="card p-24 border-white-15 bg-0B1417 d-flex flex-col gap-22">
-                        <div class="d-flex gap-10px justify-space-between align-center mb-12">
-                            <div class="d-flex gap-12">
+                    <div class="card p-32-24 border-white-15 bg-0B1417 d-flex flex-col gap-22">
+                        <div class="d-flex gap-10px justify-space-between align-center">
+                            <div class="d-flex gap-12 align-center">
                                 <div class="notification-outer">
                                     <img src="./images/percent.svg" alt="assets icon">
                                 </div>
@@ -685,7 +692,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="d-flex flex-col gap-4">
+                        <div class="d-flex flex-col gap-4 mb-26">
                             <h2 class="f-28 white">
                                 4.2%
                             </h2>
@@ -710,18 +717,18 @@
                     </h3>
                 </div>
                 <div class="d-grid col-lg-2 gap-19 w-100">
-                    <div class="card p-24 bg-0B1417">
+                    <div class="card p-32-24 bg-0B1417">
                         <div class="d-grid col-lg-6-4 mb-24 gap-10px justify-space-between align-flex-start">
                             <div class="d-flex gap-12 align-center">
                                 <div class="notification-outer">
                                     <img src="{{ asset('images/flow-tree-icon.svg') }}" alt="weight icon">
                                 </div>
                                 <div class="card-cont">
-                                    <h3 class="f-14 mb-4 white">
+                                    <h3 class="f-16 lh-18 mb-4 white">
                                         Stock → SMA Workflow
                                     </h3>
                                     <p class="f-12 uppercase clr-99ACB6">
-                                        ENERGY FLOW
+                                       PLANNING OVERVIEW
                                     </p>
                                 </div>
                             </div>
@@ -766,7 +773,7 @@
                                     <span class="f-12 lh-14 clr-99ACB6">
                                         Next Planned Sale
                                     </span>
-                                    <span class="f-12 white">
+                                    <span class="f-14 lh-14 white">
                                         June 01 (1,000 Shars)
                                     </span>
                                 </li>
@@ -774,7 +781,7 @@
                                     <span class="f-12 lh-14 clr-99ACB6">
                                         Remaining Balance
                                     </span>
-                                    <span class="f-14 white">
+                                    <span class="f-14 lh-14 white">
                                         4,000 Shrs this FY
                                     </span>
                                 </li>
@@ -807,14 +814,14 @@
                             </div> -->
 
                     </div>
-                    <div class="card p-24 bg-0B1417">
+                    <div class="card p-32-24 bg-0B1417">
                         <div class="d-grid col-lg-6-4 mb-24 gap-10px justify-space-between align-flex-start">
-                            <div class="d-flex gap-12">
+                            <div class="d-flex gap-12 align-center">
                                 <div class="notification-outer">
                                     <img src="{{ asset('images/alpha.svg') }}" alt="goals icon">
                                 </div>
                                 <div class="card-cont">
-                                    <h3 class="f-14 mb-4">
+                                    <h3 class="f-16 lh-18 mb-4">
                                         Real-Time Tax Alpha
                                     </h3>
                                     <p class="f-12 uppercase">
@@ -838,7 +845,7 @@
                         <ul class="list-unstyled m-0 d-flex gap-12 flex-col mb-22">
 
                             <li class="p-16-24 bg-10181C br-8 w-100 border-4FC07C-20">
-                                <div class="f-12 lh-12 clr-99ACB6 mb-12">
+                                <div class="f-12 lh-12 clr-99ACB6 mb-12 uppercase">
                                     Tax-Loss Harvesting (YTD)
                                 </div>
                                 <div class="d-flex flex-col justify-space-between gap-8">
@@ -1016,7 +1023,7 @@
                         </div>
                         <div class="d-flex gap-18 flex-col">
                             <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-131927 justify-center bold">Launch Interactive Scenario</a>
-                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold">Need to check</a>
+                            <a href="#" class="border-none cus-btn f-14 d-flex justify-center bold">Need to check</a>
                         </div>
                     </div>
                     <div class="card p-32-24 bg-0B1417-50 border-white-24">

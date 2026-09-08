@@ -410,7 +410,7 @@ input#search {
 
 .card-cont p {
     color: #99ACB6;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .card .notification-outer {
@@ -790,12 +790,13 @@ ul.left-col li:not(:last-child) {
 .timeline::before {
     content: "";
     position: absolute;
-    top: 14px;
-    left: 0;
-    width: 100%;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
     height: 4px;
     background: rgba(233, 231, 221, 10%);
     border-radius: 50px;
+    right: 10px;
 }
 
 /* Green completed line */
@@ -2465,7 +2466,7 @@ span.risk-card-arrow svg {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .card-title {

@@ -411,11 +411,11 @@ $(function () {
     // ===========================
 
     const labels = {
-        1: "Now Target",
-        2: "Year 2 Target",
-        3: "Year 3 Target",
-        4: "Year 4 Target",
-        5: "Year 5 Target"
+        1: "Now",
+        2: "Year 2",
+        3: "Year 3",
+        4: "Year 4",
+        5: "Year 5"
     };
 
     function updateTimeline() {

@@ -4,12 +4,24 @@
 
 @section('content')
 
-<div class="heading-bar d-flex justify-space-between">
-    <div class="breadcrumb">
-        <a class="d-flex gap-8 f-16 neutral-300" href="{{ url('/compliance') }}">
-            <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
-            Compliance
+<div class="heading-bar d-flex justify-space-between align-center">
+    <div class="breadcrumb d-flex gap-8">
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
+            Dashboard
         </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/real-time-liquidity') }}">
+            Real Time Liquidity
+        </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="f-16 lh-18 white">
+            Early Retirement Impact
+        </p>
+
     </div>
     <ul class="status d-flex gap-14">
         <li class="active d-flex gap-10 align-center">
@@ -48,7 +60,10 @@
                 <div class="d-flex gap-10 justify-space-between">
                     <div class="d-flex gap-16 align-center">
                         <div class="notification-outer">
-                            <img src="{{ asset('images/planning.svg') }}" alt="search icon">
+                            <!-- <img src="{{ asset('images/planning.svg') }}" alt="search icon"> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21" fill="none">
+                                <path d="M8.6022 5.60177H4.60188L3.6018 4.60173L2.60172 5.60177H0.601562C0.601562 2.84166 3.06176 0.601562 6.102 0.601562C9.14225 0.601562 11.6024 2.84166 11.6024 5.60177C12.1025 7.60186 14.6027 14.1021 12.6025 19.6024H8.6022C9.43227 17.6023 10.1023 15.6022 9.60228 13.1021M11.6024 4.74187C12.6151 3.99319 13.8433 3.59316 15.1027 3.60183C18.143 3.60183 20.6032 5.84192 20.6032 8.60204H17.6029L16.6028 7.60199L15.6028 8.60204H12.6025M4.49196 7.31231C2.34179 9.4624 2.19178 12.7825 4.14193 14.7426L8.38227 10.4924L11.9126 6.96229C9.9624 5.00221 6.64213 5.16221 4.49196 7.31231Z" stroke="#108476" stroke-width="1.2" stroke-linecap="round" />
+                            </svg>
                         </div>
                         <div class="card-cont">
                             <h3 class="f-16 mb-8 white">
@@ -114,7 +129,7 @@
                             Total Opportunity cost
                         </h4>
                         <div class="d-flex flex-col gap-12">
-                            <h3 class="f-24 lh-19 clr-23B05B">
+                            <h3 class="f-24 lh-19 white">
                                 $8,652,000
                             </h3>
                             <p class="f-14 lh-19 clr-99ACB6">

@@ -75,6 +75,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.diversification-velocity-control');
     });
 
+    Route::get('/sma-asset-allocation', function () {
+        return view('dashboard.sma-asset-allocation');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

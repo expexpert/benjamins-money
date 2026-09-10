@@ -13,7 +13,7 @@ $(function () {
 
 
 
-    // accordion on asset allocation page 
+    // accordion on asset allocation page
 
     $('.risk-card').each(function (index) {
 
@@ -25,6 +25,7 @@ $(function () {
         if (index === 0) {
             $content.show();
             $arrow.addClass('active');
+            $card.addClass('risk-active');
         } else {
             $content.hide();
         }
@@ -37,18 +38,19 @@ $(function () {
             $('.risk-card').each(function () {
                 $(this).find('.risk-card-content').slideUp();
                 $(this).find('.risk-card-arrow').removeClass('active');
+                $(this).removeClass('risk-active');
             });
 
             // Open clicked card if it was closed
             if (!isOpen) {
                 $content.slideDown();
                 $arrow.addClass('active');
+                $card.addClass('risk-active');
             }
 
         });
 
     });
-
 
     toastr.options = {
         "closeButton": true,

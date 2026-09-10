@@ -198,8 +198,12 @@
 
                     </ul>
                 </div>
-                <div class="bg-060F13 br-12 border-E9E7DD-15 p-24">
-
+                <div class="br-12 border-E9E7DD-15">
+                    <div class="heading bg-060F13 p-20">
+                        <h3 class="f-16 lh-18">
+                            Top Portfolio Holdings
+                        </h3>
+                    </div>
                 </div>
             </div>
 

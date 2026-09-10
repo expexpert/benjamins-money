@@ -39,7 +39,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.networth-assets');
     });
 
-     Route::get('/networth-liabilitites', function () {
+    Route::get('/networth-liabilitites', function () {
         return view('dashboard.networth-liabilitites');
     });
 
@@ -58,15 +58,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/scenario-planning', function () {
         return view('dashboard.scenario-planning');
     });
-    
+
     Route::get('/entity-asset-protection-map', function () {
         return view('dashboard.entity-asset-protection-map');
     });
-     
+
     Route::get('/asset-allocation', function () {
         return view('dashboard.asset-allocation');
     });
-    
+
     Route::get('/liquidity-workflow', function () {
         return view('dashboard.liquidity-workflow');
     });
@@ -77,6 +77,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/sma-asset-allocation', function () {
         return view('dashboard.sma-asset-allocation');
+    });
+
+    Route::get('/employment-agreement-terms', function () {
+        return view('dashboard.employment-agreement-terms');
+    });
+
+    Route::get('/agreement-pdf-viewer', function () {
+        return view('dashboard.agreement-pdf-viewer');
     });
 
     Route::get('/account-verified', function () {

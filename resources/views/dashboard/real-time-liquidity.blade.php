@@ -317,7 +317,7 @@
                         </div>
                         <div class="d-flex gap-18 flex-col">
                             <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-131927 justify-center bold">Analyze Early Retirement Impact</a>
-                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold">Review Employment Agreement Terms</a>
+                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold border-none">Review Employment Agreement Terms</a>
                         </div>
                     </div>
                     <div class="bg-0B1417 border-E9E7DD-15 p-32-24 br-12">

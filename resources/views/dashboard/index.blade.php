@@ -79,7 +79,7 @@
                                 <p> +$247,500 (1.35%) MTD</p>
                             </div> -->
                         </div>
-                        <a href="#" class="cus-link gap-4 f-14 d-flex">View Details <img
+                        <a href="{{ url('/networth') }}" class="cus-link gap-4 f-14 d-flex">View Details <img
                                 src="{{ asset('images/arrow-right.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-32-24">
@@ -111,7 +111,7 @@
                                 <p> +$247,500 (1.35%) MTD</p>
                             </div> -->
                         </div>
-                        <a href="#" class="cus-link gap-4 f-14 d-flex">View Liquidity <img
+                        <a href="{{ url('/real-time-liquidity') }}" class="cus-link gap-4 f-14 d-flex">View Liquidity <img
                                 src="{{ asset('images/arrow-right.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-32-24">
@@ -143,7 +143,7 @@
                                 <p> +$247,500 (1.35%) MTD</p>
                             </div> -->
                         </div>
-                        <a href="#" class="cus-link gap-4 f-14 d-flex">View Runway <img
+                        <a href="{{ url('/cash-reserves') }}" class="cus-link gap-4 f-14 d-flex">View Runway <img
                                 src="{{ asset('images/arrow-right.svg') }}" alt="btn icon"></a>
                     </div>
                     <div class="card p-32-24">
@@ -513,7 +513,7 @@
                             Target pool diversification is <span class="clr-A7DFBD">80%</span> • Action required to rebalance.
                         </div>
 
-                        <a href="#" class="border-none cus-btn f-14 lh-14 d-flex gap-6 align-center justify-center">View Asset Allocation Details <img class="w-14 h-14" src="{{ asset('images/long-arw.svg') }}" alt="long arrow"></a>
+                        <a href="{{ url('/asset-allocation') }}" class="border-none cus-btn f-14 lh-14 d-flex gap-6 align-center justify-center">View Asset Allocation Details <img class="w-14 h-14" src="{{ asset('images/long-arw.svg') }}" alt="long arrow"></a>
 
                     </div>
                     <div class="card p-32-24 border-white-15 bg-0B1417">
@@ -728,7 +728,7 @@
                                         Stock → SMA Workflow
                                     </h3>
                                     <p class="f-12 uppercase clr-99ACB6">
-                                       PLANNING OVERVIEW
+                                        PLANNING OVERVIEW
                                     </p>
                                 </div>
                             </div>
@@ -1023,7 +1023,7 @@
                         </div>
                         <div class="d-flex gap-18 flex-col">
                             <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-131927 justify-center bold">Launch Interactive Scenario</a>
-                            <a href="#" class="border-none cus-btn f-14 d-flex justify-center bold">Need to check</a>
+                            <a href="#" class="border-none cus-btn f-14 d-flex justify-center bold">Itemized Inventory List</a>
                         </div>
                     </div>
                     <div class="card p-32-24 bg-0B1417-50 border-white-24">

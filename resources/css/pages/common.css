@@ -2582,3 +2582,33 @@ span.risk-card-arrow svg {
 .card-link:hover {
     text-decoration: underline;
 }
+
+.terms-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.3fr;
+}
+
+.terms-inner:not(:last-child) {
+    padding-right: 44px;
+    margin-right: 44px;
+    border-right: 1px solid rgba(233, 231, 221, 10%);
+}
+
+.agreement li.active {
+    background-color: rgba(16, 132, 118, 12%);
+}
+
+.agreement li.active .icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+.agreement li .icon {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.risk-agreement.risk-active {
+    border-color: #7BD09D !important;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.23);
+}

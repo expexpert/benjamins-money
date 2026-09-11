@@ -2612,3 +2612,194 @@ span.risk-card-arrow svg {
     border-color: #7BD09D !important;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.23);
 }
+/* =========================================
+   GLOBAL BOX SIZING
+========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* =========================================
+   PAGE
+   Never put overflow-x here — breaks sticky sidebar
+========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================
+   LAYOUT SHELL (sidebar + main content)
+   This is almost certainly your real bug.
+   Find your actual grid/flex container that
+   holds [sidebar, content] and make sure the
+   content track can shrink below its content size.
+========================================= */
+
+.dashboard-layout,      /* <-- rename to your real wrapper class */
+[class*="layout"] {
+    min-width: 0;
+}
+
+/* If it's CSS Grid: */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr); /* sidebar, content — 1fr alone will NOT shrink */
+}
+
+/* If it's Flexbox instead: */
+.dashboard-layout.d-flex {
+    display: flex;
+}
+.dashboard-layout.d-flex > .main-content,
+.dashboard-layout.d-flex > .content {
+    flex: 1 1 0%;   /* flex-basis:0 avoids content-size sizing */
+    min-width: 0;   /* overrides default min-width:auto */
+}
+
+
+/* =========================================
+   CONTENT / FLEX / GRID
+   Broaden this so it actually matches every
+   wrapper between the layout shell and the table
+   (your doc shows d-flex, bg-*, p-* wrappers —
+   attribute selectors below cover all of them)
+========================================= */
+
+main,
+.main,
+.main-content,
+.page-content,
+.content,
+.dashboard-content,
+[class*="d-flex"],
+[class*="flex-col"],
+[class*="grid"],
+[class*="bg-"] {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* =========================================
+   TABLE WRAPPER — this part was already correct
+========================================= */
+
+.tablecontainer {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.tablecontainer table {
+    width: 100%;
+    min-width: 900px;
+    max-width: none;
+
+    border-collapse: separate;
+    border-spacing: 0 16px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CELLS
+========================================= */
+
+.tablecontainer th,
+.tablecontainer td {
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 170px;
+}
+
+.tablecontainer th:first-child,
+.tablecontainer td:first-child {
+    padding-left: 0;
+}
+
+.tablecontainer th:last-child,
+.tablecontainer td:last-child {
+    padding-right: 0;
+}
+
+.tablecontainer th {
+    white-space: nowrap;
+    text-align: left;
+}
+
+.tablecontainer p,
+.tablecontainer span,
+.tablecontainer div {
+    box-sizing: border-box;
+}
+
+.ledger-tab.active{
+    background-color: #23B05B;
+}
+
+.ledger-tab {
+    transition: color 0.2s ease;
+}
+
+.ledger-tab-content-wrap {
+    position: relative;
+}
+
+.ledger-tab-content {
+    display: none;
+}
+
+.ledger-tab-content.active {
+    display: block;
+    animation: ledgerTabFadeIn 0.35s ease forwards;
+}
+
+@keyframes ledgerTabFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+    .tablecontainer {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .tablecontainer table {
+        width: 100%;
+        min-width: 900px;
+    }
+}

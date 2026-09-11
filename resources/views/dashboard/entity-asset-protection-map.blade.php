@@ -210,7 +210,7 @@
                                                 <h3 class="f-15 lh-18 white">
                                                     Revocable Living Trust
                                                 </h3>
-                                                <span class="bg-E9E7DD border-23B05B p-4-16 f-12 lh-12 clr-156A37 br-24 bold">Trust</span>
+                                                <span class="bg-E9E7DD border-23B05B p-2-16 f-12 lh-12 clr-156A37 br-24 bold">Trust</span>
                                             </div>
                                             <div class="f-13 lh-14 clr-99ACB6">
                                                 Realised Losses
@@ -231,7 +231,7 @@
                                                 <h3 class="f-15 lh-18 white">
                                                     LLC / Asset Holding Co.
                                                 </h3>
-                                                <span class="bg-E9E7DD border-23B05B p-4-16 f-12 lh-12 clr-156A37 br-24 bold">LLC</span>
+                                                <span class="bg-E9E7DD border-23B05B p-2-16 f-12 lh-12 clr-156A37 br-24 bold">LLC</span>
                                             </div>
                                             <div class="f-13 lh-14 clr-99ACB6 mb-12">
                                                 Real Estate / Vacation Fund
@@ -254,7 +254,7 @@
                                                 <h3 class="f-15 lh-18 white">
                                                     105b-1 Plan
                                                 </h3>
-                                                <span class="bg-E9E7DD border-23B05B p-4-16 f-12 lh-12 clr-156A37 br-24 bold">Plan</span>
+                                                <span class="bg-E9E7DD border-23B05B p-2-16 f-12 lh-12 clr-156A37 br-24 bold">Plan</span>
                                             </div>
                                             <div class="f-13 lh-14 clr-99ACB6">
                                                 Concentrated Stock

@@ -202,7 +202,7 @@
                 <div class="p-32-24 border-E9E7DD-24 br-12 bg-060F13 d-grid col-2-1 gap-88">
                     <div class="d-flex flex-col gap-20">
 
-                        <div class="table-row d-grid meter-grid align-center gap-10 p-14-20">
+                        <div class="table-row d-grid meter-grid align-center gap-10">
                             <div class="date-outer">
                                 <p class="f-12 lh-10 ls-042 clr-99ACB6 uppercase">
                                     STATE
@@ -221,7 +221,7 @@
 
                         </div>
 
-                        <div class="table-row d-grid meter-grid align-center gap-10 p-14-20">
+                        <div class="table-row d-grid meter-grid align-center gap-10">
                             <div class="date-outer">
                                 <p class="f-16 lh-16 white">
                                     Current State
@@ -231,7 +231,7 @@
                                 <p class="f-16 lh-16 white center">
                                     84%
                                 </p>
-                                <a href="#" class="br-8 p-5-11 btn-light-red f-12 lh-12">
+                                <a href="#" class="br-8 p-4-10 btn-light-red f-12 lh-12">
                                     Extreme
                                 </a>
                             </div>
@@ -247,7 +247,7 @@
 
                         </div>
 
-                        <div class="table-row d-grid meter-grid align-center gap-10 p-14-20">
+                        <div class="table-row d-grid meter-grid align-center gap-10">
                             <div class="date-outer">
                                 <p class="f-16 lh-16 white">
                                     Post Trade State
@@ -257,7 +257,7 @@
                                 <p class="f-16 lh-16 white center">
                                     72%
                                 </p>
-                                <a href="#" class="br-8 p-5-11 btn-light-yellow f-11 lh-14 d-inline-flex gap-6 align-center">
+                                <a href="#" class="br-8 p-4-10 btn-light-yellow f-11 lh-14 d-inline-flex gap-6 align-center">
                                     Exposed
                                 </a>
                             </div>
@@ -272,7 +272,7 @@
                         <div class="border-bottom-E9E7DD-15">
 
                         </div>
-                        <div class="table-row d-grid meter-grid align-center gap-10 p-14-20">
+                        <div class="table-row d-grid meter-grid align-center gap-10">
                             <div class="date-outer">
                                 <p class="f-16 lh-16 white">
                                     Target State
@@ -282,7 +282,7 @@
                                 <p class="f-16 lh-16 white center">
                                     20%
                                 </p>
-                                <a href="#" class="br-8 p-5-11 btn-light-green f-11 lh-14 d-inline-flex gap-6 align-center">
+                                <a href="#" class="br-8 p-4-10 btn-light-green f-11 lh-14 d-inline-flex gap-6 align-center">
                                     Secure
                                 </a>
                             </div>
@@ -344,7 +344,7 @@
                         Goal Impact Ledger
                     </h3>
                     <div class="bg-060F13 br-12 border-E9E7DD-24 p-32-24 d-flex flex-col mb-8">
-                        <div class="table-row d-grid col-lg-4 align-center gap-40 p-14-20 mb-24">
+                        <div class="table-row d-grid col-lg-4 align-center gap-40  mb-24">
                             <div class="date-outer">
                                 <p class="f-12 lh-12 clr-99ACB6 ls-042 uppercase">
                                     Destination goal
@@ -366,7 +366,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="table-row d-grid col-lg-4 align-center gap-40 p-14-20 mb-16">
+                        <div class="table-row d-grid col-lg-4 align-center gap-40  mb-16">
                             <div class="date-outer">
                                 <p class="f-16 lh-24 white ls-042 ">
                                     Retirement (FI)
@@ -392,7 +392,7 @@
                         <div class="border-bottom-E9E7DD-15 mb-16">
 
                         </div>
-                        <div class="table-row d-grid col-lg-4 align-center gap-40 p-14-20 mb-16">
+                        <div class="table-row d-grid col-lg-4 align-center gap-40  mb-16">
                             <div class="date-outer">
                                 <p class="f-16 lh-24 white ls-042 ">
                                     College Funding
@@ -418,7 +418,7 @@
                         <div class="border-bottom-E9E7DD-15 mb-16">
 
                         </div>
-                        <div class="table-row d-grid col-lg-4 align-center gap-40 p-14-20">
+                        <div class="table-row d-grid col-lg-4 align-center gap-40 ">
                             <div class="date-outer">
                                 <p class="f-16 lh-24 white ls-042">
                                     Vacation Home
@@ -467,7 +467,12 @@
                                 Invested across 35–45 stocks seeking S&P alpha
                             </p>
                         </div>
-                        <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-101010 justify-center bold">View SMA Asset Allocation</a>
+                        <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-101010 justify-center bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                <path d="M2.95833 5.87542V3.5419C2.95833 2.76829 3.26562 2.02637 3.81261 1.47934C4.35959 0.932315 5.10145 0.625 5.875 0.625C6.64855 0.625 7.39041 0.932315 7.93739 1.47934C8.48438 2.02637 8.79167 2.76829 8.79167 3.5419V5.87542M1.79167 5.87542H9.95833C10.6027 5.87542 11.125 6.3978 11.125 7.04218V11.1258C11.125 11.7702 10.6027 12.2926 9.95833 12.2926H1.79167C1.14733 12.2926 0.625 11.7702 0.625 11.1258V7.04218C0.625 6.3978 1.14733 5.87542 1.79167 5.87542Z" stroke="#072312" stroke-width="1.25" stroke-linecap="round"></path>
+                            </svg>
+                            View SMA Asset Allocation
+                        </a>
                     </div>
                 </div>
 
@@ -545,8 +550,18 @@
 
                         </div>
                         <div class="d-flex gap-12 flex-col">
-                            <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-131927 justify-center">Download Trade Compliance Audit</a>
-                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center">Adjust Diversification Velocity</a>
+                            <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-131927 justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                    <path d="M2.95833 5.87542V3.5419C2.95833 2.76829 3.26562 2.02637 3.81261 1.47934C4.35959 0.932315 5.10145 0.625 5.875 0.625C6.64855 0.625 7.39041 0.932315 7.93739 1.47934C8.48438 2.02637 8.79167 2.76829 8.79167 3.5419V5.87542M1.79167 5.87542H9.95833C10.6027 5.87542 11.125 6.3978 11.125 7.04218V11.1258C11.125 11.7702 10.6027 12.2926 9.95833 12.2926H1.79167C1.14733 12.2926 0.625 11.7702 0.625 11.1258V7.04218C0.625 6.3978 1.14733 5.87542 1.79167 5.87542Z" stroke="#072312" stroke-width="1.25" stroke-linecap="round"></path>
+                                </svg>
+                                Download Trade Compliance Audit
+                            </a>
+                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                    <path d="M2.95833 5.87542V3.5419C2.95833 2.76829 3.26562 2.02637 3.81261 1.47934C4.35959 0.932315 5.10145 0.625 5.875 0.625C6.64855 0.625 7.39041 0.932315 7.93739 1.47934C8.48438 2.02637 8.79167 2.76829 8.79167 3.5419V5.87542M1.79167 5.87542H9.95833C10.6027 5.87542 11.125 6.3978 11.125 7.04218V11.1258C11.125 11.7702 10.6027 12.2926 9.95833 12.2926H1.79167C1.14733 12.2926 0.625 11.7702 0.625 11.1258V7.04218C0.625 6.3978 1.14733 5.87542 1.79167 5.87542Z" stroke="#4FC07C" stroke-width="1.25" stroke-linecap="round"></path>
+                                </svg>
+                                Adjust Diversification Velocity
+                            </a>
                         </div>
                     </div>
                 </div>

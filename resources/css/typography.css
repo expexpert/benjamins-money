@@ -154,6 +154,18 @@ a {
     --color-info-900: #0E3055;
 }
 
+.clr-000000 {
+    color: #000000;
+}
+
+.clr-8979FF {
+    color: #8979FF;
+}
+
+.clr-FFBE4C {
+    color: #FFBE4C;
+}
+
 .clr-108476 {
     color: #108476;
 }
@@ -370,8 +382,28 @@ a {
     color: #C5A059;
 }
 
+.bg-8979FF {
+    background-color: #8979FF;
+}
+
+.bg-FF928A {
+    background-color: #FF928A;
+}
+
+.bg-3CC3DF {
+    background-color: #3CC3DF;
+}
+
 .bg-C5A059-10 {
     background-color: rgba(197, 160, 89, 10.2%);
+}
+
+.bg-4FC07C-10 {
+    background: rgba(79, 192, 124, 10%);
+}
+
+.p-6-10 {
+    padding: 6px 10px;
 }
 
 .bg-C5A059-5 {
@@ -557,6 +589,14 @@ a {
 
 .border-secondary-dark-100 {
     border: 1px solid rgba(53, 102, 116, 10%);
+}
+
+.border-FFBE4C {
+    border: 1px solid #FFBE4C;
+}
+
+.border-FBBC05 {
+    border: 1px solid #FBBC05;
 }
 
 .border-1F2937 {
@@ -922,6 +962,10 @@ h6 {
     padding: 10px;
 }
 
+.p-10-20 {
+    padding: 10px 20px;
+}
+
 .p-12 {
     padding: 12px;
 }
@@ -942,6 +986,10 @@ h6 {
     padding: 24px;
 }
 
+.p-28 {
+    padding: 28px;
+}
+
 .p-24-24-16 {
     padding: 24px 24px 16px 24px;
 }
@@ -954,7 +1002,7 @@ h6 {
     padding-bottom: 16px;
 }
 
-.mb-16{
+.mb-16 {
     margin-bottom: 16px;
 }
 
@@ -974,12 +1022,28 @@ h6 {
     padding: 4px 8px;
 }
 
+.p-5-7 {
+    padding: 5px 7px;
+}
+
+.p-4-10 {
+    padding: 4px 10px;
+}
+
+.p-2-16 {
+    padding: 2px 16px;
+}
+
 .p-4-16 {
     padding: 4px 16px;
 }
 
 .p-14-20 {
     padding: 14px 20px;
+}
+
+.p-16-24 {
+    padding: 0 24px;
 }
 
 .p-4-24 {
@@ -1350,6 +1414,10 @@ h6 {
     grid-template-columns: repeat(5, 1fr);
 }
 
+.col-lg-9 {
+    grid-template-columns: repeat(9, 1fr);
+}
+
 .col-2-1 {
     grid-template-columns: 2fr 1fr;
 }
@@ -1391,7 +1459,7 @@ h6 {
 }
 
 .h-8 {
-    height: 8px;
+    height: 8px !important;
 }
 
 .w-9 {
@@ -1424,6 +1492,14 @@ h6 {
 
 .w-21 {
     width: 21px !important;
+}
+
+.w-24 {
+    width: 24px;
+}
+
+.h24 {
+    height: 24px;
 }
 
 .w-28 {
@@ -1910,8 +1986,16 @@ p {
     border-radius: 48px;
 }
 
+.br-50 {
+    border-radius: 50px;
+}
+
 .br-65 {
     border-radius: 65px;
+}
+
+.br-72 {
+    border-radius: 72px;
 }
 
 .br-89 {
@@ -2105,6 +2189,26 @@ textarea {
 
 .border-white-15 {
     border: 1px solid rgba(233, 231, 221, 15%);
+}
+
+.border-C293C9 {
+    border: 1px solid #C293C9;
+}
+
+.clr-00CB3B {
+    color: #00CB3B;
+}
+
+.border-00CB3B {
+    border: 1px solid #00CB3B;
+}
+
+.clr-0082FB {
+    color: #0082FB;
+}
+
+.border-0082FB {
+    border: 1px solid #0082FB;
 }
 
 .dashboard-content {

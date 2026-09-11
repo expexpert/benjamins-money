@@ -87,6 +87,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.agreement-pdf-viewer');
     });
 
+    Route::get('/wealth-goals', function () {
+        return view('dashboard.wealth-goals');
+    });
+
+    Route::get('/trade-compliance-audit', function () {
+        return view('dashboard.trade-compliance-audit');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

@@ -12,6 +12,36 @@ $(function () {
 
 
 
+    // tabs on wealth goals 
+    var $tabs = $('#ledgerTabs .ledger-tab');
+    var $contents = $('.ledger-tab-content');
+
+    $tabs.on('click', function () {
+        var $tab = $(this);
+        var target = $tab.data('tab');
+
+        if ($tab.hasClass('active')) return;
+
+        // Reset all tabs
+        $tabs.removeClass('active clr-000000').addClass('neutral-300');
+
+        // Activate clicked tab
+        $tab.addClass('active clr-000000').removeClass('neutral-300');
+
+        // Swap content panels with animation
+        $contents.removeClass('active');
+
+        var $nextContent = $('[data-tab-content="' + target + '"]');
+        if ($nextContent.length) {
+            // restart animation reliably by forcing reflow
+            $nextContent.css('animation', 'none');
+            void $nextContent[0].offsetWidth;
+            $nextContent.css('animation', '');
+            $nextContent.addClass('active');
+        }
+    });
+    // tabs on wealth goals end
+
 
     // accordion on asset allocation page
 
@@ -809,4 +839,5 @@ document.addEventListener("DOMContentLoaded", function () {
             options: chartOptions
         });
     }
+
 });

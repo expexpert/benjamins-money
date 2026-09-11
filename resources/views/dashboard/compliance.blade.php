@@ -61,7 +61,7 @@
                         <div class="d-flex gap-12 mb-20 align-center">
                             <div class="notification-outer w-38 h-38">
                                 <!-- <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon"> -->
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <g clip-path="url(#clip0_12615_31838)">
                                         <g opacity="0.6">
                                             <path d="M3.75018 8.24972C3.75018 7.0563 4.22432 5.91176 5.0683 5.06789C5.91229 4.22401 7.05697 3.74993 8.25054 3.74993H10.8757L11.1008 3.44994C11.3802 3.07737 11.7426 2.77498 12.1592 2.5667C12.5758 2.35843 13.0352 2.25 13.501 2.25V4.49989C13.9667 4.84918 14.3448 5.3021 14.6051 5.82278C14.8655 6.34346 15.0011 6.91761 15.0011 7.49975H15.7511C15.9501 7.49975 16.1408 7.57877 16.2815 7.71941C16.4222 7.86006 16.5012 8.05082 16.5012 8.24972V9.74965C16.5012 9.94855 16.4222 10.1393 16.2815 10.28C16.1408 10.4206 15.9501 10.4996 15.7511 10.4996H15.0011C14.8848 10.849 14.6886 11.1664 14.4282 11.4268C14.1678 11.6871 13.8504 11.8832 13.501 11.9995V14.2494C13.501 14.4483 13.4219 14.6391 13.2813 14.7797C13.1406 14.9204 12.9498 14.9994 12.7509 14.9994H11.2508C11.0519 14.9994 10.8611 14.9204 10.7204 14.7797C10.5797 14.6391 10.5007 14.4483 10.5007 14.2494V12.7495H8.25054V14.2494C8.25054 14.4483 8.17152 14.6391 8.03085 14.7797C7.89019 14.9204 7.69941 14.9994 7.50048 14.9994H6.00036C5.80143 14.9994 5.61065 14.9204 5.46999 14.7797C5.32932 14.6391 5.2503 14.4483 5.2503 14.2494V11.9995C4.78453 11.6503 4.40648 11.1973 4.14611 10.6767C3.88573 10.156 3.75018 9.58182 3.75018 8.99968V8.24972ZM3.75018 8.24972H3.00012C2.60226 8.24972 2.2207 8.09169 1.93937 7.8104C1.65805 7.52911 1.5 7.14759 1.5 6.74979V5.99982M12.0008 7.49975H12.0083" stroke="#108476" stroke-width="1.2" stroke-linecap="round"></path>
@@ -103,7 +103,7 @@
                         <div class="d-flex gap-12 mb-20 align-center">
                             <div class="notification-outer w-38 h-38">
                                 <!-- <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon"> -->
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9" viewBox="0 0 17 9" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9" viewBox="0 0 17 9" fill="none">
                                     <path d="M15.7512 5.24928V0.75H11.2508M15.7512 0.75L9.37569 7.12398L5.62539 3.37458L0.75 8.2488" stroke="#108476" stroke-width="1.5" stroke-linecap="round"></path>
                                 </svg>
                             </div>
@@ -136,7 +136,7 @@
                         <div class="d-flex gap-12 mb-20 align-center">
                             <div class="notification-outer w-38 h-38">
                                 <!-- <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon"> -->
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <g opacity="0.6">
                                         <path d="M9.0006 10.4998L12.0008 7.49987M2.50508 14.25C1.84669 13.1099 1.50005 11.8166 1.5 10.5001C1.49995 9.18355 1.84649 7.89021 2.50479 6.75005C3.1631 5.6099 4.10996 4.6631 5.25022 4.00483C6.39047 3.34655 7.68394 3 9.0006 3C10.3173 3 11.6107 3.34655 12.751 4.00483C13.8912 4.6631 14.8381 5.6099 15.4964 6.75005C16.1547 7.89021 16.5012 9.18355 16.5012 10.5001C16.5011 11.8166 16.1545 13.1099 15.4961 14.25" stroke="#108476" stroke-width="1.5" stroke-linecap="round"></path>
                                     </g>
@@ -171,7 +171,7 @@
                         <div class="d-flex gap-12 mb-20 align-center">
                             <div class="notification-outer w-38 h-38">
                                 <!-- <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon"> -->
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <g clip-path="url(#clip0_12615_31849)">
                                         <g opacity="0.6">
                                             <path d="M15.75 12V15C15.75 15.1989 15.671 15.3897 15.5303 15.5303C15.3897 15.671 15.1989 15.75 15 15.75H3.75C3.35218 15.75 2.97064 15.592 2.68934 15.3107C2.40804 15.0294 2.25 14.6478 2.25 14.25V3.75C2.25 3.35218 2.40804 2.97064 2.68934 2.68934C2.97064 2.40804 3.35218 2.25 3.75 2.25H13.5C13.6989 2.25 13.8897 2.32902 14.0303 2.46967C14.171 2.61032 14.25 2.80109 14.25 3V5.25M2.25 3.75C2.25 4.14782 2.40804 4.52936 2.68934 4.81066C2.97064 5.09196 3.35218 5.25 3.75 5.25H15C15.1989 5.25 15.3897 5.32902 15.5303 5.46967C15.671 5.61032 15.75 5.80109 15.75 6V9M15.75 9H13.5C13.1022 9 12.7206 9.15804 12.4393 9.43934C12.158 9.72064 12 10.1022 12 10.5C12 10.8978 12.158 11.2794 12.4393 11.5607C12.7206 11.842 13.1022 12 13.5 12H15.75M15.75 9C15.9489 9 16.1397 9.07902 16.2803 9.21967C16.421 9.36032 16.5 9.55109 16.5 9.75V11.25C16.5 11.4489 16.421 11.6397 16.2803 11.7803C16.1397 11.921 15.9489 12 15.75 12" stroke="#108476" stroke-width="1.2" stroke-linecap="round"></path>
@@ -522,7 +522,10 @@
                         <div class="d-flex gap-10px justify-space-between align-center mb-14">
                             <div class="d-flex gap-16">
                                 <div class="notification-outer">
-                                    <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon">
+                                    <!-- <img src="{{ asset('images/guardian.svg') }}" alt="guardian icon"> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M7 10.9979V6.9976C6.99876 5.75756 7.45828 4.56128 8.28938 3.64102C9.12047 2.72075 10.2638 2.14214 11.4975 2.01751C12.7312 1.89289 13.9671 2.23115 14.9655 2.96661C15.9638 3.70208 16.6533 4.78228 16.9 5.99753M5 10.9978H19C20.1046 10.9978 21 11.8933 21 12.9979V19.9984C21 21.1031 20.1046 21.9986 19 21.9986H5C3.89543 21.9986 3 21.1031 3 19.9984V12.9979C3 11.8933 3.89543 10.9978 5 10.9978Z" stroke="#108476" stroke-width="1.5" stroke-linecap="round" />
+                                    </svg>
                                 </div>
                                 <div class="card-cont">
                                     <h3 class="f-16 white mb-4">
@@ -542,12 +545,28 @@
                             <div class="f-14 lh-22 white mb-12">
                                 Note: Manual trades permitted for vested shares outside of 10b5-1 subject to General Counsel approval. Your 10b5-1 plan is exempt from blackout periods and will execute regardless of earnings news.
                             </div>
-                            <a href="#" class="f-14 clr-23B05B d-flex gap-8 align-center">Modify Plan <img src="{{ asset('images/btn-arrow-sm.svg') }}" alt="btn arrow icon"></a>
+                            <a href="#" class="f-14 clr-23B05B d-flex gap-8 align-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                    <path d="M2.95833 5.87542V3.5419C2.95833 2.76829 3.26562 2.02637 3.81261 1.47934C4.35959 0.932315 5.10145 0.625 5.875 0.625C6.64855 0.625 7.39041 0.932315 7.93739 1.47934C8.48438 2.02637 8.79167 2.76829 8.79167 3.5419V5.87542M1.79167 5.87542H9.95833C10.6027 5.87542 11.125 6.3978 11.125 7.04218V11.1258C11.125 11.7702 10.6027 12.2926 9.95833 12.2926H1.79167C1.14733 12.2926 0.625 11.7702 0.625 11.1258V7.04218C0.625 6.3978 1.14733 5.87542 1.79167 5.87542Z" stroke="#4FC07C" stroke-width="1.25" stroke-linecap="round"></path>
+                                </svg>
+                                Modify Plan
+                                <img src="{{ asset('images/btn-arrow-sm.svg') }}" alt="btn arrow icon">
+                            </a>
                         </div>
 
                         <div class="d-grid col-lg-2 gap-16">
-                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold">Log Private Trade</a>
-                            <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-prm-900 justify-center bold">Request Pre Clearance</a>
+                            <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                    <path d="M2.95833 5.87542V3.5419C2.95833 2.76829 3.26562 2.02637 3.81261 1.47934C4.35959 0.932315 5.10145 0.625 5.875 0.625C6.64855 0.625 7.39041 0.932315 7.93739 1.47934C8.48438 2.02637 8.79167 2.76829 8.79167 3.5419V5.87542M1.79167 5.87542H9.95833C10.6027 5.87542 11.125 6.3978 11.125 7.04218V11.1258C11.125 11.7702 10.6027 12.2926 9.95833 12.2926H1.79167C1.14733 12.2926 0.625 11.7702 0.625 11.1258V7.04218C0.625 6.3978 1.14733 5.87542 1.79167 5.87542Z" stroke="#4FC07C" stroke-width="1.25" stroke-linecap="round"></path>
+                                </svg>
+                                Log Private Trade
+                            </a>
+                            <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-prm-900 justify-center bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                <path d="M2.95833 5.87542V3.5419C2.95833 2.76829 3.26562 2.02637 3.81261 1.47934C4.35959 0.932315 5.10145 0.625 5.875 0.625C6.64855 0.625 7.39041 0.932315 7.93739 1.47934C8.48438 2.02637 8.79167 2.76829 8.79167 3.5419V5.87542M1.79167 5.87542H9.95833C10.6027 5.87542 11.125 6.3978 11.125 7.04218V11.1258C11.125 11.7702 10.6027 12.2926 9.95833 12.2926H1.79167C1.14733 12.2926 0.625 11.7702 0.625 11.1258V7.04218C0.625 6.3978 1.14733 5.87542 1.79167 5.87542Z" stroke="#101010" stroke-width="1.25" stroke-linecap="round"></path>
+                            </svg>
+                                Request Pre Clearance
+                            </a>
                         </div>
 
                     </div>

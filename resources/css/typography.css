@@ -382,8 +382,24 @@ a {
     color: #C5A059;
 }
 
+.clr-A06F11 {
+    color: var(--color-warning-700);
+}
+
 .bg-8979FF {
     background-color: #8979FF;
+}
+
+.bg-108476-12 {
+    background-color: rgba(16, 132, 118, 12.16%);
+}
+
+.bg-E8F3DC {
+    background-color: #E8F3DC;
+}
+
+.bg-FBBC05-15 {
+    background-color: rgba(251, 188, 5, 15%);
 }
 
 .bg-FF928A {
@@ -918,6 +934,10 @@ h6 {
     gap: 34px;
 }
 
+.gap-38 {
+    gap: 38px;
+}
+
 .gap-40 {
     gap: 40px;
 }
@@ -932,6 +952,10 @@ h6 {
 
 .gap-64 {
     gap: 64px;
+}
+
+.gap-78 {
+    gap: 78px;
 }
 
 .gap-84 {
@@ -1056,6 +1080,10 @@ h6 {
 
 .p-6-8 {
     padding: 6px 8px;
+}
+
+.p-5-12 {
+    padding: 5px 12px;
 }
 
 .p-6-12 {
@@ -1430,6 +1458,10 @@ h6 {
     grid-template-columns: 1.3fr 1fr;
 }
 
+.col-15-1 {
+    grid-template-columns: 1.5fr 1fr;
+}
+
 .col-1-13 {
     grid-template-columns: 1fr 1.3fr;
 }
@@ -1490,6 +1522,14 @@ h6 {
     width: 15px;
 }
 
+.w-16 {
+    width: 16px;
+}
+
+.h-16 {
+    height: 16px;
+}
+
 .w-21 {
     width: 21px !important;
 }
@@ -1506,12 +1546,28 @@ h6 {
     width: 28px;
 }
 
+.w-32 {
+    width: 32px;
+}
+
+.h-32 {
+    height: 32px;
+}
+
 .w-34 {
     width: 34px !important;
 }
 
 .h-34 {
     height: 34px !important;
+}
+
+.w-40 {
+    width: 40px;
+}
+
+.h-40 {
+    height: 40px;
 }
 
 .w-44 {
@@ -1805,6 +1861,14 @@ p {
     background-color: rgba(233, 231, 221, 32%);
 }
 
+.bg-E9E7DD-6 {
+    background-color: rgba(233, 231, 221, 6%);
+}
+
+.bg-030303 {
+    background-color: #030303;
+}
+
 .bg-E9E7DD {
     background-color: rgba(233, 231, 221, 100%);
 }
@@ -1855,6 +1919,10 @@ p {
 
 .border-bottom-E9E7DD-24 {
     border-bottom: 1px solid rgba(233, 231, 221, 24%);
+}
+
+.border-bottom-E9E7DD-30 {
+    border-bottom: 1px solid rgba(233, 231, 221, 30%);
 }
 
 .border-bottom-E9E7DD-60 {
@@ -2097,6 +2165,11 @@ p {
     letter-spacing: 1px;
 }
 
+.ls-1-5 {
+    letter-spacing: 1.5px;
+}
+
+
 .lh-8 {
     line-height: 8px;
 }
@@ -2180,7 +2253,7 @@ textarea {
 }
 
 .bl-4 {
-    border-left-width: 4px;
+    border-left-width: 4px !important;
 }
 
 .border-2-23B05B {

@@ -86,7 +86,7 @@
                         </p>
                     </div>
                     <div>
-                        <a href="#" class="btn-green-outlined f-12 lh-14 p-6-12 br-100px">Active</a>
+                        <a href="#" class="clr-7BD09D bg-108476-12 f-12 lh-12 p-5-12 br-100px border-7BD09D">Active</a>
                     </div>
                 </div>
             </div>
@@ -272,7 +272,7 @@
 
             <div class="d-flex gap-16 w-100">
                 <a href="#" class="btn bg-23B05B p-10-21 f-14 d-flex clr-101010 justify-center bold">Download Full Agreement PDF</a>
-                <a href="" class="btn border-E9E7DD-15 br-100 clr-99ACB6">Schedule Legal Review</a>
+                <a href="" class="btn border-4FC07C br-100 clr-4FC07C p-10-21">Schedule Legal Review</a>
             </div>
 
         </div>

@@ -265,7 +265,7 @@ input#search {
     margin: 28px 0 0;
     /* border-bottom: 1px solid rgba(233, 231, 221, 30%); */
     padding: 0 40px 32px;
-    max-width: 80rem;
+    max-width: 80rem !important;
     margin-left: auto;
     margin-right: auto;
     padding-left: 2.2rem;
@@ -2358,39 +2358,6 @@ span.risk-card-arrow svg {
 }
 
 
-/* Responsive */
-@media (max-width: 768px) {
-    .tax-comparison {
-        padding: 35px 25px;
-        border-radius: 20px;
-    }
-
-    .tax-legend {
-        flex-wrap: wrap;
-        gap: 18px 25px;
-        margin-bottom: 35px;
-    }
-
-    .legend-item {
-        font-size: 17px;
-    }
-
-    .legend-color {
-        width: 18px;
-        height: 18px;
-    }
-
-    .tax-heading h3,
-    .net-value {
-        font-size: 20px;
-    }
-
-    .tax-bar {
-        height: 42px;
-        border-radius: 11px;
-    }
-}
-
 
 
 /* Card Container */
@@ -2612,6 +2579,7 @@ span.risk-card-arrow svg {
     border-color: #7BD09D !important;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.23);
 }
+
 /* =========================================
    GLOBAL BOX SIZING
 ========================================= */
@@ -2621,6 +2589,7 @@ span.risk-card-arrow svg {
 *::after {
     box-sizing: border-box;
 }
+
 /* =========================================
    PAGE
    Never put overflow-x here — breaks sticky sidebar
@@ -2641,7 +2610,8 @@ body {
    content track can shrink below its content size.
 ========================================= */
 
-.dashboard-layout,      /* <-- rename to your real wrapper class */
+.dashboard-layout,
+/* <-- rename to your real wrapper class */
 [class*="layout"] {
     min-width: 0;
 }
@@ -2649,17 +2619,21 @@ body {
 /* If it's CSS Grid: */
 .dashboard-layout {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr); /* sidebar, content — 1fr alone will NOT shrink */
+    grid-template-columns: auto minmax(0, 1fr);
+    /* sidebar, content — 1fr alone will NOT shrink */
 }
 
 /* If it's Flexbox instead: */
 .dashboard-layout.d-flex {
     display: flex;
 }
-.dashboard-layout.d-flex > .main-content,
-.dashboard-layout.d-flex > .content {
-    flex: 1 1 0%;   /* flex-basis:0 avoids content-size sizing */
-    min-width: 0;   /* overrides default min-width:auto */
+
+.dashboard-layout.d-flex>.main-content,
+.dashboard-layout.d-flex>.content {
+    flex: 1 1 0%;
+    /* flex-basis:0 avoids content-size sizing */
+    min-width: 0;
+    /* overrides default min-width:auto */
 }
 
 
@@ -2754,7 +2728,7 @@ main,
     box-sizing: border-box;
 }
 
-.ledger-tab.active{
+.ledger-tab.active {
     background-color: #23B05B;
 }
 
@@ -2780,11 +2754,138 @@ main,
         opacity: 0;
         transform: translateY(8px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
+.modal-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 156px;
+}
+
+.modal-flex .left-col,
+.modal-flex .right-col {
+    width: calc(50% - 76px);
+}
+
+.modal-flex .left-col {
+    position: relative;
+}
+
+.modal-flex .left-col::before {
+    position: absolute;
+    content: '';
+    right: -76px;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(233, 231, 221, 10.2%);
+}
+
+.modal-outer {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(3, 3, 3, 0.8);
+}
+
+.modal-outer.active {
+    display: flex;
+}
+
+/* Modal animation */
+.modal-inner {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.modal-flex textarea {
+    min-height: 391px;
+    resize: none;
+}
+
+.modal-outer.active .modal-inner {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.tablecontainer.trade th {
+    background: rgba(233, 231, 221, 1.96%);
+}
+
+.tablecontainer.trade table {
+    border-spacing: 0;
+}
+
+.tablecontainer.trade table th,
+.tablecontainer.trade table td {
+    padding: 12px 20px;
+}
+
+.tablecontainer.trade th {
+    background: rgba(233, 231, 221, 1.96%);
+}
+
+.trade tr:not(:last-child) td {
+    border-bottom: 1px solid rgba(233, 231, 221, 15%);
+}
+
+.tablecontainer.trade.sma th,
+.tablecontainer.trade.sma td{
+    min-width: 80px;
+    max-width: 180px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tax-comparison {
+        padding: 35px 25px;
+        border-radius: 20px;
+    }
+
+    .tax-legend {
+        flex-wrap: wrap;
+        gap: 18px 25px;
+        margin-bottom: 35px;
+    }
+
+    .legend-item {
+        font-size: 17px;
+    }
+
+    .legend-color {
+        width: 18px;
+        height: 18px;
+    }
+
+    .tax-heading h3,
+    .net-value {
+        font-size: 20px;
+    }
+
+    .tax-bar {
+        height: 42px;
+        border-radius: 11px;
+    }
+}
+
 
 
 /* =========================================

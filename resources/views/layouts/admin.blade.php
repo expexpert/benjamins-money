@@ -30,6 +30,7 @@
 
     @vite([
     'resources/css/app.css',
+    'resources/css/pages/admin.css',
     'resources/js/app.js'
     ])
 

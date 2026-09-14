@@ -53,6 +53,15 @@
       "assets/bg-arw-D9i43j1O.svg"
     ]
   },
+  "resources/css/pages/admin.css": {
+    "file": "assets/admin-CX_yMfQi.css",
+    "name": "admin",
+    "names": [
+      "admin.css"
+    ],
+    "src": "resources/css/pages/admin.css",
+    "isEntry": true
+  },
   "resources/fonts/D-DINExp-Bold.otf": {
     "file": "assets/D-DINExp-Bold-DuSuJIpJ.otf",
     "src": "resources/fonts/D-DINExp-Bold.otf"

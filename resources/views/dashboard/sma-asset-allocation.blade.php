@@ -135,7 +135,7 @@
                                 </div>
                             </div>
                             <span class="f-13 lh-14 clr-99ACB6">
-                               35% ($2.2M)
+                                35% ($2.2M)
                             </span>
                         </li>
 
@@ -149,7 +149,7 @@
                                 </div>
                             </div>
                             <span class="f-13 lh-14 clr-99ACB6">
-                               12% ($756k)
+                                12% ($756k)
                             </span>
                         </li>
 
@@ -191,25 +191,131 @@
                                 </div>
                             </div>
                             <span class="f-13 lh-14 clr-99ACB6">
-                               20% ($1.2M)
+                                20% ($1.2M)
                             </span>
                         </li>
 
 
                     </ul>
                 </div>
-                <div class="br-12 border-E9E7DD-15">
-                    <div class="heading bg-060F13 p-20">
-                        <h3 class="f-16 lh-18">
+                <div class="bg-060F13 br-12 border-E9E7DD-15">
+                    <div class="p-20 border-bottom-E9E7DD-15">
+                        <h2 class="f-16 lh-18 white">
                             Top Portfolio Holdings
-                        </h3>
+                        </h2>
+                    </div>
+                    <div class="tablecontainer trade sma">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th class="f-12 lh-14 clr-99ACB6 text-left uppercase">TICKER</th>
+                                    <th class="f-12 lh-14 clr-99ACB6 text-left uppercase">NAME</th>
+                                    <th class="f-12 lh-14 clr-99ACB6 text-left">SECTOR</th>
+                                    <th class="f-12 lh-14 clr-99ACB6 text-left">WEIGHT</th>
+                                    <th class="f-12 lh-14 clr-99ACB6 text-left">VALUE</th>
+                                    <th class="f-12 lh-14 clr-99ACB6 text-left">1Y RETURN</th>
+                                </tr>
+                                <tr>
+                                    <td class="f-14 lh-16 white text-left uppercase bold">AAPL</td>
+                                    <td class="f-14 lh-16 white text-left uppercase">Apple Inc.</td>
+                                    <td class="f-14 lh-16 clr-99ACB6 text-left">Technology</td>
+                                    <td class="f-14 lh-16 white text-left">4.2%</td>
+                                    <td class="f-14 lh-16 white text-left">$264,600</td>
+                                    <td class="f-14 lh-16 clr-23B05B text-left">+12.3%</td>
+                                </tr>
+                                <tr>
+                                    <td class="f-14 lh-16 white text-left uppercase bold">MSFT</td>
+                                    <td class="f-14 lh-16 white text-left uppercase">Microsoft Corp.</td>
+                                    <td class="f-14 lh-16 clr-99ACB6 text-left">Technology</td>
+                                    <td class="f-14 lh-16 white text-left">3.8%</td>
+                                    <td class="f-14 lh-16 white text-left">$239,400</td>
+                                    <td class="f-14 lh-16 clr-23B05B text-left">+15.1%</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="f-14 lh-16 white text-left uppercase bold">JNJ</td>
+                                    <td class="f-14 lh-16 white text-left uppercase">Johnson & Johnson</td>
+                                    <td class="f-14 lh-16 clr-99ACB6 text-left">Healthcare</td>
+                                    <td class="f-14 lh-16 white text-left">2.1%</td>
+                                    <td class="f-14 lh-16 white text-left">$132,300</td>
+                                    <td class="f-14 lh-16 clr-23B05B text-left">+6.8%</td>
+                                </tr>
+                                <tr>
+                                    <td class="f-14 lh-16 white text-left uppercase bold">BRK.B</td>
+                                    <td class="f-14 lh-16 white text-left uppercase">Berkshire Hathaway</td>
+                                    <td class="f-14 lh-16 clr-99ACB6 text-left">Financials</td>
+                                    <td class="f-14 lh-16 white text-left">1.9%</td>
+                                    <td class="f-14 lh-16 white text-left">$119,700</td>
+                                    <td class="f-14 lh-16 clr-23B05B text-left">+9.2%</td>
+                                </tr>
+                                <tr>
+                                    <td class="f-14 lh-16 white text-left uppercase bold">AGG</td>
+                                    <td class="f-14 lh-16 white text-left uppercase">iShares Core US Agg Bond</td>
+                                    <td class="f-14 lh-16 clr-99ACB6 text-left">Fixed Income</td>
+                                    <td class="f-14 lh-16 white text-left">5.1%</td>
+                                    <td class="f-14 lh-16 white text-left">$321,300</td>
+                                    <td class="f-14 lh-16 clr-23B05B text-left">+3.4%</td>
+                                </tr>
+                                <tr>
+                                    <td class="f-14 lh-16 white text-left uppercase bold">VWO</td>
+                                    <td class="f-14 lh-16 white text-left uppercase">Vanguard Emerging Markets</td>
+                                    <td class="f-14 lh-16 clr-99ACB6 text-left">Intl Equity</td>
+                                    <td class="f-14 lh-16 white text-left">3.2%</td>
+                                    <td class="f-14 lh-16 white text-left">$201,600</td>
+                                    <td class="f-14 lh-16 clr-23B05B text-left">+4.7%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-16 flex-col w-100">
+                <h3 class="f-16 lh-18 white">
+                    Risk-Adjusted Ratios & Statistics
+                </h3>
+                <div class="d-grid col-lg-3 gap-16 w-100">
+                    <div class="bg-060F13 br-12 p-20 border-E9E7DD-15 d-flex gap-8 flex-col">
+                        <p class="f-13 lh-14 clr-99ACB6">
+                            Sharpe Ratio
+                        </p>
+                        <h2 class="f-24 lh-26 white bold">
+                            1.24
+                        </h2>
+                        <p class="f-12 lh-14 white-50">
+                            Above average risk-adjusted return metric
+                        </p>
+                    </div>
+
+                    <div class="bg-060F13 br-12 p-20 border-E9E7DD-15 d-flex gap-8 flex-col">
+                        <p class="f-13 lh-14 clr-99ACB6">
+                            Maximum Drawdown
+                        </p>
+                        <h2 class="f-24 lh-26 white bold">
+                            -8.2%
+                        </h2>
+                        <p class="f-12 lh-14 white-50">
+                            Underperforming S&P index drawdown of -12.4%
+                        </p>
+                    </div>
+
+                    <div class="bg-060F13 br-12 p-20 border-E9E7DD-15 d-flex gap-8 flex-col">
+                        <p class="f-13 lh-14 clr-99ACB6">
+                            Beta vs S&P 500
+                        </p>
+                        <h2 class="f-24 lh-26 white bold">
+                            0.72
+                        </h2>
+                        <p class="f-12 lh-14 white-50">
+                            Significantly lower volatility than general market
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div class="d-flex gap-16 justify-end w-100">
-                <a href="" class="btn border-E9E7DD-15 br-100 clr-99ACB6">Request Portfolio Rebalance</a>
-                <a href="#" class="btn bg-23B05B p-10-21 f-14 d-flex clr-101010 justify-center bold">Download Holdings Report</a>
+                <a href="" class="btn border-E9E7DD-15 br-100 clr-99ACB6 p-10-21 f-14 lh-16">Request Portfolio Rebalance</a>
+                <a href="#" class="btn bg-23B05B p-10-21 f-14 lh-16 d-flex clr-101010 justify-center bold">Download Holdings Report</a>
             </div>
 
         </div>

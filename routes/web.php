@@ -95,6 +95,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.trade-compliance-audit');
     });
 
+    Route::get('/concentration-cap', function () {
+        return view('dashboard.concentration-cap');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

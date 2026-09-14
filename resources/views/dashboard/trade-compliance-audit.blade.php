@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Liquidity Workflow')
+@section('title', 'Trade Compliance Audit')
 
 @section('content')
 
@@ -110,7 +110,7 @@
                 </div>
             </div>
 
-            <div class="d-grid col-2-1 gap-24 w-100">
+            <div class="d-grid col-15-1 gap-24 w-100">
                 <div class="d-flex flex-col gap-24 w-100">
                     <div class="p-24 bg-060F13 br-12 d-flex gap-16 flex-col w-100 border-E9E7DD-15">
                         <div class="d-flex align-center gap-10 justify-space-between">
@@ -188,11 +188,99 @@
                                 Plan Execution History
                             </h2>
                         </div>
+                        <div class="tablecontainer trade">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th class="f-12 lh-14 clr-99ACB6 text-left uppercase">DATE</th>
+                                        <th class="f-12 lh-14 clr-99ACB6 text-left uppercase">ACTION</th>
+                                        <th class="f-12 lh-14 clr-99ACB6 text-left">VOLUME</th>
+                                        <th class="f-12 lh-14 clr-99ACB6 text-left">PRICE</th>
+                                        <th class="f-12 lh-14 clr-99ACB6 text-left">METHOD</th>
+                                        <th class="f-12 lh-14 clr-99ACB6 text-left">TAX IMPACT</th>
+                                        <th class="f-12 lh-14 clr-99ACB6 text-left">COMPLIANCE</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="f-14 lh-16 white text-left">06/01/2026</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left uppercase">SELL</td>
+                                        <td class="f-14 lh-16 white text-left">1,000 shrs</td>
+                                        <td class="f-14 lh-16 white text-left">$89.50</td>
+                                        <td class="f-14 lh-16 clr-99ACB6 text-left">10b5-1 Systematic</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left"> -$0 (Offset)</td>
+                                        <td class="f-12 lh-14 clr-23B05B text-left"> Compliant</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="f-14 lh-16 white text-left">03/15/2026</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left uppercase">SELL</td>
+                                        <td class="f-14 lh-16 white text-left">500 shrs</td>
+                                        <td class="f-14 lh-16 white text-left">$92.10</td>
+                                        <td class="f-12 lh-14 clr-23B05B text-left"> Manual (Pre-Cleared)</td>
+                                        <td class="f-14 lh-16 clr-99ACB6 text-left">-$4,200</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left"> Compliant</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="f-14 lh-16 white text-left">01/10/2026</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left uppercase">SELL</td>
+                                        <td class="f-14 lh-16 white text-left">1,000 shrs</td>
+                                        <td class="f-14 lh-16 white text-left">$86.75</td>
+                                        <td class="f-14 lh-16 clr-99ACB6 text-left">10b5-1 Systematic</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left"> -$0 (Offset)</td>
+                                        <td class="f-12 lh-14 clr-23B05B text-left"> Compliant</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="f-14 lh-16 white text-left">12/01/2025</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left uppercase">SELL</td>
+                                        <td class="f-14 lh-16 white text-left">1,200 shrs</td>
+                                        <td class="f-14 lh-16 white text-left">$91.30</td>
+                                        <td class="f-12 lh-14 clr-23B05B text-left"> 10b5-1 Systematic</td>
+                                        <td class="f-14 lh-16 clr-99ACB6 text-left">-$3,800</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left">Compliant</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="f-14 lh-16 white text-left">09/15/2025</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left uppercase">SELL</td>
+                                        <td class="f-14 lh-16 white text-left">800 shrs</td>
+                                        <td class="f-14 lh-16 white text-left">$88.20</td>
+                                        <td class="f-12 lh-14 clr-23B05B text-left">Manual (Pre-Cleared)</td>
+                                        <td class="f-14 lh-16 clr-99ACB6 text-left">-$2,100</td>
+                                        <td class="f-14 lh-16 clr-23B05B text-left">Compliant</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </div>
 
                 <div class="d-flex gap-24 flex-col">
+
+                    <div class="br-12 bg-060F13 p-24 d-flex gap-16 flex-col">
+                        <h2 class="f-16 lh-18 white">
+                            Insider Trading Windows (2026)
+                        </h2>
+                        <div class="bg-0B1417 br-8 p-16 d-flex flex-col gap-12">
+                            <div class="d-flex gap-10 justify-space-between align-center">
+                                <p class="f-14 lh-16 white">
+                                    Current Status
+                                </p>
+                                <span class="bg-23B05B-10 br-4 p-2-8 f-12 lh-14 uppercase clr-23B05B">
+                                    OPEN WINDOW
+                                </span>
+                            </div>
+                            <p class="f-13 lh-14 clr-99ACB6">
+                                Closes in 12 days (Post-Q2 Earnings blackout commences)
+                            </p>
+                        </div>
+                        <div class="d-flex gap-8 flex-col">
+                            <p class="f-12 lh-14 clr-99ACB6">
+                                Annual Windows Outline
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="bg-060F13 br-12 border-E9E7DD-15 p-24 d-flex flex-col gap-16">
                         <h2 class="f-16 lh-18 white">
                             regulatory SEC Filing checklist

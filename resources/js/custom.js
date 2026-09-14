@@ -10,6 +10,25 @@ $(function () {
         $('body').toggleClass('sidebar-close');
     });
 
+    // Open modal
+    $(document).on('click', '.lock-btn', function (e) {
+        e.preventDefault();
+
+        $('.modal-outer').removeClass('active');
+
+        $('body').addClass('modal-open');
+
+        $('.modal-outer').addClass('active');
+    });
+
+    // Close modal
+    $(document).on('click', '.close-btn', function (e) {
+        e.preventDefault();
+
+        $(this).closest('.modal-outer').removeClass('active');
+
+        $('body').removeClass('modal-open');
+    });
 
 
     // tabs on wealth goals 

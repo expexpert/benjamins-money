@@ -299,7 +299,7 @@
             </div>
 
             <div class="d-flex gap-16 justify-end w-100">
-                <a href="" class="btn border-E9E7DD-15 br-100 clr-99ACB6">Cancel Changes</a>
+                <a href="" class="btn border-E9E7DD-15 br-100 clr-99ACB6 p-10-21">Cancel Changes</a>
                 <a href="#" class="btn bg-23B05B p-10-21 f-14 d-flex clr-101010 justify-center bold">Apply Velocity Strategy</a>
             </div>
 

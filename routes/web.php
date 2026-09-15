@@ -99,6 +99,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.concentration-cap');
     });
 
+    Route::get('/risk-&-protection', function () {
+        return view('dashboard.risk-&-protection');
+    });
+
+    Route::get('/estate-&-legacy', function () {
+        return view('dashboard.estate-&-legacy');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

@@ -2174,7 +2174,7 @@ body.sidebar-close .profile-dropdown button {
 .sidebar-close .heading-bar,
 .sidebar-close .dashboard-header,
 .sidebar-close .footer {
-    max-width: 85rem;
+    max-width: 85rem !important;
 }
 
 .retirement-controls input[type="range"] {
@@ -2848,9 +2848,38 @@ body.modal-open {
 }
 
 .tablecontainer.trade.sma th,
-.tablecontainer.trade.sma td{
+.tablecontainer.trade.sma td {
     min-width: 80px;
     max-width: 180px;
+}
+
+.percentage-bar {
+    width: 100%;
+    max-width: 365px;
+    height: 20px;
+    display: flex;
+    gap: 2px;
+}
+
+.percentage-bar .segment {
+    /* flex: 1; */
+    height: 100%;
+    background: #29343a;
+    border-radius: 15px;
+    width: 5px;
+    max-width: 100%;
+}
+
+.percentage-bar .segment.active {
+    background: #F58F8C;
+}
+
+.percentage-bar.green {
+    max-width: fit-content;
+}
+
+.percentage-bar.green .segment.active {
+    background: #7BD09D;
 }
 
 /* Responsive */

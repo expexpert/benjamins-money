@@ -574,7 +574,7 @@
                     Connect with us
                 </h3>
 
-                <div class="p-40 bg-0B1417">
+                <div class="p-40 bg-0B1417 br-12 border-E9E7DD-15">
                     <div class="d-grid col-lg-2 gap-40">
                         <div class="left d-flex gap-12 flex-col">
                             <h3 class="f-20 lh-22 white">
@@ -610,6 +610,15 @@
                                 <p class="f-14 lh-18 white-80">Build a more balanced and resilient portfolio.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="calendly-cus-outer">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/design-1787fp/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0b1417&text_color=e9e7dd&primary_color=e9e7dd"
+                            style="position: relative; width: 100%; height: 500px;">
+                        </div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly inline widget end -->
                     </div>
                 </div>
             </div>

@@ -62,6 +62,25 @@ $(function () {
     // tabs on wealth goals end
 
 
+    $('.percentage-bar').each(function () {
+
+        const $bar = $(this);
+        const percentage = parseFloat($bar.data('percentage')) || 0;
+        const totalSegments = parseInt($bar.data('segments')) || 50;
+
+        const activeSegments = Math.round(
+            totalSegments * percentage / 100
+        );
+
+        for (let i = 0; i < totalSegments; i++) {
+            $('<span>', {
+                class: 'segment' + (i < activeSegments ? ' active' : '')
+            }).appendTo($bar);
+        }
+
+    });
+
+
     // accordion on asset allocation page
 
     $('.risk-card').each(function (index) {

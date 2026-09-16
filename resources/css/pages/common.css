@@ -2882,6 +2882,25 @@ body.modal-open {
     background: #7BD09D;
 }
 
+.table-bordered tr:not(:first-child):not(:last-child) td {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(233, 231, 221, 24%);
+}
+
+.table-bordered tr th {
+    padding-bottom: 24px;
+}
+
+.table-bordered tr th.right {
+    text-align: right;
+}
+
+.tablecontainer.table-bordered th,
+.tablecontainer.table-bordered td {
+    vertical-align: middle;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .tax-comparison {

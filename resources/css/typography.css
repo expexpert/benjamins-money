@@ -158,6 +158,10 @@ a {
     color: #000000;
 }
 
+.clr-yellow-700 {
+    color: #A06F11;
+}
+
 .clr-8979FF {
     color: #8979FF;
 }
@@ -534,7 +538,7 @@ a {
     background-color: #fff;
 }
 
-.bg-ECFDF5{
+.bg-ECFDF5 {
     background-color: #ECFDF5;
 }
 
@@ -994,7 +998,7 @@ h6 {
     padding: 10px 20px;
 }
 
-.p-10-55{
+.p-10-55 {
     padding: 10px 55px;
 }
 
@@ -1683,7 +1687,7 @@ p {
     color: #E9E7DD !important;
 }
 
-.border-047857{
+.border-047857 {
     border: 1px solid #047857;
 }
 
@@ -1711,7 +1715,7 @@ p {
     border: 1px solid #4FC07C;
 }
 
-.border-23B05B-15{
+.border-23B05B-15 {
     border: 1px solid rgba(35, 176, 91, 15%);
 }
 
@@ -1764,6 +1768,10 @@ p {
 .bg-gray {
     background: rgba(21, 121, 61, 8%);
     border-radius: 8px;
+}
+
+.bg-F58F8C-20 {
+    background-color: rgba(245, 143, 140, 20%);
 }
 
 .bg-E9E7DD-10 {
@@ -1920,6 +1928,20 @@ p {
 
 .bg-FCA5A5 {
     background-color: #FCA5A5;
+}
+
+.bg-blended {
+    background: linear-gradient(rgba(245, 143, 140, 0.2),
+            rgba(245, 143, 140, 0.2)),
+        #E9E7DD;
+    ;
+}
+
+.bg-blend-yellow{
+    background: linear-gradient(rgba(221, 188, 5, 0.2),
+            rgba(221, 188, 5, 0.2)),
+        #E9E7DD;
+    ;
 }
 
 .btn-green-outlined {
@@ -2337,7 +2359,7 @@ textarea {
     color: #8C8B85;
 }
 
-.clr-047857{
+.clr-047857 {
     color: #047857;
 }
 

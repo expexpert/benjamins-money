@@ -171,7 +171,7 @@
                                         <span class="f-12 lh-12 ls-042 clr-FFBE4C p-2-8 br-50 border-FFBE4C">
                                             P1 - Critical
                                         </span>
-
+                                    </div>
                                 </td>
                                 <td>
                                     <div class="d-flex gap-12 flex-col align-flex-start">

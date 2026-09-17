@@ -2901,6 +2901,33 @@ body.modal-open {
     vertical-align: middle;
 }
 
+.dot-yellow {
+    width: 8px;
+    height: 8px;
+    background-color: #F59E0B;
+    border-radius: 50%;
+    opacity: 1;
+    filter: blur(2px);
+}
+
+.dot-10B981{
+    width: 8px;
+    height: 8px;
+    background-color: #10B981;
+    border-radius: 50%;
+    opacity: 1;
+    filter: blur(2px);
+}
+
+.dot-6366F1{
+    width: 8px;
+    height: 8px;
+    background-color: #6366F1;
+    border-radius: 50%;
+    opacity: 1;
+    filter: blur(2px);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .tax-comparison {

@@ -406,6 +406,18 @@ a {
     background-color: rgba(251, 188, 5, 15%);
 }
 
+.bg-FBBF24 {
+    background-color: #FBBF24;
+}
+
+.bg-34D399 {
+    background-color: #34D399;
+}
+
+.bg-94A3B8 {
+    background-color: #94A3B8;
+}
+
 .bg-FF928A {
     background-color: #FF928A;
 }
@@ -645,6 +657,10 @@ a {
 
 .border-white {
     border: 1px solid #E9E7DD;
+}
+
+.border-org-white-12 {
+    border: 1px solid rgba(255, 255, 255, 12%);
 }
 
 .border-C5A059-30 {
@@ -1048,6 +1064,10 @@ h6 {
 
 .p-2-8 {
     padding: 2px 8px;
+}
+
+.p-3-8 {
+    padding: 3px 8px;
 }
 
 .p-3-16 {
@@ -1563,7 +1583,7 @@ h6 {
     width: 24px;
 }
 
-.h24 {
+.h-24 {
     height: 24px;
 }
 
@@ -1774,6 +1794,10 @@ p {
     background-color: rgba(245, 143, 140, 20%);
 }
 
+.bg-white-6 {
+    background-color: rgba(255, 255, 255, 6.27%);
+}
+
 .bg-E9E7DD-10 {
     background-color: rgba(233, 231, 221, 10%);
 }
@@ -1937,7 +1961,7 @@ p {
     ;
 }
 
-.bg-blend-yellow{
+.bg-blend-yellow {
     background: linear-gradient(rgba(221, 188, 5, 0.2),
             rgba(221, 188, 5, 0.2)),
         #E9E7DD;
@@ -2345,6 +2369,22 @@ textarea {
 
 .clr-00CB3B {
     color: #00CB3B;
+}
+
+.clr-06B6D4 {
+    color: #06B6D4;
+}
+
+.clr-FBBF24 {
+    color: #FBBF24;
+}
+
+.clr-34D399 {
+    color: #34D399;
+}
+
+.clr-818CF8 {
+    color: #818CF8;
 }
 
 .border-00CB3B {

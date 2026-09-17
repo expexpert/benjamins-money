@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Estate & Legacy')
+@section('title', 'Estate & Legacy - Trust Inventory, Funding & Governance Registry')
 
 @section('content')
 
-<div class="heading-bar d-flex justify-space-between">
+<div class="heading-bar d-flex justify-space-between align-center">
     <div class="breadcrumb d-flex gap-8">
         <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
             Dashboard

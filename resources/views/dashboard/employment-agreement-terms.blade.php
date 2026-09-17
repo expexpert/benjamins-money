@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="heading-bar d-flex justify-space-between">
+<div class="heading-bar d-flex justify-space-between align-center">
     <div class="breadcrumb d-flex gap-8">
         <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
             Dashboard

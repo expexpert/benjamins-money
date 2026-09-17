@@ -110,6 +110,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/estate-&-legacy-trust-inventory', function () {
         return view('dashboard.estate-&-legacy-trust-inventory');
     });
+
+    Route::get('/actionable-advisory-task-board', function () {
+        return view('dashboard.actionable-advisory-task-board');
+    });
     
     Route::get('/account-verified', function () {
         return view('auth.account-verified');

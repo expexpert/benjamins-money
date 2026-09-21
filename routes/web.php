@@ -115,6 +115,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.actionable-advisory-task-board');
     });
     
+    Route::get('/residency-audit-shield', function () {
+        return view('dashboard.residency-audit-shield');
+    });
+    
+    Route::get('/gift-tax-ledger', function () {
+        return view('dashboard.gift-tax-ledger');
+    });
+    
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

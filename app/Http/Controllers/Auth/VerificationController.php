@@ -7,6 +7,7 @@ use App\Notifications\VerifyEmailOtp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class VerificationController extends Controller
 {
@@ -41,9 +42,14 @@ class VerificationController extends Controller
             ])->withInput();
         }
 
-        $user->markEmailAsVerified();
+        try {
+            $user->markEmailAsVerified();
+            Cache::forget('email_verification_otp_' . $user->id);
+        } catch (\Throwable $exception) {
+            Log::error('Email verification failed.', ['user_id' => $user->id, 'exception' => $exception]);
 
-        Cache::forget('email_verification_otp_' . $user->id);
+            return back()->withErrors(['otp' => 'Unable to verify your email right now. Please try again.']);
+        }
 
         return redirect('/account-verified')
             ->with('success', 'Your email address has been verified successfully.');
@@ -57,10 +63,15 @@ class VerificationController extends Controller
             return redirect('/account-verified');
         }
 
-        $otp = str_pad((string) random_int(0, 999999), 6, '0', STR_PAD_LEFT);
-        Cache::put('email_verification_otp_' . $user->id, $otp, now()->addMinutes(15));
+        try {
+            $otp = str_pad((string) random_int(0, 999999), 6, '0', STR_PAD_LEFT);
+            Cache::put('email_verification_otp_' . $user->id, $otp, now()->addMinutes(15));
+            $user->notify(new VerifyEmailOtp($otp));
+        } catch (\Throwable $exception) {
+            Log::error('Verification code resend failed.', ['user_id' => $user->id, 'exception' => $exception]);
 
-        $user->notify(new VerifyEmailOtp($otp));
+            return back()->withErrors(['error' => 'Unable to send a verification code right now. Please try again.']);
+        }
 
         return back()->with('status', 'A new verification code has been sent to your email address.');
     }
@@ -69,20 +80,24 @@ class VerificationController extends Controller
     {
         $user = Auth::user();
 
-        // Clear the OTP cache
-        if ($user) {
-            Cache::forget('email_verification_otp_' . $user->id);
+        try {
+            // Clear the OTP cache
+            if ($user) {
+                Cache::forget('email_verification_otp_' . $user->id);
 
-            // Optional: Delete the unverified row so it doesn't leave a ghost account
-            if (!$user->hasVerifiedEmail()) {
-                $user->delete();
+                if (!$user->hasVerifiedEmail()) {
+                    $user->delete();
+                }
             }
-        }
 
-        // Log the user out and invalidate the session
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+        } catch (\Throwable $exception) {
+            Log::error('Changing registration email failed.', ['user_id' => $user?->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to change the email right now. Please try again.']);
+        }
 
         return redirect()->route('register')
             ->with('status', 'You can now enter the correct registration details.');

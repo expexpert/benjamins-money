@@ -66,13 +66,29 @@
                         </div>
                         <div class="stats mb-16">
                             <h2 class="f-28 mb-20 white">
-                                $18,500,000
+                                @if(!is_null($currentNetWorth))
+                                ${{ number_format($currentNetWorth) }}
+                                @else
+                                $0
+                                @endif
                             </h2>
                             <div class="h-1 bg-1E2A30 mb-12">
 
                             </div>
-                            <div class="p-2-8 bg-light-green br-6 clr-A7DFBD d-inline-flex f-12 lh-14">
-                                +$247,500 (1.35%) MTD
+                            @php
+                            $current = $currentNetWorth ?? 0;
+                            $previous = $lastMonthNetWorth ?? 0;
+
+                            // Calculate dollar change
+                            $changeAmount = $current - $previous;
+
+                            // Calculate percentage change relative to last month
+                            $changePercentage = $previous > 0 ? ($changeAmount / $previous) * 100 : 0;
+
+                            $isPositive = $changeAmount >= 0;
+                            @endphp
+                            <div class="p-2-8 {{ $isPositive ? 'bg-light-green clr-A7DFBD' : 'bg-light-red text-danger' }} br-6 d-inline-flex f-12 lh-14">
+                                {{ $isPositive ? '+' : '' }}${{ number_format($changeAmount) }} ({{ number_format($changePercentage, 2) }}%) MTD
                             </div>
                             <!-- <div class="d-flex gap-4 f-12">
                                 <img src="{{ asset('images/stat-increases.svg') }}" alt="increased stats icon">

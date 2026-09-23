@@ -53,4 +53,14 @@ return [
         'redirect' => env('APPLE_REDIRECT_URI'),
     ],
 
+
+    'emoney' => [
+        'client_id' => env('EMONEY_CLIENT_ID'),
+        'api_key'   => env('EMONEY_API_KEY'),
+        'owner_id'  => env('EMONEY_OWNER_ID'),
+        'token_url' => env('EMONEY_TOKEN_URL'),
+        'base_url'  => env('EMONEY_BASE_URL'),
+        'key_path'  => base_path(env('EMONEY_PRIVATE_KEY_PATH')),
+    ],
+
 ];

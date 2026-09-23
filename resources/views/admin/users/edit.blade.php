@@ -84,7 +84,7 @@
                                 id="password"
                                 name="password"
                                 autocomplete="new-password"
-                                required>
+                                placeholder="Leave empty to keep current password">
 
                             <button type="button"
                                 class="password-toggle"
@@ -136,7 +136,7 @@
                                 id="password_confirmation"
                                 name="password_confirmation"
                                 autocomplete="new-password"
-                                required>
+                                placeholder="Leave empty to keep current password">
 
                             <button type="button"
                                 class="password-toggle"

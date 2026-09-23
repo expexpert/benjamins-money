@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
 use Smalot\PdfParser\Parser;
 use App\Models\Bank;
 
@@ -36,9 +37,11 @@ class SetupController extends Controller
             $result = $this->extractMetadata($text);
 
             return response()->json($result);
-        } catch (\Exception $exception) {
+        } catch (\Throwable $exception) {
+            Log::error('PDF extraction failed.', ['exception' => $exception]);
+
             return response()->json([
-                'message' => 'Unable to parse PDF: ' . $exception->getMessage(),
+                'message' => 'Unable to parse PDF. Please upload a valid PDF and try again.',
             ], 422);
         }
     }

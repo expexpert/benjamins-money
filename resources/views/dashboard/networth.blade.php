@@ -63,7 +63,7 @@
 
                         <div class="d-flex gap-8 align-center">
                             <p class="f-16 lh-18 {{ $netWorthChange >= 0 ? 'clr-7BD09D' : 'text-danger' }}">
-                                {{ $netWorthChange >= 0 ? '▲ +' : '▼ ' }}${{ number_format(abs($netWorthChange)) }} ({{ ($netWorthChangePct >= 0 ? '+' : '') . number_format($netWorthChangePct, 1) }}%)
+                                {{ $netWorthChange >= 0 ? '▲ +' : '▼ ' }}${{ number_format(abs($netWorthChange)) }} ({{ ($netWorthChangePct >= 0 ? '+' : '') . number_format($netWorthChangePct, 2) }}%)
                             </p>
                             <p class="f-14 lh-16 neutral-300">
                                 vs. Prior Period ({{ $priorPeriodDate }})

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Log;
 
 class ForgotPasswordController extends Controller
 {
@@ -25,9 +26,15 @@ class ForgotPasswordController extends Controller
             'email' => ['required', 'email'],
         ]);
 
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+        try {
+            $status = Password::sendResetLink(
+                $request->only('email')
+            );
+        } catch (\Throwable $exception) {
+            Log::error('Password reset link request failed.', ['exception' => $exception]);
+
+            return back()->withInput()->withErrors(['email' => 'Unable to send a password reset link right now.']);
+        }
 
         if ($status === Password::RESET_LINK_SENT) {
             return redirect()->route('password.confirmation')->with('email', $request->email);
@@ -42,9 +49,15 @@ class ForgotPasswordController extends Controller
             'email' => ['required', 'email'],
         ]);
 
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+        try {
+            $status = Password::sendResetLink(
+                $request->only('email')
+            );
+        } catch (\Throwable $exception) {
+            Log::error('Password reset link resend failed.', ['exception' => $exception]);
+
+            return back()->withInput()->withErrors(['email' => 'Unable to send a password reset link right now.']);
+        }
 
         if ($status === Password::RESET_LINK_SENT) {
             return back()

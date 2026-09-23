@@ -802,80 +802,80 @@ window.togglePassword = function (inputId, iconEl) {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
-    // --- 1. SPARKLINE TREND GRAPH ---
-    new Chart(document.getElementById('trendChart').getContext('2d'), {
-        type: 'line',
-        data: {
-            labels: ['Q1-2024', 'Q2-2024', 'Q3-2024', 'Q4-2024', 'Q1-2025', 'Q2-2025'],
-            datasets: [{
-                data: [42, 42.5, 44, 43.5, 45.2, 47.25],
-                borderColor: '#4ade80',
-                borderWidth: 1.5,
-                pointBackgroundColor: '#4ade80',
-                pointRadius: 2,
-                fill: false,
-                tension: 0.2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false, // Prevents canvas vertical blowing up
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { display: false },
-                y: { display: false }
-            }
-        }
-    });
+//     // --- 1. SPARKLINE TREND GRAPH ---
+//     new Chart(document.getElementById('trendChart').getContext('2d'), {
+//         type: 'line',
+//         data: {
+//             labels: ['Q1-2024', 'Q2-2024', 'Q3-2024', 'Q4-2024', 'Q1-2025', 'Q2-2025'],
+//             datasets: [{
+//                 data: [42, 42.5, 44, 43.5, 45.2, 47.25],
+//                 borderColor: '#4ade80',
+//                 borderWidth: 1.5,
+//                 pointBackgroundColor: '#4ade80',
+//                 pointRadius: 2,
+//                 fill: false,
+//                 tension: 0.2
+//             }]
+//         },
+//         options: {
+//             responsive: true,
+//             maintainAspectRatio: false, // Prevents canvas vertical blowing up
+//             plugins: { legend: { display: false } },
+//             scales: {
+//                 x: { display: false },
+//                 y: { display: false }
+//             }
+//         }
+//     });
 
-    const chartColors = ['#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e', '#a3e635'];
+//     const chartColors = ['#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e', '#a3e635'];
 
-    const chartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '75%',
-        plugins: {
-            legend: { display: false },
-            tooltip: { enabled: true }
-        }
-    };
+//     const chartOptions = {
+//         responsive: true,
+//         maintainAspectRatio: false,
+//         cutout: '75%',
+//         plugins: {
+//             legend: { display: false },
+//             tooltip: { enabled: true }
+//         }
+//     };
 
-    // Assets Chart
-    const assetsEl = document.getElementById('assetsChart');
-    if (assetsEl) {
-        new Chart(assetsEl.getContext('2d'), {
-            type: 'doughnut',
-            data: {
-                labels: ['Investments', 'Real Estate', 'Concentrated Stock', 'Cash & Equivalents', 'Other / Alternatives'],
-                datasets: [{
-                    data: [35, 28, 22, 8, 7],
-                    backgroundColor: chartColors,
-                    borderWidth: 0,
-                    hoverOffset: 4
-                }]
-            },
-            options: chartOptions
-        });
-    }
+//     // Assets Chart
+//     const assetsEl = document.getElementById('assetsChart');
+//     if (assetsEl) {
+//         new Chart(assetsEl.getContext('2d'), {
+//             type: 'doughnut',
+//             data: {
+//                 labels: ['Investments', 'Real Estate', 'Concentrated Stock', 'Cash & Equivalents', 'Other / Alternatives'],
+//                 datasets: [{
+//                     data: [35, 28, 22, 8, 7],
+//                     backgroundColor: chartColors,
+//                     borderWidth: 0,
+//                     hoverOffset: 4
+//                 }]
+//             },
+//             options: chartOptions
+//         });
+//     }
 
-    // Liabilities Chart
-    const liabilitiesEl = document.getElementById('liabilitiesChart');
-    if (liabilitiesEl) {
-        new Chart(liabilitiesEl.getContext('2d'), {
-            type: 'doughnut',
-            data: {
-                labels: ['Mortgages', 'Securities-Backed', 'Business Debt', 'Lifestyle Financing', 'Personal / Consumer'],
-                datasets: [{
-                    data: [54, 18, 14, 10, 4],
-                    backgroundColor: chartColors,
-                    borderWidth: 0,
-                    hoverOffset: 4
-                }]
-            },
-            options: chartOptions
-        });
-    }
+//     // Liabilities Chart
+//     const liabilitiesEl = document.getElementById('liabilitiesChart');
+//     if (liabilitiesEl) {
+//         new Chart(liabilitiesEl.getContext('2d'), {
+//             type: 'doughnut',
+//             data: {
+//                 labels: ['Mortgages', 'Securities-Backed', 'Business Debt', 'Lifestyle Financing', 'Personal / Consumer'],
+//                 datasets: [{
+//                     data: [54, 18, 14, 10, 4],
+//                     backgroundColor: chartColors,
+//                     borderWidth: 0,
+//                     hoverOffset: 4
+//                 }]
+//             },
+//             options: chartOptions
+//         });
+//     }
 
-});
+// });

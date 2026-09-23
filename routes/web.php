@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\SetupController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NetWorthController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -11,9 +13,8 @@ require __DIR__ . '/auth.php';
 require __DIR__ . '/admin.php';
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/', function () {
-        return view('dashboard.index');
-    });
+
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/scheduled', function () {
         return view('dashboard.scheduled');
@@ -31,9 +32,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.locked');
     });
 
-    Route::get('/networth', function () {
-        return view('dashboard.networth');
-    });
+    Route::get('/networth', [NetWorthController::class, 'index'])->name('networth');
 
     Route::get('/networth-assets', function () {
         return view('dashboard.networth-assets');
@@ -114,15 +113,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/actionable-advisory-task-board', function () {
         return view('dashboard.actionable-advisory-task-board');
     });
-    
+
     Route::get('/residency-audit-shield', function () {
         return view('dashboard.residency-audit-shield');
     });
-    
+
     Route::get('/gift-tax-ledger', function () {
         return view('dashboard.gift-tax-ledger');
     });
-    
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

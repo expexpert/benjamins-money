@@ -9,17 +9,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Prunable;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     const ROLE_ADMIN = 'admin';
     const ROLE_USER = 'user';
 
-    use HasFactory, Notifiable, SoftDeletes, Prunable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, Prunable;
 
     protected $fillable = [
         'name',
         'email',
+        'emoney_client_id',
         'password',
         'google_id',
         'apple_id',

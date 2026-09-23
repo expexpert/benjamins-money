@@ -7,6 +7,7 @@ use App\Models\Bank;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -71,13 +72,19 @@ class AdminController extends Controller
             'role' => ['required', 'string', 'in:admin,user'],
         ]);
 
-        User::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'password' => $validated['password'],
-            'role' => $validated['role'],
-            'email_verified_at' => now(),
-        ]);
+        try {
+            User::create([
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'password' => $validated['password'],
+                'role' => $validated['role'],
+                'email_verified_at' => now(),
+            ]);
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to create user.', ['exception' => $exception]);
+
+            return back()->withInput()->withErrors(['error' => 'Unable to create the user. Please try again.']);
+        }
 
         return redirect()->route('admin.users')
             ->with('success', 'User created successfully.');
@@ -108,7 +115,13 @@ class AdminController extends Controller
             $updateData['password'] = $validated['password'];
         }
 
-        $user->update($updateData);
+        try {
+            $user->update($updateData);
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to update user.', ['user_id' => $user->id, 'exception' => $exception]);
+
+            return back()->withInput()->withErrors(['error' => 'Unable to update the user. Please try again.']);
+        }
 
         return redirect()->route('admin.users')
             ->with('success', 'User updated successfully.');
@@ -120,7 +133,13 @@ class AdminController extends Controller
             return back()->withErrors(['error' => 'You cannot delete your own account.']);
         }
 
-        $user->delete();
+        try {
+            $user->delete();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to delete user.', ['user_id' => $user->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to delete the user. Please try again.']);
+        }
 
         return redirect()->route('admin.users')
             ->with('success', 'User deleted successfully.');
@@ -136,7 +155,13 @@ class AdminController extends Controller
             $message = 'User email verified successfully.';
         }
 
-        $user->save();
+        try {
+            $user->save();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to toggle user verification.', ['user_id' => $user->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to update email verification. Please try again.']);
+        }
 
         return back()->with('success', $message);
     }
@@ -162,7 +187,13 @@ class AdminController extends Controller
     public function restoreUser($id)
     {
         $user = User::withTrashed()->findOrFail($id);
-        $user->restore();
+        try {
+            $user->restore();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to restore user.', ['user_id' => $user->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to restore the user. Please try again.']);
+        }
 
         return redirect()->route('admin.users.trash')
             ->with('success', 'User restored successfully.');
@@ -176,7 +207,13 @@ class AdminController extends Controller
             return back()->withErrors(['error' => 'You cannot delete your own account.']);
         }
 
-        $user->forceDelete();
+        try {
+            $user->forceDelete();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to permanently delete user.', ['user_id' => $user->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to permanently delete the user. Please try again.']);
+        }
 
         return redirect()->route('admin.users.trash')
             ->with('success', 'User permanently deleted.');
@@ -225,21 +262,26 @@ class AdminController extends Controller
             'is_active' => ['nullable', 'boolean'],
         ]);
 
-        // Handle file upload
-        $logoPath = null;
-        if ($request->hasFile('logo')) {
-            $logoPath = $request->file('logo')->store('logos', 'public');
-        }
+        try {
+            $logoPath = null;
+            if ($request->hasFile('logo')) {
+                $logoPath = $request->file('logo')->store('logos', 'public');
+            }
 
-        Bank::create([
-            'name' => $validated['name'],
-            'code' => $validated['code'] ?? null,
-            'website' => $validated['website'] ?? null,
-            'logo' => $logoPath,
-            'description' => $validated['description'] ?? null,
-            'is_featured' => $request->boolean('is_featured'),
-            'is_active' => $request->boolean('is_active'),
-        ]);
+            Bank::create([
+                'name' => $validated['name'],
+                'code' => $validated['code'] ?? null,
+                'website' => $validated['website'] ?? null,
+                'logo' => $logoPath,
+                'description' => $validated['description'] ?? null,
+                'is_featured' => $request->boolean('is_featured'),
+                'is_active' => $request->boolean('is_active'),
+            ]);
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to create bank.', ['exception' => $exception]);
+
+            return back()->withInput()->withErrors(['error' => 'Unable to create the bank. Please try again.']);
+        }
 
         return redirect()->route('admin.banks')
             ->with('success', 'Bank created successfully.');
@@ -262,29 +304,31 @@ class AdminController extends Controller
             'is_active' => ['nullable', 'boolean'],
         ]);
 
-        // Retain existing logo path by default
-        $logoPath = $bank->logo;
+        try {
+            $logoPath = $bank->logo;
 
-        // Check if a new file was uploaded
-        if ($request->hasFile('logo')) {
-            // Delete the old logo file if it exists
-            if ($bank->logo && Storage::disk('public')->exists($bank->logo)) {
-                Storage::disk('public')->delete($bank->logo);
+            if ($request->hasFile('logo')) {
+                if ($bank->logo && Storage::disk('public')->exists($bank->logo)) {
+                    Storage::disk('public')->delete($bank->logo);
+                }
+
+                $logoPath = $request->file('logo')->store('logos', 'public');
             }
 
-            // Store the new file
-            $logoPath = $request->file('logo')->store('logos', 'public');
-        }
+            $bank->update([
+                'name' => $validated['name'],
+                'code' => $validated['code'] ?? null,
+                'website' => $validated['website'] ?? null,
+                'logo' => $logoPath,
+                'description' => $validated['description'] ?? null,
+                'is_featured' => $request->boolean('is_featured'),
+                'is_active' => $request->boolean('is_active'),
+            ]);
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to update bank.', ['bank_id' => $bank->id, 'exception' => $exception]);
 
-        $bank->update([
-            'name' => $validated['name'],
-            'code' => $validated['code'] ?? null,
-            'website' => $validated['website'] ?? null,
-            'logo' => $logoPath,
-            'description' => $validated['description'] ?? null,
-            'is_featured' => $request->boolean('is_featured'),
-            'is_active' => $request->boolean('is_active'),
-        ]);
+            return back()->withInput()->withErrors(['error' => 'Unable to update the bank. Please try again.']);
+        }
 
         return redirect()->route('admin.banks')
             ->with('success', 'Bank updated successfully.');
@@ -292,8 +336,14 @@ class AdminController extends Controller
 
     public function deleteBank(Bank $bank)
     {
-        $bank->logo && Storage::disk('public')->exists($bank->logo) ? Storage::disk('public')->delete($bank->logo) : null;
-        $bank->delete();
+        try {
+            $bank->logo && Storage::disk('public')->exists($bank->logo) ? Storage::disk('public')->delete($bank->logo) : null;
+            $bank->delete();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to delete bank.', ['bank_id' => $bank->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to delete the bank. Please try again.']);
+        }
 
         return redirect()->route('admin.banks')
             ->with('success', 'Bank deleted successfully.');
@@ -302,7 +352,13 @@ class AdminController extends Controller
     public function toggleBankStatus(Bank $bank)
     {
         $bank->is_active = !$bank->is_active;
-        $bank->save();
+        try {
+            $bank->save();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to toggle bank status.', ['bank_id' => $bank->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to update the bank status. Please try again.']);
+        }
 
         $message = $bank->is_active ? 'Bank activated successfully.' : 'Bank deactivated successfully.';
 
@@ -331,7 +387,13 @@ class AdminController extends Controller
     public function restoreBank($id)
     {
         $bank = Bank::withTrashed()->findOrFail($id);
-        $bank->restore();
+        try {
+            $bank->restore();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to restore bank.', ['bank_id' => $bank->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to restore the bank. Please try again.']);
+        }
 
         return redirect()->route('admin.banks.trash')
             ->with('success', 'Bank restored successfully.');
@@ -345,7 +407,13 @@ class AdminController extends Controller
             return back()->withErrors(['error' => 'You cannot delete your own account.']);
         }
 
-        $bank->forceDelete();
+        try {
+            $bank->forceDelete();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to permanently delete bank.', ['bank_id' => $bank->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to permanently delete the bank. Please try again.']);
+        }
 
         return redirect()->route('admin.banks.trash')
             ->with('success', 'Bank permanently deleted.');

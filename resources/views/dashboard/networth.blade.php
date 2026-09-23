@@ -15,13 +15,10 @@
         <p class="f-16 lh-18 white">
             Net Worth
         </p>
-
     </div>
     <ul class="status d-flex gap-14">
         <li class="active d-flex gap-10 align-center">
-            <div class="icon">
-
-            </div>
+            <div class="icon"></div>
             <div class="icon-description f-14">
                 Trading Window: Open
             </div>
@@ -29,14 +26,11 @@
 
         <li class="d-flex gap-10 align-center">
             <div class="icon"></div>
-
             <div class="icon-description f-14">
                 SmartGuard: ACTIVE
             </div>
-
             <div class="tooltip">
                 <img src="{{ asset('images/tooltip-icon.svg') }}" alt="Tooltip icon">
-
                 <div class="tooltip-content">
                     SmartGuard continuously monitors your portfolio, taxes, compliance,
                     and planning opportunities. When meaningful changes occur, you'll
@@ -50,6 +44,8 @@
 <div class="dash-cont-outer">
     <div class="dash-cont-inner">
         <div class="card-outer d-flex gap-24 align-flex-start flex-col">
+
+            {{-- Top Consolidated Net Worth Banner --}}
             <div class="bg-0B1417 p-32 br-12 border-E9E7DD-24 d-flex justify-space-between gap-10 w-100">
                 <div>
                     <div class="d-flex gap-8 align-center mb-28">
@@ -62,19 +58,21 @@
                     </div>
                     <div>
                         <h3 class="h3 f-24 lh-26 white mb-12">
-                            $47,250,000
+                            ${{ number_format($currentNetWorth) }}
                         </h3>
 
                         <div class="d-flex gap-8 align-center">
-                            <p class="f-16 lh-18 clr-7BD09D">
-                                ▲ +$2,180,000 (+4.8%)
+                            <p class="f-16 lh-18 {{ $netWorthChange >= 0 ? 'clr-7BD09D' : 'text-danger' }}">
+                                {{ $netWorthChange >= 0 ? '▲ +' : '▼ ' }}${{ number_format(abs($netWorthChange)) }} ({{ ($netWorthChangePct >= 0 ? '+' : '') . number_format($netWorthChangePct, 1) }}%)
                             </p>
                             <p class="f-14 lh-16 neutral-300">
-                                vs. Prior Period (03/31/2025)
+                                vs. Prior Period ({{ $priorPeriodDate }})
                             </p>
                         </div>
                     </div>
                 </div>
+
+                {{-- 6-Period Trend Chart --}}
                 <div class="d-flex flex-col gap-8">
                     <h3 class="f-14 lh-16 white uppercase ls-054">
                         6-Period Statement Trend
@@ -84,10 +82,10 @@
                     </div>
                     <div class="d-flex align-center justify-space-between">
                         <p class="f-14 lh-14 clr-99ACB6">
-                            Q1-2024
+                            {{ $trendPeriods[0]['asOf'] ?? 'N/A' }}
                         </p>
                         <p class="f-14 lh-14 clr-99ACB6">
-                            Q2-2025
+                            {{ end($trendPeriods)['asOf'] ?? 'N/A' }}
                         </p>
                     </div>
                 </div>
@@ -100,6 +98,8 @@
             </div>
 
             <div class="d-grid gap-24 col-lg-2 w-100">
+
+                {{-- Total Assets Block --}}
                 <div class="bg-0B1417 p-32 br-12 border-E9E7DD-24 d-flex justify-space-between gap-24 w-100 flex-col">
                     <div class="d-flex gap-10 justify-space-between w-100">
                         <div class="d-flex gap-10 justify-space-between align-center">
@@ -108,13 +108,13 @@
                                     TOTAL ASSETS
                                 </p>
                                 <h3 class="f-24 lh-26 white">
-                                    $52,800,000
+                                    ${{ number_format($totalAssets) }}
                                 </h3>
                             </div>
                         </div>
                         <div class="d-flex flex-col gap-4">
-                            <p class="f-14 lh-16 clr-7BD09D right">
-                                ▲ +3.2%
+                            <p class="f-14 lh-16 {{ $assetChangePct >= 0 ? 'clr-7BD09D' : 'text-danger' }} right">
+                                {{ $assetChangePct >= 0 ? '▲ +' : '▼ ' }}{{ number_format(abs($assetChangePct), 1) }}%
                             </p>
                             <p class="f-11 lh-12 clr-99ACB6 right">
                                 vs. Q1
@@ -127,104 +127,33 @@
                             <div class="chart-center-text">ASSETS</div>
                         </div>
                         <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col w-100">
+                            @php
+                            $assetColors = ['bg-blue-400', 'bg-indigo', 'bg-EE60E0', 'light-pink', 'bg-AFCCA1'];
+                            @endphp
+                            @foreach($assetBreakdown as $index => $asset)
                             <div class="d-flex gap-10 align-center justify-space-between w-100">
                                 <div class="d-flex gap-8 align-center w-100">
-                                    <span class="bg-blue-400 w-8 h-8">
-
-                                    </span>
+                                    <span class="{{ $assetColors[$index % count($assetColors)] }} w-8 h-8"></span>
                                     <div class="right-col">
                                         <p class="f-13 lh-23 white">
-                                            Investments
+                                            {{ $asset['type'] }}
                                         </p>
                                     </div>
                                 </div>
                                 <div>
                                     <p class="f-13 lh-14 white">
-                                        35%
+                                        {{ $asset['percentage'] }}%
                                     </p>
                                 </div>
                             </div>
-
-                            <div class="d-flex gap-10 align-center justify-space-between w-100">
-                                <div class="d-flex gap-8 align-center w-100">
-                                    <span class="bg-indigo w-8 h-8">
-
-                                    </span>
-                                    <div class="right-col">
-                                        <p class="f-13 lh-23 white">
-                                            Real Estate
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="f-13 lh-14 white">
-                                        28%
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex gap-10 align-center justify-space-between w-100">
-                                <div class="d-flex gap-8 align-center w-100">
-                                    <span class="bg-EE60E0 w-8 h-8">
-
-                                    </span>
-                                    <div class="right-col">
-                                        <p class="f-13 lh-23 white">
-                                            Concentrated Stock
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="f-13 lh-14 white">
-                                        22%
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex gap-10 align-center justify-space-between w-100">
-                                <div class="d-flex gap-8 align-center w-100">
-                                    <span class="light-pink w-8 h-8">
-
-                                    </span>
-                                    <div class="right-col">
-                                        <p class="f-13 lh-23 white">
-                                            Cash & Equivalents
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="f-13 lh-14 white">
-                                        8%
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex gap-10 align-center justify-space-between w-100">
-                                <div class="d-flex gap-8 align-center w-100">
-                                    <span class="bg-AFCCA1 w-8 h-8">
-
-                                    </span>
-                                    <div class="right-col">
-                                        <p class="f-13 lh-23 white">
-                                            Other / Alternatives
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="f-13 lh-14 white">
-                                        7%
-                                    </p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="border-bottom-334155">
-
-                    </div>
+                    <div class="border-bottom-334155"></div>
                     <a href="#" class="cus-link gap-4 f-14 d-flex">View Asset Details <span>→</span></a>
                 </div>
 
-
+                {{-- Total Liabilities Block --}}
                 <div class="bg-0B1417 p-32 br-12 border-E9E7DD-24 d-flex justify-space-between gap-24 w-100 flex-col">
                     <div class="d-flex gap-10 justify-space-between w-100">
                         <div class="d-flex gap-10 justify-space-between align-center">
@@ -233,13 +162,13 @@
                                     TOTAL LIABILITIES
                                 </p>
                                 <h3 class="f-24 lh-26 white">
-                                    $5,550,000
+                                    ${{ number_format($totalLiabilities) }}
                                 </h3>
                             </div>
                         </div>
                         <div class="d-flex flex-col gap-4">
-                            <p class="f-14 lh-16 clr-7BD09D right clr-yellow-300">
-                                ▼ -2.1%
+                            <p class="f-14 lh-16 {{ $liabilityChangePct <= 0 ? 'clr-7BD09D' : 'clr-yellow-300' }} right">
+                                {{ $liabilityChangePct >= 0 ? '▲ +' : '▼ ' }}{{ number_format($liabilityChangePct, 1) }}%
                             </p>
                             <p class="f-11 lh-12 clr-99ACB6 right">
                                 vs. Q1
@@ -252,207 +181,114 @@
                             <div class="chart-center-text">DEBT</div>
                         </div>
                         <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col w-100">
+                            @php
+                            $liabilityColors = ['bg-blue-400', 'bg-indigo', 'bg-EE60E0', 'light-pink', 'bg-AFCCA1'];
+                            @endphp
+                            @foreach($liabilityBreakdown as $index => $liability)
                             <div class="d-flex gap-10 align-center justify-space-between w-100">
                                 <div class="d-flex gap-8 align-center w-100">
-                                    <span class="bg-blue-400 w-8 h-8">
-
-                                    </span>
+                                    <span class="{{ $liabilityColors[$index % count($liabilityColors)] }} w-8 h-8"></span>
                                     <div class="right-col">
                                         <p class="f-13 lh-23 white">
-                                            Mortgages
+                                            {{ $liability['type'] }}
                                         </p>
                                     </div>
                                 </div>
                                 <div>
                                     <p class="f-13 lh-14 white">
-                                        54%
+                                        {{ $liability['percentage'] }}%
                                     </p>
                                 </div>
                             </div>
-
-                            <div class="d-flex gap-10 align-center justify-space-between w-100">
-                                <div class="d-flex gap-8 align-center w-100">
-                                    <span class="bg-indigo w-8 h-8">
-
-                                    </span>
-                                    <div class="right-col">
-                                        <p class="f-13 lh-23 white">
-                                            Securities-Backed
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="f-13 lh-14 white">
-                                        18%
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex gap-10 align-center justify-space-between w-100">
-                                <div class="d-flex gap-8 align-center w-100">
-                                    <span class="bg-EE60E0 w-8 h-8">
-
-                                    </span>
-                                    <div class="right-col">
-                                        <p class="f-13 lh-23 white">
-                                            Business Debt
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="f-13 lh-14 white">
-                                        14%
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex gap-10 align-center justify-space-between w-100">
-                                <div class="d-flex gap-8 align-center w-100">
-                                    <span class="light-pink w-8 h-8">
-
-                                    </span>
-                                    <div class="right-col">
-                                        <p class="f-13 lh-23 white">
-                                            Lifestyle Financing
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="f-13 lh-14 white">
-                                        10%
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex gap-10 align-center justify-space-between w-100">
-                                <div class="d-flex gap-8 align-center w-100">
-                                    <span class="bg-AFCCA1 w-8 h-8">
-
-                                    </span>
-                                    <div class="right-col">
-                                        <p class="f-13 lh-23 white">
-                                            Personal / Consumer
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="f-13 lh-14 white">
-                                        4%
-                                    </p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="border-bottom-334155">
-
-                    </div>
+                    <div class="border-bottom-334155"></div>
                     <a href="#" class="cus-link gap-4 f-14 d-flex">View Liability Details <span>→</span></a>
                 </div>
             </div>
+
+            {{-- Key Financial Indicators & Alerts Section --}}
             <div class="d-grid gap-24 col-lg-2 w-100 align-flex-start">
                 <div class="bg-0B1417 border-E9E7DD-24 p-32-24 d-flex flex-col gap-20 br-12">
                     <h2 class="f-16 lh-12 white-80">
                         Key Financial Health Indicators
                     </h2>
                     <div class="d-grid gap-16 col-lg-3">
-                        <div class="bg-C5A059-5 border-C5A059-30 br-8 p-16 d-flex gap-8 flex-col">
-                            <p class="f-11 lh-12 clr-99ACB6">
-                                Liquidity Ratio
-                            </p>
+
+                        {{-- Liquidity Ratio --}}
+                        <div class="{{ $indicators['liquidity']['is_warning'] ? 'bg-C5A059-5 border-C5A059-30' : 'bg-0B1417 border-334155' }} br-8 p-16 d-flex gap-8 flex-col">
+                            <p class="f-11 lh-12 clr-99ACB6">Liquidity Ratio</p>
                             <div class="d-flex gap-8 align-center">
-                                <p class="f-16 lh-18 white">
-                                    12%
-                                </p>
+                                <p class="f-16 lh-18 white">{{ $indicators['liquidity']['value'] }}</p>
+                                @if($indicators['liquidity']['is_warning'])
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
                                     <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
                                 </svg>
+                                @endif
                             </div>
-                            <p class="f-13 lh-18 white-80">
-                                Target: >15% Liquid Assets
-                            </p>
+                            <p class="f-13 lh-18 white-80">{{ $indicators['liquidity']['target'] }}</p>
                         </div>
 
+                        {{-- Debt-to-Asset --}}
                         <div class="bg-0B1417 border-334155 br-8 p-16 d-flex gap-8 flex-col">
-                            <p class="f-11 lh-12 clr-99ACB6">
-                                Debt-to-Asset
-                            </p>
+                            <p class="f-11 lh-12 clr-99ACB6">Debt-to-Asset</p>
                             <div class="d-flex gap-8 align-center">
-                                <p class="f-16 lh-18 white">
-                                    10.5%
-                                </p>
+                                <p class="f-16 lh-18 white">{{ $indicators['debt_to_asset']['value'] }}</p>
                             </div>
-                            <p class="f-13 lh-18 white-80">
-                                Conservative Tier (< 20%)
-                                    </p>
+                            <p class="f-13 lh-18 white-80">{{ $indicators['debt_to_asset']['subtext'] }}</p>
                         </div>
 
-                        <div class="bg-C5A059-5 border-C5A059-30 br-8 p-16 d-flex gap-8 flex-col">
-                            <p class="f-11 lh-12 clr-99ACB6">
-                                Concentration Risk
-                            </p>
+                        {{-- Concentration Risk --}}
+                        <div class="{{ $indicators['concentration']['is_warning'] ? 'bg-C5A059-5 border-C5A059-30' : 'bg-0B1417 border-334155' }} br-8 p-16 d-flex gap-8 flex-col">
+                            <p class="f-11 lh-12 clr-99ACB6">Concentration Risk</p>
                             <div class="d-flex gap-8 align-center">
-                                <p class="f-16 lh-18 white">
-                                    24%
-                                </p>
+                                <p class="f-16 lh-18 white">{{ $indicators['concentration']['value'] }}</p>
+                                @if($indicators['concentration']['is_warning'])
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
                                     <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
                                 </svg>
+                                @endif
                             </div>
-                            <p class="f-13 lh-18 white-80">
-                                XYZ Corp Exceeds 15% Cap
-                            </p>
+                            <p class="f-13 lh-18 white-80">{{ $indicators['concentration']['subtext'] }}</p>
                         </div>
 
-
+                        {{-- Fixed / Variable Rate --}}
                         <div class="bg-0B1417 border-334155 br-8 p-16 d-flex gap-8 flex-col">
-                            <p class="f-11 lh-12 clr-99ACB6">
-                                Fixed / Variable Rate
-                            </p>
+                            <p class="f-11 lh-12 clr-99ACB6">Fixed / Variable Rate</p>
                             <div class="d-flex gap-8 align-center">
-                                <p class="f-16 lh-18 white">
-                                    62% / 38%
-                                </p>
+                                <p class="f-16 lh-18 white">{{ $indicators['fixed_variable']['value'] }}</p>
                             </div>
-                            <p class="f-13 lh-18 white-80">
-                                Variable exposure monitored
-                            </p>
+                            <p class="f-13 lh-18 white-80">{{ $indicators['fixed_variable']['subtext'] }}</p>
                         </div>
 
+                        {{-- Undrawn Credit --}}
                         <div class="bg-0B1417 border-334155 br-8 p-16 d-flex gap-8 flex-col">
-                            <p class="f-11 lh-12 clr-99ACB6">
-                                Undrawn Credit
-                            </p>
+                            <p class="f-11 lh-12 clr-99ACB6">Undrawn Credit</p>
                             <div class="d-flex gap-8 align-center">
-                                <p class="f-16 lh-18 white">
-                                    $2,450,000
-                                </p>
+                                <p class="f-16 lh-18 white">{{ $indicators['undrawn_credit']['value'] }}</p>
                             </div>
-                            <p class="f-13 lh-18 white-80">
-                                Immediate Liquidity Access
-                            </p>
+                            <p class="f-13 lh-18 white-80">{{ $indicators['undrawn_credit']['subtext'] }}</p>
                         </div>
 
+                        {{-- 12-Mo Maturities --}}
                         <div class="bg-0B1417 border-334155 br-8 p-16 d-flex gap-8 flex-col">
-                            <p class="f-11 lh-12 clr-99ACB6">
-                                12-Mo Maturities
-                            </p>
+                            <p class="f-11 lh-12 clr-99ACB6">12-Mo Maturities</p>
                             <div class="d-flex gap-8 align-center">
-                                <p class="f-16 lh-18 white">
-                                    $875,000
-                                </p>
+                                <p class="f-16 lh-18 white">{{ $indicators['maturities_12mo']['value'] }}</p>
                             </div>
-                            <p class="f-13 lh-18 white-80">
-                                Refinancing scheduled
-                            </p>
+                            <p class="f-13 lh-18 white-80">{{ $indicators['maturities_12mo']['subtext'] }}</p>
                         </div>
 
                     </div>
                 </div>
+
                 <div class="bg-0B1417 border-E9E7DD-24 p-32-24 d-flex flex-col gap-20 br-12">
                     <h2 class="f-16 lh-12 white-80">
                         Alerts & Items Requiring Attention
                     </h2>
                     <div class="d-flex gap-12 flex-col">
+                        @forelse($alerts as $alert)
                         <div class="d-flex gap-12 p-12 align-center bg-000A0F br-8 border-C5A059-30">
                             <div class="danger-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
@@ -460,42 +296,16 @@
                                 </svg>
                             </div>
                             <div class="cont f-13 lh-20 white">
-                                Concentrated stock position (XYZ Corp) at 24% of net worth - exceeds your family office threshold of 15%.
+                                {{ $alert }}
                             </div>
                         </div>
-                        <div class="d-flex gap-12 p-12 align-center bg-000A0F br-8 border-C5A059-30">
-                            <div class="danger-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
-                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
-                                </svg>
-                            </div>
-                            <div class="cont f-13 lh-20 white">
-                                SBLOC balance is approaching 65% LTV margin threshold (current: 58%). Alert trigger set at 60%.
-                            </div>
-                        </div>
-                        <div class="d-flex gap-12 p-12 align-center bg-000A0F br-8 border-C5A059-30">
-                            <div class="danger-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
-                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
-                                </svg>
-                            </div>
-                            <div class="cont f-13 lh-20 white">
-                                $875,000 in debt is maturing within 12 months. Requesting refinancing review.
-                            </div>
-                        </div>
-                        <div class="d-flex gap-12 p-12 align-center bg-000A0F br-8 border-C5A059-30">
-                            <div class="danger-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
-                                    <path d="M0.000355124 13.0938L7.7049 0.00284004L15.4094 13.0938H0.000355124ZM7.7049 11.6278C7.99657 11.6278 8.24467 11.5256 8.44922 11.321C8.65755 11.1127 8.76172 10.8627 8.76172 10.571C8.76172 10.2794 8.65755 10.0312 8.44922 9.8267C8.24467 9.61837 7.99657 9.5142 7.7049 9.5142C7.41323 9.5142 7.16323 9.61837 6.9549 9.8267C6.75036 10.0312 6.64808 10.2794 6.64808 10.571C6.64808 10.8627 6.75036 11.1127 6.9549 11.321C7.16323 11.5256 7.41323 11.6278 7.7049 11.6278ZM7.01172 8.23011H8.39808L8.50036 4.36648H6.90945L7.01172 8.23011Z" fill="#C5A059" />
-                                </svg>
-                            </div>
-                            <div class="cont f-13 lh-20 white">
-                                Estimated tax liability on unrealized gains is currently $1,850,000.
-                            </div>
-                        </div>
+                        @empty
+                        <p class="f-13 lh-20 clr-99ACB6">No active alerts requiring attention.</p>
+                        @endforelse
                     </div>
                 </div>
             </div>
+
             <div class="d-grid col-lg-3 gap-16 bg-0B1417 p-32-24">
                 <div class="cont">
                     <p class="f-12 lh-20 clr-EDECE4">
@@ -507,7 +317,96 @@
             </div>
         </div>
     </div>
-
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. Line Trend Chart
+        const trendPeriods = @json($trendPeriods);
+        const trendCtx = document.getElementById('trendChart').getContext('2d');
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: trendPeriods.map(item => item.asOf),
+                datasets: [{
+                    data: trendPeriods.map(item => item.netWorth),
+                    borderColor: '#7BD09D',
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    pointBackgroundColor: '#7BD09D',
+                    fill: false,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false
+                    },
+                    y: {
+                        display: false
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 2. Asset Donut Chart
+        const assetBreakdown = @json($assetBreakdown);
+        const assetsCtx = document.getElementById('assetsChart').getContext('2d');
+        new Chart(assetsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: assetBreakdown.map(item => item.type),
+                datasets: [{
+                    data: assetBreakdown.map(item => item.percentage),
+                    backgroundColor: ['#60A5FA', '#6366F1', '#EE60E0', '#F472B6', '#AFCCA1'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: '75%',
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // 3. Liabilities Donut Chart
+        const liabilityBreakdown = @json($liabilityBreakdown);
+        const liabilitiesCtx = document.getElementById('liabilitiesChart').getContext('2d');
+        new Chart(liabilitiesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: liabilityBreakdown.map(item => item.type),
+                datasets: [{
+                    data: liabilityBreakdown.map(item => item.percentage),
+                    backgroundColor: ['#60A5FA', '#6366F1', '#EE60E0', '#F472B6', '#AFCCA1'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: '75%',
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    });
+</script>
 
 @endsection

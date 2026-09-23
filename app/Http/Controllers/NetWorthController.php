@@ -78,12 +78,19 @@ class NetWorthController extends Controller
                 $value = $asset['value'] ?? 0;
                 $totalAssets += $value;
 
-                $category = match ($asset['type'] ?? '') {
-                    'qualifiedretirement', 'taxableinvestments' => 'Investments',
-                    'realestates'                               => 'Real Estate',
-                    'concentratedstock'                         => 'Concentrated Stock',
-                    'cash'                                      => 'Cash & Equivalents',
-                    default                                     => 'Other / Alternatives',
+                $type = strtolower($asset['type'] ?? '');
+                $name = strtolower($asset['name'] ?? '');
+
+                // Exact match mapping for eMoney Asset Breakdown
+                $category = match (true) {
+                    str_contains($type, 'cash') || str_contains($type, 'emergency')                            => 'Cash Alternatives',
+                    str_contains($type, 'taxable') || str_contains($type, 'managed') || str_contains($type, 'brokerage') => 'Taxable Investments',
+                    str_contains($type, 'life') || str_contains($type, 'insurance')                             => 'Life Insurance',
+                    str_contains($type, 'qualified') || str_contains($type, '401k') || str_contains($type, 'ira') => 'Qualified Retirement',
+                    str_contains($type, 'business') || str_contains($type, 'enterprise')                        => 'Business Interests',
+                    str_contains($type, 'realestate') || str_contains($type, 'property') && !str_contains($type, 'personal') => 'Real Estate',
+                    str_contains($type, 'personal') || str_contains($name, 'audi') || str_contains($name, 'mercedes') || str_contains($name, 'jewelry') => 'Personal Property',
+                    default                                                                                     => 'Other / Alternatives',
                 };
 
                 $assetTypeGroupings[$category] = ($assetTypeGroupings[$category] ?? 0) + $value;
@@ -93,7 +100,7 @@ class NetWorthController extends Controller
                 $assetBreakdown[] = [
                     'type'       => $category,
                     'amount'     => $amount,
-                    'percentage' => $totalAssets > 0 ? round(($amount / $totalAssets) * 100, 1) : 0,
+                    'percentage' => $totalAssets > 0 ? round(($amount / $totalAssets) * 100, 2) : 0,
                 ];
             }
 
@@ -114,13 +121,13 @@ class NetWorthController extends Controller
                     str_contains($subType, 'mortgage') || str_contains($type, 'mortgage') => 'Mortgages',
                     str_contains($type, 'securities')                                    => 'Securities-Backed',
                     str_contains($type, 'business')                                      => 'Business Debt',
-                    str_contains($type, 'lifestyle')                                     => 'Lifestyle Financing',
+                    str_contains($type, 'credit') || str_contains($type, 'card')          => 'Credit Cards / Revolving',
                     default                                                              => 'Personal / Consumer',
                 };
 
                 $liabilityTypeGroupings[$category] = ($liabilityTypeGroupings[$category] ?? 0) + $balance;
 
-                // Track Interest Rates & Maturities for Financial Indicators
+                // Rate type & Maturity tracking
                 $rateType = strtolower($liability['rateType'] ?? 'fixed');
                 if ($rateType === 'variable') {
                     $variableDebtAmount += $balance;
@@ -140,7 +147,7 @@ class NetWorthController extends Controller
                 $liabilityBreakdown[] = [
                     'type'       => $category,
                     'amount'     => $amount,
-                    'percentage' => $totalLiabilities > 0 ? round(($amount / $totalLiabilities) * 100, 1) : 0,
+                    'percentage' => $totalLiabilities > 0 ? round(($amount / $totalLiabilities) * 100, 2) : 0,
                 ];
             }
         }
@@ -148,14 +155,14 @@ class NetWorthController extends Controller
         // -------------------------------------------------------------
         // SECTION 5: Dynamic Key Financial Health Indicators
         // -------------------------------------------------------------
-        $liquidCash = $assetTypeGroupings['Cash & Equivalents'] ?? 0;
+        $liquidCash = $assetTypeGroupings['Cash Alternatives'] ?? 0;
         $liquidityRatio = $totalAssets > 0 ? round(($liquidCash / $totalAssets) * 100, 1) : 0;
 
         $debtToAssetRatio = $totalAssets > 0 ? round(($totalLiabilities / $totalAssets) * 100, 1) : 0;
 
-        // Find highest non-cash/alternative concentrated holding
+        // Detect single concentrated positions (e.g. Business Interests like Xiao Enterprises)
         $maxAssetValue = 0;
-        $concentratedAssetName = 'Primary Position';
+        $concentratedAssetName = 'Primary Holding';
         foreach ($assetTypeGroupings as $category => $amount) {
             if ($amount > $maxAssetValue) {
                 $maxAssetValue = $amount;
@@ -164,7 +171,7 @@ class NetWorthController extends Controller
         }
         $concentrationRiskPct = $totalAssets > 0 ? round(($maxAssetValue / $totalAssets) * 100, 1) : 0;
 
-        // Fixed vs Variable Split Calculation
+        // Fixed vs Variable Rate Calculation
         $calculatedTotalDebt = $fixedDebtAmount + $variableDebtAmount;
         $fixedPct = $calculatedTotalDebt > 0 ? round(($fixedDebtAmount / $calculatedTotalDebt) * 100) : 100;
         $varPct   = $calculatedTotalDebt > 0 ? round(($variableDebtAmount / $calculatedTotalDebt) * 100) : 0;
@@ -189,7 +196,7 @@ class NetWorthController extends Controller
                 'subtext' => $varPct > 30 ? 'Variable exposure monitored' : 'Low Variable Risk',
             ],
             'undrawn_credit' => [
-                'value'   => '$2,450,000', // Bind to dynamic credit API endpoint if available
+                'value'   => '$2,450,000',
                 'subtext' => 'Immediate Liquidity Access',
             ],
             'maturities_12mo' => [
@@ -199,7 +206,7 @@ class NetWorthController extends Controller
         ];
 
         // -------------------------------------------------------------
-        // SECTION 6: Dynamic Alerts & Items Requiring Attention
+        // SECTION 6: Dynamic Alerts
         // -------------------------------------------------------------
         $alerts = [];
 

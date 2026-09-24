@@ -46,7 +46,7 @@
         <div class="card-outer d-flex gap-24 align-flex-start flex-col">
 
             {{-- Top Consolidated Net Worth Banner --}}
-            <div class="bg-0B1417 p-32 br-12 border-E9E7DD-24 d-flex justify-space-between gap-10 w-100">
+            <div class="bg-0B1417 p-32 br-12 border-E9E7DD-24 d-flex justify-space-between gap-10 w-100 mb-24">
                 <div>
                     <div class="d-flex gap-8 align-center mb-28">
                         <p class="f-13 uppercase lh-14 clr-99ACB6">
@@ -73,28 +73,56 @@
                 </div>
 
                 {{-- 6-Period Trend Chart --}}
-                <div class="d-flex flex-col gap-8">
-                    <h3 class="f-14 lh-16 white uppercase ls-054">
-                        6-Period Statement Trend
-                    </h3>
-                    <div class="trend-chart-wrapper">
-                        <canvas id="trendChart"></canvas>
+                <div class="d-flex flex-col gap-8" style="min-width: 420px;">
+                    <div class="d-flex align-center justify-space-between mb-8">
+                        <p class="f-13 clr-99ACB6">
+                            Valuation Frequency: <strong class="white">Six-Period Interval</strong>
+                        </p>
+                        <span class="bg-C5A059-10 br-4 p-4-8 f-12 lh-12 clr-7BD09D border-7BD09D font-semibold">
+                            LATEST: ${{ number_format($currentNetWorth / 1000000, 2) }}M
+                        </span>
                     </div>
-                    <div class="d-flex align-center justify-space-between">
-                        <p class="f-14 lh-14 clr-99ACB6">
-                            {{ $trendPeriods[0]['asOf'] ?? 'N/A' }}
-                        </p>
-                        <p class="f-14 lh-14 clr-99ACB6">
-                            {{ end($trendPeriods)['asOf'] ?? 'N/A' }}
-                        </p>
+
+                    <div class="trend-chart-wrapper" style="height: 120px; position: relative;">
+                        <canvas id="trendChart"></canvas>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-0B1417 br-12 border-E9E7DD-24 p-32 d-flex gap-20 flex-col w-100">
-                <h2 class="f-16 lh-12 white-80">
+            <div class="bg-0B1417 p-24 br-12 border-E9E7DD-24 w-100 mb-24">
+                <p class="f-14 lh-16 white font-medium mb-16">
                     Net Worth Composition Stack
-                </h2>
+                </p>
+
+                <div class="d-flex align-center justify-space-between gap-16">
+                    {{-- Total Assets --}}
+                    <div class="bg-091012 p-20 br-8 border-E9E7DD-24 flex-1" style="min-width: 260px;">
+                        <p class="f-12 uppercase lh-14 clr-99ACB6 font-semibold mb-8">TOTAL ASSETS</p>
+                        <h4 class="f-22 lh-24 white font-bold">${{ number_format($totalAssets) }}</h4>
+                    </div>
+
+                    {{-- Minus Operator --}}
+                    <div class="br-50 bg-162024 d-flex align-center justify-center clr-99ACB6 font-bold f-18" style="width: 36px; height: 36px; flex-shrink: 0;">
+                        −
+                    </div>
+
+                    {{-- Total Liabilities --}}
+                    <div class="bg-091012 p-20 br-8 border-E9E7DD-24 flex-1" style="min-width: 260px;">
+                        <p class="f-12 uppercase lh-14 clr-99ACB6 font-semibold mb-8">TOTAL LIABILITIES</p>
+                        <h4 class="f-22 lh-24 clr-C5A059 font-bold">${{ number_format($totalLiabilities) }}</h4>
+                    </div>
+
+                    {{-- Equals Operator --}}
+                    <div class="br-50 bg-162024 d-flex align-center justify-center clr-99ACB6 font-bold f-18" style="width: 36px; height: 36px; flex-shrink: 0;">
+                        =
+                    </div>
+
+                    {{-- Net Worth Value --}}
+                    <div class="bg-0B1F1A p-20 br-8 border-7BD09D-40 flex-1" style="min-width: 260px;">
+                        <p class="f-12 uppercase lh-14 clr-7BD09D font-semibold mb-8">NET WORTH VALUE</p>
+                        <h4 class="f-22 lh-24 clr-7BD09D font-bold">${{ number_format($currentNetWorth) }}</h4>
+                    </div>
+                </div>
             </div>
 
             <div class="d-grid gap-24 col-lg-2 w-100">
@@ -127,13 +155,11 @@
                             <div class="chart-center-text">ASSETS</div>
                         </div>
                         <div class="assets-content d-flex gap-10 justify-space-between align-center flex-col w-100">
-                            @php
-                            $assetColors = ['bg-blue-400', 'bg-indigo', 'bg-EE60E0', 'light-pink', 'bg-AFCCA1'];
-                            @endphp
-                            @foreach($assetBreakdown as $index => $asset)
+                            @foreach($assetBreakdown as $asset)
                             <div class="d-flex gap-10 align-center justify-space-between w-100">
                                 <div class="d-flex gap-8 align-center w-100">
-                                    <span class="{{ $assetColors[$index % count($assetColors)] }} w-8 h-8"></span>
+                                    {{-- Color dot using the color key passed from controller --}}
+                                    <span class="w-8 h-8 d-inline-block br-2" style="background-color: {{ $asset['color'] ?? '#78909C' }}; flex-shrink: 0;"></span>
                                     <div class="right-col">
                                         <p class="f-13 lh-23 white">
                                             {{ $asset['type'] }}
@@ -142,7 +168,7 @@
                                 </div>
                                 <div>
                                     <p class="f-13 lh-14 white">
-                                        {{ $asset['percentage'] }}%
+                                        {{ number_format($asset['percentage'], 2) }}%
                                     </p>
                                 </div>
                             </div>
@@ -322,23 +348,25 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // 1. Line Trend Chart
-        const trendPeriods = @json($trendPeriods);
-        const trendCtx = document.getElementById('trendChart').getContext('2d');
-        new Chart(trendCtx, {
+        const ctx = document.getElementById('trendChart').getContext('2d');
+
+        new Chart(ctx, {
             type: 'line',
             data: {
-                labels: trendPeriods.map(item => item.asOf),
+                labels: @json($chartLabels),
                 datasets: [{
-                    data: trendPeriods.map(item => item.netWorth),
+                    data: @json($chartData),
                     borderColor: '#7BD09D',
                     borderWidth: 2,
-                    pointRadius: 3,
                     pointBackgroundColor: '#7BD09D',
-                    fill: false,
-                    tension: 0.3
+                    pointRadius: 3,
+                    tension: 0.3,
+                    fill: false
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         display: false
@@ -346,14 +374,31 @@
                 },
                 scales: {
                     x: {
-                        display: false
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#99ACB6',
+                            font: {
+                                size: 10
+                            }
+                        }
                     },
                     y: {
-                        display: false
+                        grid: {
+                            color: 'rgba(233, 231, 221, 0.1)'
+                        },
+                        ticks: {
+                            color: '#99ACB6',
+                            font: {
+                                size: 10
+                            },
+                            callback: function(val) {
+                                return (val / 1000000).toFixed(0) + 'M';
+                            }
+                        }
                     }
-                },
-                responsive: true,
-                maintainAspectRatio: false
+                }
             }
         });
 
@@ -366,7 +411,7 @@
                 labels: assetBreakdown.map(item => item.type),
                 datasets: [{
                     data: assetBreakdown.map(item => item.percentage),
-                    backgroundColor: ['#60A5FA', '#6366F1', '#EE60E0', '#F472B6', '#AFCCA1'],
+                    backgroundColor: assetBreakdown.map(item => item.color ?? '#78909C'),
                     borderWidth: 0
                 }]
             },

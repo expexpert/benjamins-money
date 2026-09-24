@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Bank;
 use App\Models\User;
+use App\Services\EMoneyService;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Log;
@@ -12,6 +13,13 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+    protected EMoneyService $eMoneyService;
+
+    public function __construct(EMoneyService $eMoneyService)
+    {
+        $this->eMoneyService = $eMoneyService;
+    }
+
     public function dashboard()
     {
         $totalUsers = User::count();
@@ -73,13 +81,43 @@ class AdminController extends Controller
         ]);
 
         try {
-            User::create([
+            $user =  User::create([
                 'name' => $validated['name'],
                 'email' => $validated['email'],
                 'password' => $validated['password'],
                 'role' => $validated['role'],
                 'email_verified_at' => now(),
             ]);
+
+
+            if (empty($user->emoney_client_id)) {
+                try {
+                    // Split full name into First & Last Name for eMoney API payload
+                    $nameParts = explode(' ', trim($validated['name']), 2);
+                    $firstName = $nameParts[0];
+                    $lastName = $nameParts[1] ?? 'User';
+
+                    $eMoneyPayload = [
+                        'client' => [
+                            'firstName' => $firstName,
+                            'lastName' => $lastName,
+                            'email' => $user->email,
+                        ],
+                    ];
+
+                    $eMoneyClient = $this->eMoneyService->createClient($eMoneyPayload);
+
+                    if (isset($eMoneyClient['id'])) {
+                        $user->update(['emoney_client_id' => $eMoneyClient['id']]);
+                    }
+                } catch (\Throwable $eMoneyException) {
+                    // Log error so local user creation succeeds even if eMoney fails
+                    Log::error('eMoney client creation failed during registration.', [
+                        'user_id' => $user->id,
+                        'error' => $eMoneyException->getMessage()
+                    ]);
+                }
+            }
         } catch (\Throwable $exception) {
             Log::error('Admin failed to create user.', ['exception' => $exception]);
 
@@ -134,16 +172,32 @@ class AdminController extends Controller
         }
 
         try {
+            // 1. Delete client from eMoney if emoney_client_id exists
+            if (!empty($user->emoney_client_id)) {
+                $eMoneyDeleted = $this->eMoneyService->deleteClient($user->emoney_client_id);
+
+                if (!$eMoneyDeleted) {
+                    return back()->withErrors([
+                        'error' => 'Unable to delete the client from eMoney API. Local user was not removed.'
+                    ]);
+                }
+            }
+
+            // 2. Delete local user from database
             $user->delete();
         } catch (\Throwable $exception) {
-            Log::error('Admin failed to delete user.', ['user_id' => $user->id, 'exception' => $exception]);
+            Log::error('Admin failed to delete user.', [
+                'user_id'   => $user->id,
+                'exception' => $exception->getMessage()
+            ]);
 
             return back()->withErrors(['error' => 'Unable to delete the user. Please try again.']);
         }
 
         return redirect()->route('admin.users')
-            ->with('success', 'User deleted successfully.');
+            ->with('success', 'User and associated eMoney client deleted successfully.');
     }
+
 
     public function toggleVerification(User $user)
     {

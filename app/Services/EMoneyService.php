@@ -168,6 +168,24 @@ class EMoneyService
     }
 
     /**
+     * Delete Client
+     */
+    public function deleteClient(string $clientId): bool
+    {
+        $response = $this->http()
+            ->delete("{$this->baseUrl}/public/v2/clients/{$clientId}");
+
+        if ($response->failed()) {
+            throw new Exception(
+                "Failed to delete eMoney client [{$clientId}]: " . $response->body()
+            );
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
      * Get Client By Email
      */
     public function getClientByEmail(string $email): array

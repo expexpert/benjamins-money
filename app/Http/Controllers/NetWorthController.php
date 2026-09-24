@@ -48,6 +48,32 @@ class NetWorthController extends Controller
         // 6-Period Trend Chart Data (Chronological: Left to Right)
         $trendPeriods = array_reverse(array_slice($summary, 0, 6));
 
+
+        $chartLabels = [];
+        $chartData   = [];
+
+        foreach ($trendPeriods as $period) {
+            $asOf = $period['asOf'] ?? null;
+            $formattedLabel = 'N/A';
+
+            if (!empty($asOf)) {
+                try {
+                    // Handle eMoney's 'm/Y' or 'n/Y' format (e.g. "4/2026")
+                    $formattedLabel = \Carbon\Carbon::createFromFormat('!n/Y', $asOf)->format('M Y');
+                } catch (\Throwable $e) {
+                    try {
+                        // Fallback for standard ISO / full date formats
+                        $formattedLabel = \Carbon\Carbon::parse($asOf)->format('M Y');
+                    } catch (\Throwable $e2) {
+                        $formattedLabel = $asOf; // Direct string fallback
+                    }
+                }
+            }
+
+            $chartLabels[] = $formattedLabel;
+            $chartData[]   = $period['netWorth'] ?? 0;
+        }
+
         // -------------------------------------------------------------
         // SECTION 2: Fetch Active Plan ID
         // Endpoint: GET /v2/clients/{clientId}/plans
@@ -96,11 +122,25 @@ class NetWorthController extends Controller
                 $assetTypeGroupings[$category] = ($assetTypeGroupings[$category] ?? 0) + $value;
             }
 
+            $assetColors = [
+                'Cash Alternatives'    => '#1A9E80',
+                'Taxable Investments' => '#F5B83D',
+                'Life Insurance'      => '#8E2A8C',
+                'Qualified Retirement' => '#3251A3',
+                'Business Interests'  => '#512DA8',
+                'Real Estate'         => '#F57C00',
+                'Personal Property'   => '#428BCA',
+                'Other / Alternatives' => '#78909C',
+            ];
+
+            // Structure the breakdown array with color attributes
+            $assetBreakdown = [];
             foreach ($assetTypeGroupings as $category => $amount) {
                 $assetBreakdown[] = [
                     'type'       => $category,
                     'amount'     => $amount,
                     'percentage' => $totalAssets > 0 ? round(($amount / $totalAssets) * 100, 2) : 0,
+                    'color'      => $assetColors[$category] ?? '#78909C',
                 ];
             }
 
@@ -228,6 +268,8 @@ class NetWorthController extends Controller
             'netWorthChangePct',
             'priorPeriodDate',
             'trendPeriods',
+            'chartLabels',
+            'chartData',
             'totalAssets',
             'assetChangePct',
             'assetBreakdown',

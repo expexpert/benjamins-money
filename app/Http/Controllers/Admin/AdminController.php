@@ -154,6 +154,26 @@ class AdminController extends Controller
         }
 
         try {
+
+            if (!empty($user->emoney_client_id)) {
+                try {
+                    $eMoneyPayload = [
+                        'client' => [
+                            'firstName' => explode(' ', trim($validated['name']), 2)[0],
+                            'lastName' => explode(' ', trim($validated['name']), 2)[1] ?? 'User',
+                            'email' => $validated['email'],
+                        ],
+                    ];
+
+                    $this->eMoneyService->updateClient($user->emoney_client_id, $eMoneyPayload);
+                } catch (\Throwable $eMoneyException) {
+                    Log::error('eMoney client update failed during user update.', [
+                        'user_id' => $user->id,
+                        'error' => $eMoneyException->getMessage()
+                    ]);
+                }
+            }
+
             $user->update($updateData);
         } catch (\Throwable $exception) {
             Log::error('Admin failed to update user.', ['user_id' => $user->id, 'exception' => $exception]);
@@ -172,16 +192,6 @@ class AdminController extends Controller
         }
 
         try {
-            // 1. Delete client from eMoney if emoney_client_id exists
-            if (!empty($user->emoney_client_id)) {
-                $eMoneyDeleted = $this->eMoneyService->deleteClient($user->emoney_client_id);
-
-                if (!$eMoneyDeleted) {
-                    return back()->withErrors([
-                        'error' => 'Unable to delete the client from eMoney API. Local user was not removed.'
-                    ]);
-                }
-            }
 
             // 2. Delete local user from database
             $user->delete();
@@ -195,7 +205,7 @@ class AdminController extends Controller
         }
 
         return redirect()->route('admin.users')
-            ->with('success', 'User and associated eMoney client deleted successfully.');
+            ->with('success', 'User deleted successfully.');
     }
 
 
@@ -262,6 +272,17 @@ class AdminController extends Controller
         }
 
         try {
+            // 1. Delete client from eMoney if emoney_client_id exists
+            if (!empty($user->emoney_client_id)) {
+                $eMoneyDeleted = $this->eMoneyService->deleteClient($user->emoney_client_id);
+
+                if (!$eMoneyDeleted) {
+                    return back()->withErrors([
+                        'error' => 'Unable to delete the client from eMoney API. Local user was not removed.'
+                    ]);
+                }
+            }
+
             $user->forceDelete();
         } catch (\Throwable $exception) {
             Log::error('Admin failed to permanently delete user.', ['user_id' => $user->id, 'exception' => $exception]);
@@ -270,7 +291,7 @@ class AdminController extends Controller
         }
 
         return redirect()->route('admin.users.trash')
-            ->with('success', 'User permanently deleted.');
+            ->with('success', 'User and associated eMoney client permanently deleted.');
     }
 
 

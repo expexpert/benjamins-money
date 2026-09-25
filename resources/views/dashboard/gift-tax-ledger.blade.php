@@ -466,10 +466,10 @@
 
             <div class="d-flex gap-8 flex-col">
                 <h3 class="f-18 lh-20 white">
-                    Annual Gift Tax Activity Ledger
+                    GST Tax Allocation Tracker
                 </h3>
                 <p class="f-14 lh-16 clr-8C8B85 mb-8">
-                    Detailed registry of historical wealth transfers and corresponding annual tax exclusions.
+                    Verify allocation of Generation-Skipping Transfer Tax exemptions across dynasty trust vehicles.
                 </p>
                 <div class="d-grid gap-20 col-lg-2">
                     <div class="p-24 bg-0C1215 br-12 d-flex gap-20 flex-col border-E9E7DD-15">
@@ -523,7 +523,7 @@
 
                                     </div>
                                     <p class="f-14 lh-16 white">
-                                        GST Lifetime Exemption
+                                        Smith Dynasty GST Trust
                                     </p>
                                 </div>
                                 <p class="f-14 lh-16 white">

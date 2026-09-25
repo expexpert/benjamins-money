@@ -122,6 +122,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.gift-tax-ledger');
     });
 
+    Route::get('/wealth-goals-overview', function () {
+        return view('dashboard.wealth-goals-overview');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

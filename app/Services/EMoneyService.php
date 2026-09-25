@@ -150,40 +150,6 @@ class EMoneyService
         return $response->json('resources') ?? [];
     }
 
-    /**
-     * Get Client
-     */
-    public function getClient(string $clientId): array
-    {
-        $response = $this->http()
-            ->get("{$this->baseUrl}/public/v2/clients/{$clientId}");
-
-        if ($response->failed()) {
-            throw new Exception(
-                "Failed to fetch eMoney client [{$clientId}]: " . $response->body()
-            );
-        }
-
-        return $response->json();
-    }
-
-    /**
-     * Delete Client
-     */
-    public function deleteClient(string $clientId): bool
-    {
-        $response = $this->http()
-            ->delete("{$this->baseUrl}/public/v2/clients/{$clientId}");
-
-        if ($response->failed()) {
-            throw new Exception(
-                "Failed to delete eMoney client [{$clientId}]: " . $response->body()
-            );
-            return false;
-        }
-
-        return true;
-    }
 
     /**
      * Get Client By Email
@@ -241,6 +207,60 @@ class EMoneyService
         }
 
         return $response->json();
+    }
+
+
+    /**
+     * Get Client
+     */
+    public function getClient(string $clientId): array
+    {
+        $response = $this->http()
+            ->get("{$this->baseUrl}/public/v2/clients/{$clientId}");
+
+        if ($response->failed()) {
+            throw new Exception(
+                "Failed to fetch eMoney client [{$clientId}]: " . $response->body()
+            );
+        }
+
+        return $response->json();
+    }
+
+
+    /**
+     * Update Client
+     */
+    public function updateClient(string $clientId, array $clientData): array
+    {
+        $response = $this->http()
+            ->put("{$this->baseUrl}/public/v2/clients/{$clientId}", $clientData);
+
+        if ($response->failed()) {
+            throw new Exception(
+                "Failed to update eMoney client [{$clientId}]: " . $response->body()
+            );
+        }
+
+        return $response->json();
+    }
+
+    /**
+     * Delete Client
+     */
+    public function deleteClient(string $clientId): bool
+    {
+        $response = $this->http()
+            ->delete("{$this->baseUrl}/public/v2/clients/{$clientId}");
+
+        if ($response->failed()) {
+            throw new Exception(
+                "Failed to delete eMoney client [{$clientId}]: " . $response->body()
+            );
+            return false;
+        }
+
+        return true;
     }
 
     /**

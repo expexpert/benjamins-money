@@ -96,31 +96,31 @@
 
                 <div class="d-flex align-center justify-space-between gap-16">
                     {{-- Total Assets --}}
-                    <div class="bg-091012 p-20 br-8 border-E9E7DD-24 flex-1" style="min-width: 260px;">
-                        <p class="f-12 uppercase lh-14 clr-99ACB6 font-semibold mb-8">TOTAL ASSETS</p>
-                        <h4 class="f-22 lh-24 white font-bold">${{ number_format($totalAssets) }}</h4>
+                    <div class="bg-000A0F p-12 br-8 border-E9E7DD-15 flex-1" style="min-width: 260px;">
+                        <p class="f-12 uppercase lh-14 clr-99ACB6 uppercase mb-16">TOTAL ASSETS</p>
+                        <h4 class="f-24 lh-26 clr-99D5FF bold">${{ number_format($totalAssets) }}</h4>
                     </div>
 
                     {{-- Minus Operator --}}
-                    <div class="br-50 bg-162024 d-flex align-center justify-center clr-99ACB6 font-bold f-18" style="width: 36px; height: 36px; flex-shrink: 0;">
+                    <div class="br-100 bg-white-7 d-flex align-center justify-center clr-99ACB6 font-bold f-18 w-40 h-40">
                         −
                     </div>
 
                     {{-- Total Liabilities --}}
-                    <div class="bg-091012 p-20 br-8 border-E9E7DD-24 flex-1" style="min-width: 260px;">
-                        <p class="f-12 uppercase lh-14 clr-99ACB6 font-semibold mb-8">TOTAL LIABILITIES</p>
-                        <h4 class="f-22 lh-24 clr-C5A059 font-bold">${{ number_format($totalLiabilities) }}</h4>
+                    <div class="bg-000A0F p-12 br-8 border-E9E7DD-15 flex-1" style="min-width: 260px;">
+                        <p class="f-12 uppercase lh-14 clr-99ACB6 uppercase mb-16">TOTAL LIABILITIES</p>
+                        <h4 class="f-24 lh-26 clr-yellow-300 bold">${{ number_format($totalLiabilities) }}</h4>
                     </div>
 
                     {{-- Equals Operator --}}
-                    <div class="br-50 bg-162024 d-flex align-center justify-center clr-99ACB6 font-bold f-18" style="width: 36px; height: 36px; flex-shrink: 0;">
+                    <div class="br-100 bg-white-7 d-flex align-center justify-center clr-99ACB6 font-bold f-18 w-40 h-40">
                         =
                     </div>
 
                     {{-- Net Worth Value --}}
-                    <div class="bg-0B1F1A p-20 br-8 border-7BD09D-40 flex-1" style="min-width: 260px;">
-                        <p class="f-12 uppercase lh-14 clr-7BD09D font-semibold mb-8">NET WORTH VALUE</p>
-                        <h4 class="f-22 lh-24 clr-7BD09D font-bold">${{ number_format($currentNetWorth) }}</h4>
+                    <div class="bg-23B05B-7 p-12 br-8 border-A7DFBD-24 flex-1" style="min-width: 260px;">
+                        <p class="f-12 uppercase lh-14 clr-A7DFBD bold mb-16">NET WORTH VALUE</p>
+                        <h4 class="f-24 lh-26 clr-A7DFBD bold">${{ number_format($currentNetWorth) }}</h4>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="d-grid gap-24 asset-grid chart-body">
+                    <div class="d-grid gap-60 asset-grid chart-body">
                         <div class="chart-canvas-wrapper">
                             <canvas class="total-assets" id="assetsChart"></canvas>
                             <div class="chart-center-text">ASSETS</div>

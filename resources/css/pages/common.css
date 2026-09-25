@@ -2353,11 +2353,6 @@ span.risk-card-arrow svg {
     transition: 0.5s ease-in-out;
 }
 
-.asset-grid {
-    grid-template-columns: 110px 1fr;
-}
-
-
 
 
 /* Card Container */
@@ -2417,7 +2412,8 @@ span.risk-card-arrow svg {
 /* Layout & Grid Setup */
 .asset-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+    grid-template-columns: 140px 1fr;
 }
 
 .financial-card {
@@ -2470,12 +2466,12 @@ span.risk-card-arrow svg {
     margin-top: 2px;
 }
 
-.chart-body {
+/* .chart-body {
     display: flex;
     align-items: center;
     gap: 24px;
     margin-bottom: 20px;
-}
+} */
 
 /* Wrapper required for absolute positioning of text over canvas */
 .chart-canvas-wrapper {
@@ -2943,6 +2939,33 @@ body.modal-open {
     border-radius: 50%;
     opacity: 1;
     filter: blur(2px);
+}
+
+.tablecontainer.gift-table table {
+    border-spacing: 0;
+    /* border: 1px solid #fff; */
+}
+
+.tablecontainer.gift-table table th {
+    border-top: 1px solid rgba(233, 231, 221, 15%);
+    border-bottom: 1px solid rgba(233, 231, 221, 15%);
+}
+
+.tablecontainer.gift-table table th:first-child {
+    border-left: 1px solid rgba(233, 231, 221, 15%);
+}
+
+.tablecontainer.gift-table table th:last-child {
+    border-right: 1px solid rgba(233, 231, 221, 15%);
+    border-radius: 0 12px 0 0;
+}
+
+.tablecontainer.gift-table table tr td:first-child {
+    border-left: 1px solid rgba(233, 231, 221, 15%);
+}
+
+.tablecontainer.gift-table table tr td:last-child {
+    border-right: 1px solid rgba(233, 231, 221, 15%);
 }
 
 /* Responsive */

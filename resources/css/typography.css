@@ -986,6 +986,10 @@ h6 {
     gap: 48px;
 }
 
+.gap-60 {
+    gap: 60px;
+}
+
 .gap-64 {
     gap: 64px;
 }
@@ -1522,7 +1526,7 @@ h6 {
     grid-template-columns: 1fr 2.5fr;
 }
 
-.col-08-1{
+.col-08-1 {
     grid-template-columns: 0.8fr 1fr;
 }
 
@@ -1759,8 +1763,12 @@ p {
     border: 1px solid #047857;
 }
 
-.border-108476{
+.border-108476 {
     border: 1px solid #108476;
+}
+
+.border-A7DFBD-24 {
+    border: 1px solid rgba(167, 223, 189, 24%);
 }
 
 .org-white {
@@ -1840,6 +1848,10 @@ p {
 .bg-gray {
     background: rgba(21, 121, 61, 8%);
     border-radius: 8px;
+}
+
+.bg-23B05B-7 {
+    background-color: rgba(35, 176, 91, 7.84%);
 }
 
 .bg-00131D {
@@ -2455,6 +2467,10 @@ textarea {
     color: #00CB3B;
 }
 
+.clr-99D5FF {
+    color: #99D5FF;
+}
+
 .clr-92400E {
     color: #92400E;
 }
@@ -2527,6 +2543,14 @@ textarea {
     background-color: rgba(245, 166, 35, 12%);
 }
 
+.bg-white-7 {
+    background-color: rgba(255, 255, 255, 7.84%);
+}
+
 .border-F5A623-20 {
     border: 1px solid rgba(245, 166, 35, 20%);
+}
+
+.flex-1{
+    flex: 1;
 }

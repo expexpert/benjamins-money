@@ -5,11 +5,16 @@
 @section('content')
 
 <div class="heading-bar d-flex justify-space-between">
-    <div class="breadcrumb">
-        <a class="d-flex gap-8 f-16 neutral-300" href="/">
-            <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
+    <div class="breadcrumb d-flex gap-8">
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
             Dashboard
         </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="f-16 lh-18 white">
+            Asset Allocation
+        </p>
     </div>
     <ul class="status d-flex gap-14">
         <li class="active d-flex gap-10 align-center">
@@ -598,6 +603,59 @@
                 </div>
             </div>
 
+            <div class="border-E9E7DD-15 p-32 br-16 d-flex flex-col gap-16">
+                <h3 class="f-16 lh-11 white-80">
+                    Connect with us
+                </h3>
+
+                <div class="p-40 bg-0B1417 br-12 border-E9E7DD-15">
+                    <div class="d-grid col-lg-2 gap-40">
+                        <div class="left d-flex gap-12 flex-col">
+                            <h3 class="f-20 lh-22 white">
+                                Connect with your advisor
+                            </h3>
+                            <p class="f-16 lh-20 clr-4FC07C">
+                                Your portfolio remains high concentration in Amazon stock.
+                            </p>
+                            <p class="f-14 lh-22 white-80">
+                                A review with your advisor can help evaluate diversification opportunities, tax considerations, and progress toward your long-term financial goals.
+                            </p>
+                        </div>
+
+                        <div class="right-box d-flex gap-16 flex-col">
+                            <div class="d-flex gap-12 align-center">
+                                <span class="w-6 h-6 br-100 bg-4FC07C">
+
+                                </span>
+                                <p class="f-14 lh-18 white-80">Get tailored recommendations to align with your goals.</p>
+                            </div>
+
+                            <div class="d-flex gap-12 align-center">
+                                <span class="w-6 h-6 br-100 bg-4FC07C">
+
+                                </span>
+                                <p class="f-14 lh-18 white-80">Explore ways to lower single-stock exposure.</p>
+                            </div>
+
+                            <div class="d-flex gap-12 align-center">
+                                <span class="w-6 h-6 br-100 bg-4FC07C">
+
+                                </span>
+                                <p class="f-14 lh-18 white-80">Build a more balanced and resilient portfolio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendly-cus-outer">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/design-1787fp/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0b1417&text_color=e9e7dd&primary_color=e9e7dd"
+                            style="position: relative; width: 100%; height: 500px;">
+                        </div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+                </div>
+            </div>
 
 
         </div>

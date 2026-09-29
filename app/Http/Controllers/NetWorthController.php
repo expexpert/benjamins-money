@@ -30,7 +30,10 @@ class NetWorthController extends Controller
         $currentRecord  = $summary[0] ?? ['netWorth' => 0, 'totalAssets' => 0, 'totalLiabilities' => 0, 'asOf' => 'N/A'];
         $previousRecord = $summary[1] ?? ['netWorth' => 0, 'totalAssets' => 0, 'totalLiabilities' => 0, 'asOf' => 'N/A'];
 
-        $currentNetWorth   = $currentRecord['netWorth'] ?? 0;
+        $totalAssets      = $currentRecord['assets'] ?? 0;
+        $totalLiabilities = $currentRecord['liabilities'] ?? 0;
+        $currentNetWorth  = $currentRecord['netWorth'] ?? ($totalAssets - $totalLiabilities);
+
         $priorNetWorth     = $previousRecord['netWorth'] ?? 0;
         $netWorthChange    = $currentNetWorth - $priorNetWorth;
         $netWorthChangePct = $priorNetWorth > 0 ? ($netWorthChange / $priorNetWorth) * 100 : 0;
@@ -85,7 +88,6 @@ class NetWorthController extends Controller
         $assetBreakdown = [];
         $assetTypeGroupings = [];
 
-        $totalLiabilities = 0;
         $liabilityBreakdown = [];
         $liabilityTypeGroupings = [];
 
@@ -152,7 +154,6 @@ class NetWorthController extends Controller
 
             foreach ($rawLiabilities as $liability) {
                 $balance = $liability['currentBalance'] ?? 0;
-                $totalLiabilities += $balance;
 
                 $subType = strtolower($liability['subType'] ?? '');
                 $type    = strtolower($liability['type'] ?? '');

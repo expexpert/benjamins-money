@@ -1161,7 +1161,7 @@
                     <h3 class="f-13 lh-14 clr-99ACB6 uppercase">
                         Recommended Threshold
                     </h3>
-                    <p class="f-16 lh-18 clr-FCA5A5">
+                    <p class="f-16 lh-18 white">
                         10.0% - 15.0%
                     </p>
                     <p class="f-12 lh-14 neutral-300">

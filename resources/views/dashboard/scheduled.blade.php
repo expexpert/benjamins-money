@@ -4,12 +4,24 @@
 
 @section('content')
 
-<div class="heading-bar d-flex justify-space-between">
-    <div class="breadcrumb">
-        <a class="d-flex gap-8 f-16 neutral-300" href="/compliance">
-            <img src="{{ asset('images/prev-arrow.svg') }}" alt="search icon">
-            Compliance
+<div class="heading-bar d-flex justify-space-between align-center">
+    <div class="breadcrumb d-flex gap-8">
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/') }}">
+            Dashboard
         </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <a class="d-flex gap-8 f-16 lh-18 neutral-300" href="{{ url('/compliance') }}">
+            Compliance Audit
+        </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.9987 2.66406L11.332 7.9974L5.9987 13.3307" stroke="#E9E7DD" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="f-16 lh-18 white">
+            Scheduled
+        </p>
+
     </div>
     <ul class="status d-flex gap-14">
         <li class="active d-flex gap-10 align-center">
@@ -135,7 +147,7 @@
             </div>
         </div>
 
-        <div class="d-grid col-lg-2 gap-26">
+        <div class="d-grid col-lg-2 gap-26 mb-48">
 
             <div class="col-outer">
                 <h3 class="f-16 lh-12 white-80 mb-16">
@@ -237,7 +249,7 @@
                         <div class="border-bottom-white-24">
 
                         </div>
-                        <div class="d-flex gap-10 justify-space-between">
+                        <!-- <div class="d-flex gap-10 justify-space-between">
                             <h4 class="f-12 lh-16 clr-99ACB6 uppercase">
                                 Price floor
                             </h4>
@@ -247,7 +259,7 @@
                         </div>
                         <div class="border-bottom-white-24">
 
-                        </div>
+                        </div> -->
                         <div class="d-flex gap-10 justify-space-between">
                             <h4 class="f-12 lh-16 clr-99ACB6 uppercase">
                                 Fica
@@ -297,7 +309,7 @@
                                     </h3>
                                 </div>
                             </div>
-                            <div class="d-flex gap-12">
+                            <div class="d-flex gap-16 align-center">
                                 <div class="notification-outer">
                                     <img src="{{ asset('images/dollar-green.svg') }}" alt="weight icon">
                                 </div>
@@ -317,13 +329,19 @@
                                     Trade Executed
                                 </div>
                                 <div class="img-outer d-flex align-center">
-                                    <img src="{{ asset('images/long-arrow.svg') }}" alt="arrow">
+                                    <!-- <img src="{{ asset('images/long-arrow.svg') }}" alt="arrow"> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none">
+                                        <path d="M19 7L1 7M13 1L19 7L13 13" stroke="#A7DFBD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
                                 </div>
                                 <div class="f-16 lh-20 white">
                                     Taxes withheld
                                 </div>
                                 <div class="img-outer d-flex align-center">
-                                    <img src="{{ asset('images/long-arrow.svg') }}" alt="arrow">
+                                    <!-- <img src="{{ asset('images/long-arrow.svg') }}" alt="arrow"> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none">
+                                        <path d="M19 7L1 7M13 1L19 7L13 13" stroke="#A7DFBD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
                                 </div>
                                 <div class="f-16 lh-20 white">
                                     cash deposited
@@ -336,7 +354,12 @@
 
                         <div class="d-grid col-lg-2 gap-30">
                             <a href="#" class="btn btn-green-outlined p-10-21 f-14 d-flex justify-center bold">Notify Advisor</a>
-                            <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-prm-900 justify-center bold">Sync to Calendar</a>
+                            <a href="#" class="btn btn-green p-10-21 f-14 d-flex clr-prm-900 justify-center bold align-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                    <path d="M2.95833 5.87542V3.5419C2.95833 2.76829 3.26562 2.02637 3.81261 1.47934C4.35959 0.932315 5.10145 0.625 5.875 0.625C6.64855 0.625 7.39041 0.932315 7.93739 1.47934C8.48438 2.02637 8.79167 2.76829 8.79167 3.5419V5.87542M1.79167 5.87542H9.95833C10.6027 5.87542 11.125 6.3978 11.125 7.04218V11.1258C11.125 11.7702 10.6027 12.2926 9.95833 12.2926H1.79167C1.14733 12.2926 0.625 11.7702 0.625 11.1258V7.04218C0.625 6.3978 1.14733 5.87542 1.79167 5.87542Z" stroke="#101010" stroke-width="1.25" stroke-linecap="round"></path>
+                                </svg>
+                                Sync to Calendar
+                            </a>
                         </div>
                     </div>
                 </div>

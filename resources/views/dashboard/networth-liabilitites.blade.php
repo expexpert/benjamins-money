@@ -61,7 +61,7 @@
         <div class="d-grid gap-24 col-2-1 align-flex-start">
             <div class="d-flex flex-col gap-32 w-100">
                 <div class="d-flex flex-col gap-16 w-100">
-                    <div class="bg-0B1417 br-16 border-E9E7DD-24 p-32-24 d-flex justify-space-between align-end">
+                    <div class="bg-0B1417 br-16 border-E9E7DD-24 p-16 d-flex justify-space-between align-end">
                         <div class="left">
                             <p class="f-13 lh-14 clr-99ACB6 mb-8 uppercase">
                                 Consolidated Debt Outstanding
@@ -87,7 +87,7 @@
 
                     <div class="d-flex flex-col gap-24">
 
-                        <div class="risk-card bg-0B1417 br-12 border-E9E7DD-24 p-32-24">
+                        <div class="risk-card bg-0B1417 br-12 border-E9E7DD-24 p-16">
                             <div class="risk-card-header d-flex align-center gap-10 justify-space-between">
                                 <div>
                                     <div class="risk-title f-16 lh-18 white d-flex align-center gap-8 mb-8">
@@ -253,7 +253,7 @@
                             </div>
                         </div>
 
-                        <div class="risk-card bg-0B1417 br-12 border-E9E7DD-24 p-32-24">
+                        <div class="risk-card bg-0B1417 br-12 border-E9E7DD-24 p-16">
                             <div class="risk-card-header d-flex align-center gap-10 justify-space-between">
                                 <div>
                                     <div class="risk-title f-16 lh-18 white d-flex align-center gap-8 mb-8">
@@ -424,7 +424,7 @@
                             </div>
                         </div>
 
-                        <div class="risk-card bg-0B1417 br-12 border-E9E7DD-24 p-32-24">
+                        <div class="risk-card bg-0B1417 br-12 border-E9E7DD-24 p-16">
                             <div class="risk-card-header d-flex align-center gap-10 justify-space-between">
                                 <div>
                                     <div class="risk-title f-16 lh-18 white d-flex align-center gap-8 mb-8">
@@ -661,7 +661,7 @@
                         </div>
 
 
-                        <div class="risk-card bg-0B1417 br-12 border-E9E7DD-24 p-32-24">
+                        <div class="risk-card bg-0B1417 br-12 border-E9E7DD-24 p-16">
                             <div class="risk-card-header d-flex align-center gap-10 justify-space-between">
                                 <div>
                                     <div class="risk-title f-16 lh-18 white d-flex align-center gap-8 mb-8">
@@ -897,7 +897,7 @@
 
                         </div>
 
-                     
+
 
                     </div>
 
@@ -914,25 +914,25 @@
                 </div>
                 <div class="d-flex gap-5 flex-col">
                     <h3 class="f-13 lh-14 clr-99ACB6 uppercase">
-                        Current Exposure (XYZ Corp)
+                        Primary Mortgage Ratio
                     </h3>
                     <p class="f-16 lh-18 clr-FCA5A5">
-                        24.0%
+                        33.4%
                     </p>
                     <p class="f-12 lh-14 neutral-300">
-                        Against Consolidated Assets
+                        Against Consolidated Debt
                     </p>
                 </div>
 
                 <div class="d-flex gap-5 flex-col">
                     <h3 class="f-13 lh-14 clr-99ACB6 uppercase">
-                        Recommended Threshold
+                        Optimal Debt-to-Asset Limit
                     </h3>
-                    <p class="f-16 lh-18 clr-FCA5A5">
-                        10.0% - 15.0%
+                    <p class="f-16 lh-18 white">
+                        15.0% - 20.0%
                     </p>
                     <p class="f-12 lh-14 neutral-300">
-                        Target risk limit for diversification
+                        Target limit for leverage risk
                     </p>
                 </div>
                 <div class="border-bottom-1D2C35">
@@ -949,7 +949,7 @@
                             </svg>
                         </span>
                         <p class="f-13 lh-20 white">
-                            Implement a 10b5-1 Trading Plan to schedule orderly liquidations post-blackout (Sept 2025).
+                            Primary Mortgage Refinancing lock-in fixed rates to protect cash-flow from upcoming interest shocks.
                         </p>
                     </div>
                     <div class="d-flex gap-8 align-center">
@@ -959,7 +959,7 @@
                             </svg>
                         </span>
                         <p class="f-13 lh-20 white">
-                            Collateral Swap Review to transition SBLOC collateral away from XYZ Corp to diversified pools.
+                            Deleveraging Strategy: pay down high-interest lines of credit to lower total leverage to &lt;15%.
                         </p>
                     </div>
                     <div class="d-flex gap-8 align-center">
@@ -969,7 +969,7 @@
                             </svg>
                         </span>
                         <p class="f-13 lh-20 white">
-                            Hedging & Collar Strategies using equity derivatives to mitigate downside during restricted windows.
+                            Collateral Security Audit review XYZ Corp pledge constraints against margin loan limits.
                         </p>
                     </div>
                 </div>

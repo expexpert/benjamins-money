@@ -94,7 +94,7 @@
                     Net Worth Composition Stack
                 </p>
 
-                <div class="d-flex align-center justify-space-between gap-16">
+                <div class="d-flex align-center justify-space-between gap-42">
                     {{-- Total Assets --}}
                     <div class="bg-000A0F p-12 br-8 border-E9E7DD-15 flex-1" style="min-width: 260px;">
                         <p class="f-12 uppercase lh-14 clr-99ACB6 uppercase mb-16">TOTAL ASSETS</p>

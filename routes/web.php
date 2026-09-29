@@ -126,6 +126,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.wealth-goals-overview');
     });
 
+    Route::get('/wealth-priority-planning', function () {
+        return view('dashboard.wealth-priority-planning');
+    });
+
+    Route::get('/financial-progress', function () {
+        return view('dashboard.financial-progress');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

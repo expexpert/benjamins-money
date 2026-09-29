@@ -103,7 +103,7 @@
                             <div class="progress-bar bg-4FC07C" style="width:72%;"></div>
                         </div>
                     </div>
-                    <div class="bg-ECFDF5 border-047857 br-8 p-4-10 f-12 lh-14 clr-0E4624 m-fit-content">
+                    <div class="bg-ECFDF5 border-047857 br-8 p-4-10 f-12 lh-14 clr-0E4624 m-fit-content bold">
                         On Track
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                             <div class="progress-bar bg-4FC07C" style="width:64%;"></div>
                         </div>
                     </div>
-                    <div class="bg-ECFDF5 border-047857 br-8 p-4-10 f-12 lh-14 clr-0E4624 m-fit-content">
+                    <div class="bg-ECFDF5 border-047857 br-8 p-4-10 f-12 lh-14 clr-0E4624 m-fit-content bold">
                         On Track
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                             <div class="progress-bar bg-FEBC2E" style="width:58%;"></div>
                         </div>
                     </div>
-                    <div class="bg-D08D09-20 border-D08D09 br-8 p-4-10 f-12 lh-14 clr-yellow-900 m-fit-content">
+                    <div class="bg-light-brown border-D08D09 br-8 p-4-10 f-12 lh-14 clr-yellow-900 m-fit-content bold">
                         Attention Needed
                     </div>
                 </div>
@@ -202,11 +202,53 @@
                             <div class="progress-bar bg-108476" style="width:41%;"></div>
                         </div>
                     </div>
-                    <div class="bg-EDF8FF border-blue-800 br-8 p-4-10 f-12 lh-14 clr-blue-800 m-fit-content">
+                    <div class="bg-EDF8FF border-blue-800 br-8 p-4-10 f-12 lh-14 clr-blue-800 m-fit-content bold">
                         Accumulating Seed
                     </div>
                 </div>
 
+            </div>
+
+            <div class="d-flex gap-16 flex-col">
+                <h2 class="f-16 lh-18 white-80 capitalize">
+                    The three wealth engine pillars
+                </h2>
+
+                <div class="d-grid col-lg-3 gap-20">
+                    <div class="bg-0B1417 border-E9E7DD-15 br-12 p-24 d-flex flex-col gap-16">
+                        <h2 class="f-16 lh-18 white capitalize">
+                            Priority Planning
+                        </h2>
+                        <p class="f-14 lh-20 white-80">
+                            Align money with what matters. Sort short-term needs vs your 2031 Florida property.
+                        </p>
+                        <a href="#" class="f-14 lh-16 clr-4FC07C">
+                            Explore Planning →
+                        </a>
+                    </div>
+
+                    <div class="bg-0B1417 border-E9E7DD-15 br-12 p-24 d-flex flex-col gap-16">
+                        <h2 class="f-16 lh-18 white capitalize">
+                            Financial Progress
+                        </h2>
+                        <p class="f-14 lh-20 white-80">
+                            Track your wealth velocity. View asset growth vs your 2030 retirement curve.
+                        </p>
+                        <a href="#" class="f-14 lh-16 clr-4FC07C">
+                            Track Progress →
+                        </a>
+                    </div>
+                    <div class="bg-0B1417 border-E9E7DD-15 br-12 p-24 d-flex flex-col gap-16">
+                        <h2 class="f-16 lh-18 white capitalize">
+                            Cash flow timeline
+                        </h2>
+                        <p class="f-14 lh-20 white-80">
+                            Map out your peak cash outflow wave between 2029 and 2031 seamlessly. </p>
+                        <a href="#" class="f-14 lh-16 clr-4FC07C">
+                            View Timeline →
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -281,4 +281,49 @@ class NetWorthController extends Controller
             'alerts'
         ));
     }
+
+
+    public function networthAssets()
+    {
+
+        $clientId = Auth::user()->emoney_client_id;
+
+        // -------------------------------------------------------------
+        // SECTION 1: Top Net Worth Banner & 6-Period Trend Chart
+        // Endpoint: GET /v2/clients/{clientId}/networth/history
+        // -------------------------------------------------------------
+        $historyData = $this->eMoneyService->getNetWorthHistory($clientId, 1);
+        $summary = $historyData['summary'] ?? [];
+
+        // Current vs Prior Period Calculation
+        $currentRecord  = $summary[0] ?? ['netWorth' => 0, 'totalAssets' => 0, 'totalLiabilities' => 0, 'asOf' => 'N/A'];
+        $previousRecord = $summary[1] ?? ['netWorth' => 0, 'totalAssets' => 0, 'totalLiabilities' => 0, 'asOf' => 'N/A'];
+
+        $totalAssets      = $currentRecord['assets'] ?? 0;
+        $totalLiabilities = $currentRecord['liabilities'] ?? 0;
+        $currentNetWorth  = $currentRecord['netWorth'] ?? ($totalAssets - $totalLiabilities);
+
+        $priorNetWorth     = $previousRecord['netWorth'] ?? 0;
+        $netWorthChange = $currentNetWorth - $priorNetWorth;
+        $sign = $netWorthChange > 0 ? '+' : ($netWorthChange < 0 ? '-' : '');
+
+        $absoluteChange = abs($netWorthChange);
+
+        if ($absoluteChange >= 1000000) {
+            $formattedChange = number_format($absoluteChange / 1000000, 1) . 'M';
+        } elseif ($absoluteChange >= 1000) {
+            $formattedChange = number_format($absoluteChange / 1000, 1) . 'K';
+        } else {
+            $formattedChange = number_format($absoluteChange);
+        }
+
+
+        return view('dashboard.networth-assets', compact(
+            'currentNetWorth',
+            'sign',
+            'formattedChange',
+            'totalAssets',
+            'totalLiabilities'
+        ));
+    }
 }

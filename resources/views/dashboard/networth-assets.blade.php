@@ -67,7 +67,7 @@
                                 Consolidated Net Worth
                             </p>
                             <h3 class="f-38 lh-40 white bold">
-                                $12,012,810
+                                ${{ number_format($currentNetWorth) }}
                             </h3>
                         </div>
                         <div class="right">
@@ -75,7 +75,7 @@
                                 Updated 2 mins ago
                             </p>
                             <p class="f-16 lh-16 clr-A7DFBD">
-                                +$1.2M vs last month
+                                {{ $sign }}${{ $formattedChange }} vs last month
                             </p>
                         </div>
                     </div>

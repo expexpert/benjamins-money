@@ -33,12 +33,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     Route::get('/networth', [NetWorthController::class, 'index'])->name('networth');
+    Route::get('/networth/networth-assets', [NetWorthController::class, 'networthAssets'])->name('networth-assets');
 
-    Route::get('/networth-assets', function () {
-        return view('dashboard.networth-assets');
-    });
-
-    Route::get('/networth-liabilitites', function () {
+    Route::get('/networth/networth-liabilitites', function () {
         return view('dashboard.networth-liabilitites');
     });
 

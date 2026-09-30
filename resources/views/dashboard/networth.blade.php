@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="border-bottom-334155"></div>
-                    <a href="#" class="cus-link gap-4 f-14 d-flex">View Asset Details <span>→</span></a>
+                    <a href="{{ route('networth-assets') }}" class="cus-link gap-4 f-14 d-flex">View Asset Details <span>→</span></a>
                 </div>
 
                 {{-- Total Liabilities Block --}}

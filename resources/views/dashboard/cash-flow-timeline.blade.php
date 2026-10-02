@@ -55,7 +55,7 @@
 
 <div class="dash-cont-outer">
     <div class="dash-cont-inner">
-        <div class="card-outer d-flex flex-col gap-48 align-flex-start">
+        <div class="card-outer d-grid col-4-1 gap-48 align-flex-start">
             <div class="wrap">
 
                 <!-- Tab buttons: data-tab must match the panel's id -->
@@ -85,7 +85,7 @@
                     <div class="card d-flex gap-16 flex-col border-E9E7DD-15 bg-060F13 br-12 p-20">
                         <div class="card-head d-flex align-center gap-10 justify-space-between">
                             <h3 class="f-18 lh-20 white">2026 - 2028</h3>
-                            <span class="badge blue f-11 lh-12">Positive runway</span>
+                            <span class="badge green f-11 lh-12">Positive runway</span>
                         </div>
                         <p class="f-14 lh-20 white-80">Standard wealth accumulation phase.</p>
                         <div class="border-bottom-E9E7DD-24">
@@ -97,7 +97,7 @@
                     <div class="card d-flex gap-16 flex-col border-E9E7DD-15 bg-060F13 br-12 p-20">
                         <div class="card-head d-flex align-center justify-space-between gap-10">
                             <h3 class="f-18 lh-20 white">2029</h3>
-                            <span class="badge red f-11 lh-12">Capital wave begins</span>
+                            <span class="badge blue f-11 lh-12">Capital wave begins</span>
                         </div>
                         <p class="f-14 lh-20 white-80">OUTFLOW EVENT: John's Brown University Freshman Tuition &amp; Fees.</p>
                         <div class="border-bottom-E9E7DD-24">
@@ -138,7 +138,9 @@
                 </section>
 
             </div>
+            <div>
 
+            </div>
 
         </div>
     </div>

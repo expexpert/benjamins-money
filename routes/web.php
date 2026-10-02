@@ -135,6 +135,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard.cash-flow-timeline');
     });
 
+    Route::get('/review-active-goals', function () {
+        return view('dashboard.review-active-goals');
+    });
+
     Route::get('/account-verified', function () {
         return view('auth.account-verified');
     });

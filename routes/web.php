@@ -130,6 +130,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/financial-progress', function () {
         return view('dashboard.financial-progress');
     });
+    
+    Route::get('/cash-flow-timeline', function () {
+        return view('dashboard.cash-flow-timeline');
+    });
 
     Route::get('/account-verified', function () {
         return view('auth.account-verified');

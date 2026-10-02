@@ -2968,6 +2968,86 @@ body.modal-open {
     border-right: 1px solid rgba(233, 231, 221, 15%);
 }
 
+.badge.green {
+    background-color: rgba(79, 192, 124, 8.24%);
+    border: 1px solid #4FC07C;
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: #4FC07C;
+    text-transform: uppercase;
+}
+
+.badge.blue {
+    background-color: rgba(16, 132, 118, 8.24%);
+    border: 1px solid #66BFFF;
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: #66BFFF;
+    text-transform: uppercase;
+}
+
+.badge.red {
+    background-color: rgba(255, 95, 87, 8.24%);
+    border: 1px solid #F58F8C;
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: #F58F8C;
+    text-transform: uppercase;
+}
+
+.badge.yellow {
+    background-color: rgba(254, 188, 46, 8.24%);
+    border: 1px solid #FEBC2E;
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: #FEBC2E;
+    text-transform: uppercase;
+}
+
+section.tab-panel .card:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+section.tab-panel .card:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+button.tab-btn {
+    font-size: 13px;
+    line-height: 14px;
+    color: rgba(233, 231, 221, 50.2%);
+    padding: 8px 16px;
+    background: transparent;
+    border-radius: 16px;
+    border: 1px solid rgba(233, 231, 221, 14.12%);
+    display: inline-flex;
+}
+
+body.sidebar-close button {
+    display: inline-flex !important;
+}
+
+button.tab-btn.active {
+    color: #4FC07C;
+    border: 1px solid rgba(17, 192, 124, 10.12%);
+    border: 1px solid #4FC07C;
+}
+
+.wrap {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .tax-comparison {

@@ -114,6 +114,26 @@
                             </span>
                         </div>
                     </div>
+
+                    <!-- city field  -->
+                    <div class="form-field d-flex flex-col gap-6 mb-16">
+                        <label class="f-13 clr-356674" for="city"><b>City (*)</b></label>
+                        <input type="text" id="city" name="city" value="" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Select city" required autocomplete="username">
+                    </div>
+
+                    <!-- state field  -->
+                    <div class="form-field d-flex flex-col gap-6 mb-16">
+                        <label class="f-13 clr-356674" for="state"><b>State (*)</b></label>
+                        <input type="text" id="state" name="state" value="" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Select state" required autocomplete="username">
+                    </div>
+
+                    <!-- zip code field  -->
+                    <div class="form-field d-flex flex-col gap-6 mb-16">
+                        <label class="f-13 clr-356674" for="zipcode"><b>ZIP Code (*)</b></label>
+                        <input type="text" id="zipcode" name="zipcode" value="" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Enter 5-digit ZIP code" required autocomplete="username">
+                    </div>
+
+
                     <div class="d-flex flex-col gap-16">
                         <div class="terms d-flex gap-8 form-field">
                             <input type="checkbox" id="accept" name="terms" value="1" {{ old('terms') ? 'checked' : '' }} required>

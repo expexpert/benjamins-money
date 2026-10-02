@@ -114,8 +114,41 @@
                 <h3 class="f-16 lh-18 white-80 capitalize">
                     Target milestones overlap matrix
                 </h3>
-                <div class="bg-0B1417 border-E9E7DD-15 br-16 p-24">
-                    
+                <div class="bg-0B1417 border-E9E7DD-15 br-16 p-24 d-flex gap-20 flex-col">
+                    <div class="d-flex gap-10 align-center justify-space-between">
+                        <p class="f-16 lh-18 white">
+                            Cumulative Growth Curves vs Major Distribution Windows
+                        </p>
+                        <div class="d-flex gap-16 align-center">
+                            <div class="d-flex gap-6 align-center">
+                                <div class="bg-white w-12 h-4">
+
+                                </div>
+                                <p class="f-12 lh-14 white-50">
+                                    Target Path
+                                </p>
+                            </div>
+                            <div class="d-flex gap-6 align-center">
+                                <div class="bg-4FC07C w-12 h-4">
+
+                                </div>
+                                <p class="f-12 lh-14 white-50">
+                                    Actual Track
+                                </p>
+                            </div>
+                            <div class="d-flex gap-6 align-center">
+                                <div class="bg-FF5F57-10 border-FF5F57 w-12 h-12">
+
+                                </div>
+                                <p class="f-12 lh-14 white-50">
+                                    Shaded Outflow Warning Zone
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-box">
+                        <img src="{{ asset('images/progress-org.svg') }}" alt="Progress Icon">
+                    </div>
                 </div>
             </div>
 

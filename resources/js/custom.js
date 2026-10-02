@@ -31,6 +31,20 @@ $(function () {
     });
 
 
+    // timeline js 
+    $('.tab-btn').on('click', function () {
+        var target = $(this).data('tab');
+
+        // Update buttons
+        $('.tab-btn').removeClass('active').attr('aria-selected', 'false');
+        $(this).addClass('active').attr('aria-selected', 'true');
+
+        // Update panels
+        $('.tab-panel').removeClass('active');
+        $('#' + target).addClass('active');
+    });
+
+
     // tabs on wealth goals 
     var $tabs = $('#ledgerTabs .ledger-tab');
     var $contents = $('.ledger-tab-content');

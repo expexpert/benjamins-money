@@ -1058,7 +1058,7 @@ h6 {
     padding: 10px 20px;
 }
 
-.p-10-50{
+.p-10-50 {
     padding: 10px 50px;
 }
 
@@ -1619,6 +1619,14 @@ h6 {
     width: 10px;
 }
 
+.w-12 {
+    width: 12px;
+}
+
+.h-12 {
+    height: 12px;
+}
+
 .h-10 {
     height: 10px;
 }
@@ -1789,6 +1797,10 @@ p {
 
 .border-047857 {
     border: 1px solid #047857;
+}
+
+.border-FF5F57{
+    border: 1px solid #FF5F57;
 }
 
 .border-108476 {
@@ -2500,7 +2512,7 @@ textarea {
     color: #00CB3B;
 }
 
-.clr-FCA5A5{
+.clr-FCA5A5 {
     color: #FCA5A5;
 }
 

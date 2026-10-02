@@ -738,6 +738,9 @@ class AdminController extends Controller
             'is_active' => ['nullable', 'boolean'],
             'effective_from' => ['nullable', 'date'],
             'effective_to' => ['nullable', 'date', 'after_or_equal:effective_from'],
+        ], [
+            'state_id.required' => 'Please select a valid state from the list.',
+            'state_id.exists' => 'Please select a valid state from the list.',
         ]);
 
         $existing = StateTax::where('state_id', $validated['state_id'])
@@ -785,6 +788,9 @@ class AdminController extends Controller
             'is_active' => ['nullable', 'boolean'],
             'effective_from' => ['nullable', 'date'],
             'effective_to' => ['nullable', 'date', 'after_or_equal:effective_from'],
+        ], [
+            'state_id.required' => 'Please select a valid state from the list.',
+            'state_id.exists' => 'Please select a valid state from the list.',
         ]);
 
         $existing = StateTax::where('state_id', $validated['state_id'])

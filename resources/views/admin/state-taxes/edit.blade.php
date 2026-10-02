@@ -17,14 +17,8 @@
 
                 <div class="form-group">
                     <label for="state_id">State <span style="color: #dc2626;">*</span></label>
-                    <select id="state_id" name="state_id" required>
-                        <option value="">Select a state...</option>
-                        @foreach($states as $state)
-                            <option value="{{ $state->id }}" {{ old('state_id', $stateTax->state_id) == $state->id ? 'selected' : '' }}>
-                                {{ $state->name }} ({{ strtoupper($state->code) }})
-                            </option>
-                        @endforeach
-                    </select>
+                    <input type="text" id="state" name="state" value="{{ old('state', $stateTax->state->name) }}" data-search-url="{{ route('states.search') }}" placeholder="Search for a state..." autocomplete="off">
+                    <input type="hidden" id="state_id" name="state_id" value="{{ old('state_id', $stateTax->state_id) }}">
                     <small style="display: block; margin-top: 4px; font-size: 12px; color: #6b7280;">
                         Don't see your state? <a href="{{ route('admin.states.create') }}">Add a new state first</a>
                     </small>

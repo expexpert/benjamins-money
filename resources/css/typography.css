@@ -1550,6 +1550,10 @@ h6 {
     grid-template-columns: 2fr 1fr;
 }
 
+.col-4-1 {
+    grid-template-columns: 4fr 1fr;
+}
+
 .col-1-2 {
     grid-template-columns: 1fr 2.5fr;
 }
@@ -1799,7 +1803,7 @@ p {
     border: 1px solid #047857;
 }
 
-.border-FF5F57{
+.border-FF5F57 {
     border: 1px solid #FF5F57;
 }
 
@@ -2508,6 +2512,10 @@ textarea {
     border: 1px solid #C293C9;
 }
 
+.clr-0B1417 {
+    color: #0B1417;
+}
+
 .clr-00CB3B {
     color: #00CB3B;
 }
@@ -2582,6 +2590,10 @@ textarea {
 
 .clr-yellow-900 {
     color: #413422;
+}
+
+.clr-FF928A {
+    color: #FF928A;
 }
 
 .border-0082FB {

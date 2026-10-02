@@ -31,6 +31,31 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" value="{{ old('city') }}" required>
+                    @error('city')
+                    <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="state_id">State</label>
+                    <input type="text" id="state" name="state" value="{{ old('state') }}" data-search-url="{{ route('states.search') }}" required autocomplete="new-state">
+                    <input type="hidden" id="state_id" name="state_id" value="{{ old('state_id') }}">
+                    @error('state_id')
+                    <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="zip_code">Zip Code</label>
+                    <input type="text" id="zip_code" name="zip_code" value="{{ old('zip_code') }}" required>
+                    @error('zip_code')
+                    <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="role">User Role</label>
                     <select id="role" name="role" required>
                         <option value="user" {{ old('role') === 'user' ? 'selected' : '' }}>User</option>

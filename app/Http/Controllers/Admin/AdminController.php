@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bank;
+use App\Models\State;
 use App\Models\User;
+use App\Models\StateTax;
 use App\Services\EMoneyService;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
@@ -28,9 +30,15 @@ class AdminController extends Controller
         $unverifiedUsers = User::whereNull('email_verified_at')->count();
         $totalBanks = Bank::count();
         $activeBanks = Bank::active()->count();
+        $totalStates = State::count();
+        $activeStates = State::active()->count();
+        $totalStateTaxes = StateTax::count();
+        $activeStateTaxes = StateTax::active()->count();
 
         $recentUsers = User::latest()->take(5)->get();
         $recentBanks = Bank::latest()->take(5)->get();
+        $recentStates = State::latest()->take(5)->get();
+        $recentStateTaxes = StateTax::with('state')->latest()->take(5)->get();
 
         return view('admin.dashboard', compact(
             'totalUsers',
@@ -39,8 +47,14 @@ class AdminController extends Controller
             'unverifiedUsers',
             'totalBanks',
             'activeBanks',
+            'totalStates',
+            'activeStates',
+            'totalStateTaxes',
+            'activeStateTaxes',
             'recentUsers',
-            'recentBanks'
+            'recentBanks',
+            'recentStates',
+            'recentStateTaxes'
         ));
     }
 
@@ -68,7 +82,8 @@ class AdminController extends Controller
 
     public function createUser()
     {
-        return view('admin.users.create');
+        $states = State::active()->get();
+        return view('admin.users.create', compact('states'));
     }
 
     public function storeUser(Request $request)
@@ -78,12 +93,18 @@ class AdminController extends Controller
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'confirmed', Password::min(8)->symbols()],
             'role' => ['required', 'string', 'in:admin,user'],
+            'city' => ['nullable', 'string', 'max:255'],
+            'state_id' => ['nullable', 'exists:states,id'],
+            'zip_code' => ['nullable', 'string', 'max:10'],
         ]);
 
         try {
             $user =  User::create([
                 'name' => $validated['name'],
                 'email' => $validated['email'],
+                'city' => $validated['city'] ?? null,
+                'state_id' => $validated['state_id'] ?? null,
+                'zip_code' => $validated['zip_code'] ?? null,
                 'password' => $validated['password'],
                 'role' => $validated['role'],
                 'email_verified_at' => now(),
@@ -102,6 +123,11 @@ class AdminController extends Controller
                             'firstName' => $firstName,
                             'lastName' => $lastName,
                             'email' => $user->email,
+                        ],
+                        'address' => [
+                            'city' => $user->city,
+                            'state' => $user->state_id ? State::find($user->state_id)->code : null,
+                            'postalCode' => $user->zip_code,
                         ],
                     ];
 
@@ -131,7 +157,8 @@ class AdminController extends Controller
     public function editUser(User $user)
     {
         $adminUsersCount = User::where('role', User::ROLE_ADMIN)->count();
-        return view('admin.users.edit', compact('user', 'adminUsersCount'));
+        $states = State::active()->get();
+        return view('admin.users.edit', compact('user', 'adminUsersCount', 'states'));
     }
 
     public function updateUser(Request $request, User $user)
@@ -139,13 +166,22 @@ class AdminController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email,' . $user->id],
+            'city' => ['nullable', 'string', 'max:255'],
+            'state_id' => ['required', 'exists:states,id'],
+            'zip_code' => ['nullable', 'string', 'max:10'],
             'role' => ['required', 'string', 'in:admin,user'],
             'password' => ['nullable', 'confirmed', Password::min(8)->symbols()],
+        ], [
+            'state_id.required' => 'Please select a valid state from the list.',
+            'state_id.exists' => 'Please select a valid state from the list.',
         ]);
 
         $updateData = [
             'name' => $validated['name'],
             'email' => $validated['email'],
+            'city' => $validated['city'] ?? null,
+            'state_id' => $validated['state_id'] ?? null,
+            'zip_code' => $validated['zip_code'] ?? null,
             'role' => $validated['role'],
         ];
 
@@ -162,6 +198,11 @@ class AdminController extends Controller
                             'firstName' => explode(' ', trim($validated['name']), 2)[0],
                             'lastName' => explode(' ', trim($validated['name']), 2)[1] ?? 'User',
                             'email' => $validated['email'],
+                        ],
+                        'address' => [
+                            'city' =>  $validated['city'] ?? null,
+                            'state' =>  $validated['state_id'] ? State::find($validated['state_id'])->code : null,
+                            'postalCode' => $validated['zip_code'] ?? null,
                         ],
                     ];
 
@@ -492,5 +533,369 @@ class AdminController extends Controller
 
         return redirect()->route('admin.banks.trash')
             ->with('success', 'Bank permanently deleted.');
+    }
+
+
+
+
+
+
+    public function states(Request $request)
+    {
+        $search = $request->input('search');
+        $status = $request->input('status');
+
+        $states = State::query()
+            ->when($search, function ($query) use ($search) {
+                $query->where('code', 'like', "%{$search}%")
+                    ->orWhere('name', 'like', "%{$search}%");
+            })
+            ->when($status !== null, function ($query) use ($status) {
+                $query->where('is_active', $status === 'active' ? true : false);
+            })
+            ->latest()
+            ->paginate(10);
+        $trashedStates = State::onlyTrashed()->count();
+
+        return view('admin.states.index', compact('states', 'search', 'status', 'trashedStates'));
+    }
+
+    public function createState()
+    {
+        return view('admin.states.create');
+    }
+
+    public function storeState(Request $request)
+    {
+        $validated = $request->validate([
+            'code' => ['required', 'string', 'size:2', 'unique:states,code'],
+            'name' => ['required', 'string', 'max:255', 'unique:states,name'],
+            'is_active' => ['nullable', 'boolean'],
+        ]);
+
+        try {
+            State::create([
+                'code' => strtoupper($validated['code']),
+                'name' => $validated['name'],
+                'is_active' => $request->boolean('is_active'),
+            ]);
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to create state.', ['exception' => $exception]);
+
+            return back()->withInput()->withErrors(['error' => 'Unable to create the state. Please try again.']);
+        }
+
+        return redirect()->route('admin.states')
+            ->with('success', 'State created successfully.');
+    }
+
+    public function editState(State $state)
+    {
+        return view('admin.states.edit', compact('state'));
+    }
+
+    public function updateState(Request $request, State $state)
+    {
+        $validated = $request->validate([
+            'code' => ['required', 'string', 'size:2', 'unique:states,code,' . $state->id],
+            'name' => ['required', 'string', 'max:255', 'unique:states,name,' . $state->id],
+            'is_active' => ['nullable', 'boolean'],
+        ]);
+
+        try {
+            $state->update([
+                'code' => strtoupper($validated['code']),
+                'name' => $validated['name'],
+                'is_active' => $request->boolean('is_active'),
+            ]);
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to update state.', ['state_id' => $state->id, 'exception' => $exception]);
+
+            return back()->withInput()->withErrors(['error' => 'Unable to update the state. Please try again.']);
+        }
+
+        return redirect()->route('admin.states')
+            ->with('success', 'State updated successfully.');
+    }
+
+    public function deleteState(State $state)
+    {
+        try {
+            $state->delete();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to delete state.', ['state_id' => $state->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to delete the state. Please try again.']);
+        }
+
+        return redirect()->route('admin.states')
+            ->with('success', 'State deleted successfully.');
+    }
+
+    public function toggleStateStatus(State $state)
+    {
+        $state->is_active = !$state->is_active;
+        try {
+            $state->save();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to toggle state status.', ['state_id' => $state->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to update the state status. Please try again.']);
+        }
+
+        $message = $state->is_active ? 'State activated successfully.' : 'State deactivated successfully.';
+
+        return back()->with('success', $message);
+    }
+
+    public function trashStates(Request $request)
+    {
+        $search = $request->input('search');
+
+        $states = State::onlyTrashed()
+            ->when($search, function ($query) use ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('code', 'like', "%{$search}%")
+                        ->orWhere('name', 'like', "%{$search}%");
+                });
+            })
+            ->latest('deleted_at')
+            ->paginate(10)
+            ->appends(['search' => $search]);
+
+        return view('admin.states.trash', compact('states', 'search'));
+    }
+
+    public function restoreState($id)
+    {
+        $state = State::withTrashed()->findOrFail($id);
+        try {
+            $state->restore();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to restore state.', ['state_id' => $state->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to restore the state. Please try again.']);
+        }
+
+        return redirect()->route('admin.states.trash')
+            ->with('success', 'State restored successfully.');
+    }
+
+    public function forceDeleteState($id)
+    {
+        $state = State::withTrashed()->findOrFail($id);
+
+        try {
+            $state->forceDelete();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to permanently delete state.', ['state_id' => $state->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to permanently delete the state. Please try again.']);
+        }
+
+        return redirect()->route('admin.states.trash')
+            ->with('success', 'State permanently deleted.');
+    }
+
+
+    public function stateTaxes(Request $request)
+    {
+        $search = $request->input('search');
+        $status = $request->input('status');
+
+        $stateTaxes = StateTax::with('state')
+            ->when($search, function ($query) use ($search) {
+                $query->whereHas('state', function ($q) use ($search) {
+                    $q->where('code', 'like', "%{$search}%")
+                        ->orWhere('name', 'like', "%{$search}%");
+                })->orWhere('tax_name', 'like', "%{$search}%")
+                    ->orWhere('tax_rate', 'like', "%{$search}%");
+            })
+            ->when($status !== null, function ($query) use ($status) {
+                $query->where('is_active', $status === 'active' ? true : false);
+            })
+            ->latest()
+            ->paginate(10);
+        $trashedStateTaxes = StateTax::onlyTrashed()->count();
+
+        return view('admin.state-taxes.index', compact('stateTaxes', 'search', 'status', 'trashedStateTaxes'));
+    }
+
+
+    public function createStateTax()
+    {
+        $states = State::active()->orderBy('name')->get();
+
+        return view('admin.state-taxes.create', compact('states'));
+    }
+
+    public function storeStateTax(Request $request)
+    {
+        $validated = $request->validate([
+            'state_id' => ['required', 'exists:states,id'],
+            'tax_name' => ['required', 'string', 'max:255'],
+            'tax_rate' => ['required', 'numeric', 'between:0,100'],
+            'is_active' => ['nullable', 'boolean'],
+            'effective_from' => ['nullable', 'date'],
+            'effective_to' => ['nullable', 'date', 'after_or_equal:effective_from'],
+        ]);
+
+        $existing = StateTax::where('state_id', $validated['state_id'])
+            ->where('tax_name', $validated['tax_name'])
+            ->whereNull('deleted_at')
+            ->exists();
+
+        if ($existing) {
+            return back()->withInput()->withErrors(['tax_name' => 'A tax with this name already exists for the selected state.']);
+        }
+
+        try {
+            StateTax::create([
+                'state_id' => $validated['state_id'],
+                'tax_name' => $validated['tax_name'],
+                'tax_rate' => $validated['tax_rate'],
+                'is_active' => $request->boolean('is_active'),
+                'effective_from' => $validated['effective_from'] ?? null,
+                'effective_to' => $validated['effective_to'] ?? null,
+            ]);
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to create state tax.', ['exception' => $exception]);
+
+            return back()->withInput()->withErrors(['error' => 'Unable to create the state tax. Please try again.']);
+        }
+
+        return redirect()->route('admin.state-taxes')
+            ->with('success', 'State tax created successfully.');
+    }
+
+
+    public function editStateTax(StateTax $stateTax)
+    {
+        $states = State::orderBy('name')->get();
+
+        return view('admin.state-taxes.edit', compact('stateTax', 'states'));
+    }
+
+    public function updateStateTax(Request $request, StateTax $stateTax)
+    {
+        $validated = $request->validate([
+            'state_id' => ['required', 'exists:states,id'],
+            'tax_name' => ['required', 'string', 'max:255'],
+            'tax_rate' => ['required', 'numeric', 'between:0,100'],
+            'is_active' => ['nullable', 'boolean'],
+            'effective_from' => ['nullable', 'date'],
+            'effective_to' => ['nullable', 'date', 'after_or_equal:effective_from'],
+        ]);
+
+        $existing = StateTax::where('state_id', $validated['state_id'])
+            ->where('tax_name', $validated['tax_name'])
+            ->where('id', '!=', $stateTax->id)
+            ->whereNull('deleted_at')
+            ->exists();
+
+        if ($existing) {
+            return back()->withInput()->withErrors(['tax_name' => 'A tax with this name already exists for the selected state.']);
+        }
+
+        try {
+            $stateTax->update([
+                'state_id' => $validated['state_id'],
+                'tax_name' => $validated['tax_name'],
+                'tax_rate' => $validated['tax_rate'],
+                'is_active' => $request->boolean('is_active'),
+                'effective_from' => $validated['effective_from'] ?? null,
+                'effective_to' => $validated['effective_to'] ?? null,
+            ]);
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to update state tax.', ['state_tax_id' => $stateTax->id, 'exception' => $exception]);
+
+            return back()->withInput()->withErrors(['error' => 'Unable to update the state tax. Please try again.']);
+        }
+
+        return redirect()->route('admin.state-taxes')
+            ->with('success', 'State tax updated successfully.');
+    }
+
+    public function deleteStateTax(StateTax $stateTax)
+    {
+        try {
+            $stateTax->delete();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to delete state tax.', ['state_tax_id' => $stateTax->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to delete the state tax. Please try again.']);
+        }
+
+        return redirect()->route('admin.state-taxes')
+            ->with('success', 'State tax deleted successfully.');
+    }
+
+    public function toggleStateTaxStatus(StateTax $stateTax)
+    {
+        $stateTax->is_active = !$stateTax->is_active;
+        try {
+            $stateTax->save();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to toggle state tax status.', ['state_tax_id' => $stateTax->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to update the state tax status. Please try again.']);
+        }
+
+        $message = $stateTax->is_active ? 'State tax activated successfully.' : 'State tax deactivated successfully.';
+
+        return back()->with('success', $message);
+    }
+
+    public function trashStateTaxes(Request $request)
+    {
+        $search = $request->input('search');
+
+        $stateTaxes = StateTax::with('state')
+            ->onlyTrashed()
+            ->when($search, function ($query) use ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->whereHas('state', function ($sq) use ($search) {
+                        $sq->where('code', 'like', "%{$search}%")
+                            ->orWhere('name', 'like', "%{$search}%");
+                    })->orWhere('tax_name', 'like', "%{$search}%")
+                        ->orWhere('tax_rate', 'like', "%{$search}%");
+                });
+            })
+            ->latest('deleted_at')
+            ->paginate(10)
+            ->appends(['search' => $search]);
+
+        return view('admin.state-taxes.trash', compact('stateTaxes', 'search'));
+    }
+
+    public function restoreStateTax($id)
+    {
+        $stateTax = StateTax::withTrashed()->findOrFail($id);
+        try {
+            $stateTax->restore();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to restore state tax.', ['state_tax_id' => $stateTax->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to restore the state tax. Please try again.']);
+        }
+
+        return redirect()->route('admin.state-taxes.trash')
+            ->with('success', 'State tax restored successfully.');
+    }
+
+    public function forceDeleteStateTax($id)
+    {
+        $stateTax = StateTax::withTrashed()->findOrFail($id);
+
+        try {
+            $stateTax->forceDelete();
+        } catch (\Throwable $exception) {
+            Log::error('Admin failed to permanently delete state tax.', ['state_tax_id' => $stateTax->id, 'exception' => $exception]);
+
+            return back()->withErrors(['error' => 'Unable to permanently delete the state tax. Please try again.']);
+        }
+
+        return redirect()->route('admin.state-taxes.trash')
+            ->with('success', 'State tax permanently deleted.');
     }
 }

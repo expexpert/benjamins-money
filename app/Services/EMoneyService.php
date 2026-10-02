@@ -242,9 +242,10 @@ class EMoneyService
             );
         }
 
-        return $response->json();
+        return $response->json() ?? [];
     }
 
+    
     /**
      * Delete Client
      */

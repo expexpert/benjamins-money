@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\EMoneyService;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;

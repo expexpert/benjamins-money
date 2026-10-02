@@ -34,6 +34,28 @@
     </div>
 </div>
 
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 32px;">
+    <div class="stat-card total">
+        <div class="stat-value">{{ $totalStates }}</div>
+        <div class="stat-label">Total States</div>
+    </div>
+    <div class="stat-card admin">
+        <div class="stat-value">{{ $activeStates }}</div>
+        <div class="stat-label">Active States</div>
+    </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 32px;">
+    <div class="stat-card total">
+        <div class="stat-value">{{ $totalStateTaxes }}</div>
+        <div class="stat-label">Total State Taxes</div>
+    </div>
+    <div class="stat-card verified">
+        <div class="stat-value">{{ $activeStateTaxes }}</div>
+        <div class="stat-label">Active State Taxes</div>
+    </div>
+</div>
+
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
     <div class="admin-card">
         <div class="admin-card-header">
@@ -129,6 +151,108 @@
                 <div class="empty-state">
                     <p style="margin-bottom: 12px;">No banks added yet.</p>
                     <a href="{{ route('admin.banks.create') }}" class="btn btn-success btn-sm">Add First Bank</a>
+                </div>
+            @endif
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <div class="admin-card-header">
+            <h3>Recently Added States</h3>
+            <a href="{{ route('admin.states') }}" class="btn btn-primary btn-sm">View All</a>
+        </div>
+        <div class="admin-card-body">
+            @if($recentStates->count() > 0)
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>State</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($recentStates as $state)
+                            <tr>
+                                <td>
+                                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 24px; background: #003049; border-radius: 4px; color: white; font-size: 10px; font-weight: 600;">
+                                        {{ strtoupper($state->code) }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-weight: 500;">{{ $state->name }}</span>
+                                </td>
+                                <td>
+                                    @if($state->is_active)
+                                        <span class="badge badge-verified">Active</span>
+                                    @else
+                                        <span class="badge badge-unverified">Inactive</span>
+                                    @endif
+                                </td>
+                                <td>{{ $state->created_at->diffForHumans() }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @else
+                <div class="empty-state">
+                    <p style="margin-bottom: 12px;">No states added yet.</p>
+                    <a href="{{ route('admin.states.create') }}" class="btn btn-success btn-sm">Add First State</a>
+                </div>
+            @endif
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <div class="admin-card-header">
+            <h3>Recently Added State Taxes</h3>
+            <a href="{{ route('admin.state-taxes') }}" class="btn btn-primary btn-sm">View All</a>
+        </div>
+        <div class="admin-card-body">
+            @if($recentStateTaxes->count() > 0)
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Rate</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($recentStateTaxes as $stateTax)
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="width: 28px; height: 28px; background: #003049; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 11px; font-weight: 600;">
+                                            {{ strtoupper($stateTax->state->code) }}
+                                        </div>
+                                        <div>
+                                            <div style="font-weight: 500;">{{ $stateTax->state->name }}</div>
+                                            <div style="font-size: 11px; color: #6b7280;">{{ $stateTax->tax_name }}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span style="font-weight: 600;">{{ number_format($stateTax->tax_rate, 2) }}%</span>
+                                </td>
+                                <td>
+                                    @if($stateTax->is_active)
+                                        <span class="badge badge-verified">Active</span>
+                                    @else
+                                        <span class="badge badge-unverified">Inactive</span>
+                                    @endif
+                                </td>
+                                <td>{{ $stateTax->created_at->diffForHumans() }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @else
+                <div class="empty-state">
+                    <p style="margin-bottom: 12px;">No state taxes added yet.</p>
+                    <a href="{{ route('admin.state-taxes.create') }}" class="btn btn-success btn-sm">Add First State Tax</a>
                 </div>
             @endif
         </div>

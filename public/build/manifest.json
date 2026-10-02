@@ -27,8 +27,12 @@
     "file": "assets/instrument-sans-600-normal-B9e8oLYv.woff",
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
+  "_jquery.module-DJfdWFsC.js": {
+    "file": "assets/jquery.module-DJfdWFsC.js",
+    "name": "jquery.module"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-DDfBN9AC.css",
+    "file": "assets/app-DT-KlbEs.css",
     "name": "app",
     "names": [
       "app.css"
@@ -54,7 +58,7 @@
     ]
   },
   "resources/css/pages/admin.css": {
-    "file": "assets/admin-CX_yMfQi.css",
+    "file": "assets/admin-lV9AgYB1.css",
     "name": "admin",
     "names": [
       "admin.css"
@@ -123,9 +127,31 @@
     "src": "resources/images/timeline-arw-new.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CD23wls9.js",
+    "file": "assets/app-C10BUKic.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_jquery.module-DJfdWFsC.js"
+    ],
+    "dynamicImports": [
+      "resources/js/jquery-ui.js",
+      "resources/js/custom.js"
+    ]
+  },
+  "resources/js/custom.js": {
+    "file": "assets/custom-D2zgDt-p.js",
+    "name": "custom",
+    "src": "resources/js/custom.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jquery.module-DJfdWFsC.js"
+    ]
+  },
+  "resources/js/jquery-ui.js": {
+    "file": "assets/jquery-ui-zO52tKE8.js",
+    "name": "jquery-ui",
+    "src": "resources/js/jquery-ui.js",
+    "isDynamicEntry": true
   }
 }

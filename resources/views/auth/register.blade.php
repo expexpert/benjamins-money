@@ -118,19 +118,20 @@
                     <!-- city field  -->
                     <div class="form-field d-flex flex-col gap-6 mb-16">
                         <label class="f-13 clr-356674" for="city"><b>City (*)</b></label>
-                        <input type="text" id="city" name="city" value="" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Select city" required autocomplete="username">
+                        <input type="text" id="city" name="city" value="" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Select city" required autocomplete="off">
                     </div>
 
                     <!-- state field  -->
                     <div class="form-field d-flex flex-col gap-6 mb-16">
                         <label class="f-13 clr-356674" for="state"><b>State (*)</b></label>
-                        <input type="text" id="state" name="state" value="" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Select state" required autocomplete="username">
+                        <input type="text" id="state" name="state" value="" data-search-url="{{ route('states.search') }}" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Select state" required autocomplete="new-state">
+                        <input type="hidden" id="state_id" name="state_id" value="{{ old('state_id') }}">
                     </div>
 
                     <!-- zip code field  -->
                     <div class="form-field d-flex flex-col gap-6 mb-16">
-                        <label class="f-13 clr-356674" for="zipcode"><b>ZIP Code (*)</b></label>
-                        <input type="text" id="zipcode" name="zipcode" value="" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Enter 5-digit ZIP code" required autocomplete="username">
+                        <label class="f-13 clr-356674" for="zip_code"><b>ZIP Code (*)</b></label>
+                        <input type="text" id="zip_code" name="zip_code" value="" class="p-16 br-8 border-secondary-dark-20 f-14" placeholder="Enter 5-digit ZIP code" required autocomplete="off">
                     </div>
 
 

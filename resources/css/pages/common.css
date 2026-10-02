@@ -3099,3 +3099,76 @@ button.tab-btn.active {
         min-width: 900px;
     }
 }
+
+
+
+
+
+/* State autocomplete dropdown */
+.ui-autocomplete {
+    position: absolute !important;
+    z-index: 99999 !important;
+
+    margin: 4px 0 0 !important;
+    padding: 0 !important;
+
+    width: auto !important;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #fff;
+    border: 1px solid #d9e1e5;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    list-style: none !important;
+}
+
+/* Remove global UL/LI styling */
+.ui-autocomplete,
+.ui-autocomplete li {
+    list-style: none !important;
+}
+
+.ui-autocomplete li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Individual option */
+.ui-autocomplete .ui-menu-item-wrapper {
+    display: block;
+    padding: 10px 14px !important;
+
+    font-size: 14px;
+    line-height: 1.4;
+    color: #356674;
+
+    cursor: pointer;
+}
+
+/* Hover / keyboard selected option */
+.ui-autocomplete .ui-menu-item-wrapper.ui-state-active {
+    margin: 0 !important;
+
+    background: #f1f7f9 !important;
+    border: 0 !important;
+
+    color: #356674 !important;
+}
+
+/* Scrollbar */
+.ui-autocomplete::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ui-autocomplete::-webkit-scrollbar-thumb {
+    background: #c5d2d6;
+    border-radius: 10px;
+}
+
+.ui-autocomplete::-webkit-scrollbar-track {
+    background: transparent;
+}

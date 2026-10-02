@@ -2,4 +2,5 @@ import $ from 'jquery';
 
 window.$ = window.jQuery = $;
 
-import './custom';
+await import('./jquery-ui.js');
+await import('./custom.js');

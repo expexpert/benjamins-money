@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\State;
 use App\Notifications\VerifyEmailOtp;
 use App\Services\EMoneyService;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $states = State::active()->get();
+        return view('auth.register', compact('states'));
     }
 
     public function register(Request $request)
@@ -33,6 +35,12 @@ class RegisterController extends Controller
             'email' => ['required', 'email', 'max:255'],
             'password' => ['required', 'confirmed', Password::min(8)->symbols()],
             'terms' => ['required', 'accepted'],
+            'city' => ['nullable', 'string', 'max:255'],
+            'zip_code' => ['nullable', 'string', 'max:20'],
+            'state_id' => ['required', 'exists:states,id'],
+        ], [
+            'state_id.required' => 'Please select a valid state from the list.',
+            'state_id.exists' => 'Please select a valid state from the list.',
         ]);
 
         try {
@@ -60,12 +68,18 @@ class RegisterController extends Controller
                 $user->update([
                     'name' => $validated['name'],
                     'password' => $validated['password'],
+                    'city' => $validated['city'],
+                    'zip_code' => $validated['zip_code'],
+                    'state_id' => $validated['state_id'],
                 ]);
             } else {
                 // 4. New user registration
                 $user = User::create([
                     'name' => $validated['name'],
                     'email' => $validated['email'],
+                    'city' => $validated['city'],
+                    'zip_code' => $validated['zip_code'],
+                    'state_id' => $validated['state_id'],
                     'password' => $validated['password'],
                     'role' => User::ROLE_USER,
                 ]);
@@ -84,6 +98,11 @@ class RegisterController extends Controller
                             'firstName' => $firstName,
                             'lastName' => $lastName,
                             'email' => $user->email,
+                        ],
+                        'address' => [
+                            'city' => $user->city,
+                            'state' => $user->state_id ? State::find($user->state_id)->code : null,
+                            'postalCode' => $user->zip_code,
                         ],
                     ];
 

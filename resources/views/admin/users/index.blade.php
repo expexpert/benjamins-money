@@ -41,7 +41,7 @@
                 <tbody>
                     @foreach($users as $user)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $users->firstItem() + $loop->index }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
@@ -80,8 +80,14 @@
                 </tbody>
             </table>
 
-            <div class="pagination">
-                {{ $users->appends(['search' => $search, 'role' => $role])->links() }}
+            <div class="state-tax-pagination-footer">
+                <div class="state-tax-pagination-summary">
+                    Page {{ $users->currentPage() }} of {{ $users->lastPage() }}
+                    &middot; {{ $users->total() }} total entries
+                </div>
+                <div class="pagination">
+                    {{ $users->appends(['search' => $search, 'role' => $role])->links() }}
+                </div>
             </div>
         @else
             <div class="empty-state">

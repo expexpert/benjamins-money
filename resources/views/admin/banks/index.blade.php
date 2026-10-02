@@ -42,7 +42,7 @@
                 <tbody>
                     @foreach($banks as $bank)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $banks->firstItem() + $loop->index }}</td>
                             <td>
                                 <div style="display: flex; align-items: center; gap: 10px;">
                                     @if($bank->logo)
@@ -99,8 +99,14 @@
                 </tbody>
             </table>
 
-            <div class="pagination">
-                {{ $banks->appends(['search' => $search, 'status' => $status])->links() }}
+            <div class="state-tax-pagination-footer">
+                <div class="state-tax-pagination-summary">
+                    Page {{ $banks->currentPage() }} of {{ $banks->lastPage() }}
+                    &middot; {{ $banks->total() }} total entries
+                </div>
+                <div class="pagination">
+                    {{ $banks->appends(['search' => $search, 'status' => $status])->links() }}
+                </div>
             </div>
         @else
             <div class="empty-state">

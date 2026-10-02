@@ -32,6 +32,31 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" value="{{ old('city', $user->city) }}">
+                    @error('city')
+                    <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="state_id">State</label>
+                    <input type="text" id="state" name="state" value="{{ old('state', $user->state?->name) }}" data-search-url="{{ route('states.search') }}" placeholder="Select state">
+                    <input type="hidden" id="state_id" name="state_id" value="{{ old('state_id', $user->state_id) }}">
+                    @error('state_id')
+                    <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="zip_code">Zip Code</label>
+                    <input type="text" id="zip_code" name="zip_code" value="{{ old('zip_code', $user->zip_code) }}">
+                    @error('zip_code')
+                    <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="role">User Role</label>
                     <select id="role" name="role" required @if($adminUsersCount <=1 && $user->role === 'admin') disabled @endif>
                         <option value="user" {{ old('role', $user->role) === 'user' ? 'selected' : '' }}>User</option>

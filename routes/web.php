@@ -3,6 +3,7 @@
 use App\Http\Controllers\SetupController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NetWorthController;
+use App\Http\Controllers\CommonController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -130,7 +131,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/financial-progress', function () {
         return view('dashboard.financial-progress');
     });
-    
+
     Route::get('/cash-flow-timeline', function () {
         return view('dashboard.cash-flow-timeline');
     });
@@ -143,3 +144,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('/setup/extract', [SetupController::class, 'extract']);
 });
+
+
+
+Route::get('/states/search', [CommonController::class, 'search'])->name('states.search');

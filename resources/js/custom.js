@@ -751,6 +751,37 @@ $(function () {
             }
         }
     });
+
+
+    const $state = $('#state');
+
+    $state.on('input', function () {
+        $('#state_id').val('');
+    });
+
+    $state.autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: $state.data('search-url'),
+                type: "GET",
+                dataType: "json",
+                data: {
+                    term: request.term
+                },
+                success: function (data) {
+                    response(data);
+                }
+            });
+        },
+        minLength: 1,
+        select: function (event, ui) {
+            $state.val(ui.item.value);
+            $('#state_id').val(ui.item.id);
+
+            return false;
+        }
+    });
+
 });
 
 // ===========================================================
